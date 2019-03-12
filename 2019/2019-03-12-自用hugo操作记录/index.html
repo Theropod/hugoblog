@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "自用hugo操作记录",
     "headline" : "自用hugo操作记录",
-    "description" : " 安装  在WSL上使用，github上有编译的extended的deb版本 因为要使用scss自定义格式 官方教程安装 初始化目录，下载主题，新建项目等等
+    "description" : "安装  在WSL上使用，github上有编译的extended的deb版本 因为要使用scss自定义格式 官方教程安装 初始化目录，下载主题，新建项目等等
 主题 用LeaveIt主题
  github上下下来主题之后，我并没有按照官方加成submodule，直接把主题自己的.git删了，不再单独处理
 自定义 config.toml相关配置
@@ -59,7 +59,11 @@
  默认的archetypes里面是draft:true也就是说用hugo server -D才能看到这些drafts，而生成静态网页就忽略掉了。。。我嫌麻烦直接改成true
 github同步 如果想用username.github.io当做主页,就需要只把hugo生成的public文件夹放在username.github.io的项目中（加入其他文件会生成页面失败），这样其余的文件必须再新建另一个项目来保存。即：Hugo文件夹是一个项目，每次生成的public作为submodule放在使用用户名作为地址的项目。
  但我本来就有域名，所以不需要非得用username.github.io这个来显得正式。
- Hugo文件夹git init，add remote，pull下来一个github空项目，配置好博客内容，生成public目录。 接下来就是按照官方文档里说的，只把public文件夹用git worktree弄到一个新的gh-pages分支，选择这个分支作为主页就行了。注意官方文档的upstream指的是你自己上游仓库的名字，比如origin。   ",
+ Hugo文件夹git init，add remote，pull下来一个github空项目，配置好博客内容，生成public目录。 接下来就是按照官方文档里说的，只把public文件夹用git worktree弄到一个新的gh-pages分支，选择这个分支作为主页就行了。注意官方文档的upstream指的是你自己上游的名字，比如origin。  最后就是使用官网上发布脚本的例子了。正好vscode里面可以把terminal改成是wsl的bash.exe，写和发布可以在一起进行。但是注意把CRLF转成LF ```shell
+  #!/bin/sh
+DIR=$(dirname &ldquo;$0&rdquo;)
+cd $DIR/..
+if [[ $(git status -s) ]] then echo &ldquo;The working directory is dirty.",
     "inLanguage" : "en",
     "author" : "Theropod",
     "creator" : "Theropod",
@@ -70,7 +74,7 @@ github同步 如果想用username.github.io当做主页,就需要只把hugo生�
     "datePublished": "2019-03-12 18:35:03 &#43;0800 CST",
     "dateModified" : "2019-03-12 18:35:03 &#43;0800 CST",
     "url" : "https://theropod.tk/2019/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/",
-    "wordCount" : "36",
+    "wordCount" : "123",
     "keywords" : [ "Windows姿势", "WGS84教信者"]
 }
 </script>
@@ -204,9 +208,43 @@ github同步 如果想用username.github.io当做主页,就需要只把hugo生�
 
 <ul>
 <li>Hugo文件夹git init，add remote，pull下来一个github空项目，配置好博客内容，生成public目录。</li>
-<li>接下来就是按照官方文档里说的，只把public文件夹用<code>git worktree</code>弄到一个新的gh-pages分支，选择这个分支作为主页就行了。注意官方文档的upstream指的是你自己上游仓库的名字，比如origin。</li>
+<li>接下来就是按照官方文档里说的，只把public文件夹用<code>git worktree</code>弄到一个新的gh-pages分支，选择这个分支作为主页就行了。注意官方文档的upstream指的是你自己上游的名字，比如origin。</li>
 </ul></li>
+
+<li><p>最后就是使用官网上发布脚本的例子了。正好vscode里面可以把terminal改成是wsl的bash.exe，写和发布可以在一起进行。但是注意把CRLF转成LF
+```shell</p></li>
 </ul>
+
+<p>#!/bin/sh</p>
+
+<p>DIR=$(dirname &ldquo;$0&rdquo;)</p>
+
+<p>cd $DIR/..</p>
+
+<p>if [[ $(git status -s) ]]
+then
+    echo &ldquo;The working directory is dirty. Please commit any pending changes.&rdquo;
+    exit 1;
+fi</p>
+
+<p>echo &ldquo;Deleting old publication&rdquo;
+rm -rf public
+mkdir public
+git worktree prune
+rm -rf .git/worktrees/public/</p>
+
+<p>echo &ldquo;Checking out gh-pages branch into public&rdquo;
+git worktree add -B gh-pages public origin/gh-pages</p>
+
+<p>echo &ldquo;Removing existing files&rdquo;
+rm -rf public/*</p>
+
+<p>echo &ldquo;Generating site&rdquo;
+hugo</p>
+
+<p>echo &ldquo;Updating gh-pages branch&rdquo;
+cd public &amp;&amp; git add &ndash;all &amp;&amp; git commit -m &ldquo;Publishing to gh-pages (publish.sh)&rdquo;
+```</p>
 
     </div>
 

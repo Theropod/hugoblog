@@ -60,9 +60,43 @@
 
 &lt;ul&gt;
 &lt;li&gt;Hugo文件夹git init，add remote，pull下来一个github空项目，配置好博客内容，生成public目录。&lt;/li&gt;
-&lt;li&gt;接下来就是按照官方文档里说的，只把public文件夹用&lt;code&gt;git worktree&lt;/code&gt;弄到一个新的gh-pages分支，选择这个分支作为主页就行了。注意官方文档的upstream指的是你自己上游仓库的名字，比如origin。&lt;/li&gt;
+&lt;li&gt;接下来就是按照官方文档里说的，只把public文件夹用&lt;code&gt;git worktree&lt;/code&gt;弄到一个新的gh-pages分支，选择这个分支作为主页就行了。注意官方文档的upstream指的是你自己上游的名字，比如origin。&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;最后就是使用官网上发布脚本的例子了。正好vscode里面可以把terminal改成是wsl的bash.exe，写和发布可以在一起进行。但是注意把CRLF转成LF
+```shell&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;#!/bin/sh&lt;/p&gt;
+
+&lt;p&gt;DIR=$(dirname &amp;ldquo;$0&amp;rdquo;)&lt;/p&gt;
+
+&lt;p&gt;cd $DIR/..&lt;/p&gt;
+
+&lt;p&gt;if [[ $(git status -s) ]]
+then
+    echo &amp;ldquo;The working directory is dirty. Please commit any pending changes.&amp;rdquo;
+    exit 1;
+fi&lt;/p&gt;
+
+&lt;p&gt;echo &amp;ldquo;Deleting old publication&amp;rdquo;
+rm -rf public
+mkdir public
+git worktree prune
+rm -rf .git/worktrees/public/&lt;/p&gt;
+
+&lt;p&gt;echo &amp;ldquo;Checking out gh-pages branch into public&amp;rdquo;
+git worktree add -B gh-pages public origin/gh-pages&lt;/p&gt;
+
+&lt;p&gt;echo &amp;ldquo;Removing existing files&amp;rdquo;
+rm -rf public/*&lt;/p&gt;
+
+&lt;p&gt;echo &amp;ldquo;Generating site&amp;rdquo;
+hugo&lt;/p&gt;
+
+&lt;p&gt;echo &amp;ldquo;Updating gh-pages branch&amp;rdquo;
+cd public &amp;amp;&amp;amp; git add &amp;ndash;all &amp;amp;&amp;amp; git commit -m &amp;ldquo;Publishing to gh-pages (publish.sh)&amp;rdquo;
+```&lt;/p&gt;
 </description>
     </item>
     
