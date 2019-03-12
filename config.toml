@@ -42,7 +42,7 @@ preserveTaxonomyNames = true
 [params]
     since = 2015
     author = "Theropod"                           # Author's name
-    avatar = "/images/me/avatar.png"           # Author's avatar
+    avatar = "static/images/me/avatar.png"           # Author's avatar
     subtitle = "都是我老婆.jpg"         # Subtitle
     cdn_url = ""           # Base CDN URL
     home_mode = "" # post or other
