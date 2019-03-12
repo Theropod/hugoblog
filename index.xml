@@ -60,6 +60,7 @@
 &lt;li&gt;接下来就是按照官方文档里说的，只把public文件夹用&lt;code&gt;git worktree&lt;/code&gt;弄到一个新的gh-pages分支，选择这个分支作为主页就行了。注意官方文档的upstream指的是你自己上游的名字，比如origin。&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;最后就是修改下官网上发布脚本的例子了。正好vscode里面可以把terminal改成是wsl的bash.exe，写和发布可以在一起进行。手动最后一道检查，没有把Push到github加进去。还有就是注意VSCode把脚本CRLF转成LF。&lt;/li&gt;
+&lt;li&gt;vscode里没法push gh-pages目录，提示说已经在WSL的子系统里checkout过了。索性加入WSL的ssh key，在terminal里用ssh push。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;#!/bin/sh
