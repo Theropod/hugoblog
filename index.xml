@@ -28,7 +28,7 @@
 
 &lt;ul&gt;
 &lt;li&gt;用LeaveIt主题&lt;/li&gt;
-&lt;li&gt;github上下下来主题之后，我并没有按照官方加成submodule，直接把主题自己的&lt;code&gt;.git&lt;/code&gt;删了，不再单独处理&lt;/li&gt;
+&lt;li&gt;github上下下来主题后，并没有按照官方加成submodule，直接把主题的&lt;code&gt;.git&lt;/code&gt;删了，不再单独处理&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&#34;自定义&#34;&gt;自定义&lt;/h4&gt;
@@ -39,20 +39,20 @@
 &lt;ul&gt;
 &lt;li&gt;加了&lt;code&gt;hasCJKlanguage=true&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;图片放到&lt;code&gt;static/images&lt;/code&gt;里面&lt;/li&gt;
+&lt;li&gt;图片放到&lt;code&gt;static/images&lt;/code&gt;里面，先同步再引用github的地址,包括config里的avatar&lt;/li&gt;
 &lt;li&gt;_custom.scss 里面 &lt;code&gt;.post-warp {max-width: 900px;}&lt;/code&gt; 看起来舒服一点&lt;/li&gt;
 &lt;li&gt;favicon 都放在static里面&lt;/li&gt;
 &lt;li&gt;main.js改一下切换出标签页之后的网页title&lt;/li&gt;
 &lt;li&gt;代码块要在```之后说明语言，否则会和行内的代码高亮混淆&lt;/li&gt;
 &lt;li&gt;测试可以用&lt;code&gt;hugo server -D&lt;/code&gt;的server模式，且包括标记为draft的文本&lt;/li&gt;
-&lt;li&gt;默认的archetypes里面是&lt;code&gt;draft:true&lt;/code&gt;也就是说用&lt;code&gt;hugo server -D&lt;/code&gt;才能看到这些drafts，而生成静态网页就忽略掉了。。。我嫌麻烦直接改成true&lt;/li&gt;
+&lt;li&gt;默认的archetypes里面是&lt;code&gt;draft:true&lt;/code&gt;也就是说用&lt;code&gt;hugo server -D&lt;/code&gt;才能看到这些drafts，而生成静态网页就忽略掉了。。。嫌麻烦直接改成true&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&#34;github同步&#34;&gt;github同步&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;如果想用&lt;code&gt;username.github.io&lt;/code&gt;当做主页,就需要只把hugo生成的public文件夹放在&lt;code&gt;username.github.io&lt;/code&gt;的项目中（加入其他文件会生成页面失败），这样其余的文件必须再新建另一个项目来保存。即：Hugo文件夹是一个项目，每次生成的public作为submodule放在使用用户名作为地址的项目。&lt;/li&gt;
-&lt;li&gt;但我本来就有域名，所以不需要非得用&lt;code&gt;username.github.io&lt;/code&gt;这个来显得正式。
+&lt;li&gt;但我本来就有域名，所以不需要非得用&lt;code&gt;username.github.io&lt;/code&gt;这个
 
 &lt;ul&gt;
 &lt;li&gt;Hugo文件夹git init，add remote，pull下来一个github空项目，配置好博客内容，生成public目录。&lt;/li&gt;
@@ -91,6 +91,10 @@ hugo
 echo &amp;quot;Updating gh-pages branch&amp;quot;
 cd public &amp;amp;&amp;amp; git add --all &amp;amp;&amp;amp; git commit -m &amp;quot;Publishing to gh-pages (publish.sh)&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;vscode一站式解决&#34;&gt;VSCode一站式解决&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Theropod/hugoblog/master/static/images/blog_images/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-01.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
