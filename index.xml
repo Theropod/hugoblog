@@ -2,110 +2,103 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>WGS84教信者 on WGS84教信者</title>
-    <link>https://theropod.tk/</link>
+    <link>https://theropod.github.io/hugoblog/</link>
     <description>Recent content in WGS84教信者 on WGS84教信者</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 12 Mar 2019 18:35:03 +0800</lastBuildDate>
-    <atom:link href="/" rel="self" type="application/rss+xml" />
+    <atom:link href="/hugoblog/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>自用hugo操作记录</title>
-      <link>https://theropod.tk/2019/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</link>
+      <link>https://theropod.github.io/hugoblog/2019/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Tue, 12 Mar 2019 18:35:03 +0800</pubDate>
       
-      <guid>https://theropod.tk/2019/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://theropod.github.io/hugoblog/2019/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</guid>
       <description>
 
 &lt;h4 id=&#34;安装&#34;&gt;安装&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;在WSL上使用，github上有编译的extended的deb版本 因为要使用scss自定义格式&lt;/li&gt;
+&lt;li&gt;官方教程安装 初始化目录，下载主题，新建项目等等&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;li&gt;&lt;p&gt;官方教程安装 初始化目录，下载主题，新建项目等等&lt;/p&gt;
+&lt;h4 id=&#34;主题&#34;&gt;主题&lt;/h4&gt;
 
-&lt;h4 id=&#34;主题&#34;&gt;主题&lt;/h4&gt;&lt;/li&gt;
+&lt;ul&gt;
+&lt;li&gt;用LeaveIt主题&lt;/li&gt;
+&lt;li&gt;github上下下来主题之后，我并没有按照官方加成submodule，直接把主题自己的&lt;code&gt;.git&lt;/code&gt;删了，不再单独处理&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;li&gt;&lt;p&gt;用LeaveIt主题&lt;/p&gt;&lt;/li&gt;
+&lt;h4 id=&#34;自定义&#34;&gt;自定义&lt;/h4&gt;
 
-&lt;li&gt;&lt;p&gt;github上下下来主题之后，我并没有按照官方加成submodule，直接把主题自己的&lt;code&gt;.git&lt;/code&gt;删了，不再单独处理&lt;/p&gt;
-
-&lt;h4 id=&#34;自定义&#34;&gt;自定义&lt;/h4&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;config.toml相关配置&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;config.toml相关配置
 
 &lt;ul&gt;
 &lt;li&gt;加了&lt;code&gt;hasCJKlanguage=true&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;图片放到&lt;code&gt;static/images&lt;/code&gt;里面&lt;/li&gt;
+&lt;li&gt;_custom.scss 里面 &lt;code&gt;.post-warp {max-width: 900px;}&lt;/code&gt; 看起来舒服一点&lt;/li&gt;
+&lt;li&gt;favicon 都放在static里面&lt;/li&gt;
+&lt;li&gt;main.js改一下切换出标签页之后的网页title&lt;/li&gt;
+&lt;li&gt;代码块要在```之后说明语言，否则会和行内的代码高亮混淆&lt;/li&gt;
+&lt;li&gt;测试可以用&lt;code&gt;hugo server -D&lt;/code&gt;的server模式，且包括标记为draft的文本&lt;/li&gt;
+&lt;li&gt;默认的archetypes里面是&lt;code&gt;draft:true&lt;/code&gt;也就是说用&lt;code&gt;hugo server -D&lt;/code&gt;才能看到这些drafts，而生成静态网页就忽略掉了。。。我嫌麻烦直接改成true&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;li&gt;&lt;p&gt;图片放到&lt;code&gt;static/images&lt;/code&gt;里面&lt;/p&gt;&lt;/li&gt;
+&lt;h4 id=&#34;github同步&#34;&gt;github同步&lt;/h4&gt;
 
-&lt;li&gt;&lt;p&gt;_custom.scss 里面 &lt;code&gt;.post-warp {max-width: 900px;}&lt;/code&gt; 看起来舒服一点&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;favicon 都放在static里面&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;main.js改一下切换出标签页之后的网页title&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;代码块要在```之后说明语言，否则会和行内的代码高亮混淆&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;测试可以用&lt;code&gt;hugo server -D&lt;/code&gt;的server模式，且包括标记为draft的文本&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;默认的archetypes里面是&lt;code&gt;draft:true&lt;/code&gt;也就是说用&lt;code&gt;hugo server -D&lt;/code&gt;才能看到这些drafts，而生成静态网页就忽略掉了。。。我嫌麻烦直接改成true&lt;/p&gt;
-
-&lt;h4 id=&#34;github同步&#34;&gt;github同步&lt;/h4&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;如果想用&lt;code&gt;username.github.io&lt;/code&gt;当做主页,就需要只把hugo生成的public文件夹放在&lt;code&gt;username.github.io&lt;/code&gt;的项目中（加入其他文件会生成页面失败），这样其余的文件必须再新建另一个项目来保存。即：Hugo文件夹是一个项目，每次生成的public作为submodule放在使用用户名作为地址的项目。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;但我本来就有域名，所以不需要非得用&lt;code&gt;username.github.io&lt;/code&gt;这个来显得正式。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果想用&lt;code&gt;username.github.io&lt;/code&gt;当做主页,就需要只把hugo生成的public文件夹放在&lt;code&gt;username.github.io&lt;/code&gt;的项目中（加入其他文件会生成页面失败），这样其余的文件必须再新建另一个项目来保存。即：Hugo文件夹是一个项目，每次生成的public作为submodule放在使用用户名作为地址的项目。&lt;/li&gt;
+&lt;li&gt;但我本来就有域名，所以不需要非得用&lt;code&gt;username.github.io&lt;/code&gt;这个来显得正式。
 
 &lt;ul&gt;
 &lt;li&gt;Hugo文件夹git init，add remote，pull下来一个github空项目，配置好博客内容，生成public目录。&lt;/li&gt;
+&lt;li&gt;config.toml里设置到Github Pages的publish 地址&lt;/li&gt;
 &lt;li&gt;接下来就是按照官方文档里说的，只把public文件夹用&lt;code&gt;git worktree&lt;/code&gt;弄到一个新的gh-pages分支，选择这个分支作为主页就行了。注意官方文档的upstream指的是你自己上游的名字，比如origin。&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;最后就是使用官网上发布脚本的例子了。正好vscode里面可以把terminal改成是wsl的bash.exe，写和发布可以在一起进行。但是注意把CRLF转成LF
-```shell&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;最后就是修改下官网上发布脚本的例子了。正好vscode里面可以把terminal改成是wsl的bash.exe，写和发布可以在一起进行。手动最后一道检查，没有把Push到github加进去。还有就是注意VSCode把脚本CRLF转成LF。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;#!/bin/sh&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;#!/bin/sh
+DIR=$(dirname &amp;quot;$0&amp;quot;)
+cd $DIR/..
 
-&lt;p&gt;DIR=$(dirname &amp;ldquo;$0&amp;rdquo;)&lt;/p&gt;
-
-&lt;p&gt;cd $DIR/..&lt;/p&gt;
-
-&lt;p&gt;if [[ $(git status -s) ]]
+if [[ $(git status -s) ]]
 then
-    echo &amp;ldquo;The working directory is dirty. Please commit any pending changes.&amp;rdquo;
+    echo &amp;quot;The working directory is dirty. Please commit any pending changes.&amp;quot;
     exit 1;
-fi&lt;/p&gt;
+fi
 
-&lt;p&gt;echo &amp;ldquo;Deleting old publication&amp;rdquo;
+echo &amp;quot;Deleting old publication&amp;quot;
 rm -rf public
 mkdir public
 git worktree prune
-rm -rf .git/worktrees/public/&lt;/p&gt;
+rm -rf .git/worktrees/public/
 
-&lt;p&gt;echo &amp;ldquo;Checking out gh-pages branch into public&amp;rdquo;
-git worktree add -B gh-pages public origin/gh-pages&lt;/p&gt;
+echo &amp;quot;Checking out gh-pages branch into public&amp;quot;
+git worktree add -B gh-pages public origin/gh-pages
 
-&lt;p&gt;echo &amp;ldquo;Removing existing files&amp;rdquo;
-rm -rf public/*&lt;/p&gt;
+echo &amp;quot;Removing existing files&amp;quot;
+rm -rf public/*
 
-&lt;p&gt;echo &amp;ldquo;Generating site&amp;rdquo;
-hugo&lt;/p&gt;
+echo &amp;quot;Generating site&amp;quot;
+hugo
 
-&lt;p&gt;echo &amp;ldquo;Updating gh-pages branch&amp;rdquo;
-cd public &amp;amp;&amp;amp; git add &amp;ndash;all &amp;amp;&amp;amp; git commit -m &amp;ldquo;Publishing to gh-pages (publish.sh)&amp;rdquo;
-```&lt;/p&gt;
+echo &amp;quot;Updating gh-pages branch&amp;quot;
+cd public &amp;amp;&amp;amp; git add --all &amp;amp;&amp;amp; git commit -m &amp;quot;Publishing to gh-pages (publish.sh)&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
     <item>
       <title>VSCode中PlantUML流程图</title>
-      <link>https://theropod.tk/2019/2019-03-12-vscode%E4%B8%ADplantuml%E6%B5%81%E7%A8%8B%E5%9B%BE/</link>
+      <link>https://theropod.github.io/hugoblog/2019/2019-03-12-vscode%E4%B8%ADplantuml%E6%B5%81%E7%A8%8B%E5%9B%BE/</link>
       <pubDate>Tue, 12 Mar 2019 18:34:50 +0800</pubDate>
       
-      <guid>https://theropod.tk/2019/2019-03-12-vscode%E4%B8%ADplantuml%E6%B5%81%E7%A8%8B%E5%9B%BE/</guid>
+      <guid>https://theropod.github.io/hugoblog/2019/2019-03-12-vscode%E4%B8%ADplantuml%E6%B5%81%E7%A8%8B%E5%9B%BE/</guid>
       <description>
 
 &lt;h4 id=&#34;需要安装&#34;&gt;需要安装&lt;/h4&gt;

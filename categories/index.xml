@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on WGS84教信者</title>
-    <link>https://theropod.tk/categories/</link>
+    <link>https://theropod.github.io/hugoblog/categories/</link>
     <description>Recent content in Categories on WGS84教信者</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	<atom:link href="https://theropod.tk/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://theropod.github.io/hugoblog/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>技术</title>
-      <link>https://theropod.tk/categories/%E6%8A%80%E6%9C%AF/</link>
+      <link>https://theropod.github.io/hugoblog/categories/%E6%8A%80%E6%9C%AF/</link>
       <pubDate>Tue, 12 Mar 2019 18:35:03 +0800</pubDate>
       
-      <guid>https://theropod.tk/categories/%E6%8A%80%E6%9C%AF/</guid>
+      <guid>https://theropod.github.io/hugoblog/categories/%E6%8A%80%E6%9C%AF/</guid>
       <description></description>
     </item>
     
