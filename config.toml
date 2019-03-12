@@ -1,4 +1,4 @@
-baseURL = "https://theropod.tk"
+baseURL = "https://theropod.github.io/hugoblog/"
 languageCode = "en"
 title = "WGS84教信者"
 theme = "LeaveIt"
