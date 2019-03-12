@@ -22,3 +22,6 @@ hugo
 
 echo "Updating gh-pages branch"
 cd public && git add --all && git commit -m "Publishing to gh-pages (publish.sh)"
+
+# or the gh-pages is still checked-out, wouldn't be able to push in vscode
+git worktree prune
