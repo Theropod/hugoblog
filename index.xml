@@ -39,8 +39,8 @@
 &lt;ul&gt;
 &lt;li&gt;加了&lt;code&gt;hasCJKlanguage=true&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;图片放到&lt;code&gt;static/images&lt;/code&gt;里面，先同步再引用github的地址,包括config里的avatar&lt;/li&gt;
-&lt;li&gt;_custom.scss 里面 &lt;code&gt;.post-warp {max-width: 900px;}&lt;/code&gt; 看起来舒服一点&lt;/li&gt;
+&lt;li&gt;图片放到&lt;code&gt;static/images&lt;/code&gt;里面，先同步再引用github的地址,而主题里的很多处引用都调整了相对路径&lt;/li&gt;
+&lt;li&gt;_custom.scss 里面 &lt;code&gt;.post-warp {max-width: 900px;.post-copyright {border-bottom: none;} .post-content img {max-width: 100%;}}&lt;/code&gt; 看起来舒服一点&lt;/li&gt;
 &lt;li&gt;favicon 都放在static里面&lt;/li&gt;
 &lt;li&gt;main.js改一下切换出标签页之后的网页title&lt;/li&gt;
 &lt;li&gt;代码块要在```之后说明语言，否则会和行内的代码高亮混淆&lt;/li&gt;
@@ -63,7 +63,7 @@
 &lt;li&gt;vscode里没法push gh-pages目录，提示说已经在WSL的子系统里checkout过了。索性加入WSL的ssh key，在terminal里用ssh push。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;#!/bin/sh
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/sh
 DIR=$(dirname &amp;quot;$0&amp;quot;)
 cd $DIR/..
 
