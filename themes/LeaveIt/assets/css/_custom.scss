@@ -4,4 +4,7 @@
 // You can override the variables in _variables.scss to customize the style
 .post-warp {
     max-width: 900px;
+    .post-copyright {
+        border-bottom: none;
+    }
 }

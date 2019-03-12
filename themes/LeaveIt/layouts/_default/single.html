@@ -37,18 +37,18 @@
         <!-- end featured_image-->
      
           {{ $reAltIn := "<img src=\"([^\"]+)\" alt=\"([^\"]+)?\" />" }}
-          {{ $reAltOut :=  ( printf "<figure><img src=\"/images/ring.svg\" data-sizes=\"auto\" data-src=\"%s$1\" alt=\"$2\" class=\"lazyload\"><figcaption class=\"image-caption\">$2</figcaption></figure>" $cdn_url ) }}
+          {{ $reAltOut :=  ( printf "<figure><img src=\"https://raw.githubusercontent.com/Theropod/hugoblog/master/themes/LeaveIt/images/ring.svg\" data-sizes=\"auto\" data-src=\"%s$1\" alt=\"$2\" class=\"lazyload\"><figcaption class=\"image-caption\">$2</figcaption></figure>" $cdn_url ) }}
           {{ $altContent := .Content | replaceRE $reAltIn $reAltOut | safeHTML }}
 
           {{ $reAltTitleIn := "<img src=\"([^\"]+)\" alt=\"([^\"]+)?\" title=\"([^\"]+)?\" />" }}
-          {{ $reAltTitleOut := ( printf "<figure><img src=\"/images/ring.svg\" data-src=\"%s$1\" data-sizes=\"auto\" alt=\"$2\" title=\"$3\" class=\"lazyload\"><figcaption class=\"image-caption\">$2</figcaption></figure>" $cdn_url ) }}
+          {{ $reAltTitleOut := ( printf "<figure><img src=\"https://raw.githubusercontent.com/Theropod/hugoblog/master/themes/LeaveIt/images/ring.svg\" data-src=\"%s$1\" data-sizes=\"auto\" alt=\"$2\" title=\"$3\" class=\"lazyload\"><figcaption class=\"image-caption\">$2</figcaption></figure>" $cdn_url ) }}
           {{ $finalContent := $altContent | replaceRE $reAltTitleIn $reAltTitleOut | safeHTML }}
 
           {{ $finalContent }}
     </div>
 
     <div class="post-copyright">
-            {{ with .Site.Params.author }} 
+            <!-- {{ with .Site.Params.author }} 
             <p class="copyright-item">
                 <span>Author:</span>
                 <span>{{ . }} </span>
@@ -60,7 +60,8 @@
                     <span>Link:</span>
                     <a href={{ . }}>{{ . }}</span>
             </p>
-            {{ end }}
+            {{ end }} -->
+
             {{ with .Site.Params.license }} 
             <p class="copyright-item lincese">
                 {{ . | safeHTML}}
