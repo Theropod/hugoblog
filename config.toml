@@ -42,7 +42,7 @@ preserveTaxonomyNames = true
 [params]
     since = 2015
     author = "Theropod"                           # Author's name
-    avatar = "https://raw.githubusercontent.com/Theropod/hugoblog/master/static/images/me/avatar.png"           # Author's avatar
+    avatar = "/hugoblog/images/me/avatar.png"           # Author's avatar
     subtitle = "都是我老婆.jpg"         # Subtitle
     cdn_url = ""           # Base CDN URL
     home_mode = "" # post or other
@@ -68,3 +68,4 @@ preserveTaxonomyNames = true
 #    Dribbble = "xxoo"
 #    Medium = "xxoo"
 
+staticDir = "./static"
