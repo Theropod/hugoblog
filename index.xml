@@ -6,7 +6,91 @@
     <description>Recent content in WGS84教信者 on WGS84教信者</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Tue, 12 Mar 2019 18:35:03 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>自用hugo操作记录</title>
+      <link>https://theropod.tk/2019/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Tue, 12 Mar 2019 18:35:03 +0800</pubDate>
+      
+      <guid>https://theropod.tk/2019/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</guid>
+      <description>
+
+&lt;h4 id=&#34;安装&#34;&gt;安装&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在WSL上使用，github上有编译的extended的deb版本 因为要使用scss自定义格式&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;官方教程安装 初始化目录，下载主题，新建项目等等&lt;/p&gt;
+
+&lt;h4 id=&#34;主题&#34;&gt;主题&lt;/h4&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;用LeaveIt主题&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;github上下下来主题之后，我并没有按照官方加成submodule，直接把主题自己的&lt;code&gt;.git&lt;/code&gt;删了，不再单独处理&lt;/p&gt;
+
+&lt;h4 id=&#34;自定义&#34;&gt;自定义&lt;/h4&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;config.toml相关配置&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;加了&lt;code&gt;hasCJKlanguage=true&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;图片放到&lt;code&gt;static/images&lt;/code&gt;里面&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;_custom.scss 里面 &lt;code&gt;.post-warp {max-width: 900px;}&lt;/code&gt; 看起来舒服一点&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;favicon 都放在static里面&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;main.js改一下切换出标签页之后的网页title&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;代码块要在```之后说明语言，否则会和行内的代码高亮混淆&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;测试可以用&lt;code&gt;hugo server -D&lt;/code&gt;的server模式，且包括标记为draft的文本&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;默认的archetypes里面是&lt;code&gt;draft:true&lt;/code&gt;也就是说用&lt;code&gt;hugo server -D&lt;/code&gt;才能看到这些drafts，而生成静态网页就忽略掉了。。。我嫌麻烦直接改成true&lt;/p&gt;
+
+&lt;h4 id=&#34;github同步&#34;&gt;github同步&lt;/h4&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;如果想用&lt;code&gt;username.github.io&lt;/code&gt;当做主页,就需要只把hugo生成的public文件夹放在&lt;code&gt;username.github.io&lt;/code&gt;的项目中（加入其他文件会生成页面失败），这样其余的文件必须再新建另一个项目来保存。即：Hugo文件夹是一个项目，每次生成的public作为submodule放在使用用户名作为地址的项目。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;但我本来就有域名，所以不需要非得用&lt;code&gt;username.github.io&lt;/code&gt;这个来显得正式。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Hugo文件夹git init，add remote，pull下来一个github空项目，配置好博客内容，生成public目录。&lt;/li&gt;
+&lt;li&gt;接下来就是按照官方文档里说的，只把public文件夹用&lt;code&gt;git worktree&lt;/code&gt;弄到一个新的gh-pages分支，选择这个分支作为主页就行了。注意官方文档的upstream指的是你自己上游仓库的名字，比如origin。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>VSCode中PlantUML流程图</title>
+      <link>https://theropod.tk/2019/2019-03-12-vscode%E4%B8%ADplantuml%E6%B5%81%E7%A8%8B%E5%9B%BE/</link>
+      <pubDate>Tue, 12 Mar 2019 18:34:50 +0800</pubDate>
+      
+      <guid>https://theropod.tk/2019/2019-03-12-vscode%E4%B8%ADplantuml%E6%B5%81%E7%A8%8B%E5%9B%BE/</guid>
+      <description>
+
+&lt;h4 id=&#34;需要安装&#34;&gt;需要安装&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Markdown Preview Enhanced插件&lt;/li&gt;
+&lt;li&gt;jdk并且配置了环境变量&lt;/li&gt;
+&lt;li&gt;PlantUML Preview插件（非必需，只是用来预览放大测试PlantUML类型的流程图&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;注释&#34;&gt;注释&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;网上不少说需要安装graphviz这个程序的，其实不需要&lt;/li&gt;
+&lt;li&gt;jdk环境变量没设置好的话，两个插件都不能用&lt;/li&gt;
+&lt;li&gt;Markdown Preview Enhanced支持很多种的流程图 PlantUML Mermaid等等很多种，看文档就可以上手，但是注意PlantUML的部分要放到专门的代码块里声明&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
   </channel>
 </rss>

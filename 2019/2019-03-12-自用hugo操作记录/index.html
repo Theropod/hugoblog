@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Theropod">
+  
+  
+  
+  <link rel="prev" href="https://theropod.tk/2019/2019-03-12-vscode%E4%B8%ADplantuml%E6%B5%81%E7%A8%8B%E5%9B%BE/" />
+  
+  <link rel="canonical" href="https://theropod.tk/2019/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           自用hugo操作记录 | WGS84教信者
+       
+  </title>
+  <meta name="title" content="自用hugo操作记录 | WGS84教信者">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https://theropod.tk"
+    },
+    "articleSection" : "posts",
+    "name" : "自用hugo操作记录",
+    "headline" : "自用hugo操作记录",
+    "description" : " 安装  在WSL上使用，github上有编译的extended的deb版本 因为要使用scss自定义格式 官方教程安装 初始化目录，下载主题，新建项目等等
+主题 用LeaveIt主题
+ github上下下来主题之后，我并没有按照官方加成submodule，直接把主题自己的.git删了，不再单独处理
+自定义 config.toml相关配置
+ 加了hasCJKlanguage=true  图片放到static/images里面
+ _custom.scss 里面 .post-warp {max-width: 900px;} 看起来舒服一点
+ favicon 都放在static里面
+ main.js改一下切换出标签页之后的网页title
+ 代码块要在```之后说明语言，否则会和行内的代码高亮混淆
+ 测试可以用hugo server -D的server模式，且包括标记为draft的文本
+ 默认的archetypes里面是draft:true也就是说用hugo server -D才能看到这些drafts，而生成静态网页就忽略掉了。。。我嫌麻烦直接改成true
+github同步 如果想用username.github.io当做主页,就需要只把hugo生成的public文件夹放在username.github.io的项目中（加入其他文件会生成页面失败），这样其余的文件必须再新建另一个项目来保存。即：Hugo文件夹是一个项目，每次生成的public作为submodule放在使用用户名作为地址的项目。
+ 但我本来就有域名，所以不需要非得用username.github.io这个来显得正式。
+ Hugo文件夹git init，add remote，pull下来一个github空项目，配置好博客内容，生成public目录。 接下来就是按照官方文档里说的，只把public文件夹用git worktree弄到一个新的gh-pages分支，选择这个分支作为主页就行了。注意官方文档的upstream指的是你自己上游仓库的名字，比如origin。   ",
+    "inLanguage" : "en",
+    "author" : "Theropod",
+    "creator" : "Theropod",
+    "publisher": "Theropod",
+    "accountablePerson" : "Theropod",
+    "copyrightHolder" : "Theropod",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-03-12 18:35:03 &#43;0800 CST",
+    "dateModified" : "2019-03-12 18:35:03 &#43;0800 CST",
+    "url" : "https://theropod.tk/2019/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/",
+    "wordCount" : "36",
+    "keywords" : [ "Windows姿势", "WGS84教信者"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://theropod.tk">WGS84教信者</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://theropod.tk">WGS84教信者</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">自用hugo操作记录</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://theropod.tk" rel="author">Theropod</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-03-12 itemprop="datePublished">March 12, 2019</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://theropod.tk/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h4 id="安装">安装</h4>
+
+<ul>
+<li>在WSL上使用，github上有编译的extended的deb版本 因为要使用scss自定义格式</li>
+
+<li><p>官方教程安装 初始化目录，下载主题，新建项目等等</p>
+
+<h4 id="主题">主题</h4></li>
+
+<li><p>用LeaveIt主题</p></li>
+
+<li><p>github上下下来主题之后，我并没有按照官方加成submodule，直接把主题自己的<code>.git</code>删了，不再单独处理</p>
+
+<h4 id="自定义">自定义</h4></li>
+
+<li><p>config.toml相关配置</p>
+
+<ul>
+<li>加了<code>hasCJKlanguage=true</code></li>
+</ul></li>
+
+<li><p>图片放到<code>static/images</code>里面</p></li>
+
+<li><p>_custom.scss 里面 <code>.post-warp {max-width: 900px;}</code> 看起来舒服一点</p></li>
+
+<li><p>favicon 都放在static里面</p></li>
+
+<li><p>main.js改一下切换出标签页之后的网页title</p></li>
+
+<li><p>代码块要在```之后说明语言，否则会和行内的代码高亮混淆</p></li>
+
+<li><p>测试可以用<code>hugo server -D</code>的server模式，且包括标记为draft的文本</p></li>
+
+<li><p>默认的archetypes里面是<code>draft:true</code>也就是说用<code>hugo server -D</code>才能看到这些drafts，而生成静态网页就忽略掉了。。。我嫌麻烦直接改成true</p>
+
+<h4 id="github同步">github同步</h4></li>
+
+<li><p>如果想用<code>username.github.io</code>当做主页,就需要只把hugo生成的public文件夹放在<code>username.github.io</code>的项目中（加入其他文件会生成页面失败），这样其余的文件必须再新建另一个项目来保存。即：Hugo文件夹是一个项目，每次生成的public作为submodule放在使用用户名作为地址的项目。</p></li>
+
+<li><p>但我本来就有域名，所以不需要非得用<code>username.github.io</code>这个来显得正式。</p>
+
+<ul>
+<li>Hugo文件夹git init，add remote，pull下来一个github空项目，配置好博客内容，生成public目录。</li>
+<li>接下来就是按照官方文档里说的，只把public文件夹用<code>git worktree</code>弄到一个新的gh-pages分支，选择这个分支作为主页就行了。注意官方文档的upstream指的是你自己上游仓库的名字，比如origin。</li>
+</ul></li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Theropod </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://theropod.tk/2019/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/>https://theropod.tk/2019/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://theropod.tk/tags/windows%E5%A7%BF%E5%8A%BF/">
+                    #Windows姿势</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://theropod.tk">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://theropod.tk/2019/2019-03-12-vscode%E4%B8%ADplantuml%E6%B5%81%E7%A8%8B%E5%9B%BE/" class="prev" rel="prev" title="VSCode中PlantUML流程图"><i class="iconfont icon-left"></i>&nbsp;VSCode中PlantUML流程图</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2015 - 2019</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://theropod.tk">Theropod</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
