@@ -63,4 +63,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: https://theropod.tk/sitemap.xml
+Sitemap: https://blog.theropod.tk/sitemap.xml

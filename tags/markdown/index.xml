@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MarkDown on WGS84教信者</title>
-    <link>https://theropod.tk/tags/markdown/</link>
+    <link>https://blog.theropod.tk/tags/markdown/</link>
     <description>Recent content in MarkDown on WGS84教信者</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 12 Mar 2019 18:34:50 +0800</lastBuildDate>
     
-	<atom:link href="https://theropod.tk/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.theropod.tk/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>VSCode中PlantUML流程图</title>
-      <link>https://theropod.tk/2019/2019-03-12-vscode%E4%B8%ADplantuml%E6%B5%81%E7%A8%8B%E5%9B%BE/</link>
+      <link>https://blog.theropod.tk/2019/2019-03-12-vscode%E4%B8%ADplantuml%E6%B5%81%E7%A8%8B%E5%9B%BE/</link>
       <pubDate>Tue, 12 Mar 2019 18:34:50 +0800</pubDate>
       
-      <guid>https://theropod.tk/2019/2019-03-12-vscode%E4%B8%ADplantuml%E6%B5%81%E7%A8%8B%E5%9B%BE/</guid>
+      <guid>https://blog.theropod.tk/2019/2019-03-12-vscode%E4%B8%ADplantuml%E6%B5%81%E7%A8%8B%E5%9B%BE/</guid>
       <description> 需要安装  Markdown Preview Enhanced插件 jdk并且配置了环境变量 PlantUML Preview插件（非必需，只是用来预览放大测试PlantUML类型的流程图  注释  网上不少说需要安装graphviz这个程序的，其实不需要 jdk环境变量没设置好的话，两个插件都不能用 Markdown Preview Enhanced支持很多种的流程图 PlantUML Mermaid等等很多种，看文档就可以上手，但是注意PlantUML的部分要放到专门的代码块里声明  </description>
     </item>
     

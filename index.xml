@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>WGS84教信者 on WGS84教信者</title>
-    <link>https://theropod.tk/</link>
+    <link>https://blog.theropod.tk/</link>
     <description>Recent content in WGS84教信者 on WGS84教信者</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
@@ -11,10 +11,10 @@
     
     <item>
       <title>自用hugo操作记录</title>
-      <link>https://theropod.tk/2019/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</link>
+      <link>https://blog.theropod.tk/2019/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Tue, 12 Mar 2019 18:35:03 +0800</pubDate>
       
-      <guid>https://theropod.tk/2019/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://blog.theropod.tk/2019/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</guid>
       <description>
 
 &lt;h4 id=&#34;安装&#34;&gt;安装&lt;/h4&gt;
@@ -110,10 +110,10 @@ cd public &amp;amp;&amp;amp; git add --all &amp;amp;&amp;amp; git commit -m &amp
     
     <item>
       <title>VSCode中PlantUML流程图</title>
-      <link>https://theropod.tk/2019/2019-03-12-vscode%E4%B8%ADplantuml%E6%B5%81%E7%A8%8B%E5%9B%BE/</link>
+      <link>https://blog.theropod.tk/2019/2019-03-12-vscode%E4%B8%ADplantuml%E6%B5%81%E7%A8%8B%E5%9B%BE/</link>
       <pubDate>Tue, 12 Mar 2019 18:34:50 +0800</pubDate>
       
-      <guid>https://theropod.tk/2019/2019-03-12-vscode%E4%B8%ADplantuml%E6%B5%81%E7%A8%8B%E5%9B%BE/</guid>
+      <guid>https://blog.theropod.tk/2019/2019-03-12-vscode%E4%B8%ADplantuml%E6%B5%81%E7%A8%8B%E5%9B%BE/</guid>
       <description>
 
 &lt;h4 id=&#34;需要安装&#34;&gt;需要安装&lt;/h4&gt;
