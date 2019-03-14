@@ -1,4 +1,4 @@
-baseURL = "https://theropod.github.io/hugoblog/"
+baseURL = "https://theropod.tk"
 languageCode = "en"
 title = "WGS84教信者"
 theme = "LeaveIt"
@@ -42,7 +42,7 @@ preserveTaxonomyNames = true
 [params]
     since = 2015
     author = "Theropod"                           # Author's name
-    avatar = "/hugoblog/images/me/avatar.png"           # Author's avatar
+    avatar = "/images/me/avatar.png"           # Author's avatar
     subtitle = "都是我老婆.jpg"         # Subtitle
     cdn_url = ""           # Base CDN URL
     home_mode = "" # post or other
