@@ -56,10 +56,16 @@
 
 &lt;ul&gt;
 &lt;li&gt;Hugo文件夹git init，add remote，pull下来一个github空项目，配置好博客内容，生成public目录。&lt;/li&gt;
+&lt;li&gt;先把github pages里域名设置成自己的（这里我的freenom DNS会失败，换成cloudflare的才能被github认出来），否则网站主题模板找根路径会有问题，毕竟根目录本来是个人域名下的一个项目&lt;/li&gt;
 &lt;li&gt;config.toml里设置到Github Pages的publish 地址&lt;/li&gt;
 &lt;li&gt;接下来就是按照官方文档里说的，只把public文件夹用&lt;code&gt;git worktree&lt;/code&gt;弄到一个新的gh-pages分支，选择这个分支作为主页就行了。注意官方文档的upstream指的是你自己上游的名字，比如origin。&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;最后就是修改下官网上发布脚本的例子了。正好vscode里面可以把terminal改成是wsl的bash.exe，写和发布可以在一起进行。手动最后一道检查，没有把Push到github加进去。还有就是注意VSCode把脚本CRLF转成LF。&lt;/li&gt;
+&lt;li&gt;最后就是修改下官网上发布脚本的例子了。正好vscode里面可以把terminal改成是wsl的bash.exe，写和发布可以在一起进行。手动最后一道检查，没有把Push到github加进去。
+
+&lt;ul&gt;
+&lt;li&gt;注意这个脚本里Push的是新生成的Public，github的相应分支里的CNAME和README这些要重新放进去，否则每次传完都要重新配置&lt;/li&gt;
+&lt;li&gt;还有就是注意VSCode把脚本CRLF转成LF。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;vscode里没法push gh-pages目录，提示说已经在WSL的子系统里checkout过了。索性加入WSL的ssh key，在terminal里用ssh push。&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -87,6 +93,10 @@ rm -rf public/*
 
 echo &amp;quot;Generating site&amp;quot;
 hugo
+
+echo &amp;quot;Adding files&amp;quot;
+cp CNAME public
+cp gh-pages-README.md public/README.md
 
 echo &amp;quot;Updating gh-pages branch&amp;quot;
 cd public &amp;amp;&amp;amp; git add --all &amp;amp;&amp;amp; git commit -m &amp;quot;Publishing to gh-pages (publish.sh)&amp;quot;
