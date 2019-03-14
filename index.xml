@@ -17,38 +17,61 @@
       <guid>https://blog.theropod.tk/2019/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</guid>
       <description>
 
-&lt;h4 id=&#34;安装&#34;&gt;安装&lt;/h4&gt;
+&lt;h3 id=&#34;安装&#34;&gt;安装&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;在WSL上使用，github上有编译的extended的deb版本 因为要使用scss自定义格式&lt;/li&gt;
 &lt;li&gt;官方教程安装 初始化目录，下载主题，新建项目等等&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;主题&#34;&gt;主题&lt;/h4&gt;
+&lt;h3 id=&#34;自定义&#34;&gt;自定义&lt;/h3&gt;
 
-&lt;ul&gt;
-&lt;li&gt;用LeaveIt主题&lt;/li&gt;
-&lt;li&gt;github上下下来主题后，并没有按照官方加成submodule，直接把主题的&lt;code&gt;.git&lt;/code&gt;删了，不再单独处理&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;自定义&#34;&gt;自定义&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;config.toml相关配置
+&lt;h4 id=&#34;config-toml相关配置&#34;&gt;config.toml相关配置&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;加了&lt;code&gt;hasCJKlanguage=true&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;图片放到&lt;code&gt;static/images&lt;/code&gt;里面，先同步再引用github的地址,而主题里的很多处引用都调整了相对路径&lt;/li&gt;
-&lt;li&gt;_custom.scss 里面 &lt;code&gt;.post-warp {max-width: 900px;.post-copyright {border-bottom: none;} .post-content img {max-width: 100%;}}&lt;/code&gt; 看起来舒服一点&lt;/li&gt;
-&lt;li&gt;favicon 都放在static里面&lt;/li&gt;
-&lt;li&gt;main.js改一下切换出标签页之后的网页title&lt;/li&gt;
-&lt;li&gt;代码块要在```之后说明语言，否则会和行内的代码高亮混淆&lt;/li&gt;
-&lt;li&gt;测试可以用&lt;code&gt;hugo server -D&lt;/code&gt;的server模式，且包括标记为draft的文本&lt;/li&gt;
-&lt;li&gt;默认的archetypes里面是&lt;code&gt;draft:true&lt;/code&gt;也就是说用&lt;code&gt;hugo server -D&lt;/code&gt;才能看到这些drafts，而生成静态网页就忽略掉了。。。嫌麻烦直接改成true&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;github同步&#34;&gt;github同步&lt;/h4&gt;
+&lt;h4 id=&#34;各种路径&#34;&gt;各种路径&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;图片放到&lt;code&gt;static/images&lt;/code&gt;里面，先同步再引用github的地址,而主题里的很多处引用都调整了相对路径&lt;/li&gt;
+&lt;li&gt;favicon 都放在static里面&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;主题调整&#34;&gt;主题调整&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;用LeaveIt主题,github上下下来后，并没有按照官方加成submodule，直接把主题的&lt;code&gt;.git&lt;/code&gt;删了，不再处理版本&lt;/li&gt;
+&lt;li&gt;_custom.scss 里面 &lt;code&gt;.post-warp {max-width: 900px;.post-copyright {border-bottom: none;} .post-content img {max-width: 100%;}}&lt;/code&gt; 看起来舒服一点&lt;/li&gt;
+&lt;li&gt;main.js改一下切换出标签页之后的网页title&lt;/li&gt;
+&lt;li&gt;themes\Leaveit\layouts_default\single.html，增减一些模板内容&lt;/li&gt;
+&lt;li&gt;关于目录，在上面的模板页面里合适位置加入
+&lt;code&gt;html
+{{ if (gt .WordCount 400 ) }}
+&amp;lt;aside&amp;gt;
+    &amp;lt;header&amp;gt;
+            &amp;lt;h2&amp;gt;{{.Title}}&amp;lt;/h2&amp;gt;
+    &amp;lt;/header&amp;gt;
+    {{ .TableOfContents }}
+&amp;lt;/aside&amp;gt;
+{{ end }}
+&lt;/code&gt;
+此为官网上的例子，非常容易理解。WordCount这个判断要是不设置hasCJKlanguage会统计不出来。&lt;/li&gt;
+&lt;li&gt;Disqus模板Hugo已经内置，申请一个Disqus Site得到shortname，作为&lt;code&gt;DisqusShortname&lt;/code&gt;放在config.toml，在single.html里面加入教程里的一行引用就ok。&lt;/li&gt;
+&lt;li&gt;Google和Baidu的Analytics，注册服务得到跟踪ID之后加入网站设置就ok&lt;/li&gt;
+&lt;li&gt;默认的archetypes里面是&lt;code&gt;draft:true&lt;/code&gt;也就是说用&lt;code&gt;hugo server -D&lt;/code&gt;才能看到这些drafts，而生成静态网页就忽略掉了。。。嫌麻烦直接改成true。测试可以用&lt;code&gt;hugo server -D&lt;/code&gt;的server模式，且包括标记为draft的文本）
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;写&#34;&gt;写&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;就是普通写markdown&lt;/li&gt;
+&lt;li&gt;代码块要在```之后说明语言，否则会和行内的代码高亮混淆&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;github同步&#34;&gt;github同步&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;如果想用&lt;code&gt;username.github.io&lt;/code&gt;当做主页,就需要只把hugo生成的public文件夹放在&lt;code&gt;username.github.io&lt;/code&gt;的项目中（加入其他文件会生成页面失败），这样其余的文件必须再新建另一个项目来保存。即：Hugo文件夹是一个项目，每次生成的public作为submodule放在使用用户名作为地址的项目。&lt;/li&gt;
@@ -68,8 +91,8 @@
 &lt;li&gt;注意这个脚本里Push的是新生成的Public，github的相应分支里的CNAME和README这些要重新放进去，否则每次传完都要重新配置&lt;/li&gt;
 &lt;li&gt;还有就是注意VSCode把脚本CRLF转成LF。&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;vscode里没法push gh-pages目录，提示说已经在WSL的子系统里checkout过了。索性加入WSL的ssh key，在terminal里用ssh push。&lt;/li&gt;
-&lt;/ul&gt;
+
+&lt;li&gt;&lt;p&gt;vscode里没法push gh-pages目录，提示说已经在WSL的子系统里checkout过了。索性加入WSL的ssh key，在terminal里用ssh push。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/sh
 DIR=$(dirname &amp;quot;$0&amp;quot;)
@@ -104,9 +127,10 @@ echo &amp;quot;Updating gh-pages branch&amp;quot;
 cd public &amp;amp;&amp;amp; git add --all &amp;amp;&amp;amp; git commit -m &amp;quot;Publishing to gh-pages (publish.sh)&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;vscode一站式解决&#34;&gt;VSCode一站式解决&lt;/h4&gt;
+&lt;h3 id=&#34;vscode一站式解决&#34;&gt;VSCode一站式解决&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Theropod/hugoblog/master/static/images/blog_images/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-01.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Theropod/hugoblog/master/static/images/blog_images/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-01.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     

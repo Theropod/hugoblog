@@ -9,6 +9,18 @@
   
   
   
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-136276173-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   <link rel="prev" href="https://blog.theropod.tk/2019/2019-03-12-vscode%E4%B8%ADplantuml%E6%B5%81%E7%A8%8B%E5%9B%BE/" />
   
   <link rel="canonical" href="https://blog.theropod.tk/2019/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/" />
@@ -46,7 +58,7 @@
     "articleSection" : "posts",
     "name" : "自用hugo操作记录",
     "headline" : "自用hugo操作记录",
-    "description" : "安装  在WSL上使用，github上有编译的extended的deb版本 因为要使用scss自定义格式 官方教程安装 初始化目录，下载主题，新建项目等等  主题  用LeaveIt主题 github上下下来主题后，并没有按照官方加成submodule，直接把主题的.git删了，不再单独处理  自定义  config.toml相关配置  加了hasCJKlanguage=true  图片放到static/images里面，先同步再引用github的地址,而主题里的很多处引用都调整了相对路径 _custom.scss 里面 .post-warp {max-width: 900px;.post-copyright {border-bottom: none;} .post-content img {max-width: 100%;}} 看起来舒服一点 favicon 都放在static里面 main.js改一下切换出标签页之后的网页title 代码块要在```之后说明语言，否则会和行内的代码高亮混淆 测试可以用hugo server -D的server模式，且包括标记为draft的文本 默认的archetypes里面是draft:true也就是说用hugo server -D才能看到这些drafts，而生成静态网页就忽略掉了。。。嫌麻烦直接改成true  github同步  如果想用username.github.io当做主页,就需要只把hugo生成的public文件夹放在username.github.io的项目中（加入其他文件会生成页面失败），这样其余的文件必须再新建另一个项目来保存。即：Hugo文件夹是一个项目，每次生成的public作为submodule放在使用用户名作为地址的项目。 但我本来就有域名，所以不需要非得用username.github.io这个  Hugo文件夹git init，add remote，pull下来一个github空项目，配置好博客内容，生成public目录。 先把github pages里域名设置成自己的（这里我的freenom DNS会失败，换成cloudflare的才能被github认出来），否则网站主题模板找根路径会有问题，毕竟根目录本来是个人域名下的一个项目 config.toml里设置到Github Pages的publish 地址。这里我用的是blog.therpod.tk，于是在cloudflare里只配置了一个CNAME,指向theropod.github.io。 在github pages里面开启https后，提示NET::ERR_CERT_COMMON_NAME_INVALID github pages，感觉像是github.com发的证书仍没有和我的域名联系起来。我在cloudflare里又加上了A记录，直接用ip地址，https就好了。  接下来就是按照官方文档里说的，只把public文件夹用git worktree弄到一个新的gh-pages分支，选择这个分支作为主页就行了。注意官方文档的upstream指的是你自己上游的名字，比如origin。  最后就是修改下官网上发布脚本的例子了。正好vscode里面可以把terminal改成是wsl的bash.exe，写和发布可以在一起进行。手动最后一道检查，没有把Push到github加进去。  注意这个脚本里Push的是新生成的Public，github的相应分支里的CNAME和README这些要重新放进去，否则每次传完都要重新配置 还有就是注意VSCode把脚本CRLF转成LF。  vscode里没法push gh-pages目录，提示说已经在WSL的子系统里checkout过了。索性加入WSL的ssh key，在terminal里用ssh push。  #!",
+    "description" : "安装 在WSL上使用，github上有编译的extended的deb版本 因为要使用scss自定义格式 官方教程安装 初始化目录，下载主题，新建项目",
     "inLanguage" : "en",
     "author" : "Theropod",
     "creator" : "Theropod",
@@ -57,7 +69,7 @@
     "datePublished": "2019-03-12 18:35:03 &#43;0800 CST",
     "dateModified" : "2019-03-12 18:35:03 &#43;0800 CST",
     "url" : "https://blog.theropod.tk/2019/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/",
-    "wordCount" : "153",
+    "wordCount" : "1831",
     "keywords" : [ "Windows姿势", "WGS84教信者"]
 }
 </script>
@@ -118,7 +130,8 @@
     <header class="post-header">
         <h1 class="post-title" itemprop="name headline">自用hugo操作记录</h1>
         <div class="post-meta">
-                Written by <a itemprop="name" href="https://blog.theropod.tk" rel="author">Theropod</a> with ♥ 
+                Written by <a itemprop="name" href="https://blog.theropod.tk" rel="author">Theropod</a> 
+                
                 <span class="post-time">
                 on <time datetime=2019-03-12 itemprop="datePublished">March 12, 2019</time>
                 </span>
@@ -128,8 +141,42 @@
                         <a href="https://blog.theropod.tk/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
                         
                 </span>
+                <span class="post-wordcount">
+                    <a>|</a>
+                    <a> 1831 Words, Estimated Reading time (口胡) : 4 min </a>
+                </span>
+
         </div>
     </header>
+
+    
+    <aside class='post-toc'>
+        <header>
+                <h2>自用hugo操作记录</h2>
+        </header>
+        <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#安装">安装</a></li>
+<li><a href="#自定义">自定义</a>
+<ul>
+<li><a href="#config-toml相关配置">config.toml相关配置</a></li>
+<li><a href="#各种路径">各种路径</a></li>
+<li><a href="#主题调整">主题调整</a></li>
+</ul></li>
+<li><a href="#写">写</a></li>
+<li><a href="#github同步">github同步</a></li>
+<li><a href="#vscode一站式解决">VSCode一站式解决</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </aside>
+    
+
     <div class="post-content">
         
 
@@ -150,38 +197,61 @@
 
           
 
-<h4 id="安装">安装</h4>
+<h3 id="安装">安装</h3>
 
 <ul>
 <li>在WSL上使用，github上有编译的extended的deb版本 因为要使用scss自定义格式</li>
 <li>官方教程安装 初始化目录，下载主题，新建项目等等</li>
 </ul>
 
-<h4 id="主题">主题</h4>
+<h3 id="自定义">自定义</h3>
 
-<ul>
-<li>用LeaveIt主题</li>
-<li>github上下下来主题后，并没有按照官方加成submodule，直接把主题的<code>.git</code>删了，不再单独处理</li>
-</ul>
-
-<h4 id="自定义">自定义</h4>
-
-<ul>
-<li>config.toml相关配置
+<h4 id="config-toml相关配置">config.toml相关配置</h4>
 
 <ul>
 <li>加了<code>hasCJKlanguage=true</code></li>
-</ul></li>
-<li>图片放到<code>static/images</code>里面，先同步再引用github的地址,而主题里的很多处引用都调整了相对路径</li>
-<li>_custom.scss 里面 <code>.post-warp {max-width: 900px;.post-copyright {border-bottom: none;} .post-content img {max-width: 100%;}}</code> 看起来舒服一点</li>
-<li>favicon 都放在static里面</li>
-<li>main.js改一下切换出标签页之后的网页title</li>
-<li>代码块要在```之后说明语言，否则会和行内的代码高亮混淆</li>
-<li>测试可以用<code>hugo server -D</code>的server模式，且包括标记为draft的文本</li>
-<li>默认的archetypes里面是<code>draft:true</code>也就是说用<code>hugo server -D</code>才能看到这些drafts，而生成静态网页就忽略掉了。。。嫌麻烦直接改成true</li>
 </ul>
 
-<h4 id="github同步">github同步</h4>
+<h4 id="各种路径">各种路径</h4>
+
+<ul>
+<li>图片放到<code>static/images</code>里面，先同步再引用github的地址,而主题里的很多处引用都调整了相对路径</li>
+<li>favicon 都放在static里面</li>
+</ul>
+
+<h4 id="主题调整">主题调整</h4>
+
+<ul>
+<li>用LeaveIt主题,github上下下来后，并没有按照官方加成submodule，直接把主题的<code>.git</code>删了，不再处理版本</li>
+<li>_custom.scss 里面 <code>.post-warp {max-width: 900px;.post-copyright {border-bottom: none;} .post-content img {max-width: 100%;}}</code> 看起来舒服一点</li>
+<li>main.js改一下切换出标签页之后的网页title</li>
+<li>themes\Leaveit\layouts_default\single.html，增减一些模板内容</li>
+<li>关于目录，在上面的模板页面里合适位置加入
+<code>html
+{{ if (gt .WordCount 400 ) }}
+&lt;aside&gt;
+    &lt;header&gt;
+            &lt;h2&gt;{{.Title}}&lt;/h2&gt;
+    &lt;/header&gt;
+    {{ .TableOfContents }}
+&lt;/aside&gt;
+{{ end }}
+</code>
+此为官网上的例子，非常容易理解。WordCount这个判断要是不设置hasCJKlanguage会统计不出来。</li>
+<li>Disqus模板Hugo已经内置，申请一个Disqus Site得到shortname，作为<code>DisqusShortname</code>放在config.toml，在single.html里面加入教程里的一行引用就ok。</li>
+<li>Google和Baidu的Analytics，注册服务得到跟踪ID之后加入网站设置就ok</li>
+<li>默认的archetypes里面是<code>draft:true</code>也就是说用<code>hugo server -D</code>才能看到这些drafts，而生成静态网页就忽略掉了。。。嫌麻烦直接改成true。测试可以用<code>hugo server -D</code>的server模式，且包括标记为draft的文本）
+<br /></li>
+</ul>
+
+<h3 id="写">写</h3>
+
+<ul>
+<li>就是普通写markdown</li>
+<li>代码块要在```之后说明语言，否则会和行内的代码高亮混淆</li>
+</ul>
+
+<h3 id="github同步">github同步</h3>
 
 <ul>
 <li>如果想用<code>username.github.io</code>当做主页,就需要只把hugo生成的public文件夹放在<code>username.github.io</code>的项目中（加入其他文件会生成页面失败），这样其余的文件必须再新建另一个项目来保存。即：Hugo文件夹是一个项目，每次生成的public作为submodule放在使用用户名作为地址的项目。</li>
@@ -201,8 +271,8 @@
 <li>注意这个脚本里Push的是新生成的Public，github的相应分支里的CNAME和README这些要重新放进去，否则每次传完都要重新配置</li>
 <li>还有就是注意VSCode把脚本CRLF转成LF。</li>
 </ul></li>
-<li>vscode里没法push gh-pages目录，提示说已经在WSL的子系统里checkout过了。索性加入WSL的ssh key，在terminal里用ssh push。</li>
-</ul>
+
+<li><p>vscode里没法push gh-pages目录，提示说已经在WSL的子系统里checkout过了。索性加入WSL的ssh key，在terminal里用ssh push。</p>
 
 <pre><code class="language-bash">#!/bin/sh
 DIR=$(dirname &quot;$0&quot;)
@@ -237,9 +307,10 @@ echo &quot;Updating gh-pages branch&quot;
 cd public &amp;&amp; git add --all &amp;&amp; git commit -m &quot;Publishing to gh-pages (publish.sh)&quot;
 </code></pre>
 
-<h4 id="vscode一站式解决">VSCode一站式解决</h4>
+<h3 id="vscode一站式解决">VSCode一站式解决</h3>
 
-<p><figure><img src="https://raw.githubusercontent.com/Theropod/hugoblog/master/themes/LeaveIt/images/ring.svg" data-sizes="auto" data-src="https://raw.githubusercontent.com/Theropod/hugoblog/master/static/images/blog_images/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-01.png" alt="image" class="lazyload"><figcaption class="image-caption">image</figcaption></figure></p>
+<p><figure><img src="https://raw.githubusercontent.com/Theropod/hugoblog/master/themes/LeaveIt/images/ring.svg" data-sizes="auto" data-src="https://raw.githubusercontent.com/Theropod/hugoblog/master/static/images/blog_images/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-01.png" alt="image" class="lazyload"><figcaption class="image-caption">image</figcaption></figure></p></li>
+</ul>
 
     </div>
 
@@ -279,6 +350,27 @@ cd public &amp;&amp; git add --all &amp;&amp; git commit -m &quot;Publishing to 
 
     <div class="post-comment">
           
+                 
+                     <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "theropodblog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
                  
           
     </div>
