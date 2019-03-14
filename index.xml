@@ -57,7 +57,8 @@
 &lt;ul&gt;
 &lt;li&gt;Hugo文件夹git init，add remote，pull下来一个github空项目，配置好博客内容，生成public目录。&lt;/li&gt;
 &lt;li&gt;先把github pages里域名设置成自己的（这里我的freenom DNS会失败，换成cloudflare的才能被github认出来），否则网站主题模板找根路径会有问题，毕竟根目录本来是个人域名下的一个项目&lt;/li&gt;
-&lt;li&gt;config.toml里设置到Github Pages的publish 地址&lt;/li&gt;
+&lt;li&gt;config.toml里设置到Github Pages的publish 地址。这里我用的是&lt;code&gt;blog.therpod.tk&lt;/code&gt;，于是在cloudflare里只配置了一个CNAME,指向&lt;code&gt;theropod.github.io&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;在github pages里面开启https后，提示&lt;code&gt;NET::ERR_CERT_COMMON_NAME_INVALID github pages&lt;/code&gt;，感觉像是github.com发的证书仍没有和我的域名联系起来。我在cloudflare里又加上了A记录，直接用ip地址，https就好了。&lt;/li&gt;
 &lt;li&gt;接下来就是按照官方文档里说的，只把public文件夹用&lt;code&gt;git worktree&lt;/code&gt;弄到一个新的gh-pages分支，选择这个分支作为主页就行了。注意官方文档的upstream指的是你自己上游的名字，比如origin。&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;最后就是修改下官网上发布脚本的例子了。正好vscode里面可以把terminal改成是wsl的bash.exe，写和发布可以在一起进行。手动最后一道检查，没有把Push到github加进去。

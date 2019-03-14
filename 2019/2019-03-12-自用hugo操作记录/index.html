@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "自用hugo操作记录",
     "headline" : "自用hugo操作记录",
-    "description" : "安装  在WSL上使用，github上有编译的extended的deb版本 因为要使用scss自定义格式 官方教程安装 初始化目录，下载主题，新建项目等等  主题  用LeaveIt主题 github上下下来主题后，并没有按照官方加成submodule，直接把主题的.git删了，不再单独处理  自定义  config.toml相关配置  加了hasCJKlanguage=true  图片放到static/images里面，先同步再引用github的地址,而主题里的很多处引用都调整了相对路径 _custom.scss 里面 .post-warp {max-width: 900px;.post-copyright {border-bottom: none;} .post-content img {max-width: 100%;}} 看起来舒服一点 favicon 都放在static里面 main.js改一下切换出标签页之后的网页title 代码块要在```之后说明语言，否则会和行内的代码高亮混淆 测试可以用hugo server -D的server模式，且包括标记为draft的文本 默认的archetypes里面是draft:true也就是说用hugo server -D才能看到这些drafts，而生成静态网页就忽略掉了。。。嫌麻烦直接改成true  github同步  如果想用username.github.io当做主页,就需要只把hugo生成的public文件夹放在username.github.io的项目中（加入其他文件会生成页面失败），这样其余的文件必须再新建另一个项目来保存。即：Hugo文件夹是一个项目，每次生成的public作为submodule放在使用用户名作为地址的项目。 但我本来就有域名，所以不需要非得用username.github.io这个  Hugo文件夹git init，add remote，pull下来一个github空项目，配置好博客内容，生成public目录。 先把github pages里域名设置成自己的（这里我的freenom DNS会失败，换成cloudflare的才能被github认出来），否则网站主题模板找根路径会有问题，毕竟根目录本来是个人域名下的一个项目 config.toml里设置到Github Pages的publish 地址 接下来就是按照官方文档里说的，只把public文件夹用git worktree弄到一个新的gh-pages分支，选择这个分支作为主页就行了。注意官方文档的upstream指的是你自己上游的名字，比如origin。  最后就是修改下官网上发布脚本的例子了。正好vscode里面可以把terminal改成是wsl的bash.exe，写和发布可以在一起进行。手动最后一道检查，没有把Push到github加进去。  注意这个脚本里Push的是新生成的Public，github的相应分支里的CNAME和README这些要重新放进去，否则每次传完都要重新配置 还有就是注意VSCode把脚本CRLF转成LF。  vscode里没法push gh-pages目录，提示说已经在WSL的子系统里checkout过了。索性加入WSL的ssh key，在terminal里用ssh push。  #!",
+    "description" : "安装  在WSL上使用，github上有编译的extended的deb版本 因为要使用scss自定义格式 官方教程安装 初始化目录，下载主题，新建项目等等  主题  用LeaveIt主题 github上下下来主题后，并没有按照官方加成submodule，直接把主题的.git删了，不再单独处理  自定义  config.toml相关配置  加了hasCJKlanguage=true  图片放到static/images里面，先同步再引用github的地址,而主题里的很多处引用都调整了相对路径 _custom.scss 里面 .post-warp {max-width: 900px;.post-copyright {border-bottom: none;} .post-content img {max-width: 100%;}} 看起来舒服一点 favicon 都放在static里面 main.js改一下切换出标签页之后的网页title 代码块要在```之后说明语言，否则会和行内的代码高亮混淆 测试可以用hugo server -D的server模式，且包括标记为draft的文本 默认的archetypes里面是draft:true也就是说用hugo server -D才能看到这些drafts，而生成静态网页就忽略掉了。。。嫌麻烦直接改成true  github同步  如果想用username.github.io当做主页,就需要只把hugo生成的public文件夹放在username.github.io的项目中（加入其他文件会生成页面失败），这样其余的文件必须再新建另一个项目来保存。即：Hugo文件夹是一个项目，每次生成的public作为submodule放在使用用户名作为地址的项目。 但我本来就有域名，所以不需要非得用username.github.io这个  Hugo文件夹git init，add remote，pull下来一个github空项目，配置好博客内容，生成public目录。 先把github pages里域名设置成自己的（这里我的freenom DNS会失败，换成cloudflare的才能被github认出来），否则网站主题模板找根路径会有问题，毕竟根目录本来是个人域名下的一个项目 config.toml里设置到Github Pages的publish 地址。这里我用的是blog.therpod.tk，于是在cloudflare里只配置了一个CNAME,指向theropod.github.io。 在github pages里面开启https后，提示NET::ERR_CERT_COMMON_NAME_INVALID github pages，感觉像是github.com发的证书仍没有和我的域名联系起来。我在cloudflare里又加上了A记录，直接用ip地址，https就好了。 接下来就是按照官方文档里说的，只把public文件夹用git worktree弄到一个新的gh-pages分支，选择这个分支作为主页就行了。注意官方文档的upstream指的是你自己上游的名字，比如origin。  最后就是修改下官网上发布脚本的例子了。正好vscode里面可以把terminal改成是wsl的bash.exe，写和发布可以在一起进行。手动最后一道检查，没有把Push到github加进去。  注意这个脚本里Push的是新生成的Public，github的相应分支里的CNAME和README这些要重新放进去，否则每次传完都要重新配置 还有就是注意VSCode把脚本CRLF转成LF。  vscode里没法push gh-pages目录，提示说已经在WSL的子系统里checkout过了。索性加入WSL的ssh key，在terminal里用ssh push。  #!",
     "inLanguage" : "en",
     "author" : "Theropod",
     "creator" : "Theropod",
@@ -57,7 +57,7 @@
     "datePublished": "2019-03-12 18:35:03 &#43;0800 CST",
     "dateModified" : "2019-03-12 18:35:03 &#43;0800 CST",
     "url" : "https://blog.theropod.tk/2019/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/",
-    "wordCount" : "149",
+    "wordCount" : "153",
     "keywords" : [ "Windows姿势", "WGS84教信者"]
 }
 </script>
@@ -190,7 +190,8 @@
 <ul>
 <li>Hugo文件夹git init，add remote，pull下来一个github空项目，配置好博客内容，生成public目录。</li>
 <li>先把github pages里域名设置成自己的（这里我的freenom DNS会失败，换成cloudflare的才能被github认出来），否则网站主题模板找根路径会有问题，毕竟根目录本来是个人域名下的一个项目</li>
-<li>config.toml里设置到Github Pages的publish 地址</li>
+<li>config.toml里设置到Github Pages的publish 地址。这里我用的是<code>blog.therpod.tk</code>，于是在cloudflare里只配置了一个CNAME,指向<code>theropod.github.io</code>。</li>
+<li>在github pages里面开启https后，提示<code>NET::ERR_CERT_COMMON_NAME_INVALID github pages</code>，感觉像是github.com发的证书仍没有和我的域名联系起来。我在cloudflare里又加上了A记录，直接用ip地址，https就好了。</li>
 <li>接下来就是按照官方文档里说的，只把public文件夹用<code>git worktree</code>弄到一个新的gh-pages分支，选择这个分支作为主页就行了。注意官方文档的upstream指的是你自己上游的名字，比如origin。</li>
 </ul></li>
 <li>最后就是修改下官网上发布脚本的例子了。正好vscode里面可以把terminal改成是wsl的bash.exe，写和发布可以在一起进行。手动最后一道检查，没有把Push到github加进去。
