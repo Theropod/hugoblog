@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
-      <loc>https://theropod.github.io/hugoblog/2019/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</loc>
+      <loc>https://theropod.tk/2019/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</loc>
       
       <lastmod>2019-03-12T18:35:03+08:00</lastmod>
       
@@ -13,7 +13,7 @@
     </url>
   
     <url>
-      <loc>https://theropod.github.io/hugoblog/2019/2019-03-12-vscode%E4%B8%ADplantuml%E6%B5%81%E7%A8%8B%E5%9B%BE/</loc>
+      <loc>https://theropod.tk/2019/2019-03-12-vscode%E4%B8%ADplantuml%E6%B5%81%E7%A8%8B%E5%9B%BE/</loc>
       
       <lastmod>2019-03-12T18:34:50+08:00</lastmod>
       
@@ -23,7 +23,7 @@
     </url>
   
     <url>
-      <loc>https://theropod.github.io/hugoblog/categories/</loc>
+      <loc>https://theropod.tk/categories/</loc>
       
       
       
@@ -33,31 +33,7 @@
     </url>
   
     <url>
-      <loc>https://theropod.github.io/hugoblog/tags/markdown/</loc>
-      
-      <lastmod>2019-03-12T18:34:50+08:00</lastmod>
-      
-      
-      
-      <priority>0</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://theropod.github.io/hugoblog/posts/</loc>
-      
-      <lastmod>2019-03-12T18:35:03+08:00</lastmod>
-      
-      
-      
-      <priority>0</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://theropod.github.io/hugoblog/tags/</loc>
+      <loc>https://theropod.tk/tags/markdown/</loc>
       
       <lastmod>2019-03-12T18:34:50+08:00</lastmod>
       
@@ -69,7 +45,7 @@
     </url>
   
     <url>
-      <loc>https://theropod.github.io/hugoblog/</loc>
+      <loc>https://theropod.tk/posts/</loc>
       
       <lastmod>2019-03-12T18:35:03+08:00</lastmod>
       
@@ -81,7 +57,19 @@
     </url>
   
     <url>
-      <loc>https://theropod.github.io/hugoblog/tags/windows%E5%A7%BF%E5%8A%BF/</loc>
+      <loc>https://theropod.tk/tags/</loc>
+      
+      <lastmod>2019-03-12T18:34:50+08:00</lastmod>
+      
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://theropod.tk/</loc>
       
       <lastmod>2019-03-12T18:35:03+08:00</lastmod>
       
@@ -93,7 +81,19 @@
     </url>
   
     <url>
-      <loc>https://theropod.github.io/hugoblog/categories/%E6%8A%80%E6%9C%AF/</loc>
+      <loc>https://theropod.tk/tags/windows%E5%A7%BF%E5%8A%BF/</loc>
+      
+      <lastmod>2019-03-12T18:35:03+08:00</lastmod>
+      
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://theropod.tk/categories/%E6%8A%80%E6%9C%AF/</loc>
       
       <lastmod>2019-03-12T18:35:03+08:00</lastmod>
       
