@@ -24,5 +24,8 @@ echo "Adding files"
 cp CNAME public
 cp gh-pages-README.md public/README.md
 
+echo "Updating master branch"
+git add --all && git commit -m "Publishing to master (publish.sh)"
+
 echo "Updating gh-pages branch"
 cd public && git add --all && git commit -m "Publishing to gh-pages (publish.sh)"
