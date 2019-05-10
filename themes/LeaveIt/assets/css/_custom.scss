@@ -2,8 +2,24 @@
 // Custom style
 // ==============================
 // You can override the variables in _variables.scss to customize the style
+.post-toc{
+    padding:1.5rem;
+}
+
+.post-toc-wrapper{
+    position:fixed;
+    right:1rem;
+    top:8rem;
+    z-index: 100;
+    background-color: azure;
+}
+
+.post-toc-wrapper-mobile{
+    display:none;
+}
+
 .post-warp {
-    max-width: 900px;
+    max-width: 50rem;
     .post-copyright {
         border-bottom: none;
     }

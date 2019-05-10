@@ -3,6 +3,10 @@
         display: none;
     }
 
+    .post-toc-wrapper{
+        display:none;
+    }
+
     .navbar-mobile {
         display: block !important;
         position: fixed;
@@ -107,6 +111,13 @@
                 background: $dark-background-color !important;
             }
         }
+    }
+
+    .post-toc-wrapper-mobile{
+        display:block !important;
+            .post-toc{
+                padding-bottom: 0rem;
+            }
     }
 
     #dynamic-to-top {

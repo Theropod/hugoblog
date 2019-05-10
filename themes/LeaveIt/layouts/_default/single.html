@@ -30,12 +30,14 @@
     </header>
 
     {{ if (gt .WordCount 400 ) }}
-    <aside class='post-toc'>
-        <header>
-                <h2>{{.Title}}</h2>
-        </header>
-        {{ .TableOfContents }}
-    </aside>
+    <div class="post-toc-wrapper-mobile">
+      <aside class="post-toc">
+          <header>
+                  <h2>TOC</h2>
+          </header>
+          {{ .TableOfContents }}
+      </aside>
+    </div>
     {{ end }}
 
     <div class="post-content">
