@@ -69,7 +69,7 @@ if (!doNotTrack) {
     "datePublished": "2019-03-12 18:35:03 &#43;0800 CST",
     "dateModified" : "2019-03-12 18:35:03 &#43;0800 CST",
     "url" : "https://blog.theropod.tk/2019/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/",
-    "wordCount" : "2062",
+    "wordCount" : "2043",
     "keywords" : [ "Windows姿势", "WGS84教信者"]
 }
 </script>
@@ -174,7 +174,7 @@ if (!doNotTrack) {
                 </span>
                 <span class="post-wordcount">
                     <a>|</a>
-                    <a> 2062 Words, Estimated Reading time (口胡) : 5 min </a>
+                    <a> 2043 Words, Estimated Reading time (口胡) : 5 min </a>
                 </span>
 
         </div>
@@ -327,7 +327,7 @@ if (!doNotTrack) {
 <figure><img src="https://raw.githubusercontent.com/Theropod/hugoblog/master/themes/LeaveIt/images/ring.svg" data-sizes="auto" data-src="https://raw.githubusercontent.com/Theropod/hugoblog/master/static/images/blog_images/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-02.png" alt="image" class="lazyload"><figcaption class="image-caption">image</figcaption></figure></li>
 <li>接下来就是按照官方文档里说的，只把public文件夹用<code>git worktree</code>弄到一个新的gh-pages分支，选择这个分支作为主页就行了。注意官方文档的upstream指的是你自己上游的名字，比如origin。</li>
 </ul></li>
-<li>最后就是修改下官网上发布脚本的例子了。正好vscode里面可以把terminal改成是wsl的bash.exe，写和发布可以在一起进行。手动最后一道检查，没有把Push到github加进去。
+<li>最后就是修改下官网上发布脚本的例子了。正好vscode里面可以把terminal改成是wsl的bash.exe，写和发布可以在一起进行。
 
 <ul>
 <li>注意这个脚本里Push新生成的Public，github的相应分支里的CNAME和README这些要重新放进去，否则每次传完都要重新配置</li>
@@ -367,9 +367,11 @@ cp gh-pages-README.md public/README.md
 
 echo &quot;Updating master branch&quot;
 git add --all &amp;&amp; git commit -m &quot;Publishing to master (publish.sh)&quot;
+git push origin master
 
 echo &quot;Updating gh-pages branch&quot;
 cd public &amp;&amp; git add --all &amp;&amp; git commit -m &quot;Publishing to gh-pages (publish.sh)&quot;
+git push origin gh-pages
 </code></pre>
 
 <h3 id="vscode一站式解决">VSCode一站式解决</h3>

@@ -148,7 +148,7 @@
 &lt;img src=&#34;https://raw.githubusercontent.com/Theropod/hugoblog/master/static/images/blog_images/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-02.png&#34; alt=&#34;image&#34; /&gt;&lt;/li&gt;
 &lt;li&gt;接下来就是按照官方文档里说的，只把public文件夹用&lt;code&gt;git worktree&lt;/code&gt;弄到一个新的gh-pages分支，选择这个分支作为主页就行了。注意官方文档的upstream指的是你自己上游的名字，比如origin。&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;最后就是修改下官网上发布脚本的例子了。正好vscode里面可以把terminal改成是wsl的bash.exe，写和发布可以在一起进行。手动最后一道检查，没有把Push到github加进去。
+&lt;li&gt;最后就是修改下官网上发布脚本的例子了。正好vscode里面可以把terminal改成是wsl的bash.exe，写和发布可以在一起进行。
 
 &lt;ul&gt;
 &lt;li&gt;注意这个脚本里Push新生成的Public，github的相应分支里的CNAME和README这些要重新放进去，否则每次传完都要重新配置&lt;/li&gt;
@@ -188,9 +188,11 @@ cp gh-pages-README.md public/README.md
 
 echo &amp;quot;Updating master branch&amp;quot;
 git add --all &amp;amp;&amp;amp; git commit -m &amp;quot;Publishing to master (publish.sh)&amp;quot;
+git push origin master
 
 echo &amp;quot;Updating gh-pages branch&amp;quot;
 cd public &amp;amp;&amp;amp; git add --all &amp;amp;&amp;amp; git commit -m &amp;quot;Publishing to gh-pages (publish.sh)&amp;quot;
+git push origin gh-pages
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&#34;vscode一站式解决&#34;&gt;VSCode一站式解决&lt;/h3&gt;
