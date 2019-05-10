@@ -21,9 +21,9 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
+  <link rel="prev" href="https://blog.theropod.tk/2019/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/" />
   
-  <link rel="next" href="https://blog.theropod.tk/2019/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/" />
-  <link rel="canonical" href="https://blog.theropod.tk/2019/2019-03-12-vscode%E4%B8%ADplantuml%E6%B5%81%E7%A8%8B%E5%9B%BE/" />
+  <link rel="canonical" href="https://blog.theropod.tk/2019/2019-05-10-%E8%B6%85%E5%BE%AEipmi%E9%A3%8E%E6%89%87%E8%B0%83%E8%8A%82/" />
   <link rel="apple-touch-icon" sizes="180x180" href="https://blog.theropod.tk/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://blog.theropod.tk/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="https://blog.theropod.tk/favicon-16x16.png">
@@ -34,10 +34,10 @@ if (!doNotTrack) {
   <title>
        
        
-           VSCode中PlantUML流程图 | WGS84教信者
+           2019 05 10 超微IPMI风扇调节 | WGS84教信者
        
   </title>
-  <meta name="title" content="VSCode中PlantUML流程图 | WGS84教信者">
+  <meta name="title" content="2019 05 10 超微IPMI风扇调节 | WGS84教信者">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -56,9 +56,9 @@ if (!doNotTrack) {
          "@id": "https://blog.theropod.tk"
     },
     "articleSection" : "posts",
-    "name" : "VSCode中PlantUML流程图",
-    "headline" : "VSCode中PlantUML流程图",
-    "description" : "需要安装 Markdown Preview Enhanced插件 jdk并且配置了环境变量 PlantUML Preview插件（非必需，只是用来预览放大测试PlantUML类型的流程图 注释 网",
+    "name" : "2019 05 10 超微IPMI风扇调节",
+    "headline" : "2019 05 10 超微IPMI风扇调节",
+    "description" : "问题 组里分配的5年前台式，主板Supermicro X10SLM+-LN4F 服务器主板下压式风扇很小，动不动转速起飞，吵死我了，看起来需要用IPMI调节风扇曲线 定义",
     "inLanguage" : "en",
     "author" : "Theropod",
     "creator" : "Theropod",
@@ -66,11 +66,11 @@ if (!doNotTrack) {
     "accountablePerson" : "Theropod",
     "copyrightHolder" : "Theropod",
     "copyrightYear" : "2019",
-    "datePublished": "2019-03-12 18:34:50 &#43;0800 CST",
-    "dateModified" : "2019-03-12 18:34:50 &#43;0800 CST",
-    "url" : "https://blog.theropod.tk/2019/2019-03-12-vscode%E4%B8%ADplantuml%E6%B5%81%E7%A8%8B%E5%9B%BE/",
-    "wordCount" : "188",
-    "keywords" : [ "MarkDown","Windows姿势", "WGS84教信者"]
+    "datePublished": "2019-05-10 13:17:45 &#43;0800 CST",
+    "dateModified" : "2019-05-10 13:17:45 &#43;0800 CST",
+    "url" : "https://blog.theropod.tk/2019/2019-05-10-%E8%B6%85%E5%BE%AEipmi%E9%A3%8E%E6%89%87%E8%B0%83%E8%8A%82/",
+    "wordCount" : "308",
+    "keywords" : [ "Windows姿势", "WGS84教信者"]
 }
 </script>
 
@@ -131,12 +131,12 @@ if (!doNotTrack) {
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">VSCode中PlantUML流程图</h1>
+        <h1 class="post-title" itemprop="name headline">2019 05 10 超微IPMI风扇调节</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://blog.theropod.tk" rel="author">Theropod</a> 
                 
                 <span class="post-time">
-                on <time datetime=2019-03-12 itemprop="datePublished">March 12, 2019</time>
+                on <time datetime=2019-05-10 itemprop="datePublished">May 10, 2019</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
@@ -146,7 +146,7 @@ if (!doNotTrack) {
                 </span>
                 <span class="post-wordcount">
                     <a>|</a>
-                    <a> 188 Words, Estimated Reading time (口胡) : 1 min </a>
+                    <a> 308 Words, Estimated Reading time (口胡) : 1 min </a>
                 </span>
 
         </div>
@@ -172,20 +172,28 @@ if (!doNotTrack) {
 
           
 
-<h4 id="需要安装">需要安装</h4>
+<h3 id="问题">问题</h3>
+
+<p>组里分配的5年前台式，主板Supermicro X10SLM+-LN4F
+服务器主板下压式风扇很小，动不动转速起飞，吵死我了，看起来需要用IPMI调节风扇曲线</p>
+
+<h3 id="定义">定义</h3>
 
 <ul>
-<li>Markdown Preview Enhanced插件</li>
-<li>jdk并且配置了环境变量</li>
-<li>PlantUML Preview插件（非必需，只是用来预览放大测试PlantUML类型的流程图</li>
-</ul>
+<li><strong>IPMI</strong> Intelligent Platform Management Interface</li>
 
-<h4 id="注释">注释</h4>
+<li><p><strong>BMC</strong> Baseboard Management Controller
+服务器基于BMC芯片实现IPMI之功能，通过IPMI的网口来管理</p>
 
-<ul>
-<li>网上不少说需要安装graphviz这个程序的，其实不需要</li>
-<li>jdk环境变量没设置好的话，两个插件都不能用</li>
-<li>Markdown Preview Enhanced支持很多种的流程图 PlantUML Mermaid等等很多种，看文档就可以上手，但是注意PlantUML的部分要放到专门的代码块里声明</li>
+<h3 id="操作">操作</h3></li>
+
+<li><p>可以使用的超微软件有IPMI的命令行工具，以及GUI的IPMI View</p></li>
+
+<li><p>首先试图在本机实现IPMI之控制，但是据查现在已经不能用本机来访问本机的IPMI接口</p></li>
+
+<li><p>接下来试图用内网电脑来IPMI访问控制，因为IPMI访问可以设置为Dedicated,Shared,Fail Over（默认值）<a href="https://serverfault.com/questions/361940/configuring-supermicro-ipmi-to-use-one-of-the-lan-interfaces-instead-of-the-ipmi" rel="nofollow noreferrer" target="_blank">讨论</a>,但是BIOS里面不能设置。据说是断电之后IPMI要是没插线自动分配到第一个网口，但是自己试了没有用。</p></li>
+
+<li><p>直接连线，</p></li>
 </ul>
 
     </div>
@@ -206,9 +214,6 @@ if (!doNotTrack) {
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://blog.theropod.tk/tags/markdown/">
-                    #MarkDown</a></span>
-            
             <span class="tag"><a href="https://blog.theropod.tk/tags/windows%E5%A7%BF%E5%8A%BF/">
                     #Windows姿势</a></span>
             
@@ -221,9 +226,9 @@ if (!doNotTrack) {
     </div>
 
     <div class="post-nav">
-         
         
-        <a href="https://blog.theropod.tk/2019/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/" class="next" rel="next" title="自用hugo操作记录">自用hugo操作记录&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="https://blog.theropod.tk/2019/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/" class="prev" rel="prev" title="自用hugo操作记录"><i class="iconfont icon-left"></i>&nbsp;自用hugo操作记录</a>
+         
         
     </div>
 
