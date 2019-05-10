@@ -186,6 +186,9 @@ echo &amp;quot;Adding files&amp;quot;
 cp CNAME public
 cp gh-pages-README.md public/README.md
 
+echo &amp;quot;Updating master branch&amp;quot;
+git add --all &amp;amp;&amp;amp; git commit -m &amp;quot;Publishing to master (publish.sh)&amp;quot;
+
 echo &amp;quot;Updating gh-pages branch&amp;quot;
 cd public &amp;amp;&amp;amp; git add --all &amp;amp;&amp;amp; git commit -m &amp;quot;Publishing to gh-pages (publish.sh)&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;

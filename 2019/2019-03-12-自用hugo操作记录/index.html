@@ -69,7 +69,7 @@ if (!doNotTrack) {
     "datePublished": "2019-03-12 18:35:03 &#43;0800 CST",
     "dateModified" : "2019-03-12 18:35:03 &#43;0800 CST",
     "url" : "https://blog.theropod.tk/2019/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/",
-    "wordCount" : "2049",
+    "wordCount" : "2064",
     "keywords" : [ "Windows姿势", "WGS84教信者"]
 }
 </script>
@@ -174,7 +174,7 @@ if (!doNotTrack) {
                 </span>
                 <span class="post-wordcount">
                     <a>|</a>
-                    <a> 2049 Words, Estimated Reading time (口胡) : 5 min </a>
+                    <a> 2064 Words, Estimated Reading time (口胡) : 5 min </a>
                 </span>
 
         </div>
@@ -364,6 +364,9 @@ hugo
 echo &quot;Adding files&quot;
 cp CNAME public
 cp gh-pages-README.md public/README.md
+
+echo &quot;Updating master branch&quot;
+git add --all &amp;&amp; git commit -m &quot;Publishing to master (publish.sh)&quot;
 
 echo &quot;Updating gh-pages branch&quot;
 cd public &amp;&amp; git add --all &amp;&amp; git commit -m &quot;Publishing to gh-pages (publish.sh)&quot;
