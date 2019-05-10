@@ -181,19 +181,17 @@ if (!doNotTrack) {
 
 <ul>
 <li><strong>IPMI</strong> Intelligent Platform Management Interface</li>
+<li><strong>BMC</strong> Baseboard Management Controller
+服务器基于BMC芯片实现IPMI之功能，通过IPMI的网口来管理</li>
+</ul>
 
-<li><p><strong>BMC</strong> Baseboard Management Controller
-服务器基于BMC芯片实现IPMI之功能，通过IPMI的网口来管理</p>
+<h3 id="操作">操作</h3>
 
-<h3 id="操作">操作</h3></li>
-
-<li><p>可以使用的超微软件有IPMI的命令行工具，以及GUI的IPMI View</p></li>
-
-<li><p>首先试图在本机实现IPMI之控制，但是据查现在已经不能用本机来访问本机的IPMI接口</p></li>
-
-<li><p>接下来试图用内网电脑来IPMI访问控制，因为IPMI访问可以设置为Dedicated,Shared,Fail Over（默认值）<a href="https://serverfault.com/questions/361940/configuring-supermicro-ipmi-to-use-one-of-the-lan-interfaces-instead-of-the-ipmi" rel="nofollow noreferrer" target="_blank">讨论</a>,但是BIOS里面不能设置。据说是断电之后IPMI要是没插线自动分配到第一个网口，但是自己试了没有用。</p></li>
-
-<li><p>直接连线，</p></li>
+<ul>
+<li>可以使用的超微软件有IPMI的命令行工具，以及GUI的IPMI View</li>
+<li>首先试图在本机实现IPMI之控制，但是据查现在已经不能用本机来访问本机的IPMI接口</li>
+<li>接下来试图用内网电脑来IPMI访问控制，因为IPMI访问可以设置为Dedicated,Shared,Fail Over（默认值）<a href="https://serverfault.com/questions/361940/configuring-supermicro-ipmi-to-use-one-of-the-lan-interfaces-instead-of-the-ipmi" rel="nofollow noreferrer" target="_blank">讨论</a>,但是BIOS里面不能设置。据说是断电之后IPMI要是没插线自动分配到第一个网口，但是自己试了没有用。</li>
+<li>直接连线，</li>
 </ul>
 
     </div>
