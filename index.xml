@@ -10,7 +10,7 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>2019 05 10 超微IPMI风扇调节</title>
+      <title>超微IPMI风扇调节</title>
       <link>https://blog.theropod.tk/2019/2019-05-10-%E8%B6%85%E5%BE%AEipmi%E9%A3%8E%E6%89%87%E8%B0%83%E8%8A%82/</link>
       <pubDate>Fri, 10 May 2019 13:17:45 +0800</pubDate>
       
@@ -151,7 +151,7 @@
 &lt;li&gt;最后就是修改下官网上发布脚本的例子了。正好vscode里面可以把terminal改成是wsl的bash.exe，写和发布可以在一起进行。手动最后一道检查，没有把Push到github加进去。
 
 &lt;ul&gt;
-&lt;li&gt;注意这个脚本里Push的是新生成的Public，github的相应分支里的CNAME和README这些要重新放进去，否则每次传完都要重新配置&lt;/li&gt;
+&lt;li&gt;注意这个脚本里Push新生成的Public，github的相应分支里的CNAME和README这些要重新放进去，否则每次传完都要重新配置&lt;/li&gt;
 &lt;li&gt;还有就是注意VSCode把脚本CRLF转成LF。&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 
