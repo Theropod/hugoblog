@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>网管 on WGS84教信者</title>
+    <link>https://blog.theropod.tk/tags/%E7%BD%91%E7%AE%A1/</link>
+    <description>Recent content in 网管 on WGS84教信者</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 10 Dec 2019 14:33:18 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.theropod.tk/tags/%E7%BD%91%E7%AE%A1/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2019 12 09 服务器ssh转发不好使之解决</title>
+      <link>https://blog.theropod.tk/2019/2019-12-09-%E6%9C%8D%E5%8A%A1%E5%99%A8ssh%E8%BD%AC%E5%8F%91%E4%B8%8D%E5%A5%BD%E4%BD%BF%E4%B9%8B%E8%A7%A3%E5%86%B3/</link>
+      <pubDate>Tue, 10 Dec 2019 14:33:18 +0800</pubDate>
+      
+      <guid>https://blog.theropod.tk/2019/2019-12-09-%E6%9C%8D%E5%8A%A1%E5%99%A8ssh%E8%BD%AC%E5%8F%91%E4%B8%8D%E5%A5%BD%E4%BD%BF%E4%B9%8B%E8%A7%A3%E5%86%B3/</guid>
+      <description>本来我可以用ssh -N -D来通过服务器转发本地流量，最近失败，-vvv查看也看不出啥，只有channel 2 open failure. 同时，使用VSCode的remo</description>
+    </item>
+    
+  </channel>
+</rss>

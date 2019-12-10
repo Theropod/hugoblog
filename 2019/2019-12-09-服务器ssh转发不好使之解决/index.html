@@ -21,9 +21,9 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-  <link rel="prev" href="https://blog.theropod.tk/2019/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/" />
-  <link rel="next" href="https://blog.theropod.tk/2019/2019-12-09-%E6%9C%8D%E5%8A%A1%E5%99%A8ssh%E8%BD%AC%E5%8F%91%E4%B8%8D%E5%A5%BD%E4%BD%BF%E4%B9%8B%E8%A7%A3%E5%86%B3/" />
-  <link rel="canonical" href="https://blog.theropod.tk/2019/2019-05-10-%E8%B6%85%E5%BE%AEipmi%E9%A3%8E%E6%89%87%E8%B0%83%E8%8A%82/" />
+  <link rel="prev" href="https://blog.theropod.tk/2019/2019-05-10-%E8%B6%85%E5%BE%AEipmi%E9%A3%8E%E6%89%87%E8%B0%83%E8%8A%82/" />
+  
+  <link rel="canonical" href="https://blog.theropod.tk/2019/2019-12-09-%E6%9C%8D%E5%8A%A1%E5%99%A8ssh%E8%BD%AC%E5%8F%91%E4%B8%8D%E5%A5%BD%E4%BD%BF%E4%B9%8B%E8%A7%A3%E5%86%B3/" />
   <link rel="apple-touch-icon" sizes="180x180" href="https://blog.theropod.tk/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://blog.theropod.tk/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="https://blog.theropod.tk/favicon-16x16.png">
@@ -34,10 +34,10 @@ if (!doNotTrack) {
   <title>
        
        
-           半途而废-超微IPMI风扇调节 | WGS84教信者
+           2019 12 09 服务器ssh转发不好使之解决 | WGS84教信者
        
   </title>
-  <meta name="title" content="半途而废-超微IPMI风扇调节 | WGS84教信者">
+  <meta name="title" content="2019 12 09 服务器ssh转发不好使之解决 | WGS84教信者">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -56,9 +56,9 @@ if (!doNotTrack) {
          "@id": "https:\/\/blog.theropod.tk"
     },
     "articleSection" : "posts",
-    "name" : "半途而废-超微IPMI风扇调节",
-    "headline" : "半途而废-超微IPMI风扇调节",
-    "description" : "问题 组里分配的5年前台式，主板Supermicro X10SLM\x2b-LN4F 服务器主板下压式风扇很小，动不动转速起飞，吵死我了，看起来需要用IPMI调节风扇曲线 定义",
+    "name" : "2019 12 09 服务器ssh转发不好使之解决",
+    "headline" : "2019 12 09 服务器ssh转发不好使之解决",
+    "description" : "本来我可以用ssh -N -D来通过服务器转发本地流量，最近失败，-vvv查看也看不出啥，只有channel 2 open failure. 同时，使用VSCode的remo",
     "inLanguage" : "en",
     "author" : "Theropod",
     "creator" : "Theropod",
@@ -66,11 +66,11 @@ if (!doNotTrack) {
     "accountablePerson" : "Theropod",
     "copyrightHolder" : "Theropod",
     "copyrightYear" : "2019",
-    "datePublished": "2019-05-10 13:17:45 \x2b0800 CST",
-    "dateModified" : "2019-05-10 13:17:45 \x2b0800 CST",
-    "url" : "https:\/\/blog.theropod.tk\/2019\/2019-05-10-%E8%B6%85%E5%BE%AEipmi%E9%A3%8E%E6%89%87%E8%B0%83%E8%8A%82\/",
-    "wordCount" : "370",
-    "keywords" : [ "Windows姿势", "WGS84教信者"]
+    "datePublished": "2019-12-10 14:33:18 \x2b0800 CST",
+    "dateModified" : "2019-12-10 14:33:18 \x2b0800 CST",
+    "url" : "https:\/\/blog.theropod.tk\/2019\/2019-12-09-%E6%9C%8D%E5%8A%A1%E5%99%A8ssh%E8%BD%AC%E5%8F%91%E4%B8%8D%E5%A5%BD%E4%BD%BF%E4%B9%8B%E8%A7%A3%E5%86%B3\/",
+    "wordCount" : "101",
+    "keywords" : [ "网管", "WGS84教信者"]
 }
 </script>
 
@@ -131,12 +131,12 @@ if (!doNotTrack) {
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">半途而废-超微IPMI风扇调节</h1>
+        <h1 class="post-title" itemprop="name headline">2019 12 09 服务器ssh转发不好使之解决</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://blog.theropod.tk" rel="author">Theropod</a> 
                 
                 <span class="post-time">
-                on <time datetime=2019-05-10 itemprop="datePublished">May 10, 2019</time>
+                on <time datetime=2019-12-10 itemprop="datePublished">December 10, 2019</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
@@ -146,7 +146,7 @@ if (!doNotTrack) {
                 </span>
                 <span class="post-wordcount">
                     <a>|</a>
-                    <a> 370 Words, Estimated Reading time (口胡) : 1 min </a>
+                    <a> 101 Words, Estimated Reading time (口胡) : 1 min </a>
                 </span>
 
         </div>
@@ -170,22 +170,9 @@ if (!doNotTrack) {
           
           
 
-          <h3 id="heading">问题</h3>
-<p>组里分配的5年前台式，主板Supermicro X10SLM+-LN4F
-服务器主板下压式风扇很小，动不动转速起飞，吵死我了，看起来需要用IPMI调节风扇曲线</p>
-<h3 id="heading1">定义</h3>
-<ul>
-<li><strong>IPMI</strong> Intelligent Platform Management Interface</li>
-<li><strong>BMC</strong> Baseboard Management Controller
-服务器基于BMC芯片实现IPMI之功能，通过IPMI的网口来管理</li>
-</ul>
-<h3 id="heading2">操作</h3>
-<ul>
-<li>可以使用的超微软件有IPMI的命令行工具，以及GUI的IPMI View</li>
-<li>首先试图在本机实现IPMI之控制，但是据查现在已经不能用本机来访问本机的IPMI接口2s</li>
-<li>接下来试图用内网电脑来IPMI访问控制，因为IPMI访问可以设置为Dedicated,Shared,Fail Over（默认值）<a href="https://serverfault.com/questions/361940/configuring-supermicro-ipmi-to-use-one-of-the-lan-interfaces-instead-of-the-ipmi">讨论</a>,但是BIOS里面不能设置。据说是断电之后IPMI要是没插线自动分配到第一个网口，但是自己试了没有用。</li>
-<li>直接连线(就是服务器的管理口，连上网线配一个ip，IPMIView还有远程桌面类似的功能,李兆基机房亲测)。但是没再接着弄了。。。</li>
-</ul>
+          <p>本来我可以用ssh -N -D来通过服务器转发本地流量，最近失败，-vvv查看也看不出啥，只有channel 2 open failure.
+同时，使用VSCode的remote功能也是失败的。</p>
+<p>最后发现关闭SELINUX就可以了。。。。</p>
 
     </div>
 
@@ -205,8 +192,8 @@ if (!doNotTrack) {
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://blog.theropod.tk/tags/windows%E5%A7%BF%E5%8A%BF/">
-                    #Windows姿势</a></span>
+            <span class="tag"><a href="https://blog.theropod.tk/tags/%E7%BD%91%E7%AE%A1/">
+                    #网管</a></span>
             
             </section>
         
@@ -218,10 +205,8 @@ if (!doNotTrack) {
 
     <div class="post-nav">
         
-        <a href="https://blog.theropod.tk/2019/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/" class="prev" rel="prev" title="自用hugo操作记录"><i class="iconfont icon-left"></i>&nbsp;自用hugo操作记录</a>
+        <a href="https://blog.theropod.tk/2019/2019-05-10-%E8%B6%85%E5%BE%AEipmi%E9%A3%8E%E6%89%87%E8%B0%83%E8%8A%82/" class="prev" rel="prev" title="半途而废-超微IPMI风扇调节"><i class="iconfont icon-left"></i>&nbsp;半途而废-超微IPMI风扇调节</a>
          
-        
-        <a href="https://blog.theropod.tk/2019/2019-12-09-%E6%9C%8D%E5%8A%A1%E5%99%A8ssh%E8%BD%AC%E5%8F%91%E4%B8%8D%E5%A5%BD%E4%BD%BF%E4%B9%8B%E8%A7%A3%E5%86%B3/" class="next" rel="next" title="2019 12 09 服务器ssh转发不好使之解决">2019 12 09 服务器ssh转发不好使之解决&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
