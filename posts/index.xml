@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>2019 12 09 服务器ssh转发不好使之解决</title>
+      <title>2019 12 09 服务器/VSCode ssh转发各种不好使解决</title>
       <link>https://blog.theropod.tk/2019/2019-12-09-%E6%9C%8D%E5%8A%A1%E5%99%A8ssh%E8%BD%AC%E5%8F%91%E4%B8%8D%E5%A5%BD%E4%BD%BF%E4%B9%8B%E8%A7%A3%E5%86%B3/</link>
       <pubDate>Tue, 10 Dec 2019 14:33:18 +0800</pubDate>
       
       <guid>https://blog.theropod.tk/2019/2019-12-09-%E6%9C%8D%E5%8A%A1%E5%99%A8ssh%E8%BD%AC%E5%8F%91%E4%B8%8D%E5%A5%BD%E4%BD%BF%E4%B9%8B%E8%A7%A3%E5%86%B3/</guid>
-      <description>本来我可以用ssh -N -D来通过服务器转发本地流量，最近失败，-vvv查看也看不出啥，只有channel 2 open failure. 同时，使用VSCode的remo</description>
+      <description>转发失败的问题 本来我可以用ssh -N -D来通过服务器转发本地流量，最近失败，-vvv查看也看不出啥，只有channel 2 open failure. 同时，使用VSCo</description>
     </item>
     
     <item>
