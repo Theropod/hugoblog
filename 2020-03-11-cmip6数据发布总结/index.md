@@ -2,7 +2,7 @@
 
 ## 1. 在control machine上安装ansible
 
-## 2. 克隆esgf-ansible的github目录
+## 2. 在manage machine克隆esgf-ansible的目录
 
 ## 3. 两个配置文件
 
@@ -34,14 +34,14 @@
 ### 曾遇到的问题
 
 - 在wsl里会说权限是777的话config就忽略了，改下文件夹的权限
-  - selinux 会说没有安装libpython-selinux但是已经安了？关闭目标机上的selinux
-  - 安装中failed to open file 等问题？先把playbook上的步骤看懂然后在目标机器上手动运行，再重试
-  - 下载migation script失败？经常出现下载github repo资源时超时的情况，只能重试
-  - 出现 Import Web CA Into Trust Store这一步找不到文件？但是文件都在?
-    - 手动在certs.yml里定义executable的位置
-  - java 的openjdk 装完之后在/etc/profile里定义,但是安装里还是非要说我没装，只好把java的role改了
-  - yum 使用清华源
-  - /etc/globus-connect-server-esgf.conf hostcert.pem hostkey.pem不存在 需要看playbook脚本内容，手动自己装上。（但因为清华没用GridFTP其实不影响，可以注掉）
+- selinux 会说没有安装libpython-selinux但是已经安了？关闭目标机上的selinux
+- 安装中failed to open file 等问题？先把playbook上的步骤看懂然后在目标机器上手动运行，再重试
+- 下载migation script失败？经常出现下载github repo资源时超时的情况，只能重试
+- 出现 Import Web CA Into Trust Store这一步找不到文件？但是文件都在?
+  - 手动在certs.yml里定义executable的位置
+- java 的openjdk 装完之后在/etc/profile里定义,但是安装里还是非要说我没装，只好把java的role改了
+- yum 使用清华源
+- /etc/globus-connect-server-esgf.conf hostcert.pem hostkey.pem不存在 需要看playbook脚本内容，手动自己装上。（但因为清华没用GridFTP其实不影响，可以注掉）
 - 测试安装
   - `ansible-playbook -v -i hosts.test --ask-pass -u root --tags data --limit sample.host start.yml status.yml`
   - Unable to start service httpd: Job for httpd.service failed because the control process exited with error code. See "systemctl status httpd.service" and "journalctl -xe" for details
@@ -50,76 +50,76 @@
 
 ## 5. 部署完成后配置发布数据
 
-- 经验：不要用root来发布，尽量建立一个新的账号和用户组
+- 官方经验：不要用root来发布，尽量建立一个新的账号和用户组
 
 ### 附加的功能
 
 - cdf2cim
   - CIM2 (Common Information Model 2)， 希望直接从netcdf的global attributes中提取出来这一信息，作为json放在指定目录，之后上传到ES-DOC网站里面
-    - esg-publisher里已经安装了这个模块，cmip6的话自动调用和扫描
-    - 需要管理员在github群组里注册自己的id，然后下载access token
-    - 失败了也不影响esg-publisher的其他步骤
-  - Citation信息需要联系WIP，来首先注册机构和数据
-    - <https://github.com/WCRP-CMIP/CMIP6_CVs>
-    - <http://cmip6cite.wdc-climate.de/#Information-for-ESGF-Data-Node-Managers>
+  - esg-publisher里已经安装了这个模块，cmip6的话自动调用和扫描
+  - 需要管理员在github群组里注册自己的id，然后下载access token
+  - 失败了也不影响esg-publisher的其他步骤
+- Citation信息需要联系WIP，来首先注册机构和数据
+  - <https://github.com/WCRP-CMIP/CMIP6_CVs>
+  - <http://cmip6cite.wdc-climate.de/#Information-for-ESGF-Data-Node-Managers>
 
 ### 准备，esgprep
 
-- 安装
+- 软件安装
   - **用到conda 比如在/usr/local/conda/bin ansible安装会给一个esg-pub环境，esgprep这些组件都已经有了**
-    - 需要hdf5 yum包名其实是hdf5-devel
-    - python2.6安装语法不兼容，只能改系统默认python
-  - 步骤 (github上也有)
-    1. fetch esgf configuration ini files: `esgfetchini`
-    2. fetch cmor tables: `esgfetchtables`
-    3. DRS （Data Reference Syntax）把结果文件按DRS的格式组织（变量路径中加入version等）可以管理数据版本，生成文件的时候也会进行一些检查
-        - 初次扫描 `esgdrs list --project cmip6 /mypath/ciesm_data/copy3`会把结果写进临时的文件
-        - 可以预览drs tree 和构建目录结构的语句(todo和tree)。觉得可以了就`esgdrs upgrade --project cmip6 /mypath/ciesm_data/copy1 --link` 这里会默认在当前目录下创建DRS树，比如选择`/esg/data`注意默认是直接移动文件，文档里推荐使用--link但若不在同一个物理存储，所以只能用symlink,而symlink会出错。所以尽量同一个存储
-    4. 在DRS基础上生成mapfile
-        - 检查路径`esgmapfile show --project cmip6 --directory /mypath/ciesm_data/ocn --outdir /mypath/ciesm_data/esg/mapfiles/ocn/`
-        - 生成`esgmapfile make --project cmip6 /mypath/ciesm_data/ocn --outdir /mypath/ciesm_data/esg/mapfiles/ocn/`
-        - 例子
+  - 需要hdf5 yum包名其实是hdf5-devel
+  - python2.6安装语法不兼容，只能改系统默认python
+- 数据生产步骤 (github上也有)
+  1. fetch esgf configuration ini files: `esgfetchini`
+  2. fetch cmor tables: `esgfetchtables`
+  3. DRS （Data Reference Syntax）把结果文件按DRS的格式组织（变量路径中加入version等）可以管理数据版本，生成文件的时候也会进行一些检查
+      - 初次扫描 `esgdrs list --project cmip6 /mypath/ciesm_data/copy3`会把结果写进临时的文件
+      - 可以预览drs tree 和构建目录结构的语句(todo和tree)。觉得可以了就`esgdrs upgrade --project cmip6 /mypath/ciesm_data/copy1 --link` 这里会默认在当前目录下创建DRS树，比如选择`/esg/data`注意默认是直接移动文件，文档里推荐使用--link但若不在同一个物理存储，所以只能用symlink,而symlink会出错。所以尽量同一个存储
+  4. 在DRS基础上生成mapfile
+      - 检查路径`esgmapfile show --project cmip6 --directory /mypath/ciesm_data/ocn --outdir /mypath/ciesm_data/esg/mapfiles/ocn/`
+      - 生成`esgmapfile make --project cmip6 /mypath/ciesm_data/ocn --outdir /mypath/ciesm_data/esg/mapfiles/ocn/`
+      - 例子
 
-            ```bash
+          ```bash
+          (esgdrs list --project cmip6 /mypath/ciesm_data/ice | tee ice-list.txt) &&
+          (esgdrs tree --project cmip6 /mypath/ciesm_data/ice | tee ice-tree.txt) &&
+          (esgdrs upgrade --project cmip6 /mypath/ciesm_data/ice --link | tee ice-upgrade.txt) &&
+          (esgmapfile make --project cmip6 /mypath/ciesm_data/ice --outdir /mypath/ciesm_data/esg/mapfiles/ice/)
+          ```
 
-            (esgdrs list --project cmip6 /mypath/ciesm_data/ice | tee ./record/ice-list.txt) &&
-            (esgdrs tree --project cmip6 /mypath/ciesm_data/ice | tee ./record/ice-tree.txt) &&
-            (esgdrs upgrade --project cmip6 /mypath/ciesm_data/ice --link | tee ./record/ice-upgrade.txt) &&
-            (esgmapfile make --project cmip6 /mypath/ciesm_data/ice --outdir /mypath/ciesm_data/esg/mapfiles/ice/)
-            ```
-
-          发布中发现，用esgupgrade的结果来生成mapfile会出现在esgpublish的时候找不到文件错误。但是不运行esgdrs的几步，生成的mapfile版本就是根据老的目录里日期来了，且不同版本的同一变量文件就无法按照DRS结构来组织。权衡一下，在清华服务器上还是没有用DRS的目录来生成mapfile（但是若事先运行了drs，mapfile版本日期同样是DRS的日期）
+        发布中发现，用esgupgrade的结果来生成mapfile会出现在esgpublish的时候找不到文件错误。但是不运行esgdrs的几步，生成的mapfile版本就是根据老的目录里日期来了，且不同版本的同一变量文件就无法按照DRS结构来组织。权衡一下，在清华服务器上还是没有用DRS的目录来生成mapfile（但是若事先运行了drs，mapfile版本日期同样是DRS的日期）
 
 ### 发布 esgpublish，同样的conda环境  
 
   1. Generate certificate for publication with myproxy-logon 用的普通用户来发布 `myproxy-logon -b -s esgf-node.llnl.gov -l username -p 7512 -t 72 -o $HOME/.globus/certificate-file`
   2. publish
 
-- 三步: database, thredds server, index node
+      三步: database, thredds server, index node
 
-  ```bash
-  1. esgpublish --project cmip6 --map ./mapfiles [--set-replica]
-  2. esgpublish --project cmip6 --map ./mapfiles --service fileservice --noscan --thredds [--set-replica]
-  3. esgpublish --project cmip6 --map ./mapfiles --noscan --publish [--set-replica]
-  ```
+      ```bash
+      1. esgpublish --project cmip6 --map ./mapfiles [--set-replica]
+      2. esgpublish --project cmip6 --map ./mapfiles --service fileservice --noscan --thredds [--set-replica]
+      3. esgpublish --project cmip6 --map ./mapfiles --noscan --publish [--set-replica]
+      ```
 
-  或者`esgpublish --project cmip6 --map ./mapfiles --service fileservice --noscan --thredds --publish`
-  (不推荐,容易出错)publish to postgres, Thredds and the Index in one step
-  1. unpublish
+      或者`esgpublish --project cmip6 --map ./mapfiles --service fileservice --noscan --thredds --publish`
+      (不推荐,容易出错)publish to postgres, Thredds and the Index in one step
 
-- 删除全部,网络原因API可能会失效，多来几遍才能全删`esgunpublish --project cmip6 --map ./mapfiles --database-delete --delete`
-  - thredds在tomcat，重启tomcat后可以看到本地的都被删了
-  - 若unpublish不能删除网站上的东西的话，可以直接使用unpublish api来删除
+  3. unpublish
 
-  ```bash
-  wget --no-check-certificate --ca-certificate $HOME/.globus/certificate-file
-  --certificate $HOME/.globus/certificate-file
-  --private-key $HOME/.globus/certificate-file --verbose -O response.xml
-  --post-data="id=CMIP6.CMIP.THU.CIESM.historical.r1i1p1f1.Amon.clivi.gr.v20191202|cmip.dess.tsinghua.edu.cn"
-  https://esgf-node.llnl.gov/esg-search/ws/delete
-  ```
+     - 删除全部,网络原因API可能会失效，多来几遍才能全删`esgunpublish --project cmip6 --map ./mapfiles --database-delete --delete`
+     - thredds在tomcat，重启tomcat后可以看到本地的都被删了
+     - 若unpublish不能删除网站上的东西的话，可以直接使用unpublish api来删除
 
-- 注意，官方会提到有test publish的地址，但是实际邮件沟通是不能用的，耽误了很久。。。要发布的话应当直接发布
+      ```bash
+      wget --no-check-certificate --ca-certificate $HOME/.globus/certificate-file
+      --certificate $HOME/.globus/certificate-file
+      --private-key $HOME/.globus/certificate-file --verbose -O response.xml
+      --post-data="id=CMIP6.CMIP.THU.CIESM.historical.r1i1p1f1.Amon.clivi.gr.v20191202|cmip.dess.tsinghua.edu.cn"
+      https://esgf-node.llnl.gov/esg-search/ws/delete
+      ```
+
+      注意，官方会提到有test publish的地址，但是实际邮件沟通是不能用的，耽误了很久。。。要发布的话应当直接发布
 
 ## 作为警醒的一个事件：曾经删除了/etc下所有文件
 

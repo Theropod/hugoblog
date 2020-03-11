@@ -18,7 +18,7 @@
       <pubDate>Wed, 11 Mar 2020 18:47:08 +0800</pubDate>
       
       <guid>https://blog.theropod.tk/2020-03-11-cmip6%E6%95%B0%E6%8D%AE%E5%8F%91%E5%B8%83%E6%80%BB%E7%BB%93/</guid>
-      <description>1. 在control machine上安装ansible 2. 克隆esgf-ansible的github目录 3. 两个配置文件 sample.hosts是</description>
+      <description>1. 在control machine上安装ansible 2. 在manage machine克隆esgf-ansible的目录 3. 两个配置文件 sampl</description>
     </item>
     
     <item>
