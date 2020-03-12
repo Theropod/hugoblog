@@ -91,7 +91,7 @@ enableEmoji = true
             defaultHiddenFromHomePage = false
         # Social Info in home page
         [languages.en.params.social]
-          GitHub = "https://github.com/Theropod"
+          GitHub = "Theropod"
           #Linkedin = "xxxx"
           #Twitter = "xxxx"
           #Instagram = "xxxx"
@@ -154,7 +154,7 @@ enableEmoji = true
           # Gitea = "xxxx"
           # XMPP = "xxxx"
           # Matrix = "xxxx"
-          Bilibili = "https://space.bilibili.com/6370869"
+          Bilibili = "6370869"
         # Social Share Links in post page
         [languages.en.params.share]
           enable = true
