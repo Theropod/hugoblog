@@ -116,38 +116,38 @@
                     <div class="toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#1-control-machineansible">1. 在control machine上安装ansible</a></li>
-    <li><a href="#2-manage-machineesgfansible">2. 在manage machine克隆esgf-ansible的目录</a></li>
+    <li><a href="#2-manage-machineesgf-ansible">2. 在manage machine克隆esgf-ansible的目录</a></li>
     <li><a href="#3-">3. 两个配置文件</a>
       <ul>
         <li><a href="#samplehostsdata-only">sample.hosts是描述远程机器的模板，这里配置为data only</a></li>
-        <li><a href="#hostvarsmyhostmyorgymlhosts">host_vars/myhost.my.org.yml是安装配置，文件名要和hosts里的名称一致</a></li>
+        <li><a href="#host-varsmyhostmyorgymlhosts">host_vars/myhost.my.org.yml是安装配置，文件名要和hosts里的名称一致</a></li>
       </ul>
     </li>
     <li><a href="#4-target-machineplaybook">4. 在target machine上面使用Playbook部署</a>
       <ul>
         <li><a href="#heading">命令</a></li>
-        <li><a href="#heading1">曾遇到的问题</a></li>
+        <li><a href="#heading-1">曾遇到的问题</a></li>
       </ul>
     </li>
     <li><a href="#5-">5. 部署完成后配置发布数据</a>
       <ul>
-        <li><a href="#heading2">附加的功能</a></li>
+        <li><a href="#heading-2">附加的功能</a></li>
         <li><a href="#esgprep">准备，esgprep</a></li>
         <li><a href="#-esgpublishconda">发布 esgpublish，同样的conda环境</a></li>
       </ul>
     </li>
     <li><a href="#etc">作为警醒的一个事件：曾经删除了/etc下所有文件</a>
       <ul>
-        <li><a href="#heading3">背景</a></li>
+        <li><a href="#heading-3">背景</a></li>
         <li><a href="#why">五个why</a></li>
-        <li><a href="#heading4">改进</a></li>
+        <li><a href="#heading-4">改进</a></li>
       </ul>
     </li>
   </ul>
 </nav></div>
                 </details>
             </div><div class="content" id="content"><h2 id="1-control-machineansible">1. 在control machine上安装ansible</h2>
-<h2 id="2-manage-machineesgfansible">2. 在manage machine克隆esgf-ansible的目录</h2>
+<h2 id="2-manage-machineesgf-ansible">2. 在manage machine克隆esgf-ansible的目录</h2>
 <h2 id="3-">3. 两个配置文件</h2>
 <h3 id="samplehostsdata-only">sample.hosts是描述远程机器的模板，这里配置为data only</h3>
 <ul>
@@ -158,7 +158,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="hostvarsmyhostmyorgymlhosts">host_vars/myhost.my.org.yml是安装配置，文件名要和hosts里的名称一致</h3>
+<h3 id="host-varsmyhostmyorgymlhosts">host_vars/myhost.my.org.yml是安装配置，文件名要和hosts里的名称一致</h3>
 <ul>
 <li>github里有配置为data node的示例
 <ul>
@@ -188,7 +188,7 @@
 <li>用户有root权限<code>ansible-playbook -v -i hosts.test --ask-pass -u hxm_stu --ask-become-pass --tags data --limit sample.host install.yml</code></li>
 <li>root用户<code>ansible-playbook -v -i hosts.test --ask-pass -u root --tags data --limit sample.host install.yml</code></li>
 </ul>
-<h3 id="heading1">曾遇到的问题</h3>
+<h3 id="heading-1">曾遇到的问题</h3>
 <ul>
 <li>在wsl里会说权限是777的话config就忽略了，改下文件夹的权限</li>
 <li>selinux 会说没有安装libpython-selinux但是已经安了？关闭目标机上的selinux</li>
@@ -218,7 +218,7 @@
 <ul>
 <li>官方经验：不要用root来发布，尽量建立一个新的账号和用户组</li>
 </ul>
-<h3 id="heading2">附加的功能</h3>
+<h3 id="heading-2">附加的功能</h3>
 <ul>
 <li>cdf2cim
 <ul>
@@ -335,7 +335,7 @@ https://esgf-node.llnl.gov/esg-search/ws/delete
 </li>
 </ol>
 <h2 id="etc">作为警醒的一个事件：曾经删除了/etc下所有文件</h2>
-<h3 id="heading3">背景</h3>
+<h3 id="heading-3">背景</h3>
 <ul>
 <li>
 <p><strong>周二下午-晚上</strong>
@@ -376,7 +376,7 @@ sudo rm /etc/gridftp.conf
 <li>为什么执行-rf没有检查？或采取更安全的方法？ -因为急于解决esgtest_publish问题，经过连续的调试后产生了投机的心理，注意力下降，忽视了基本安全操作。</li>
 <li>为什么要手动操作解决重新安装问题，而不是使用脚本？ - 本来使用ansible定义脚本来操作可以避免问题，但安装使用过程中经常出现失败，需要调整236服务器的依赖等，最终感到脚本更适合全新服务器安装，不愿再花时间使用脚本</li>
 </ol>
-<h3 id="heading4">改进</h3>
+<h3 id="heading-4">改进</h3>
 <ol>
 <li>改变操作时的习惯，检查或是不使用危险的命令，尤其在不同压力或是状态时能够牢记这些</li>
 <li>不把希望寄托在人不犯错上，如尽量使用脚本，以及在本机器esgf部署这种复杂的情况里，花时间整理修改权限等问题，尽量使得运行调试权限不和其他各种文件产生干扰</li>

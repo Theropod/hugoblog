@@ -116,20 +116,20 @@
                     <div class="toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#heading">安装</a></li>
-    <li><a href="#heading1">自定义</a>
+    <li><a href="#heading-1">自定义</a>
       <ul>
-        <li><a href="#heading2">我才发现有官方文档</a></li>
+        <li><a href="#heading-2">我才发现有官方文档</a></li>
         <li><a href="#configtoml">config.toml相关配置</a></li>
-        <li><a href="#heading3">各种路径</a></li>
-        <li><a href="#heading4">主题调整</a></li>
+        <li><a href="#heading-3">各种路径</a></li>
+        <li><a href="#heading-4">主题调整</a></li>
       </ul>
     </li>
-    <li><a href="#heading5">写</a></li>
+    <li><a href="#heading-5">写</a></li>
     <li><a href="#github">github同步</a>
       <ul>
-        <li><a href="#heading6">有关域名</a></li>
+        <li><a href="#heading-6">有关域名</a></li>
         <li><a href="#cloudflare">使用自定义域名（cloudflare）</a></li>
-        <li><a href="#heading7">发布脚本</a></li>
+        <li><a href="#heading-7">发布脚本</a></li>
       </ul>
     </li>
     <li><a href="#vscode">VSCode一站式解决</a></li>
@@ -141,19 +141,19 @@
 <li>在WSL上使用，github上有编译的extended的deb版本 因为要使用scss自定义格式</li>
 <li>官方教程安装 初始化目录，下载主题，新建项目等等</li>
 </ul>
-<h2 id="heading1">自定义</h2>
-<h3 id="heading2">我才发现有官方文档</h3>
+<h2 id="heading-1">自定义</h2>
+<h3 id="heading-2">我才发现有官方文档</h3>
 <p>这里<a href="https://hugoloveit.com/categories/documentation/">https://hugoloveit.com/categories/documentation/</a></p>
 <h3 id="configtoml">config.toml相关配置</h3>
 <ul>
 <li>加了<code>hasCJKlanguage=true</code></li>
 </ul>
-<h3 id="heading3">各种路径</h3>
+<h3 id="heading-3">各种路径</h3>
 <ul>
 <li>图片放到<code>static/images</code>里面，先同步再引用github的地址,而主题里的很多处引用都调整了相对路径</li>
 <li>favicon 都放在static里面</li>
 </ul>
-<h3 id="heading4">主题调整</h3>
+<h3 id="heading-4">主题调整</h3>
 <ul>
 <li>
 <p>用LoveIt主题,github上下下来后，并没有按照官方加成submodule，直接把主题的<code>.git</code>删了，不再处理版本</p>
@@ -218,14 +218,14 @@
 <p>默认的archetypes里面是<code>draft:true</code>也就是说用<code>hugo server -D</code>才能看到这些drafts，而生成静态网页就忽略掉了。。。嫌麻烦直接改成true。测试可以用<code>hugo server -D</code>的server模式，且包括标记为draft的文本）</p>
 </li>
 </ul>
-<h2 id="heading5">写</h2>
+<h2 id="heading-5">写</h2>
 <ul>
 <li>就是普通写markdown</li>
 <li>代码块要在```之后声明语言，否则会和行内的代码高亮混淆</li>
 <li>用vscode的md插件还会有自动语法检查，强迫症患者可以用来排错玩</li>
 </ul>
 <h2 id="github">github同步</h2>
-<h3 id="heading6">有关域名</h3>
+<h3 id="heading-6">有关域名</h3>
 <ul>
 <li>如果想用<code>username.github.io</code>当做主页,就需要只把hugo生成的public文件夹放在<code>username.github.io</code>的项目中（加入其他文件会生成页面失败），这样其余的文件必须再新建另一个项目来保存。即：Hugo文件夹是一个项目，每次生成的public作为submodule放在使用用户名作为地址的项目。</li>
 <li>但我本来就有域名，所以不需要非得用<code>username.github.io</code>这个</li>
@@ -239,7 +239,7 @@
 <img src="https://raw.githubusercontent.com/Theropod/hugoblog/master/static/images/blog_images/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-02.png" alt="image"></li>
 <li>接下来就是按照官方文档里说的，只把public文件夹用<code>git worktree</code>弄到一个新的gh-pages分支，选择这个分支作为主页就行了。注意官方文档的upstream指的是你自己上游的名字，比如origin。</li>
 </ul>
-<h3 id="heading7">发布脚本</h3>
+<h3 id="heading-7">发布脚本</h3>
 <ul>
 <li>
 <p>最后就是修改下官网上发布脚本的例子了。正好vscode里面可以把terminal改成是wsl的bash.exe，写和发布可以在一起进行。</p>
