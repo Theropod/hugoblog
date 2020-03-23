@@ -60,11 +60,27 @@
         <div class="header-title animated bounceIn">
             <a href="/">WGS84教信者</a>
         </div>
-        <div class="menu"><a class="menu-item" href="/posts/">Posts</a><a class="menu-item" href="/tags/">Tags</a><a class="menu-item" href="/categories/">Categories</a><a href="javascript:void(0);" class="theme-switch" title="Switch Theme">
+        <div class="menu"><a class="menu-item"
+                href="/posts/" >Posts</a><a class="menu-item"
+                href="/tags/" >Tags</a><a class="menu-item"
+                href="/categories/" >Categories</a><a href="javascript:void(0);" class="theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-rotate-180 fa-fw"></i>
             </a>
         </div>
     </div>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-136276173-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
 </header><header class="mobile" id="header-mobile">
     <div class="header-wrapper">
         <div class="header-container">
@@ -80,13 +96,25 @@
             </a>
         </div>
     </div>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-136276173-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
 </header>
 
 <script>
     window.desktopHeaderMode = "auto";
     window.mobileHeaderMode = "auto";
-</script>
-<main class="main">
+</script><main class="main">
                 <div class="container"><article class="page single"><h1 class="single-title animated flipInX">CMIP6数据发布步骤总结</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author">
                     <a class="author" href="https://blog.theropod.tk" rel="author" target="_blank">
@@ -115,41 +143,41 @@
                     </summary>
                     <div class="toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#1-control-machineansible">1. 在control machine上安装ansible</a></li>
-    <li><a href="#2-manage-machineesgf-ansible">2. 在manage machine克隆esgf-ansible的目录</a></li>
-    <li><a href="#3-">3. 两个配置文件</a>
+    <li><a href="#1-在control-machine上安装ansible">1. 在control machine上安装ansible</a></li>
+    <li><a href="#2-在manage-machine克隆esgf-ansible的目录">2. 在manage machine克隆esgf-ansible的目录</a></li>
+    <li><a href="#3-两个配置文件">3. 两个配置文件</a>
       <ul>
-        <li><a href="#samplehostsdata-only">sample.hosts是描述远程机器的模板，这里配置为data only</a></li>
-        <li><a href="#host-varsmyhostmyorgymlhosts">host_vars/myhost.my.org.yml是安装配置，文件名要和hosts里的名称一致</a></li>
+        <li><a href="#samplehosts是描述远程机器的模板这里配置为data-only">sample.hosts是描述远程机器的模板，这里配置为data only</a></li>
+        <li><a href="#host_varsmyhostmyorgyml是安装配置文件名要和hosts里的名称一致">host_vars/myhost.my.org.yml是安装配置，文件名要和hosts里的名称一致</a></li>
       </ul>
     </li>
-    <li><a href="#4-target-machineplaybook">4. 在target machine上面使用Playbook部署</a>
+    <li><a href="#4-在target-machine上面使用playbook部署">4. 在target machine上面使用Playbook部署</a>
       <ul>
-        <li><a href="#heading">命令</a></li>
-        <li><a href="#heading-1">曾遇到的问题</a></li>
+        <li><a href="#命令">命令</a></li>
+        <li><a href="#曾遇到的问题">曾遇到的问题</a></li>
       </ul>
     </li>
-    <li><a href="#5-">5. 部署完成后配置发布数据</a>
+    <li><a href="#5-部署完成后配置发布数据">5. 部署完成后配置发布数据</a>
       <ul>
-        <li><a href="#heading-2">附加的功能</a></li>
-        <li><a href="#esgprep">准备，esgprep</a></li>
-        <li><a href="#-esgpublishconda">发布 esgpublish，同样的conda环境</a></li>
+        <li><a href="#附加的功能">附加的功能</a></li>
+        <li><a href="#准备esgprep">准备，esgprep</a></li>
+        <li><a href="#发布-esgpublish同样的conda环境">发布 esgpublish，同样的conda环境</a></li>
       </ul>
     </li>
-    <li><a href="#etc">作为警醒的一个事件：曾经删除了/etc下所有文件</a>
+    <li><a href="#作为警醒的一个事件曾经删除了etc下所有文件">作为警醒的一个事件：曾经删除了/etc下所有文件</a>
       <ul>
-        <li><a href="#heading-3">背景</a></li>
-        <li><a href="#why">五个why</a></li>
-        <li><a href="#heading-4">改进</a></li>
+        <li><a href="#背景">背景</a></li>
+        <li><a href="#五个why">五个why</a></li>
+        <li><a href="#改进">改进</a></li>
       </ul>
     </li>
   </ul>
 </nav></div>
                 </details>
-            </div><div class="content" id="content"><h2 id="1-control-machineansible">1. 在control machine上安装ansible</h2>
-<h2 id="2-manage-machineesgf-ansible">2. 在manage machine克隆esgf-ansible的目录</h2>
-<h2 id="3-">3. 两个配置文件</h2>
-<h3 id="samplehostsdata-only">sample.hosts是描述远程机器的模板，这里配置为data only</h3>
+            </div><div class="content" id="content"><h2 id="1-在control-machine上安装ansible">1. 在control machine上安装ansible</h2>
+<h2 id="2-在manage-machine克隆esgf-ansible的目录">2. 在manage machine克隆esgf-ansible的目录</h2>
+<h2 id="3-两个配置文件">3. 两个配置文件</h2>
+<h3 id="samplehosts是描述远程机器的模板这里配置为data-only">sample.hosts是描述远程机器的模板，这里配置为data only</h3>
 <ul>
 <li>需要有一个domain name (fully qulified domain name)
 <ul>
@@ -158,7 +186,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="host-varsmyhostmyorgymlhosts">host_vars/myhost.my.org.yml是安装配置，文件名要和hosts里的名称一致</h3>
+<h3 id="host_varsmyhostmyorgyml是安装配置文件名要和hosts里的名称一致">host_vars/myhost.my.org.yml是安装配置，文件名要和hosts里的名称一致</h3>
 <ul>
 <li>github里有配置为data node的示例
 <ul>
@@ -182,13 +210,13 @@
 </ul>
 </li>
 </ul>
-<h2 id="4-target-machineplaybook">4. 在target machine上面使用Playbook部署</h2>
-<h3 id="heading">命令</h3>
+<h2 id="4-在target-machine上面使用playbook部署">4. 在target machine上面使用Playbook部署</h2>
+<h3 id="命令">命令</h3>
 <ul>
 <li>用户有root权限<code>ansible-playbook -v -i hosts.test --ask-pass -u hxm_stu --ask-become-pass --tags data --limit sample.host install.yml</code></li>
 <li>root用户<code>ansible-playbook -v -i hosts.test --ask-pass -u root --tags data --limit sample.host install.yml</code></li>
 </ul>
-<h3 id="heading-1">曾遇到的问题</h3>
+<h3 id="曾遇到的问题">曾遇到的问题</h3>
 <ul>
 <li>在wsl里会说权限是777的话config就忽略了，改下文件夹的权限</li>
 <li>selinux 会说没有安装libpython-selinux但是已经安了？关闭目标机上的selinux</li>
@@ -214,11 +242,11 @@
 </ul>
 </li>
 </ul>
-<h2 id="5-">5. 部署完成后配置发布数据</h2>
+<h2 id="5-部署完成后配置发布数据">5. 部署完成后配置发布数据</h2>
 <ul>
 <li>官方经验：不要用root来发布，尽量建立一个新的账号和用户组</li>
 </ul>
-<h3 id="heading-2">附加的功能</h3>
+<h3 id="附加的功能">附加的功能</h3>
 <ul>
 <li>cdf2cim
 <ul>
@@ -235,7 +263,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="esgprep">准备，esgprep</h3>
+<h3 id="准备esgprep">准备，esgprep</h3>
 <ul>
 <li>软件安装
 <ul>
@@ -285,7 +313,7 @@
 </ol>
 </li>
 </ul>
-<h3 id="-esgpublishconda">发布 esgpublish，同样的conda环境</h3>
+<h3 id="发布-esgpublish同样的conda环境">发布 esgpublish，同样的conda环境</h3>
 <ol>
 <li>
 <p>Generate certificate for publication with myproxy-logon 用的普通用户来发布 <code>myproxy-logon -b -s esgf-node.llnl.gov -l username -p 7512 -t 72 -o $HOME/.globus/certificate-file</code></p>
@@ -334,8 +362,8 @@ https://esgf-node.llnl.gov/esg-search/ws/delete
 </div><p>注意，官方会提到有test publish的地址，但是实际邮件沟通是不能用的，耽误了很久。。。要发布的话应当直接发布</p>
 </li>
 </ol>
-<h2 id="etc">作为警醒的一个事件：曾经删除了/etc下所有文件</h2>
-<h3 id="heading-3">背景</h3>
+<h2 id="作为警醒的一个事件曾经删除了etc下所有文件">作为警醒的一个事件：曾经删除了/etc下所有文件</h2>
+<h3 id="背景">背景</h3>
 <ul>
 <li>
 <p><strong>周二下午-晚上</strong>
@@ -365,7 +393,7 @@ sudo rm /etc/gridftp.conf
 </div><p>删除时使用root，第一次打字错误，因此第二次自动补全，其后输入空格直接执行类似<code>rm /etc/grid * -rf</code>。约5秒后尝试删除globus-connect-server.conf时发现未找到文件，意识到/etc已经全部被删除。考虑到若没有unmount所在硬盘，执行恢复操作也会造成写入，因此未进行任何操作，联系管理员。</p>
 </li>
 </ul>
-<h3 id="why">五个why</h3>
+<h3 id="五个why">五个why</h3>
 <ul>
 <li>问题：/etc被删除，236集群设置损坏，无法登录和使用</li>
 </ul>
@@ -376,7 +404,7 @@ sudo rm /etc/gridftp.conf
 <li>为什么执行-rf没有检查？或采取更安全的方法？ -因为急于解决esgtest_publish问题，经过连续的调试后产生了投机的心理，注意力下降，忽视了基本安全操作。</li>
 <li>为什么要手动操作解决重新安装问题，而不是使用脚本？ - 本来使用ansible定义脚本来操作可以避免问题，但安装使用过程中经常出现失败，需要调整236服务器的依赖等，最终感到脚本更适合全新服务器安装，不愿再花时间使用脚本</li>
 </ol>
-<h3 id="heading-4">改进</h3>
+<h3 id="改进">改进</h3>
 <ol>
 <li>改变操作时的习惯，检查或是不使用危险的命令，尤其在不同压力或是状态时能够牢记这些</li>
 <li>不把希望寄托在人不犯错上，如尽量使用脚本，以及在本机器esgf部署这种复杂的情况里，花时间整理修改权限等问题，尽量使得运行调试权限不和其他各种文件产生干扰</li>

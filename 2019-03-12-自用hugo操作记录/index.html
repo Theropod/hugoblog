@@ -37,7 +37,7 @@
                 "url": "https:\/\/blog.theropod.tk\/images\/me\/avatar.png",
                 "width":  867 ,
                 "height":  868 
-            },"genre": "posts","keywords": "Windows姿势","wordcount":  2043 ,
+            },"genre": "posts","keywords": "Windows姿势","wordcount":  2105 ,
         "url": "https:\/\/blog.theropod.tk\/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95\/","datePublished": "2019-03-12T18:35:03\x2b08:00","dateModified": "2019-03-12T18:35:03\x2b08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
                 "@type": "Organization",
                 "name": "Theropod",
@@ -60,11 +60,27 @@
         <div class="header-title animated bounceIn">
             <a href="/">WGS84教信者</a>
         </div>
-        <div class="menu"><a class="menu-item" href="/posts/">Posts</a><a class="menu-item" href="/tags/">Tags</a><a class="menu-item" href="/categories/">Categories</a><a href="javascript:void(0);" class="theme-switch" title="Switch Theme">
+        <div class="menu"><a class="menu-item"
+                href="/posts/" >Posts</a><a class="menu-item"
+                href="/tags/" >Tags</a><a class="menu-item"
+                href="/categories/" >Categories</a><a href="javascript:void(0);" class="theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-rotate-180 fa-fw"></i>
             </a>
         </div>
     </div>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-136276173-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
 </header><header class="mobile" id="header-mobile">
     <div class="header-wrapper">
         <div class="header-container">
@@ -80,13 +96,25 @@
             </a>
         </div>
     </div>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-136276173-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
 </header>
 
 <script>
     window.desktopHeaderMode = "auto";
     window.mobileHeaderMode = "auto";
-</script>
-<main class="main">
+</script><main class="main">
                 <div class="container"><article class="page single"><h1 class="single-title animated flipInX">自用hugo操作记录</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author">
                     <a class="author" href="https://blog.theropod.tk" rel="author" target="_blank">
@@ -99,7 +127,7 @@
                                 </a>
                             </span></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-03-12>2019-03-12</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 2043 words&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 2105 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>5 min&nbsp;</div>
         </div><div class="toc" id="toc-auto">
                 <h2 class="toc-title">Contents</h2>
@@ -115,45 +143,45 @@
                     </summary>
                     <div class="toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">安装</a></li>
-    <li><a href="#heading-1">自定义</a>
+    <li><a href="#安装">安装</a></li>
+    <li><a href="#自定义">自定义</a>
       <ul>
-        <li><a href="#heading-2">我才发现有官方文档</a></li>
-        <li><a href="#configtoml">config.toml相关配置</a></li>
-        <li><a href="#heading-3">各种路径</a></li>
-        <li><a href="#heading-4">主题调整</a></li>
+        <li><a href="#我才发现有官方文档">我才发现有官方文档</a></li>
+        <li><a href="#configtoml相关配置">config.toml相关配置</a></li>
+        <li><a href="#各种路径">各种路径</a></li>
+        <li><a href="#主题调整">主题调整</a></li>
       </ul>
     </li>
-    <li><a href="#heading-5">写</a></li>
-    <li><a href="#github">github同步</a>
+    <li><a href="#写">写</a></li>
+    <li><a href="#github同步">github同步</a>
       <ul>
-        <li><a href="#heading-6">有关域名</a></li>
-        <li><a href="#cloudflare">使用自定义域名（cloudflare）</a></li>
-        <li><a href="#heading-7">发布脚本</a></li>
+        <li><a href="#有关域名">有关域名</a></li>
+        <li><a href="#使用自定义域名cloudflare">使用自定义域名（cloudflare）</a></li>
+        <li><a href="#发布脚本">发布脚本</a></li>
       </ul>
     </li>
-    <li><a href="#vscode">VSCode一站式解决</a></li>
+    <li><a href="#vscode一站式解决">VSCode一站式解决</a></li>
   </ul>
 </nav></div>
                 </details>
-            </div><div class="content" id="content"><h2 id="heading">安装</h2>
+            </div><div class="content" id="content"><h2 id="安装">安装</h2>
 <ul>
 <li>在WSL上使用，github上有编译的extended的deb版本 因为要使用scss自定义格式</li>
 <li>官方教程安装 初始化目录，下载主题，新建项目等等</li>
 </ul>
-<h2 id="heading-1">自定义</h2>
-<h3 id="heading-2">我才发现有官方文档</h3>
+<h2 id="自定义">自定义</h2>
+<h3 id="我才发现有官方文档">我才发现有官方文档</h3>
 <p>这里<a href="https://hugoloveit.com/categories/documentation/">https://hugoloveit.com/categories/documentation/</a></p>
-<h3 id="configtoml">config.toml相关配置</h3>
+<h3 id="configtoml相关配置">config.toml相关配置</h3>
 <ul>
 <li>加了<code>hasCJKlanguage=true</code></li>
 </ul>
-<h3 id="heading-3">各种路径</h3>
+<h3 id="各种路径">各种路径</h3>
 <ul>
 <li>图片放到<code>static/images</code>里面，先同步再引用github的地址,而主题里的很多处引用都调整了相对路径</li>
 <li>favicon 都放在static里面</li>
 </ul>
-<h3 id="heading-4">主题调整</h3>
+<h3 id="主题调整">主题调整</h3>
 <ul>
 <li>
 <p>用LoveIt主题,github上下下来后，并没有按照官方加成submodule，直接把主题的<code>.git</code>删了，不再处理版本</p>
@@ -178,7 +206,7 @@
 <span class="p">.</span><span class="nc">page</span> <span class="p">{</span>
     <span class="k">max-width</span><span class="p">:</span> <span class="mi">900</span><span class="kt">px</span><span class="p">;</span>
 
-    <span class="err">#</span><span class="err">t</span><span class="err">o</span><span class="err">c</span><span class="err">-</span><span class="err">a</span><span class="err">u</span><span class="err">t</span><span class="err">o</span> <span class="err">{</span>
+    <span class="err">#toc-auto</span> <span class="err">{</span>
     <span class="k">margin-left</span><span class="p">:</span> <span class="mi">900</span><span class="kt">px</span><span class="p">;</span>
     <span class="p">}</span>
   <span class="p">}</span>
@@ -212,34 +240,45 @@
 </li>
 <li>
 <p>Disqus模板主题已经内置，申请一个Disqus Site得到shortname，作为<code>DisqusShortname</code>放在config.toml（注意localhost的时候没有效果的）。但我发现disqus好像已经完全被墙了。。。只有架梯子才能评论</p>
-<p>就可以被谷歌检测到。之后按照谷歌的提示通过他们各种各样的检测，以及search console也可以加入。百度的这个据说很慢，先搁置。</p>
+</li>
+<li>
+<p>config.toml里加入google analytics的id,headers.html里放入Hugo提供的谷歌模板，就可以被谷歌检测到。之后按照谷歌的提示通过他们各种各样的检测，以及search console也可以加入。百度的这个据说很慢，先搁置。</p>
 </li>
 <li>
 <p>默认的archetypes里面是<code>draft:true</code>也就是说用<code>hugo server -D</code>才能看到这些drafts，而生成静态网页就忽略掉了。。。嫌麻烦直接改成true。测试可以用<code>hugo server -D</code>的server模式，且包括标记为draft的文本）</p>
 </li>
 </ul>
-<h2 id="heading-5">写</h2>
+<h2 id="写">写</h2>
 <ul>
 <li>就是普通写markdown</li>
 <li>代码块要在```之后声明语言，否则会和行内的代码高亮混淆</li>
 <li>用vscode的md插件还会有自动语法检查，强迫症患者可以用来排错玩</li>
 </ul>
-<h2 id="github">github同步</h2>
-<h3 id="heading-6">有关域名</h3>
+<h2 id="github同步">github同步</h2>
+<h3 id="有关域名">有关域名</h3>
 <ul>
 <li>如果想用<code>username.github.io</code>当做主页,就需要只把hugo生成的public文件夹放在<code>username.github.io</code>的项目中（加入其他文件会生成页面失败），这样其余的文件必须再新建另一个项目来保存。即：Hugo文件夹是一个项目，每次生成的public作为submodule放在使用用户名作为地址的项目。</li>
 <li>但我本来就有域名，所以不需要非得用<code>username.github.io</code>这个</li>
 </ul>
-<h3 id="cloudflare">使用自定义域名（cloudflare）</h3>
+<h3 id="使用自定义域名cloudflare">使用自定义域名（cloudflare）</h3>
 <ul>
 <li>Hugo文件夹git init，add remote，pull下来一个github空项目，配置好博客内容，生成public目录。</li>
 <li>先把github pages里域名设置成自己的（这里我的freenom DNS会失败，换成cloudflare的才能被github认出来），否则网站主题模板找根路径会有问题，毕竟根目录本来是个人域名下的一个项目</li>
 <li>config.toml里设置baseURL到Github Pages的publish 地址。这里我用的是<code>blog.therpod.tk</code>，于是在cloudflare里只配置了一个CNAME,指向<code>theropod.github.io</code>。</li>
 <li>在github pages里面开启https后，提示<code>NET::ERR_CERT_COMMON_NAME_INVALID github pages</code>，感觉像是github.com发的证书仍没有和我的域名联系起来。我在cloudflare里又加上了A记录，直接用ip地址，https就好了。
-<img src="https://raw.githubusercontent.com/Theropod/hugoblog/master/static/images/blog_images/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-02.png" alt="image"></li>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/Theropod/hugoblog/master/static/images/blog_images/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-02.png" title="image" data-thumbnail="https://raw.githubusercontent.com/Theropod/hugoblog/master/static/images/blog_images/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-02.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-sizes="auto"
+            data-srcset="https://raw.githubusercontent.com/Theropod/hugoblog/master/static/images/blog_images/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-02.png, https://raw.githubusercontent.com/Theropod/hugoblog/master/static/images/blog_images/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-02.png 1.5x, https://raw.githubusercontent.com/Theropod/hugoblog/master/static/images/blog_images/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-02.png 2x"
+            data-src="https://raw.githubusercontent.com/Theropod/hugoblog/master/static/images/blog_images/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-02.png"
+            alt="image" />
+    </a><figcaption class="image-caption">image</figcaption></figure>
+</li>
 <li>接下来就是按照官方文档里说的，只把public文件夹用<code>git worktree</code>弄到一个新的gh-pages分支，选择这个分支作为主页就行了。注意官方文档的upstream指的是你自己上游的名字，比如origin。</li>
 </ul>
-<h3 id="heading-7">发布脚本</h3>
+<h3 id="发布脚本">发布脚本</h3>
 <ul>
 <li>
 <p>最后就是修改下官网上发布脚本的例子了。正好vscode里面可以把terminal改成是wsl的bash.exe，写和发布可以在一起进行。</p>
@@ -294,7 +333,7 @@
 </span><span class="cp"></span><span class="nv">DIR</span><span class="o">=</span><span class="k">$(</span>dirname <span class="s2">&#34;</span><span class="nv">$0</span><span class="s2">&#34;</span><span class="k">)</span>
 <span class="nb">cd</span> <span class="nv">$DIR</span>/..
 
-<span class="k">if</span> <span class="o">[</span><span class="o">[</span> <span class="k">$(</span>git status -s<span class="k">)</span> <span class="o">]</span><span class="o">]</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="k">$(</span>git status -s<span class="k">)</span> <span class="o">]]</span>
 <span class="k">then</span>
     <span class="nb">echo</span> <span class="s2">&#34;The working directory is dirty. Please commit any pending changes.&#34;</span>
     <span class="nb">exit</span> 1<span class="p">;</span>
@@ -330,8 +369,17 @@ git push origin gh-pages
 </div>
 </div></li>
 </ul>
-<h2 id="vscode">VSCode一站式解决</h2>
-<p><img src="https://raw.githubusercontent.com/Theropod/hugoblog/master/static/images/blog_images/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-01.png" alt="image"></p>
+<h2 id="vscode一站式解决">VSCode一站式解决</h2>
+<p><figure><a class="lightgallery" href="https://raw.githubusercontent.com/Theropod/hugoblog/master/static/images/blog_images/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-01.png" title="image" data-thumbnail="https://raw.githubusercontent.com/Theropod/hugoblog/master/static/images/blog_images/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-01.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-sizes="auto"
+            data-srcset="https://raw.githubusercontent.com/Theropod/hugoblog/master/static/images/blog_images/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-01.png, https://raw.githubusercontent.com/Theropod/hugoblog/master/static/images/blog_images/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-01.png 1.5x, https://raw.githubusercontent.com/Theropod/hugoblog/master/static/images/blog_images/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-01.png 2x"
+            data-src="https://raw.githubusercontent.com/Theropod/hugoblog/master/static/images/blog_images/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-01.png"
+            alt="image" />
+    </a><figcaption class="image-caption">image</figcaption></figure>
+</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
@@ -382,7 +430,19 @@ git push origin gh-pages
 </footer>
 </div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
             <span>&nbsp;</span>
-        </a><script src="https://theropodblog.disqus.com/embed.js"></script><script src="/lib/smooth-scroll/smooth-scroll.polyfills.min.54590077ee163035c3dd38dc034e9f6915ecbe680dd832f449afa21672cab116.js" integrity="sha256-VFkAd&#43;4WMDXD3TjcA06faRXsvmgN2DL0Sa&#43;iFnLKsRY="></script><script src="/lib/sharer/sharer.min.9c88f86c7f0820287113f6236200459832693656e80d7556cc80a93dfbd45813.js" integrity="sha256-nIj4bH8IIChxE/YjYgBFmDJpNlboDXVWzICpPfvUWBM="></script><script src="/js/theme.min.1482fc67bfa2c3b8cebe476d0037b9321b5b7a8a1525b547b94143948be90e9e.js" integrity="sha256-FIL8Z7&#43;iw7jOvkdtADe5MhtbeooVJbVHuUFDlIvpDp4="></script>
+        </a><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            lightGallery(document.getElementById('content'), {
+                selector: '.lightgallery',
+                speed: 400,
+                hideBarsDelay: 2000,
+                thumbnail: true,
+                exThumbImage: 'data-thumbnail',
+                thumbWidth: 80,
+                thumbContHeight: 80,
+            });
+        });
+    </script><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.a0f67639490aba5d9a250783c0aa0ed69f83a6f151fb0d7b9fb617c9dbc54565.css" integrity="sha256-oPZ2OUkKul2aJQeDwKoO1p&#43;DpvFR&#43;w17n7YXydvFRWU="><script src="https://theropodblog.disqus.com/embed.js"></script><script src="/lib/smooth-scroll/smooth-scroll.polyfills.min.54590077ee163035c3dd38dc034e9f6915ecbe680dd832f449afa21672cab116.js" integrity="sha256-VFkAd&#43;4WMDXD3TjcA06faRXsvmgN2DL0Sa&#43;iFnLKsRY="></script><script src="/lib/sharer/sharer.min.9c88f86c7f0820287113f6236200459832693656e80d7556cc80a93dfbd45813.js" integrity="sha256-nIj4bH8IIChxE/YjYgBFmDJpNlboDXVWzICpPfvUWBM="></script><script src="/lib/lazysizes/lazysizes.min.876b4c12685e991d88378c1b6dd3638fd2da0c88f3c24da1ada950c1f26604e1.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE="></script><script src="/lib/lightgallery/lightgallery.min.7a84c63ab156d68e4a7269487c9c65a4eb34b0c7864f2d3fd2b87f7c664480d3.js" integrity="sha256-eoTGOrFW1o5KcmlIfJxlpOs0sMeGTy0/0rh/fGZEgNM="></script><script src="/lib/lightgallery/lg-thumbnail.min.eab31af8f90835b7ab674b2dd2474841039bc01022aa312f80dde6e22fde58d7.js" integrity="sha256-6rMa&#43;PkINberZ0st0kdIQQObwBAiqjEvgN3m4i/eWNc="></script><script src="/lib/lightgallery/lg-zoom.min.e3a7e6bb4a69f8627654ba9e0ab1252971bcfb400538dbb0605db9a3342ce5b9.js" integrity="sha256-46fmu0pp&#43;GJ2VLqeCrElKXG8&#43;0AFONuwYF25ozQs5bk="></script><script src="/js/theme.min.1482fc67bfa2c3b8cebe476d0037b9321b5b7a8a1525b547b94143948be90e9e.js" integrity="sha256-FIL8Z7&#43;iw7jOvkdtADe5MhtbeooVJbVHuUFDlIvpDp4="></script>
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
