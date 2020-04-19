@@ -37,7 +37,7 @@
                 "url": "https:\/\/blog.theropod.tk\/images\/me\/avatar.png",
                 "width":  867 ,
                 "height":  868 
-            },"genre": "posts","keywords": "毕业用","wordcount":  4165 ,
+            },"genre": "posts","keywords": "毕业用","wordcount":  4843 ,
         "url": "https:\/\/blog.theropod.tk\/2020-03-11-cmip6%E6%95%B0%E6%8D%AE%E5%8F%91%E5%B8%83%E6%80%BB%E7%BB%93\/","datePublished": "2020-03-11T18:47:08\x2b08:00","dateModified": "2020-03-11T18:47:08\x2b08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
                 "@type": "Organization",
                 "name": "Theropod",
@@ -127,8 +127,8 @@ if (!doNotTrack) {
                                 </a>
                             </span></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-03-11>2020-03-11</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 4165 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>9 min&nbsp;</div>
+                <i class="fas fa-pencil-alt fa-fw"></i>about 4843 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>10 min&nbsp;</div>
         </div><div class="toc" id="toc-auto">
                 <h2 class="toc-title">Contents</h2>
                 <div class="toc-content" id="toc-content-auto"></div>
@@ -161,14 +161,15 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#heading-2">附加的功能</a></li>
         <li><a href="#esgprep">准备，esgprep</a></li>
-        <li><a href="#-esgpublishconda">发布 esgpublish，同样的conda环境</a></li>
+        <li><a href="#-esgpublishconda--publishunpublishmapfile">发布 esgpublish，同样的conda环境  注意publish和unpublish，mapfile一定要保存好</a></li>
+        <li><a href="#heading-3">几点实践经验</a></li>
       </ul>
     </li>
     <li><a href="#etc">作为警醒的一个事件：曾经删除了/etc下所有文件</a>
       <ul>
-        <li><a href="#heading-3">背景</a></li>
+        <li><a href="#heading-4">背景</a></li>
         <li><a href="#why">五个why</a></li>
-        <li><a href="#heading-4">改进</a></li>
+        <li><a href="#heading-5">改进</a></li>
       </ul>
     </li>
   </ul>
@@ -239,12 +240,15 @@ if (!doNotTrack) {
 <p>Unable to start service httpd: Job for httpd.service failed because the control process exited with error code. See &ldquo;systemctl status httpd.service&rdquo; and &ldquo;journalctl -xe&rdquo; for details</p>
 <p>在目标机上启动httpd失败，错误是Syntax error on line 24 of /etc/httpd/conf/httpd.ssl.conf: SSLCertificateChainFile: file &lsquo;/etc/certs/cachain.pem&rsquo; does not exist or is empty. 但是清华是自动的https，已经不需要这个了，注释掉就可。</p>
 </li>
+<li>
+<p>服务器重启 注意默认的catalog需要apache 和 tomcat都起来</p>
+</li>
 </ul>
 </li>
 </ul>
 <h2 id="5-">5. 部署完成后配置发布数据</h2>
 <ul>
-<li>官方经验：不要用root来发布，尽量建立一个新的账号和用户组</li>
+<li>官方提示：不要用root来发布，尽量建立一个新的账号和用户组</li>
 </ul>
 <h3 id="heading-2">附加的功能</h3>
 <ul>
@@ -275,8 +279,16 @@ if (!doNotTrack) {
 <li>数据生产步骤 (github上也有)
 <ol>
 <li>fetch esgf configuration ini files: <code>esgfetchini</code></li>
-<li>fetch cmor tables: <code>esgfetchtables</code></li>
-<li>DRS （Data Reference Syntax）把结果文件按DRS的格式组织（变量路径中加入version等）可以管理数据版本，生成文件的时候也会进行一些检查
+<li>fetch cmor tables: <code>esgfetchtables</code>，用来自动PrePARE</li>
+</ol>
+<ul>
+<li>如果文件不是cmor生成：
+如果文件里没有cmorized,publish入库的一步会自动检查是否符合cmip6 cmor tables， 有三个配置选项在esg.ini定义https://esgf.github.io/esg-publisher/configuration.html。esgfetchtables的tables要对应文件里cmor版本，默认下载在usr/local。有时这个目录不能访问，而且按照cmor版本fetch branch也会报错，上述选项不太好使，就直接手动PrePARE了。esg.ini加上skip_validation=True（老版本安装的src/python/esgcet/esgcet/config/cmip6_handler.py没有这个选项，手动更新了一下文件）</li>
+<li>手动PrePARE：
+<code>PrePARE -l ./PrePARE_log/ice --table-path ./cmip6-cmor-tables-6.7.31/Tables/ ../ice</code></li>
+</ul>
+<ol start="3">
+<li>DRS （Data Reference Syntax）把结果文件按DRS的格式组织（变量路径中加入version等）可以管理数据版本，生成文件的时候会进行一些检查
 <ul>
 <li>初次扫描 <code>esgdrs list --project cmip6 /mypath/ciesm_data/copy3</code>会把结果写进临时的文件</li>
 <li>可以预览drs tree 和构建目录结构的语句(todo和tree)。觉得可以了就<code>esgdrs upgrade --project cmip6 /mypath/ciesm_data/copy1 --link</code> 这里会默认在当前目录下创建DRS树，比如选择<code>/esg/data</code>注意默认是直接移动文件，文档里推荐使用&ndash;link但若不在同一个物理存储，所以只能用symlink,而symlink会出错。所以尽量同一个存储</li>
@@ -300,10 +312,10 @@ if (!doNotTrack) {
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">(</span>esgdrs list --project cmip6 /mypath/ciesm_data/ice <span class="p">|</span> tee ice-list.txt<span class="o">)</span> <span class="o">&amp;&amp;</span>
-<span class="o">(</span>esgdrs tree --project cmip6 /mypath/ciesm_data/ice <span class="p">|</span> tee ice-tree.txt<span class="o">)</span> <span class="o">&amp;&amp;</span>
-<span class="o">(</span>esgdrs upgrade --project cmip6 /mypath/ciesm_data/ice --link <span class="p">|</span> tee ice-upgrade.txt<span class="o">)</span> <span class="o">&amp;&amp;</span>
-<span class="o">(</span>esgmapfile make --project cmip6 /mypath/ciesm_data/ice --outdir /mypath/ciesm_data/esg/mapfiles/ice/<span class="o">)</span>
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">(</span>esgdrs list --project cmip6 /mypath/ciesm_data/ice <span class="p">|</span> tee ../../DRS_log/ice-list.txt<span class="o">)</span> <span class="o">&amp;&amp;</span>
+<span class="o">(</span>esgdrs tree --project cmip6 /mypath/ciesm_data/ice <span class="p">|</span> tee ../../DRS_log/ice-tree.txt<span class="o">)</span> <span class="o">&amp;&amp;</span>
+<span class="o">(</span>esgdrs upgrade --project cmip6 /mypath/ciesm_data/ice --link <span class="p">|</span> tee ../../DRS_log/ice-upgrade.txt<span class="o">)</span> <span class="o">&amp;&amp;</span>
+<span class="o">(</span>esgmapfile make --project cmip6 /mypath/ciesm_data/esg/DRS/ice --outdir /mypath/ciesm_data/esg/mapfiles/ice/<span class="o">)</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -324,7 +336,7 @@ if (!doNotTrack) {
 </ol>
 </li>
 </ul>
-<h3 id="-esgpublishconda">发布 esgpublish，同样的conda环境</h3>
+<h3 id="-esgpublishconda--publishunpublishmapfile">发布 esgpublish，同样的conda环境  注意publish和unpublish，mapfile一定要保存好</h3>
 <ol>
 <li>
 <p>Generate certificate for publication with myproxy-logon 用的普通用户来发布 <code>myproxy-logon -b -s esgf-node.llnl.gov -l username -p 7512 -t 72 -o $HOME/.globus/certificate-file</code></p>
@@ -373,8 +385,17 @@ https://esgf-node.llnl.gov/esg-search/ws/delete
 </div><p>注意，官方会提到有test publish的地址，但是实际邮件沟通是不能用的，耽误了很久。。。要发布的话应当直接发布</p>
 </li>
 </ol>
+<h3 id="heading-3">几点实践经验</h3>
+<ol>
+<li>有关两次检查
+手动运行PrePARE检查，然后DRS生成的时候也会检查。如果文件不是cmor生成，在publish时跳过自动的PrePARE。</li>
+<li>有关数据目录
+由于学校给出的模式结果是按atm/lnd/ocn这样分组的，我产生的DRS目录和mapfiles目录都是按/atm/lnd/ocn分别存放。这样发布和撤回时也是分开的，便于找错。</li>
+<li>有关更新或者增加文件
+数据原始目录里复制替换nc文件，然后重新运行一遍DRS和mapfile，照常发布即可。</li>
+</ol>
 <h2 id="etc">作为警醒的一个事件：曾经删除了/etc下所有文件</h2>
-<h3 id="heading-3">背景</h3>
+<h3 id="heading-4">背景</h3>
 <ul>
 <li>
 <p><strong>周二下午-晚上</strong>
@@ -415,7 +436,7 @@ sudo rm /etc/gridftp.conf
 <li>为什么执行-rf没有检查？或采取更安全的方法？ -因为急于解决esgtest_publish问题，经过连续的调试后产生了投机的心理，注意力下降，忽视了基本安全操作。</li>
 <li>为什么要手动操作解决重新安装问题，而不是使用脚本？ - 本来使用ansible定义脚本来操作可以避免问题，但安装使用过程中经常出现失败，需要调整236服务器的依赖等，最终感到脚本更适合全新服务器安装，不愿再花时间使用脚本</li>
 </ol>
-<h3 id="heading-4">改进</h3>
+<h3 id="heading-5">改进</h3>
 <ol>
 <li>改变操作时的习惯，检查或是不使用危险的命令，尤其在不同压力或是状态时能够牢记这些</li>
 <li>不把希望寄托在人不犯错上，如尽量使用脚本，以及在本机器esgf部署这种复杂的情况里，花时间整理修改权限等问题，尽量使得运行调试权限不和其他各种文件产生干扰</li>
