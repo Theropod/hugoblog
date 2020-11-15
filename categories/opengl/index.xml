@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenGL on WGS84教信者</title>
+    <link>https://blog.theropod.tk/categories/opengl/</link>
+    <description>Recent content in OpenGL on WGS84教信者</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 20 Oct 2015 23:46:52 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.theropod.tk/categories/opengl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>OpenGL中的一些注意点</title>
+      <link>https://blog.theropod.tk/2015-10-20-opengl%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E7%82%B9/</link>
+      <pubDate>Tue, 20 Oct 2015 23:46:52 +0000</pubDate>
+      
+      <guid>https://blog.theropod.tk/2015-10-20-opengl%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E7%82%B9/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

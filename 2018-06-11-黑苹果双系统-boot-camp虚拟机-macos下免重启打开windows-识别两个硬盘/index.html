@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>黑苹果双系统 boot camp虚拟机 macOS下免重启打开windows 识别两个硬盘 | WGS84教信者</title>
+        <meta name="Description" content="WGS84教信者"><meta property="og:title" content="黑苹果双系统 boot camp虚拟机 macOS下免重启打开windows 识别两个硬盘" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.theropod.tk/2018-06-11-%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%8F%8C%E7%B3%BB%E7%BB%9F-boot-camp%E8%99%9A%E6%8B%9F%E6%9C%BA-macos%E4%B8%8B%E5%85%8D%E9%87%8D%E5%90%AF%E6%89%93%E5%BC%80windows-%E8%AF%86%E5%88%AB%E4%B8%A4%E4%B8%AA%E7%A1%AC%E7%9B%98/" />
+<meta property="article:published_time" content="2018-06-11T15:05:47+00:00" />
+<meta property="article:modified_time" content="2018-06-11T15:05:47+00:00" /><meta property="og:site_name" content="WGS84教信者" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="黑苹果双系统 boot camp虚拟机 macOS下免重启打开windows 识别两个硬盘"/>
+<meta name="twitter:description" content=""/>
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#da532c">
+<link rel="canonical" href="https://blog.theropod.tk/2018-06-11-%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%8F%8C%E7%B3%BB%E7%BB%9F-boot-camp%E8%99%9A%E6%8B%9F%E6%9C%BA-macos%E4%B8%8B%E5%85%8D%E9%87%8D%E5%90%AF%E6%89%93%E5%BC%80windows-%E8%AF%86%E5%88%AB%E4%B8%A4%E4%B8%AA%E7%A1%AC%E7%9B%98/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="https://blog.theropod.tk/2018-06-03-%E5%85%B3%E4%BA%8E-oauth2.0-%E5%AE%89%E5%85%A8%E6%80%A7/" /><link rel="next" href="https://blog.theropod.tk/2018-12-15-%E5%B0%86%E5%87%A0%E7%A7%8D%E5%8C%97%E4%BA%AC%E5%BB%BA%E6%88%90%E5%8C%BA%E6%95%B0%E6%8D%AE%E4%B8%8B%E8%BD%BD%E8%A3%81%E5%89%AA%E9%87%8D%E5%88%86%E7%B1%BB%E5%90%8E%E4%BB%A5%E4%BE%9B%E6%AF%94%E8%BE%83/" /><link rel="stylesheet" href="/lib/fontawesome-free/all.min.9a680b90260b5106d79f4075491ab31daafa7429eff686453c40b58357309649.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="><link rel="stylesheet" href="/lib/animate/animate.min.3c770e90f98eb21b0c042fafb49755af93306fbaf42e449524f94fae9fc83295.css" integrity="sha256-PHcOkPmOshsMBC&#43;vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="><link rel="stylesheet" href="/css/style.min.b499aa36490cd3731b618b943112e5024effc494a3522ab3309e40e6afacbc1e.css" integrity="sha256-tJmqNkkM03MbYYuUMRLlAk7/xJSjUiqzMJ5A5q&#43;svB4=">
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "黑苹果双系统 boot camp虚拟机 macOS下免重启打开windows 识别两个硬盘",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog.theropod.tk\/2018-06-11-%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%8F%8C%E7%B3%BB%E7%BB%9F-boot-camp%E8%99%9A%E6%8B%9F%E6%9C%BA-macos%E4%B8%8B%E5%85%8D%E9%87%8D%E5%90%AF%E6%89%93%E5%BC%80windows-%E8%AF%86%E5%88%AB%E4%B8%A4%E4%B8%AA%E7%A1%AC%E7%9B%98\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "https:\/\/blog.theropod.tk\/images\/me\/avatar.png",
+                "width":  867 ,
+                "height":  868 
+            },"genre": "posts","keywords": "黑苹果, 虚拟机","wordcount":  834 ,
+        "url": "https:\/\/blog.theropod.tk\/2018-06-11-%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%8F%8C%E7%B3%BB%E7%BB%9F-boot-camp%E8%99%9A%E6%8B%9F%E6%9C%BA-macos%E4%B8%8B%E5%85%8D%E9%87%8D%E5%90%AF%E6%89%93%E5%BC%80windows-%E8%AF%86%E5%88%AB%E4%B8%A4%E4%B8%AA%E7%A1%AC%E7%9B%98\/","datePublished": "2018-06-11T15:05:47\x2b00:00","dateModified": "2018-06-11T15:05:47\x2b00:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+                "@type": "Organization",
+                "name": "Theropod",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/blog.theropod.tk\/images\/me\/avatar.png",
+                "width":  867 ,
+                "height":  868 
+                }
+            },"description": ""
+    }
+    </script></head>
+    <body><script>
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;} else {
+                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            }
+            window.isDark && document.body.classList.add('dark-theme');
+        </script><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title animated bounceIn">
+            <a href="/">WGS84教信者</a>
+        </div>
+        <div class="menu"><a class="menu-item"
+                href="/posts/" >Posts</a><a class="menu-item"
+                href="/tags/" >Tags</a><a class="menu-item"
+                href="/categories/" >Categories</a><a href="javascript:void(0);" class="theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-rotate-180 fa-fw"></i>
+            </a>
+        </div>
+    </div>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-136276173-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+</header><header class="mobile" id="header-mobile">
+    <div class="header-wrapper">
+        <div class="header-container">
+            <div class="header-title animated bounceIn">
+                <a href="/">WGS84教信者</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-rotate-180 fa-fw"></i>
+            </a>
+        </div>
+    </div>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-136276173-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+</header>
+
+<script>
+    window.desktopHeaderMode = "auto";
+    window.mobileHeaderMode = "auto";
+</script><main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">黑苹果双系统 boot camp虚拟机 macOS下免重启打开windows 识别两个硬盘</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author">
+                    <a class="author" href="https://blog.theropod.tk" rel="author" target="_blank">
+                        <i class="fas fa-user-circle fa-fw"></i>WGS84教信者
+                    </a>
+                </span>&nbsp;<span class="post-category">included in&nbsp;
+                            <span>
+                                <a href="/categories/windows%E5%A7%BF%E5%8A%BF">
+                                    <i class="far fa-folder fa-fw"></i>Windows姿势
+                                </a>
+                            </span></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2018-06-11>2018-06-11</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 834 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>2 min&nbsp;</div>
+        </div><div class="toc" id="toc-auto">
+                <h2 class="toc-title">Contents</h2>
+                <div class="toc-content" id="toc-content-auto"></div>
+            </div>
+            <div class="toc" id="toc-static">
+                <details>
+                    <summary>
+                        <div class="toc-title">
+                            <span>Contents</span>
+                            <span><i class="details icon fas fa-angle-down"></i></span>
+                        </div>
+                    </summary>
+                    <div class="toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+                </details>
+            </div><div class="content" id="content"><ul>
+<li>笔记本是256的SSD加上1T的HDD，SSD上win和mac，HDD存数据</li>
+<li>其实这一切的起因是想在high sierra下读取ntfs，用的mounty有时能用有时不能用，tuxera和paragon的破解又找不到，非常痛苦。所以想到装一个虚拟机，这样正好office等等软件也不用两边都装了。</li>
+<li>现在用的是vmware fusion（xclient上最新版破解也比较好找），除了双硬盘需要手动用一个命令行工具设置之外没有什么问题。也是以boot camp形式导入的已经安装的windows。<a href="https://communities.vmware.com/thread/337466" target="_blank" rel="noopener noreffer">这是教程</a>
+
+这个有一个问题，他写的路径是<code>./Desktop</code>，但是现在苹果好像已经不是这样写了，而应该是<code>～/Desktop</code>
+总结一下就是：</li>
+</ul>
+<ol>
+<li>先在导入的windows虚拟机的设置里建一个第二硬盘，起个名字，容量不用管，是不是非得IDE模式我没试</li>
+<li>终端里<code>diskutil list</code>看一下要导入哪个盘，如/dev/disk2</li>
+<li><code>/Applications/VMware\ Fusion.app/Contents/Library/vmware-rawdiskCreator print /dev/disk2</code> 输出一下刚才看的盘的信息看看对不对</li>
+<li><code>/Applications/VMware\ Fusion.app/Contents/Library/vmware-rawdiskCreator create /dev/disk2 fullDevice ~/Desktop/MyHDD ide</code>  建立一个对应着第二个物理磁盘的虚拟磁盘到桌面</li>
+<li>把自己建立的虚拟机的bundle打开，用新建的vmdk替换第一步建立的vmdk。</li>
+<li>打开虚拟机，应该就好了。要是全局重启到windows启动项可能变了，clover不是第一个，bios里调一下。</li>
+</ol>
+<hr>
+<p>开始我也试了parallels，和vmware一样它会自动识别你的双系统，并认为你是boot camp技术装的双系统（boot camp按道理说是白苹果装双系统的技术，但是这里我自己分区装的黑苹果双系统也被这样识别了。）官方论坛上说parallels 13把加载第二硬盘的功能砍了，并认为这是一个bug。。。试了一下果然如此。parallels12可以在GUI下加入第二硬盘，软件也有破解，但是每次重启到windows之后第二硬盘的驱动就加载失败，必须把Parallel的tools软件卸载重启后才正常。停止parallels服务也没有用，麻烦得不行。。。最后怒删，还是用vmware fusion。</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>The article was updated on 2018-06-11</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="https://blog.theropod.tk/2018-06-11-%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%8F%8C%E7%B3%BB%E7%BB%9F-boot-camp%E8%99%9A%E6%8B%9F%E6%9C%BA-macos%E4%B8%8B%E5%85%8D%E9%87%8D%E5%90%AF%E6%89%93%E5%BC%80windows-%E8%AF%86%E5%88%AB%E4%B8%A4%E4%B8%AA%E7%A1%AC%E7%9B%98/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://blog.theropod.tk/2018-06-11-%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%8F%8C%E7%B3%BB%E7%BB%9F-boot-camp%E8%99%9A%E6%8B%9F%E6%9C%BA-macos%E4%B8%8B%E5%85%8D%E9%87%8D%E5%90%AF%E6%89%93%E5%BC%80windows-%E8%AF%86%E5%88%AB%E4%B8%A4%E4%B8%AA%E7%A1%AC%E7%9B%98/" data-title="黑苹果双系统 boot camp虚拟机 macOS下免重启打开windows 识别两个硬盘" data-hashtags="黑苹果,虚拟机"><i class="fab fa-twitter fa-fw"></i>
+</a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://blog.theropod.tk/2018-06-11-%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%8F%8C%E7%B3%BB%E7%BB%9F-boot-camp%E8%99%9A%E6%8B%9F%E6%9C%BA-macos%E4%B8%8B%E5%85%8D%E9%87%8D%E5%90%AF%E6%89%93%E5%BC%80windows-%E8%AF%86%E5%88%AB%E4%B8%A4%E4%B8%AA%E7%A1%AC%E7%9B%98/" data-hashtag="黑苹果"><i class="fab fa-facebook-square fa-fw"></i>
+</a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://blog.theropod.tk/2018-06-11-%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%8F%8C%E7%B3%BB%E7%BB%9F-boot-camp%E8%99%9A%E6%8B%9F%E6%9C%BA-macos%E4%B8%8B%E5%85%8D%E9%87%8D%E5%90%AF%E6%89%93%E5%BC%80windows-%E8%AF%86%E5%88%AB%E4%B8%A4%E4%B8%AA%E7%A1%AC%E7%9B%98/"><i class="fab fa-linkedin fa-fw"></i>
+</a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://blog.theropod.tk/2018-06-11-%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%8F%8C%E7%B3%BB%E7%BB%9F-boot-camp%E8%99%9A%E6%8B%9F%E6%9C%BA-macos%E4%B8%8B%E5%85%8D%E9%87%8D%E5%90%AF%E6%89%93%E5%BC%80windows-%E8%AF%86%E5%88%AB%E4%B8%A4%E4%B8%AA%E7%A1%AC%E7%9B%98/" data-title="黑苹果双系统 boot camp虚拟机 macOS下免重启打开windows 识别两个硬盘" data-web><i class="fab fa-whatsapp fa-fw"></i>
+</a><a href="javascript:void(0);" title="Share on Pinterest" data-sharer="pinterest" data-url="https://blog.theropod.tk/2018-06-11-%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%8F%8C%E7%B3%BB%E7%BB%9F-boot-camp%E8%99%9A%E6%8B%9F%E6%9C%BA-macos%E4%B8%8B%E5%85%8D%E9%87%8D%E5%90%AF%E6%89%93%E5%BC%80windows-%E8%AF%86%E5%88%AB%E4%B8%A4%E4%B8%AA%E7%A1%AC%E7%9B%98/"><i class="fab fa-pinterest fa-fw"></i>
+</a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section><span>
+                        <a href="/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C">
+                            <i class="fas fa-tag fa-fw"></i>黑苹果
+                        </a>
+                    </span>&nbsp;<span>
+                        <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA">
+                            <i class="fas fa-tag fa-fw"></i>虚拟机
+                        </a>
+                    </span>&nbsp;</section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="https://blog.theropod.tk/2018-06-03-%E5%85%B3%E4%BA%8E-oauth2.0-%E5%AE%89%E5%85%A8%E6%80%A7/" class="prev" rel="prev" title="关于 OAuth2.0 安全性"><i class="fas fa-angle-left fa-fw"></i>关于 OAuth2.0 安全性</a>
+            <a href="https://blog.theropod.tk/2018-12-15-%E5%B0%86%E5%87%A0%E7%A7%8D%E5%8C%97%E4%BA%AC%E5%BB%BA%E6%88%90%E5%8C%BA%E6%95%B0%E6%8D%AE%E4%B8%8B%E8%BD%BD%E8%A3%81%E5%89%AA%E9%87%8D%E5%88%86%E7%B1%BB%E5%90%8E%E4%BB%A5%E4%BE%9B%E6%AF%94%E8%BE%83/" class="next" rel="next" title="将几种北京建成区数据下载裁剪重分类后以供比较">将几种北京建成区数据下载裁剪重分类后以供比较<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div class="comment"><div id="disqus_thread"></div><noscript>
+            Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript></div>
+    </article></div>
+            </main><footer class="footer">
+    <div class="copyright"><div class="copyright-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer">LoveIt<i class="far fa-heart fa-fw"></i></a>
+        </div>
+
+        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://blog.theropod.tk" target="_blank">WGS84教信者</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+</div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
+            <span>&nbsp;</span>
+        </a><script src="https://theropodblog.disqus.com/embed.js"></script><script src="/lib/smooth-scroll/smooth-scroll.polyfills.min.54590077ee163035c3dd38dc034e9f6915ecbe680dd832f449afa21672cab116.js" integrity="sha256-VFkAd&#43;4WMDXD3TjcA06faRXsvmgN2DL0Sa&#43;iFnLKsRY="></script><script src="/lib/sharer/sharer.min.9c88f86c7f0820287113f6236200459832693656e80d7556cc80a93dfbd45813.js" integrity="sha256-nIj4bH8IIChxE/YjYgBFmDJpNlboDXVWzICpPfvUWBM="></script><script src="/js/theme.min.1482fc67bfa2c3b8cebe476d0037b9321b5b7a8a1525b547b94143948be90e9e.js" integrity="sha256-FIL8Z7&#43;iw7jOvkdtADe5MhtbeooVJbVHuUFDlIvpDp4="></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-136276173-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+</html>

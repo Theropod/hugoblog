@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>谷歌地球 on WGS84教信者</title>
+    <link>https://blog.theropod.tk/tags/%E8%B0%B7%E6%AD%8C%E5%9C%B0%E7%90%83/</link>
+    <description>Recent content in 谷歌地球 on WGS84教信者</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Fri, 23 Jun 2017 16:35:47 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.theropod.tk/tags/%E8%B0%B7%E6%AD%8C%E5%9C%B0%E7%90%83/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ArcGIS依照谷歌地球空间校正</title>
+      <link>https://blog.theropod.tk/2017-06-23-arcgis%E4%BE%9D%E7%85%A7%E8%B0%B7%E6%AD%8C%E5%9C%B0%E7%90%83%E7%A9%BA%E9%97%B4%E6%A0%A1%E6%AD%A3/</link>
+      <pubDate>Fri, 23 Jun 2017 16:35:47 +0000</pubDate>
+      
+      <guid>https://blog.theropod.tk/2017-06-23-arcgis%E4%BE%9D%E7%85%A7%E8%B0%B7%E6%AD%8C%E5%9C%B0%E7%90%83%E7%A9%BA%E9%97%B4%E6%A0%A1%E6%AD%A3/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

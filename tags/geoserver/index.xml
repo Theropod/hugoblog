@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>geoserver on WGS84教信者</title>
+    <link>https://blog.theropod.tk/tags/geoserver/</link>
+    <description>Recent content in geoserver on WGS84教信者</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Wed, 13 Sep 2017 23:00:01 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.theropod.tk/tags/geoserver/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Geoserver的CORS问题解决</title>
+      <link>https://blog.theropod.tk/2017-09-13-geoserver%E7%9A%84cors%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</link>
+      <pubDate>Wed, 13 Sep 2017 23:00:01 +0000</pubDate>
+      
+      <guid>https://blog.theropod.tk/2017-09-13-geoserver%E7%9A%84cors%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

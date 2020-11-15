@@ -1,0 +1,6 @@
+# 关于如何强制把lumia920降级到Wp8.1
+
+
+<!--more-->
+
+看[这个教程](http://bbs.lumwp.com/thread-139536-1-1.html%20dospy%E8%AE%BA%E5%9D%9B)中的强刷部分

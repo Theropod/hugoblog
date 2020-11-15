@@ -1,0 +1,11 @@
+# 单独安装pgAdmin的小问题和解决
+
+
+<!--more-->
+
+## 再编辑
+我的电脑上运行desktop版的pgAdmin反而很卡，可能是桌面版实质上是套壳浏览器的原因。。。所以无奈最后又重新安装，切换回网页版。
+
+---
+只安装pgAdmin，想连接服务器上的数据库。官网上下载安装，报错Can not connect to pgAdmin server。是因为默认的配置是服务器模式，不是desktop，需要改一个配置项，然后重新运行安装后文件夹里的setup.py。看[这个链接](https://superuser.com/questions/1097581/can-not-connect-to-pgadmin-server)
+连接的时候，需要数据库本身的几个conf里面允许自己的ip进行连接。几个参考：[官方说明](https://www.postgresql.org/docs/9.6/static/auth-pg-hba-conf.html)[例子](http://rainbow702.iteye.com/blog/1278497)[例子](http://www.cnblogs.com/hiloves/archive/2011/08/20/2147043.html)

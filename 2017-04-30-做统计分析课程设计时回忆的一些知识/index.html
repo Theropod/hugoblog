@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>做统计分析课程设计时回忆的一些知识 | WGS84教信者</title>
+        <meta name="Description" content="WGS84教信者"><meta property="og:title" content="做统计分析课程设计时回忆的一些知识" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.theropod.tk/2017-04-30-%E5%81%9A%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E6%97%B6%E5%9B%9E%E5%BF%86%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86/" />
+<meta property="article:published_time" content="2017-04-30T18:44:45+00:00" />
+<meta property="article:modified_time" content="2017-04-30T18:44:45+00:00" /><meta property="og:site_name" content="WGS84教信者" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="做统计分析课程设计时回忆的一些知识"/>
+<meta name="twitter:description" content=""/>
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#da532c">
+<link rel="canonical" href="https://blog.theropod.tk/2017-04-30-%E5%81%9A%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E6%97%B6%E5%9B%9E%E5%BF%86%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="https://blog.theropod.tk/2017-04-09-%E5%AE%89%E8%A3%85google-cloud-sdk%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3/" /><link rel="next" href="https://blog.theropod.tk/2017-05-02-tomacat%E9%83%A8%E7%BD%B2%E4%B8%A4%E4%B8%AA%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%87%A0%E7%82%B9%E7%BB%8F%E9%AA%8C/" /><link rel="stylesheet" href="/lib/fontawesome-free/all.min.9a680b90260b5106d79f4075491ab31daafa7429eff686453c40b58357309649.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="><link rel="stylesheet" href="/lib/animate/animate.min.3c770e90f98eb21b0c042fafb49755af93306fbaf42e449524f94fae9fc83295.css" integrity="sha256-PHcOkPmOshsMBC&#43;vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="><link rel="stylesheet" href="/css/style.min.b499aa36490cd3731b618b943112e5024effc494a3522ab3309e40e6afacbc1e.css" integrity="sha256-tJmqNkkM03MbYYuUMRLlAk7/xJSjUiqzMJ5A5q&#43;svB4=">
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "做统计分析课程设计时回忆的一些知识",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog.theropod.tk\/2017-04-30-%E5%81%9A%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E6%97%B6%E5%9B%9E%E5%BF%86%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "https:\/\/blog.theropod.tk\/images\/me\/avatar.png",
+                "width":  867 ,
+                "height":  868 
+            },"genre": "posts","keywords": "统计","wordcount":  2086 ,
+        "url": "https:\/\/blog.theropod.tk\/2017-04-30-%E5%81%9A%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E6%97%B6%E5%9B%9E%E5%BF%86%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86\/","datePublished": "2017-04-30T18:44:45\x2b00:00","dateModified": "2017-04-30T18:44:45\x2b00:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+                "@type": "Organization",
+                "name": "Theropod",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/blog.theropod.tk\/images\/me\/avatar.png",
+                "width":  867 ,
+                "height":  868 
+                }
+            },"description": ""
+    }
+    </script></head>
+    <body><script>
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;} else {
+                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            }
+            window.isDark && document.body.classList.add('dark-theme');
+        </script><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title animated bounceIn">
+            <a href="/">WGS84教信者</a>
+        </div>
+        <div class="menu"><a class="menu-item"
+                href="/posts/" >Posts</a><a class="menu-item"
+                href="/tags/" >Tags</a><a class="menu-item"
+                href="/categories/" >Categories</a><a href="javascript:void(0);" class="theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-rotate-180 fa-fw"></i>
+            </a>
+        </div>
+    </div>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-136276173-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+</header><header class="mobile" id="header-mobile">
+    <div class="header-wrapper">
+        <div class="header-container">
+            <div class="header-title animated bounceIn">
+                <a href="/">WGS84教信者</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-rotate-180 fa-fw"></i>
+            </a>
+        </div>
+    </div>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-136276173-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+</header>
+
+<script>
+    window.desktopHeaderMode = "auto";
+    window.mobileHeaderMode = "auto";
+</script><main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">做统计分析课程设计时回忆的一些知识</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author">
+                    <a class="author" href="https://blog.theropod.tk" rel="author" target="_blank">
+                        <i class="fas fa-user-circle fa-fw"></i>WGS84教信者
+                    </a>
+                </span>&nbsp;<span class="post-category">included in&nbsp;
+                            <span>
+                                <a href="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1">
+                                    <i class="far fa-folder fa-fw"></i>数学建模
+                                </a>
+                            </span></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2017-04-30>2017-04-30</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 2086 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>5 min&nbsp;</div>
+        </div><div class="toc" id="toc-auto">
+                <h2 class="toc-title">Contents</h2>
+                <div class="toc-content" id="toc-content-auto"></div>
+            </div>
+            <div class="toc" id="toc-static">
+                <details>
+                    <summary>
+                        <div class="toc-title">
+                            <span>Contents</span>
+                            <span><i class="details icon fas fa-angle-down"></i></span>
+                        </div>
+                    </summary>
+                    <div class="toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#z检验">Z检验</a></li>
+    <li><a href="#t检验">t检验</a>
+      <ul>
+        <li><a href="#单样本的">单样本的</a></li>
+        <li><a href="#双样本的配对的等等">双样本的、配对的等等</a></li>
+      </ul>
+    </li>
+    <li><a href="#f检验">F检验</a>
+      <ul>
+        <li><a href="#卡方分布httpszhwikipediaorgwikie58da1e696b9e58886e4bd88"><a href="https://zh.wikipedia.org/wiki/%E5%8D%A1%E6%96%B9%E5%88%86%E4%BD%88">卡方分布</a></a></li>
+      </ul>
+    </li>
+    <li><a href="#线性回归中的显著性检验">线性回归中的显著性检验</a>
+      <ul>
+        <li><a href="#检验一个回归系数">检验一个回归系数</a></li>
+        <li><a href="#检验所有的回归系数">检验所有的回归系数</a></li>
+      </ul>
+    </li>
+    <li><a href="#anovahttpsenwikipediaorgwikianalysis_of_variancedesign-of-experiments_terms"><a href="https://en.wikipedia.org/wiki/Analysis_of_variance#Design-of-experiments_terms">ANOVA</a></a></li>
+  </ul>
+</nav></div>
+                </details>
+            </div><div class="content" id="content"><p>真的全忘了。。。
+#泊松、指数、伽马分布</p>
+<ul>
+<li><a href="https://zh.wikipedia.org/wiki/%E6%B3%8A%E6%9D%BE%E5%88%86%E4%BD%88" target="_blank" rel="noopener noreffer">泊松分布</a>
+： 已知某事件单位时间的<strong>平均发生率$\lambda$</strong>，能给出单位时间内实际上发生X次的概率。可以证明二项分布取极限（试无数次）就是泊松分布，也就是说二项分布是泊松分布在离散的时间上的对应。</li>
+<li><a href="https://zh.wikipedia.org/wiki/%E6%8C%87%E6%95%B0%E5%88%86%E5%B8%83#.E4.B8.8E.E6.B3.8A.E6.9D.BE.E8.BF.87.E7.A8.8B.E7.9A.84.E5.85.B3.E7.B3.BB" target="_blank" rel="noopener noreffer">指数分布</a>
+： 泊松过程中，第k次随机事件与第k+1次随机事件出现的时间间隔t服从指数分布，即 $t\sim Expotional(\lambda)$ 。可以发现指数分布的<strong>累积分布函数</strong>（注意不是概率密度函数）：$1-e^{-\lambda t}$ 中的$e^{-\lambda t}$ 就是泊松分布中t个时间内不发生事件的概率。
+这个累积分布函数只是说出现，而不管出现几次，其实和直接用二项分布计算（1减去每次都不出现的概率）基本上相同，只是一个用概率的乘方，一个用$e$来表示。比如说计算0.01概率出5星的抽卡，可以用下面的两种式子计算，而得到的函数曲线基本上是重合的。因为通过泊松分布的证明过程，可以把组合数、概率乘方变成用指数表示。（这个图可见fgo抽卡是多么难出货，要理性氪金啊！）
+<figure><a class="lightgallery" href="https://img-blog.csdn.net/20180327220140276?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoZXJvcG9k/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" title="泊松/指数分布对应着二项分布" data-thumbnail="https://img-blog.csdn.net/20180327220140276?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoZXJvcG9k/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-sizes="auto"
+            data-srcset="https://img-blog.csdn.net/20180327220140276?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoZXJvcG9k/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70, https://img-blog.csdn.net/20180327220140276?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoZXJvcG9k/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70 1.5x, https://img-blog.csdn.net/20180327220140276?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoZXJvcG9k/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70 2x"
+            data-src="https://img-blog.csdn.net/20180327220140276?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoZXJvcG9k/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70"
+            alt="泊松/指数分布对应着二项分布" />
+    </a><figcaption class="image-caption">泊松/指数分布对应着二项分布</figcaption></figure>
+</li>
+<li><a href="https://zh.wikipedia.org/wiki/%E4%BC%BD%E7%8E%9B%E5%88%86%E5%B8%83" target="_blank" rel="noopener noreffer">伽马分布</a>
+：$X \sim \Gamma(\alpha,\beta)$ 说的是事件平均概率$\frac{1}{\beta}$ 的时候等到第 $\alpha$个事件发生的时间X符合伽马分布
+以上就是它们之间的关系。提这个是因为指数分布、<a href="https://zh.wikipedia.org/wiki/%E5%8D%A1%E6%96%B9%E5%88%86%E4%BD%88" target="_blank" rel="noopener noreffer">卡方分布</a>
+都是伽马分布的特例。指数分布只能表示发生事件，不能算等到发生了第k个事件的概率。后者可以用二项分布计算（也是组合数乘以概率），之后转化成用伽马分布表示。</li>
+</ul>
+<h1 id="显著性检验">显著性检验</h1>
+<h2 id="z检验">Z检验</h2>
+<p>有一个来自正态分布总体的样本$X_i\ldots$，已知（指定）总体的$\sigma^2$，想知道<strong>总体均值</strong>$\mu$和给的$\mu_0$有没有显著差异。于是<strong>零假设</strong>是$\mu=\mu_0$，用统计量$Z=\frac{\mu-\mu_0}{\sigma\sqrt n}$在正态分布里找拒绝域。</p>
+<h2 id="t检验">t检验</h2>
+<h3 id="单样本的">单样本的</h3>
+<p>有一个来自正态分布总体的样本$X_i\ldots$，不知道总体的$\sigma^2$和$\mu_0$，想知道<strong>总体均值</strong>$\mu$和给的$\mu_0$有没有显著差异。于是<strong>零假设</strong>是$\mu=\mu_0$，用样本标准差$S^2$代替$\sigma^2$，用统计量$t=\frac{\mu-\mu_0}{S\sqrt n} \sim t(n-1)$在<a href="https://zh.wikipedia.org/wiki/%E5%AD%A6%E7%94%9Ft-%E5%88%86%E5%B8%83" target="_blank" rel="noopener noreffer">学生分布</a>
+（t分布）里找拒绝域。
+因为是用样本估计了总体的标准差，所以不能用正态分布了。学生分布当时被发明出来就是为了解决这个问题的，它的概率密度函数$f(t)$里面有一个自由度（$n-1$）的参数。</p>
+<h3 id="双样本的配对的等等">双样本的、配对的等等</h3>
+<p>统计量算的方式有差别。
+<a href="http://support.minitab.com/zh-cn/minitab/17/topic-library/basic-statistics-and-graphs/hypothesis-tests/tests-of-means/types-of-t-tests/" target="_blank" rel="noopener noreffer">Minitab帮助</a>
+
+<a href="https://zh.wikipedia.org/wiki/%E5%AD%B8%E7%94%9Ft%E6%AA%A2%E9%A9%97" target="_blank" rel="noopener noreffer">维基</a>
+</p>
+<h2 id="f检验">F检验</h2>
+<p>又叫联合假设检验、方差齐性检验。t检验要求两个总体方差相等的时候就要先检验方差齐性。
+有两个正态样本，想检验两个总体的方差是否有显著差异。构造统计量$F=\frac{U_1/d_1}{U_2/d_2}$，$U_1$和$U_2$呈卡方分布，它们的自由度分别是$d_1$和$d_2$。</p>
+<h3 id="卡方分布httpszhwikipediaorgwikie58da1e696b9e58886e4bd88"><a href="https://zh.wikipedia.org/wiki/%E5%8D%A1%E6%96%B9%E5%88%86%E4%BD%88" target="_blank" rel="noopener noreffer">卡方分布</a>
+</h3>
+<p>符合<strong>标准正态分布</strong>的随机变量的<strong>平方和</strong>服从自由度为 k 的卡方分布。比如有一个来自正态分布总体的样本$X_i\ldots$，不知道总体的$\sigma^2$和$\mu_0$，想知道<strong>总体方差</strong>$\sigma^2$和给的$\sigma^2_0$有没有显著差异。样本的标准差$S$是总体标准差的无偏估计，再除以$\sigma_0^2$就正好凑出来一个标准正态分布。统计量$\frac{(n-1)S^2}{\sigma_0^2}\sim \chi(n-1)$，在卡方分布函数里找拒绝域。</p>
+<h2 id="线性回归中的显著性检验">线性回归中的显著性检验</h2>
+<h3 id="检验一个回归系数">检验一个回归系数</h3>
+<p>用t检验，零假设为回归系数$\beta$是0，。从最小二乘求出回归系数的方法可知，回归系数的标准差$S_\beta=\frac{\sigma}{\sqrt{\Sigma(x_i-\bar x)^2}}$，但总体$y$的标准差$\sigma$不知道，所以用样本的$S_y$代替。计算统计量$t=\frac{\beta}{S_\beta} \sim t(n-2)$。</p>
+<h3 id="检验所有的回归系数">检验所有的回归系数</h3>
+<p>用f检验，零假设为所有的回归系数都是0。为了验证这一点，使用了三个平方和（间接表现出零假设的影响）：</p>
+<ul>
+<li>SSM/SSR (Sum of Squares for Model/Regression)</li>
+<li>SSE (Sum of Squares for Error)</li>
+<li>SST (Sum of Squares Total)
+关系：SST（样本值和样本平均值之差的平方和）=SSM（预测值和平均值之差的平方和）+ SSE（预测值和样本值之差的平方和）。顺便一提，判定系数$r^2=\frac{SSM}{SST}$。
+把SSM和SSE都除以$\sigma^2$就能构造两个符合卡方分布的变量，相除之后消去不知道的方差。
+最终得到统计量$F=\frac{SSM/p}{SSE/n-p-1} \sim F(p,n-p-1)$，在F分布函数里找拒绝域。</li>
+</ul>
+<h2 id="anovahttpsenwikipediaorgwikianalysis_of_variancedesign-of-experiments_terms"><a href="https://en.wikipedia.org/wiki/Analysis_of_variance#Design-of-experiments_terms" target="_blank" rel="noopener noreffer">ANOVA</a>
+</h2>
+<p>主要的零假设就是几个样本的均值相等，即没有显著性差异。为了验证这一点，用的基本就是上面显著性检验的方法。
+在检验两组之间的差异的时候，就可以用t检验；而在多组的时候，虽然可以两两做t检验，但是不能替代原有的假设，所以用F检验。F检验时也是用组间之差的平方和比上组内之差的平方和。跟回归系数检验里面的F检验一个道理。
+总之就是没有特别的方法，就是上面方法的综合运用。</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>The article was updated on 2017-04-30</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="https://blog.theropod.tk/2017-04-30-%E5%81%9A%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E6%97%B6%E5%9B%9E%E5%BF%86%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://blog.theropod.tk/2017-04-30-%E5%81%9A%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E6%97%B6%E5%9B%9E%E5%BF%86%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86/" data-title="做统计分析课程设计时回忆的一些知识" data-hashtags="统计"><i class="fab fa-twitter fa-fw"></i>
+</a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://blog.theropod.tk/2017-04-30-%E5%81%9A%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E6%97%B6%E5%9B%9E%E5%BF%86%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86/" data-hashtag="统计"><i class="fab fa-facebook-square fa-fw"></i>
+</a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://blog.theropod.tk/2017-04-30-%E5%81%9A%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E6%97%B6%E5%9B%9E%E5%BF%86%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86/"><i class="fab fa-linkedin fa-fw"></i>
+</a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://blog.theropod.tk/2017-04-30-%E5%81%9A%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E6%97%B6%E5%9B%9E%E5%BF%86%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86/" data-title="做统计分析课程设计时回忆的一些知识" data-web><i class="fab fa-whatsapp fa-fw"></i>
+</a><a href="javascript:void(0);" title="Share on Pinterest" data-sharer="pinterest" data-url="https://blog.theropod.tk/2017-04-30-%E5%81%9A%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E6%97%B6%E5%9B%9E%E5%BF%86%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86/"><i class="fab fa-pinterest fa-fw"></i>
+</a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section><span>
+                        <a href="/tags/%E7%BB%9F%E8%AE%A1">
+                            <i class="fas fa-tag fa-fw"></i>统计
+                        </a>
+                    </span>&nbsp;</section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="https://blog.theropod.tk/2017-04-09-%E5%AE%89%E8%A3%85google-cloud-sdk%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3/" class="prev" rel="prev" title="安装Google Cloud SDK遇到的问题和解决"><i class="fas fa-angle-left fa-fw"></i>安装Google Cloud SDK遇到的问题和解决</a>
+            <a href="https://blog.theropod.tk/2017-05-02-tomacat%E9%83%A8%E7%BD%B2%E4%B8%A4%E4%B8%AA%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%87%A0%E7%82%B9%E7%BB%8F%E9%AA%8C/" class="next" rel="next" title="Tomacat部署两个项目的几点经验">Tomacat部署两个项目的几点经验<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div class="comment"><div id="disqus_thread"></div><noscript>
+            Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript></div>
+    </article></div>
+            </main><footer class="footer">
+    <div class="copyright"><div class="copyright-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer">LoveIt<i class="far fa-heart fa-fw"></i></a>
+        </div>
+
+        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://blog.theropod.tk" target="_blank">WGS84教信者</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+</div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
+            <span>&nbsp;</span>
+        </a><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            lightGallery(document.getElementById('content'), {
+                selector: '.lightgallery',
+                speed: 400,
+                hideBarsDelay: 2000,
+                thumbnail: true,
+                exThumbImage: 'data-thumbnail',
+                thumbWidth: 80,
+                thumbContHeight: 80,
+            });
+        });
+    </script><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.a0f67639490aba5d9a250783c0aa0ed69f83a6f151fb0d7b9fb617c9dbc54565.css" integrity="sha256-oPZ2OUkKul2aJQeDwKoO1p&#43;DpvFR&#43;w17n7YXydvFRWU="><script src="https://theropodblog.disqus.com/embed.js"></script><script src="/lib/smooth-scroll/smooth-scroll.polyfills.min.54590077ee163035c3dd38dc034e9f6915ecbe680dd832f449afa21672cab116.js" integrity="sha256-VFkAd&#43;4WMDXD3TjcA06faRXsvmgN2DL0Sa&#43;iFnLKsRY="></script><script src="/lib/sharer/sharer.min.9c88f86c7f0820287113f6236200459832693656e80d7556cc80a93dfbd45813.js" integrity="sha256-nIj4bH8IIChxE/YjYgBFmDJpNlboDXVWzICpPfvUWBM="></script><script src="/lib/lazysizes/lazysizes.min.876b4c12685e991d88378c1b6dd3638fd2da0c88f3c24da1ada950c1f26604e1.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE="></script><script src="/lib/lightgallery/lightgallery.min.7a84c63ab156d68e4a7269487c9c65a4eb34b0c7864f2d3fd2b87f7c664480d3.js" integrity="sha256-eoTGOrFW1o5KcmlIfJxlpOs0sMeGTy0/0rh/fGZEgNM="></script><script src="/lib/lightgallery/lg-thumbnail.min.eab31af8f90835b7ab674b2dd2474841039bc01022aa312f80dde6e22fde58d7.js" integrity="sha256-6rMa&#43;PkINberZ0st0kdIQQObwBAiqjEvgN3m4i/eWNc="></script><script src="/lib/lightgallery/lg-zoom.min.e3a7e6bb4a69f8627654ba9e0ab1252971bcfb400538dbb0605db9a3342ce5b9.js" integrity="sha256-46fmu0pp&#43;GJ2VLqeCrElKXG8&#43;0AFONuwYF25ozQs5bk="></script><script src="/js/theme.min.1482fc67bfa2c3b8cebe476d0037b9321b5b7a8a1525b547b94143948be90e9e.js" integrity="sha256-FIL8Z7&#43;iw7jOvkdtADe5MhtbeooVJbVHuUFDlIvpDp4="></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-136276173-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+</html>
