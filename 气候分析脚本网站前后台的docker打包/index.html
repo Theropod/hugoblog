@@ -5,40 +5,40 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Geoserver中加入netcdf | WGS84教信者</title>
-        <meta name="Description" content="WGS84教信者"><meta property="og:title" content="Geoserver中加入netcdf" />
-<meta property="og:description" content="" />
+        <title>气候分析脚本网站前后台的打包 | WGS84教信者</title>
+        <meta name="Description" content="WGS84教信者"><meta property="og:title" content="气候分析脚本网站前后台的打包" />
+<meta property="og:description" content="conda:太大了 https://pythonspeed.com/articles/conda-docker-image-size/说本来打" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.theropod.tk/2020-11-15-geoserver%E4%B8%AD%E5%8A%A0%E5%85%A5netcdf/" />
-<meta property="article:published_time" content="2020-11-15T17:15:37+08:00" />
-<meta property="article:modified_time" content="2020-11-15T17:15:37+08:00" /><meta property="og:site_name" content="WGS84教信者" />
+<meta property="og:url" content="https://blog.theropod.tk/%E6%B0%94%E5%80%99%E5%88%86%E6%9E%90%E8%84%9A%E6%9C%AC%E7%BD%91%E7%AB%99%E5%89%8D%E5%90%8E%E5%8F%B0%E7%9A%84docker%E6%89%93%E5%8C%85/" />
+<meta property="article:published_time" content="2020-11-24T00:35:19+08:00" />
+<meta property="article:modified_time" content="2020-11-24T00:35:19+08:00" /><meta property="og:site_name" content="WGS84教信者" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Geoserver中加入netcdf"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="气候分析脚本网站前后台的打包"/>
+<meta name="twitter:description" content="conda:太大了 https://pythonspeed.com/articles/conda-docker-image-size/说本来打"/>
 <meta name="theme-color" content="#ffffff">
 <meta name="msapplication-TileColor" content="#da532c">
-<link rel="canonical" href="https://blog.theropod.tk/2020-11-15-geoserver%E4%B8%AD%E5%8A%A0%E5%85%A5netcdf/" />
+<link rel="canonical" href="https://blog.theropod.tk/%E6%B0%94%E5%80%99%E5%88%86%E6%9E%90%E8%84%9A%E6%9C%AC%E7%BD%91%E7%AB%99%E5%89%8D%E5%90%8E%E5%8F%B0%E7%9A%84docker%E6%89%93%E5%8C%85/" />
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="https://blog.theropod.tk/2020-11-14-%E6%9C%89%E5%85%B3linux%E5%88%A0%E9%99%A4libc.so.6%E4%B9%8B%E5%90%8E%E7%9A%84%E5%87%A0%E7%A7%8D%E5%8F%AF%E8%83%BD%E8%A1%A5%E6%95%91/" /><link rel="next" href="https://blog.theropod.tk/2020-11-23-github%E5%8A%A0tag/" /><link rel="stylesheet" href="/lib/fontawesome-free/all.min.9a680b90260b5106d79f4075491ab31daafa7429eff686453c40b58357309649.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="><link rel="stylesheet" href="/lib/animate/animate.min.3c770e90f98eb21b0c042fafb49755af93306fbaf42e449524f94fae9fc83295.css" integrity="sha256-PHcOkPmOshsMBC&#43;vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="><link rel="stylesheet" href="/css/style.min.b499aa36490cd3731b618b943112e5024effc494a3522ab3309e40e6afacbc1e.css" integrity="sha256-tJmqNkkM03MbYYuUMRLlAk7/xJSjUiqzMJ5A5q&#43;svB4=">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="https://blog.theropod.tk/2020-11-23-github%E5%8A%A0tag/" /><link rel="stylesheet" href="/lib/fontawesome-free/all.min.9a680b90260b5106d79f4075491ab31daafa7429eff686453c40b58357309649.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="><link rel="stylesheet" href="/lib/animate/animate.min.3c770e90f98eb21b0c042fafb49755af93306fbaf42e449524f94fae9fc83295.css" integrity="sha256-PHcOkPmOshsMBC&#43;vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="><link rel="stylesheet" href="/css/style.min.b499aa36490cd3731b618b943112e5024effc494a3522ab3309e40e6afacbc1e.css" integrity="sha256-tJmqNkkM03MbYYuUMRLlAk7/xJSjUiqzMJ5A5q&#43;svB4=">
 <script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "Geoserver中加入netcdf",
+        "headline": "气候分析脚本网站前后台的打包",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/blog.theropod.tk\/2020-11-15-geoserver%E4%B8%AD%E5%8A%A0%E5%85%A5netcdf\/"
+            "@id": "https:\/\/blog.theropod.tk\/%E6%B0%94%E5%80%99%E5%88%86%E6%9E%90%E8%84%9A%E6%9C%AC%E7%BD%91%E7%AB%99%E5%89%8D%E5%90%8E%E5%8F%B0%E7%9A%84docker%E6%89%93%E5%8C%85\/"
         },"image": {
                 "@type": "ImageObject",
                 "url": "https:\/\/blog.theropod.tk\/images\/me\/avatar.png",
                 "width":  867 ,
                 "height":  868 
-            },"genre": "posts","keywords": "网管","wordcount":  0 ,
-        "url": "https:\/\/blog.theropod.tk\/2020-11-15-geoserver%E4%B8%AD%E5%8A%A0%E5%85%A5netcdf\/","datePublished": "2020-11-15T17:15:37\x2b08:00","dateModified": "2020-11-15T17:15:37\x2b08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            },"genre": "posts","wordcount":  469 ,
+        "url": "https:\/\/blog.theropod.tk\/%E6%B0%94%E5%80%99%E5%88%86%E6%9E%90%E8%84%9A%E6%9C%AC%E7%BD%91%E7%AB%99%E5%89%8D%E5%90%8E%E5%8F%B0%E7%9A%84docker%E6%89%93%E5%8C%85\/","datePublished": "2020-11-24T00:35:19\x2b08:00","dateModified": "2020-11-24T00:35:19\x2b08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
                 "@type": "Organization",
                 "name": "Theropod",
                 "logo": {
@@ -115,20 +115,15 @@ if (!doNotTrack) {
     window.desktopHeaderMode = "auto";
     window.mobileHeaderMode = "auto";
 </script><main class="main">
-                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">Geoserver中加入netcdf</h1><div class="post-meta">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">气候分析脚本网站前后台的打包</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author">
                     <a class="author" href="https://blog.theropod.tk" rel="author" target="_blank">
                         <i class="fas fa-user-circle fa-fw"></i>WGS84教信者
                     </a>
-                </span>&nbsp;<span class="post-category">included in&nbsp;
-                            <span>
-                                <a href="/categories/geoserver">
-                                    <i class="far fa-folder fa-fw"></i>Geoserver
-                                </a>
-                            </span></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-11-15>2020-11-15</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 0 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>0 min&nbsp;</div>
+                </span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-11-24>2020-11-24</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 469 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>1 min&nbsp;</div>
         </div><div class="toc" id="toc-auto">
                 <h2 class="toc-title">Contents</h2>
                 <div class="toc-content" id="toc-content-auto"></div>
@@ -143,42 +138,59 @@ if (!doNotTrack) {
                     </summary>
                     <div class="toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
                 </details>
-            </div><div class="content" id="content"></div><div class="post-footer" id="post-footer">
+            </div><div class="content" id="content"><p>conda:太大了 <a href="https://pythonspeed.com/articles/conda-docker-image-size/">https://pythonspeed.com/articles/conda-docker-image-size/</a>说本来打包一个python3.8+numpy要950MB 分层压缩之后也要330MB
+aplinelinux：害怕有问题
+ubuntu：官方镜像是72.9MB
+装完nclncocdo之后是1.03GB
+如何精简：https://www.cnblogs.com/dogecheng/p/11437413.html
+ubuntu20.04安装https://packages.ubuntu.com/bionic-updates/amd64/libgfortran3/download
+<a href="https://packages.ubuntu.com/bionic-updates/amd64/gcc-6-base/download">https://packages.ubuntu.com/bionic-updates/amd64/gcc-6-base/download</a>
+有关X11https://medium.com/@SaravSun/running-gui-applications-inside-docker-containers-83d65c0db110没有用
+但是这个可以
+<a href="https://github.com/mviereck/x11docker#dependencies">https://github.com/mviereck/x11docker#dependencies</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">x11docker -i &lt;IMAGENAME&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>conda也没有用
+比较一下conda和apt体积? 别了 没有用 肯定是conda大啊
+使用GitHub Actions来推送
+<a href="https://sleele.com/2020/01/06/%E4%BD%BF%E7%94%A8github-action%E6%9E%84%E5%BB%BAimage%E6%8E%A8%E9%80%81docker-hub/">https://sleele.com/2020/01/06/%E4%BD%BF%E7%94%A8github-action%E6%9E%84%E5%BB%BAimage%E6%8E%A8%E9%80%81docker-hub/</a></p>
+</div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>The article was updated on 2020-11-15</span>
+                <span>The article was updated on 2020-11-24</span>
             </div>
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="https://blog.theropod.tk/2020-11-15-geoserver%E4%B8%AD%E5%8A%A0%E5%85%A5netcdf/index.md" target="_blank">Read Markdown</a>
+                            <a class="link-to-markdown" href="https://blog.theropod.tk/%E6%B0%94%E5%80%99%E5%88%86%E6%9E%90%E8%84%9A%E6%9C%AC%E7%BD%91%E7%AB%99%E5%89%8D%E5%90%8E%E5%8F%B0%E7%9A%84docker%E6%89%93%E5%8C%85/index.md" target="_blank">Read Markdown</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://blog.theropod.tk/2020-11-15-geoserver%E4%B8%AD%E5%8A%A0%E5%85%A5netcdf/" data-title="Geoserver中加入netcdf" data-hashtags="网管"><i class="fab fa-twitter fa-fw"></i>
-</a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://blog.theropod.tk/2020-11-15-geoserver%E4%B8%AD%E5%8A%A0%E5%85%A5netcdf/" data-hashtag="网管"><i class="fab fa-facebook-square fa-fw"></i>
-</a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://blog.theropod.tk/2020-11-15-geoserver%E4%B8%AD%E5%8A%A0%E5%85%A5netcdf/"><i class="fab fa-linkedin fa-fw"></i>
-</a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://blog.theropod.tk/2020-11-15-geoserver%E4%B8%AD%E5%8A%A0%E5%85%A5netcdf/" data-title="Geoserver中加入netcdf" data-web><i class="fab fa-whatsapp fa-fw"></i>
-</a><a href="javascript:void(0);" title="Share on Pinterest" data-sharer="pinterest" data-url="https://blog.theropod.tk/2020-11-15-geoserver%E4%B8%AD%E5%8A%A0%E5%85%A5netcdf/"><i class="fab fa-pinterest fa-fw"></i>
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://blog.theropod.tk/%E6%B0%94%E5%80%99%E5%88%86%E6%9E%90%E8%84%9A%E6%9C%AC%E7%BD%91%E7%AB%99%E5%89%8D%E5%90%8E%E5%8F%B0%E7%9A%84docker%E6%89%93%E5%8C%85/" data-title="气候分析脚本网站前后台的打包"><i class="fab fa-twitter fa-fw"></i>
+</a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://blog.theropod.tk/%E6%B0%94%E5%80%99%E5%88%86%E6%9E%90%E8%84%9A%E6%9C%AC%E7%BD%91%E7%AB%99%E5%89%8D%E5%90%8E%E5%8F%B0%E7%9A%84docker%E6%89%93%E5%8C%85/"><i class="fab fa-facebook-square fa-fw"></i>
+</a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://blog.theropod.tk/%E6%B0%94%E5%80%99%E5%88%86%E6%9E%90%E8%84%9A%E6%9C%AC%E7%BD%91%E7%AB%99%E5%89%8D%E5%90%8E%E5%8F%B0%E7%9A%84docker%E6%89%93%E5%8C%85/"><i class="fab fa-linkedin fa-fw"></i>
+</a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://blog.theropod.tk/%E6%B0%94%E5%80%99%E5%88%86%E6%9E%90%E8%84%9A%E6%9C%AC%E7%BD%91%E7%AB%99%E5%89%8D%E5%90%8E%E5%8F%B0%E7%9A%84docker%E6%89%93%E5%8C%85/" data-title="气候分析脚本网站前后台的打包" data-web><i class="fab fa-whatsapp fa-fw"></i>
+</a><a href="javascript:void(0);" title="Share on Pinterest" data-sharer="pinterest" data-url="https://blog.theropod.tk/%E6%B0%94%E5%80%99%E5%88%86%E6%9E%90%E8%84%9A%E6%9C%AC%E7%BD%91%E7%AB%99%E5%89%8D%E5%90%8E%E5%8F%B0%E7%9A%84docker%E6%89%93%E5%8C%85/"><i class="fab fa-pinterest fa-fw"></i>
 </a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section><span>
-                        <a href="/tags/%E7%BD%91%E7%AE%A1">
-                            <i class="fas fa-tag fa-fw"></i>网管
-                        </a>
-                    </span>&nbsp;</section>
+        <section></section>
         <section>
             <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="https://blog.theropod.tk/2020-11-14-%E6%9C%89%E5%85%B3linux%E5%88%A0%E9%99%A4libc.so.6%E4%B9%8B%E5%90%8E%E7%9A%84%E5%87%A0%E7%A7%8D%E5%8F%AF%E8%83%BD%E8%A1%A5%E6%95%91/" class="prev" rel="prev" title="有关Linux删除libc.so.6之后的几种可能补救"><i class="fas fa-angle-left fa-fw"></i>有关Linux删除libc.so.6之后的几种可能补救</a>
-            <a href="https://blog.theropod.tk/2020-11-23-github%E5%8A%A0tag/" class="next" rel="next" title="Github加tag">Github加tag<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="https://blog.theropod.tk/2020-11-23-github%E5%8A%A0tag/" class="prev" rel="prev" title="Github加tag"><i class="fas fa-angle-left fa-fw"></i>Github加tag</a></div>
 </div>
 <div class="comment"><div id="disqus_thread"></div><noscript>
             Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
