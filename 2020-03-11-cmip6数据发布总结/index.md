@@ -6,11 +6,12 @@
 
 ## 3. 两个配置文件
 
-### sample.hosts是描述远程机器的模板，这里配置为data only
+### sample.hosts是描述远程机器的模板，作为数据节点都配置为data only
 
 - 需要有一个domain name (fully qulified domain name)
   - 在清华经过国际处和网络中心的诸多手续才能申请，而且他们得先看到网站本体才能给你通过。
-  - 临时没有domain name可以指定ip和端口号替代
+  - 没有domain name时可以指定ip和端口号临时替代
+  - 由于校内没法解析，所以还是
 
 ### host_vars/myhost.my.org.yml是安装配置，文件名要和hosts里的名称一致
 
@@ -18,11 +19,11 @@
   - 关于https证书部分
     - 清华是自动在校园网的出口配置https，所以设置generate_httpd:true来生成个假的就行，别人访问就是https
     - 如果不像清华这种自动配置的，就按照自己的域名用LetsEncrypt设置
-  - 有关Globus的证书
-    - 称为Globus services Certificate，用于服务器向Globus来注册自己的GridFTP/Myproxy服务。安装时首先配置generate_globus为true，在root用户目录下产生CSR，将CSR邮件给ESGF相应管理员获得证书，之后可以用local_certs.yml安装证书，或重新安装时在globus设置里配置此证书的路径，不再generate_globus。
-    - 注意，清华节点开放端口申请复杂，所以没有安装GridFTP，而data node不需要MyProxy服务，因此本步骤只是为了防止在esg-publish和unpublish的时候可能会弹出认证。
-    - Globus 用户名密码部分
-      - 需要申请一个globus帐户密码然后填上去，否则不给通过安装
+  - 有关Globus和Myproxy的证书
+    - 注意，清华节点开放端口申请复杂，所以其实没有安装GridFTP，而data node不需要MyProxy服务（用于给用户认证，待明确）。因此设置generate_myproxy和设置globus只是为了防止在esg-publish和unpublish的时候弹出认证。
+    - 文件中要求的cert称为Globus services Certificate，服务器用它向Globus注册自己的GridFTP/Myproxy服务。首先在Ansible安装时配置generate_globus为true，以在root用户目录下产生私钥globushostkey.pem和签名请求globushostcsr.csr，随后将CSR邮件给ESGF相应管理员获得ESGF签名的证书globushostcert.pem。可以用ansible的local_certs.yml安装证书，或重新安装时关闭generate_globus选项，在yml相应位置配置此证书的路径。
+  - Globus 用户名密码部分
+    - 如果出Bug提示没有Globus用户名密码不给通过安装，就需要申请一个globus号，填进去
 
 ## 4. 在target machine上面使用Playbook部署
 
@@ -63,9 +64,23 @@
 - Citation信息需要联系WIP，来首先注册机构和数据
   - <https://github.com/WCRP-CMIP/CMIP6_CVs>
   - <http://cmip6cite.wdc-climate.de/#Information-for-ESGF-Data-Node-Managers>
+- ESGF-Dashboard
+  - 概述和配置方法见PCMDI的网页。简单来说，esgf-dashboard-ip程序会把下载信息记录到esgf_dashboardschema下的esgf-dashboard-queue表（注意postgresql的schema不等于db），以及从这个表生成统计信息，最终由tomcat中的esgf-stats-api读取表发布出来网页，如https://cmip.bcc.cma.cn/esgf-stats-api/cmip6/stats-by-space/xml。另外有统计用的节点来harvest，如http://esgf-ui.cmcc.it/esgf-dashboard-ui/federated-view.html
+  - 从学校服务器的access log看，所有的来源ip都被隐去了，只能看到校园网的166.111.7.7和166.111.7.8，所以原理上无法按照区域等统计，只能统计个下载量。
+  - 清华的这个服务按照教程可以启动，但没有生成数据库表，且esgf-dashboard-ip可执行文件目录中出现了非常多segement fault导致的core.dump信息，怀疑是安装出错导致无法使用。\dn schema等等 set view之后发现全是esgf_dashboard 数据是有的
+  - set search_path = esgf_dashboard;
+  - 根据PCMDI的重启命令，结合源程序（网上搜到的zip解压看到  /usr/local/esgf-dashboard/src/c/esgf-dashboard-ip/src/dbAccess.c），以及出现执行sql命令出错，怀疑是esgcet没有权限，于是给esgcet加上所有权限
+  ALTER ROLE esgcet WITH SUPERUSER;
+  /esg/config/esgf.properties里面的用户名设置上
+  - 然而还是出错，形式是先报错sql执行不对，之后出现segment fault 然后有一个core dump。sql直接输进数据库，发现原因是缺了一些表，但我感觉这个不重要，因为缺的不是cmip6的表。
+  - 用gdb调试，发现原因是读取一个shards.xml文件时xmlReadFile报错找不到文件。
+- Filebeat
+  - 现状：2020年时，发现老的esgf-dashboard-ip已经从ansible中移除了，节点数据采集流程改为：先在apache中设置新增一个country_download.log，用filebeat处理后，上报给cmcc.it
+  - 安装：全新安装时会自动把相关东西装上，在 https://acme-climate.atlassian.net/wiki/spaces/ESGF/pages/1054113816/Proposed+ESGF+Usage+of+Filebeat+and+Logstash 可以找到手动配置的方法。官方里给的filebeat.yml中`- type: log`前面少了两个空格，要不然filebeat服务启动会失败。
+  - 显示：filebeat起来之后，可以在localhost:5601看到
 - 有关Thredds和root url网页
   - thredds里面有关标题、图片、联系方式、组织等信息在/esg/下面设置
-  - 域名的根页面原来是空的，现在在/etc/httpd/htdocs下放了一个html作为首页。放的是如何撤回、更新、追加的信息。
+  - 域名的根页面原来是空的，现在在/etc/httpd/htdocs下放了一个html作为首页。内容是如何撤回、更新、追加的信息。
 
 ### 准备，esgprep
 
@@ -102,7 +117,7 @@
 
 ### 发布 esgpublish，同样的conda环境  注意publish和unpublish，mapfile一定要保存好
 
-  1. Generate certificate for publication with myproxy-logon 用的普通用户来发布 `myproxy-logon -b -s esgf-node.llnl.gov -l username -p 7512 -t 72 -o $HOME/.globus/certificate-file`
+  1. Generate certificate for publication with myproxy-logon 用的普通用户来发布 `myproxy-logon -b -s esgf-node.llnl.gov -l username -p 7512 -t 72 -o $HOME/.globus/certificate-file` 如果失败，需要ESGF管理员将你的用户名加入列表。
   2. publish
 
       三步: database, thredds server, index node
