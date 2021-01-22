@@ -16,39 +16,57 @@ unordered会比imap稍好，先自动执行小任务出结果，同时总体上�
 [参考链接](https://stackoverflow.com/questions/26520781/multiprocessing-pool-whats-the-difference-between-map-async-and-imap)
 ### 和apply/apply_async的区别
 1. apply仅将一个任务发送给process，在完成前都是block
-2. apply_async可以立即获得AsyncResult，任务结束得到值。apply is implemented by simply calling apply_async(...).get()
+2. apply_async可以立即获得AsyncResult，任务结束得到值,可以用于tqdm。[(tqdm操作方法)](https://github.com/tqdm/tqdm/issues/484)  
+apply is implemented by simply calling apply_async(...).get()
 ### 使用中遇到的问题
 1. 若希望在multi processing时用tqdm显示进度，不能用同步的map或apply，会阻塞tqdm更新
-2. 需要判断 `if __name__ == '__main__':`后再执行imap，否则child process拷贝的运行环境也将尝试开child process，造成套娃。例如在jupyter lab中运行时，若不设置此判断会经常发现任务运行不玩就出错卡死，进程永远不结束。（此判断的原理是，子进程的__name__不再是__main__ [参考](https://cloud.tencent.com/developer/article/1563136)）
-3. 开启多进程有fork/spawn/fork_server三种方式 [(官方文档)](https://docs.python.org/3.8/library/multiprocessing.html#contexts-and-start-methods)，windows和interactive的shell采用spawn，会从头开始导入code，很难正确导入。而unix使用fork会直接复制running states，就不会有这个问题。[详见](https://stackoverflow.com/a/50385056)  
-例如，children运行需要导入__main__模块，而interactive interpreter（导入code困难）有时会无法运行 [可以参考此节的的Note](https://stackoverflow.com/a/50385056)。 
-4. 为此有人会专门把函数写到文件，用多进程时import它，以避免spawn的导入code失败（例如此问题，但当时jupyter会失败，我现在没有遇到此问题 [参考](https://stackoverflow.com/a/54266620)）
+2. 尽量显式传参给子进程
+    - 虽然unix的fork方式可以让子进程使用父进程的全局变量，但仍建议传参
+    - 原因：Windows兼容、别处也可直接调用、防止子进程alive时资源GC
+3. 有关Windows/Interactive环境下执行
+    - 开启多进程有fork/spawn/fork_server三种方式 [(官方文档)](https://docs.python.org/3.8/library/multiprocessing.html#contexts-and-start-methods)，windows和interactive的shell采用spawn，会很难从头开始导入code。而unix使用fork会直接复制running states，就不会有这个问题。[详见](https://stackoverflow.com/a/50385056) 
+    - 因此，Windows下需要判断 `if __name__ == '__main__':`后再执行imap等开启多进程，称为protect the main function [(否则会导致main中内容又执行一遍)](https://stackoverflow.com/a/45110493)，官方文档的programming guidline也提示[safe importing of main module](https://docs.python.org/3.8/library/multiprocessing.html#the-spawn-and-forkserver-start-methods)  
+    - 但是，有时children需要__main__模块的内容才能正确运行，而Windows下子进程的__name__不再是__main__ [参考](https://cloud.tencent.com/developer/article/1563136)，因此需要用到的资源要在`if __name__ == '__main__':`之前确定好,在这语句之后的值不会传递到子进程里。interactive interpreter（导入code困难）有时会无法运行 [可以参考此节的的Note](https://docs.python.org/3.8/library/multiprocessing.html#using-a-pool-of-workers)
+    - 为此有人会专门把函数写到文件，用多进程时import它，以避免spawn的导入code失败（此处的jupyter会失败，我现在没有遇到此问题 [参考](https://stackoverflow.com/a/54266620)）
 
-### 我在jupyterlab中的一个例子
+### 在jupyterlab中的一个例子
 ```python
+# import multiprocessing as mp
+# this module is a fork of official multiprocessing and I believe is faster
+import multiprocess as mp
+
+# pool
+# pool = mp.Pool(mp.cpu_count())
+pool = mp.Pool(16)
+
 '''
 multiprocessing a for-range function with tqdm showing progess bar, https://github.com/tqdm/tqdm/issues/484
 using imap_unordered to start process in a pool and get returned value asynchronously
-- need to determine if the module is run by jupyter (__name__ == '__main__') or in a worker(__name__ != '__main__')
-  or the created processes will also try to create process and lead to failure(e.g. the process never ends)
+- imap_unordered only takes one argument(the iterator), if you need multiple arguments, you have to wrap all arguments into one new iterator
 # myRange: range of for loop, e.g. range(2001,2020)
 # MyFunc: function to by multiprocessed, takes returned value of myRange as the only argument
 ''' 
 def forloop_mp(myRange, myFunc):
     if __name__ == '__main__':
-#         pool = mp.Pool(mp.cpu_count())
-        pool = mp.Pool(16)
-        # to store returned values
-        results = []
-        # run iteration with tqdm
-        for result in tqdm(pool.imap_unordered(myFunc, myRange), total=len(myRange)):
-            # if you want to print returned value
-#             print(result)
-            results.append(result)
-        # stop receiving new tasks
-        pool.close()
-        # block the method until the process whose join() method is called terminates
-        pool.join()
+        # start a pool
+        # with mp.Pool(processes=mp.cpu_count()) as pool:
+        with mp.Pool(processes=16) as pool:
+         
+            # to store returned values
+            results = []
+            # run iteration with tqdm
+            # expecting a message to print and the returned result of each iteration
+            for (msg, result) in tqdm(pool.imap_unordered(myFunc, myRange), total=len(myRange)):
+                # if you want to print returned message
+                print(msg)
+                results.append(result)
+            # stop receiving new tasks
+            pool.close()
+            # block the method until the process whose join() method is called terminates
+            pool.join()
+            # exiting the 'with'-block has stopped the pool, dont terminate it manually
+            # pool.terminate()
+            
         return results
     else:
         raise "Not in Jupyter Notebook"
@@ -62,26 +80,35 @@ using apply_async to start process in a pool (another way is to use imap_unorder
 ''' 
 def forloop_mp_applyasync(myRange, myFunc, params):
     if __name__ == '__main__':
-        # progress bar and result list
-        pbar = tqdm(total=len(myRange))
-        res = [None] * len(myRange)  # result list of correct size
+        # start a pool
+        # with mp.Pool(processes=mp.cpu_count()) as pool:
+        with mp.Pool(processes=16) as pool:
+            
+            # progress bar and result list
+            pbar = tqdm(total=len(myRange))
+            results = [None] * len(myRange)  # result list of correct size
 
-        # callback function to update pbar
-        def update(*result):
-            pbar.update()
-            # if you want to print returned value
-    #       print(str(result))
+            # callback function to update pbar
+            # expecting a message to print and the returned result of each iteration    
+            def update(msg, result):
+                pbar.update()
+                # if you want to print returned value
+                print(msg)
+                results.append(result)
 
-    #   pool = mp.Pool(mp.cpu_count())
-        pool = mp.Pool(16)
-        for i in myRange:
-            pool.apply_async(myFunc, args=params , callback=update)
-        # stop receiving new tasks
-        pool.close()
-        # block the method until the process whose join() method is called terminates
-        pool.join()
-        # stop updating pbar
-        pbar.close()
+            for i in myRange:
+                pool.apply_async(myFunc, args=(i, params) , callback=update)
+
+            # stop receiving new tasks
+            pool.close()
+            # block the method until the process whose join() method is called terminates
+            pool.join()
+            # stop updating pbar
+            pbar.close()
+            # exiting the 'with'-block has stopped the pool, dont terminate it manually
+            # pool.terminate()
+            
+        return results
     else:
         raise "Not in Jupyter Notebook"
 
