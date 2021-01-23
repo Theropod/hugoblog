@@ -1,5 +1,5 @@
 ---
-title: "2021 01 14 Python使用apply_async和imap时遇到的区别"
+title: "Python使用apply_async和imap时遇到的区别"
 date: 2021-01-14T22:06:13+08:00
 draft: false
 ---

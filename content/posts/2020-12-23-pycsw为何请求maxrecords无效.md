@@ -1,5 +1,5 @@
 ---
-title: "2020 12 23 Pycsw为何请求maxrecords无效"
+title: "Pycsw为何请求maxrecords无效"
 date: 2020-12-23T10:02:52+08:00
 draft: false
 ---

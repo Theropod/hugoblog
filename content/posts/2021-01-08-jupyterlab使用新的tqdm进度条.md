@@ -1,5 +1,5 @@
 ---
-title: "2021 01 08 Jupyterlab使用新的tqdm进度条"
+title: "Jupyterlab使用新的tqdm进度条"
 date: 2021-01-08T13:59:00+08:00
 draft: false
 ---
