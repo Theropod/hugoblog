@@ -1,4 +1,4 @@
-# 2021 01 14 使用mkcert快速实现本地https
+# 使用mkcert快速实现本地https
 
 ### 安装
 直接使用github上发布的binary（因为是go写的），或者使用brew/chocolatey等安装

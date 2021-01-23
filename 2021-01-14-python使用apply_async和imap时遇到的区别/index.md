@@ -1,4 +1,4 @@
-# 2021 01 14 Python使用apply_async和imap时遇到的区别
+# Python使用apply_async和imap时遇到的区别
 
 ### map/map_async与imap/imap_unordered的区别
 1. 传递iterable object的方式  
