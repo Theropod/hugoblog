@@ -147,15 +147,19 @@
 
       注意，官方会提到有test publish的地址，但是实际邮件沟通是不能用的，耽误了很久。。。要发布的话应当直接发布
   
-### 几点实践经验
-  1. 有关两次检查
-   手动运行PrePARE检查，然后DRS生成的时候也会检查。如果文件不是cmor生成，在publish时跳过自动的PrePARE。
-  2. 有关数据目录
-   由于学校给出的模式结果是按atm/lnd/ocn这样分组的，我产生的DRS目录和mapfiles目录都是按/atm/lnd/ocn分别存放。这样发布和撤回时也是分开的，便于找错。
-  3. 有关更新或者增加文件
-   数据原始目录里复制替换nc文件，然后重新运行一遍DRS和mapfile，照常发布即可。
+### 实践经验
+  1. 有关两次检查  
+  手动运行PrePARE检查，然后DRS生成的时候也会检查。如果文件不是cmor生成，在publish时跳过自动的PrePARE。
+  2. 有关数据目录  
+  由于提供给我模式结果是按atm/lnd/ocn这样分组的，我产生的DRS目录和mapfiles目录都是按/atm/lnd/ocn分别存放。这样发布和撤回时也是分开的，便于找错。
+  3. 有关更新或者增加文件  
+  数据原始目录里复制替换nc文件，然后重新运行一遍DRS和mapfile，照常发布即可。
+  4. 某次升级esgf软件之后发现部分文件下载需要用户认证  
+  查看tomcat log发现http下载某些文件时307重定向到restrictedAccess的地址，浏览器弹出的认证是让输入用户名和密码。查看其它机构的ESGF安装，都限制数据集为esgf-user访问（通过esg.ini设置，发布时生成的xml里面写入了这一项，xml也在/esg里面），于是在tomcat/webapps/thredds/WEB-INF/web.xml里面注掉了restricted access datasets相关的security-constraints部分，重启tomcat后就无跳转了。
+  [参考Thredds的restrictedAccess设置方法](https://www.unidata.ucar.edu/software/tds/current/reference/RestrictedAccess.html)
+  
 
-## 6.数据更新、追加、撤回实践
+## 6.数据更新、追加、撤回
 ### 根据要求，每次更新或撤回错误数据都要先在ERRATA上说明原因，附上影响的文件列表，作为长期记录。
 https://errata.es-doc.org/static/index.html
 ### 撤回
