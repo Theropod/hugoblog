@@ -28,8 +28,9 @@ apply is implemented by simply calling apply_async(...).get()
     - 因此，Windows下需要判断 `if __name__ == '__main__':`后再执行imap等开启多进程，称为protect the main function [(否则会导致main中内容又执行一遍)](https://stackoverflow.com/a/45110493)，官方文档的programming guidline也提示[safe importing of main module](https://docs.python.org/3.8/library/multiprocessing.html#the-spawn-and-forkserver-start-methods)  
     - 但是，有时children需要__main__模块的内容才能正确运行，而Windows下子进程的__name__不再是__main__ [参考](https://cloud.tencent.com/developer/article/1563136)，因此需要用到的资源要在`if __name__ == '__main__':`之前确定好,在这语句之后的值不会传递到子进程里。interactive interpreter（导入code困难）有时会无法运行 [可以参考此节的的Note](https://docs.python.org/3.8/library/multiprocessing.html#using-a-pool-of-workers)
     - 为此有人会专门把函数写到文件，用多进程时import它，以避免spawn的导入code失败（此处的jupyter会失败，我现在没有遇到此问题 [参考](https://stackoverflow.com/a/54266620)）
+4. jupyter中的可用性十分不稳定。multiprocessing会把整个jupyter的kernel复制一遍，有时会遇到谜之bug(比如notebook前端一直收到克隆kernel的更新状态失败信息)。而就算把上述best practice都做了有时也会只有第一个循环的进程跑不完，看gdb是其他进程read的时候卡住，第一个循环的进程有futex锁，整个程序卡死。
 
-### 在jupyterlab中的一个例子
+### 一个例子,jupyterlab有时可以用
 ```python
 # import multiprocessing as mp
 # this module is a fork of official multiprocessing and I believe is faster
