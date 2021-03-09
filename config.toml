@@ -77,7 +77,7 @@ enableEmoji = true
             # URL of avatar shown in home page
             avatarURL = "/images/me/avatar.png"
             # subtitle shown in home page
-            subtitle = "都是我老婆.jpg"
+            subtitle = "在做了在做了.jpg"
             # whether to use typeit animation for subtitle
             typeit = true
             # whether to show social links
