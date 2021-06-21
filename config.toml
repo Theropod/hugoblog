@@ -4,7 +4,7 @@ baseURL = "https://blog.theropod.tk"
 defaultContentLanguage = "en"
 # theme
 # 主题
-theme = "LoveIt"
+theme = "CodeIT"
 # themes directory
 # 主题目录
 # themesDir = "../.."
@@ -221,12 +221,20 @@ enableEmoji = true
 
 
 [params]
-  # LoveIt theme version
-  # LoveIt 主题版本
-  version = "0.1.X"
+  # CodeIT theme version
+  version = "0.2.X"
+  # site default theme ("light", "dark", "auto")
+  defaultTheme = "auto"
   # public git repo url only then enableGitInfo is true
   # 公共 git 仓库路径，仅在 enableGitInfo 设为 true 时有效
-  gitRepo = "https://github.com/dillonzq/LoveIt"
+  gitRepo = "https://github.com/sunt-programator/CodeIT"
+  # which hash function used for SRI, when empty, no SRI is used ("sha256", "sha384", "sha512", "md5")
+  fingerprint = "sha256"
+  # date format
+  dateFormat = "2006-01-02"
+  # website images for Open Graph and Twitter Cards
+  images = ["/logo.png"]
+
   # tableOfContents
   toc = "true"
   # Header info
