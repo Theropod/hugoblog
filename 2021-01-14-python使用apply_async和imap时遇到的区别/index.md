@@ -1,6 +1,6 @@
 # Python使用apply_async和imap时遇到的区别
 
-### map/map_async与imap/imap_unordered的区别
+## map/map_async与imap/imap_unordered的区别
 1. 传递iterable object的方式  
     - map会把发给他的所有任务iterable转成list，然后分块发给pool中的process。转换成list+分解成块需要把整个list放内存，占空间但是快
     - imap不会转list到内存，默认不分块，每次发送一个iterable到process。这样占用少可以避免内存超额的问题，但是速度降低（可通过手动设置chunksize缓解）[chunksize原理](https://stackoverflow.com/questions/53751050/python-multiprocessing-understanding-logic-behind-chunksize)
@@ -11,11 +11,11 @@
 unordered会比imap稍好，先自动执行小任务出结果，同时总体上内存小一点
 
 [参考链接](https://stackoverflow.com/questions/26520781/multiprocessing-pool-whats-the-difference-between-map-async-and-imap)
-### 和apply/apply_async的区别
+## 和apply/apply_async的区别
 1. apply仅将一个任务发送给process，在完成前都是block
 2. apply_async可以立即获得AsyncResult，任务结束得到值,可以用于tqdm。[(tqdm操作方法)](https://github.com/tqdm/tqdm/issues/484)  
 apply is implemented by simply calling apply_async(...).get()
-### 使用中遇到的问题
+## 使用中遇到的问题
 1. 若希望在multi processing时用tqdm显示进度，不能用同步的map或apply，会阻塞tqdm更新
 2. 尽量显式传参给子进程
     - 虽然unix的fork方式可以让子进程使用父进程的全局变量，但仍建议传参
@@ -27,7 +27,7 @@ apply is implemented by simply calling apply_async(...).get()
     - 为此有人会专门把函数写到文件，用多进程时import它，以避免spawn的导入code失败（此处的jupyter会失败，我现在没有遇到此问题 [参考](https://stackoverflow.com/a/54266620)）
 4. jupyter中的可用性十分不稳定。multiprocessing会把整个jupyter的kernel复制一遍，有时会遇到谜之bug(比如notebook前端一直收到克隆kernel的更新状态失败信息)。而就算把上述best practice都做了有时也会只有第一个循环的进程跑不完，看gdb是其他进程read的时候卡住，第一个循环的进程有futex锁，整个程序卡死。
 
-### 一个例子,jupyterlab有时可以用
+## 一个例子,jupyterlab有时可以用
 ```python
 # import multiprocessing as mp
 # this module is a fork of official multiprocessing and I believe is faster
@@ -130,7 +130,7 @@ def clip_LC_rasters(i):
 forloop_mp(range(2001,2020), clip_LC_rasters)
 ```
 
-### 为什么要用multiprocessing
+## 为什么要用multiprocessing
 cpython的GIL（Global Interpreter Lock）默认任何时候单进程只有一个线程能拿到GIL，竞争、切换锁消耗资源，且永远只能同时执行一个线程，效率不高。多核时，其他核心的线程虽然被唤醒-竞争锁，但大概率还是CPU0拿到锁，其他线程回到待调度，造成thrashing，效率更低。
 不过，IO密集操作的线程等待时间较长，这时切换到其他线程就可以提高效率。CPU密集则需要multiprocessing  
 [参考1](https://zhuanlan.zhihu.com/p/20953544) [参考2](http://cenalulu.github.io/python/gil-in-python/) [参考3](https://python3-cookbook.readthedocs.io/zh_CN/latest/c12/p09_dealing_with_gil_stop_worring_about_it.html)

@@ -5,144 +5,88 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>使用Openlayers v4时感觉需要记一下的东西 | WGS84教信者</title>
-        <meta name="Description" content="WGS84教信者"><meta property="og:title" content="使用Openlayers v4时感觉需要记一下的东西" />
+        <title>使用Openlayers v4时感觉需要记一下的东西 - WGS84教信者</title><meta name="description" content="WGS84教信者"><meta property="og:title" content="使用Openlayers v4时感觉需要记一下的东西" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.theropod.tk/2017-03-06-%E4%BD%BF%E7%94%A8openlayers-v4%E6%97%B6%E6%84%9F%E8%A7%89%E9%9C%80%E8%A6%81%E8%AE%B0%E4%B8%80%E4%B8%8B%E7%9A%84%E4%B8%9C%E8%A5%BF/" />
-<meta property="article:published_time" content="2017-03-06T20:21:50+00:00" />
-<meta property="article:modified_time" content="2017-03-06T20:21:50+00:00" /><meta property="og:site_name" content="WGS84教信者" />
-<meta name="twitter:card" content="summary"/>
+<meta property="og:url" content="https://blog.theropod.tk/2017-03-06-%E4%BD%BF%E7%94%A8openlayers-v4%E6%97%B6%E6%84%9F%E8%A7%89%E9%9C%80%E8%A6%81%E8%AE%B0%E4%B8%80%E4%B8%8B%E7%9A%84%E4%B8%9C%E8%A5%BF/" /><meta property="og:image" content="https://blog.theropod.tk/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2017-03-06T20:21:50&#43;00:00" />
+<meta property="article:modified_time" content="2017-03-06T20:21:50&#43;00:00" /><meta property="og:site_name" content="WGS84教信者" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://blog.theropod.tk/logo.png"/>
+
 <meta name="twitter:title" content="使用Openlayers v4时感觉需要记一下的东西"/>
 <meta name="twitter:description" content=""/>
-<meta name="theme-color" content="#ffffff">
-<meta name="msapplication-TileColor" content="#da532c">
-<link rel="canonical" href="https://blog.theropod.tk/2017-03-06-%E4%BD%BF%E7%94%A8openlayers-v4%E6%97%B6%E6%84%9F%E8%A7%89%E9%9C%80%E8%A6%81%E8%AE%B0%E4%B8%80%E4%B8%8B%E7%9A%84%E4%B8%9C%E8%A5%BF/" />
-<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="https://blog.theropod.tk/2017-02-23-shapefile-%E4%B9%B1%E7%A0%81%E4%B8%8E%E5%AD%97%E7%AC%A6%E6%88%AA%E6%96%AD%E9%97%AE%E9%A2%98/" /><link rel="next" href="https://blog.theropod.tk/2017-04-09-%E5%AE%89%E8%A3%85google-cloud-sdk%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3/" /><link rel="stylesheet" href="/lib/fontawesome-free/all.min.9a680b90260b5106d79f4075491ab31daafa7429eff686453c40b58357309649.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="><link rel="stylesheet" href="/lib/animate/animate.min.3c770e90f98eb21b0c042fafb49755af93306fbaf42e449524f94fae9fc83295.css" integrity="sha256-PHcOkPmOshsMBC&#43;vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="><link rel="stylesheet" href="/css/style.min.b499aa36490cd3731b618b943112e5024effc494a3522ab3309e40e6afacbc1e.css" integrity="sha256-tJmqNkkM03MbYYuUMRLlAk7/xJSjUiqzMJ5A5q&#43;svB4=">
-<script type="application/ld+json">
+<meta name="application-name" content="WGS84教信者">
+<meta name="apple-mobile-web-app-title" content="WGS84教信者"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.theropod.tk/2017-03-06-%E4%BD%BF%E7%94%A8openlayers-v4%E6%97%B6%E6%84%9F%E8%A7%89%E9%9C%80%E8%A6%81%E8%AE%B0%E4%B8%80%E4%B8%8B%E7%9A%84%E4%B8%9C%E8%A5%BF/" /><link rel="prev" href="https://blog.theropod.tk/2017-02-23-shapefile-%E4%B9%B1%E7%A0%81%E4%B8%8E%E5%AD%97%E7%AC%A6%E6%88%AA%E6%96%AD%E9%97%AE%E9%A2%98/" /><link rel="next" href="https://blog.theropod.tk/2017-04-09-%E5%AE%89%E8%A3%85google-cloud-sdk%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.055364f5be272caa092b0e6654c165828707f8ab971e2656383a6d6392bc345e.css" integrity="sha256-BVNk9b4nLKoJKw5mVMFlgocH&#43;KuXHiZWODptY5K8NF4="><link rel="stylesheet" href="/css/style.min.95ec0163754442eb1048a8ab1f905d6a004eee20a9076cca4c546e8376109e77.css" integrity="sha256-lewBY3VEQusQSKirH5BdagBO7iCpB2zKTFRug3YQnnc="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.876d023d9d10c97941b80c3b03e2a5b94631ff7a4af9cee5604a6a2d39718d84.css" integrity="sha256-h20CPZ0QyXlBuAw7A&#43;KluUYx/3pK&#43;c7lYEpqLTlxjYQ="><link rel="stylesheet" href="/lib/animate/animate.min.3c770e90f98eb21b0c042fafb49755af93306fbaf42e449524f94fae9fc83295.css" integrity="sha256-PHcOkPmOshsMBC&#43;vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
         "headline": "使用Openlayers v4时感觉需要记一下的东西",
+        "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/blog.theropod.tk\/2017-03-06-%E4%BD%BF%E7%94%A8openlayers-v4%E6%97%B6%E6%84%9F%E8%A7%89%E9%9C%80%E8%A6%81%E8%AE%B0%E4%B8%80%E4%B8%8B%E7%9A%84%E4%B8%9C%E8%A5%BF\/"
-        },"image": {
-                "@type": "ImageObject",
-                "url": "https:\/\/blog.theropod.tk\/images\/me\/avatar.png",
-                "width":  867 ,
-                "height":  868 
-            },"genre": "posts","keywords": "openlayers","wordcount":  293 ,
-        "url": "https:\/\/blog.theropod.tk\/2017-03-06-%E4%BD%BF%E7%94%A8openlayers-v4%E6%97%B6%E6%84%9F%E8%A7%89%E9%9C%80%E8%A6%81%E8%AE%B0%E4%B8%80%E4%B8%8B%E7%9A%84%E4%B8%9C%E8%A5%BF\/","datePublished": "2017-03-06T20:21:50\x2b00:00","dateModified": "2017-03-06T20:21:50\x2b00:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
-                "@type": "Organization",
-                "name": "Theropod",
-                "logo": {
-                "@type": "ImageObject",
-                "url": "https:\/\/blog.theropod.tk\/images\/me\/avatar.png",
-                "width":  867 ,
-                "height":  868 
-                }
+        },"genre": "posts","keywords": "openlayers","wordcount":  293 ,
+        "url": "https:\/\/blog.theropod.tk\/2017-03-06-%E4%BD%BF%E7%94%A8openlayers-v4%E6%97%B6%E6%84%9F%E8%A7%89%E9%9C%80%E8%A6%81%E8%AE%B0%E4%B8%80%E4%B8%8B%E7%9A%84%E4%B8%9C%E8%A5%BF\/","datePublished": "2017-03-06T20:21:50+00:00","dateModified": "2017-03-06T20:21:50+00:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "WGS84教信者"},"author": {
+                "@type": "Person",
+                "name": "WGS84教信者"
             },"description": ""
     }
     </script></head>
-    <body><script>
-            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;} else {
-                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
-            }
-            window.isDark && document.body.classList.add('dark-theme');
-        </script><div class="wrapper"><header class="desktop" id="header-desktop">
+    <body header-desktop="auto" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
-        <div class="header-title animated bounceIn">
-            <a href="/">WGS84教信者</a>
+        <div class="header-title">
+            <a href="/" title="WGS84教信者">WGS84教信者</a>
         </div>
-        <div class="menu"><a class="menu-item"
-                href="/posts/" >Posts</a><a class="menu-item"
-                href="/tags/" >Tags</a><a class="menu-item"
-                href="/categories/" >Categories</a><a href="javascript:void(0);" class="theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-rotate-180 fa-fw"></i>
-            </a>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
         </div>
     </div>
-    
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-136276173-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-    
 </header><header class="mobile" id="header-mobile">
-    <div class="header-wrapper">
-        <div class="header-container">
-            <div class="header-title animated bounceIn">
-                <a href="/">WGS84教信者</a>
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="WGS84教信者">WGS84教信者</a>
             </div>
             <div class="menu-toggle" id="menu-toggle-mobile">
                 <span></span><span></span><span></span>
             </div>
         </div>
-        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-rotate-180 fa-fw"></i>
-            </a>
-        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
     </div>
-    
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-136276173-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-    
 </header>
-
-<script>
-    window.desktopHeaderMode = "auto";
-    window.mobileHeaderMode = "auto";
-</script><main class="main">
-                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">使用Openlayers v4时感觉需要记一下的东西</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author">
-                    <a class="author" href="https://blog.theropod.tk" rel="author" target="_blank">
-                        <i class="fas fa-user-circle fa-fw"></i>WGS84教信者
-                    </a>
-                </span>&nbsp;<span class="post-category">included in&nbsp;
-                            <span>
-                                <a href="/categories/gis">
-                                    <i class="far fa-folder fa-fw"></i>G i s
-                                </a>
-                            </span></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2017-03-06>2017-03-06</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 293 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>1 min&nbsp;</div>
-        </div><div class="toc" id="toc-auto">
-                <h2 class="toc-title">Contents</h2>
-                <div class="toc-content" id="toc-content-auto"></div>
-            </div>
-            <div class="toc" id="toc-static">
-                <details>
-                    <summary>
-                        <div class="toc-title">
-                            <span>Contents</span>
-                            <span><i class="details icon fas fa-angle-down"></i></span>
-                        </div>
-                    </summary>
-                    <div class="toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-                </details>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">使用Openlayers v4时感觉需要记一下的东西</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://blog.theropod.tk" title="Author" target="_blank" rel="noopener noreferrer author" class="author"><i class="fas fa-user-circle fa-fw"></i>WGS84教信者</a></span>&nbsp;<span class="post-category">included in <a href="/categories/gis/"><i class="far fa-folder fa-fw"></i>GIS</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2017-03-06">2017-03-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;293 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
             </div><div class="content" id="content"><ul>
 <li>ol.map有一个forEachFeatureAtPixel的函数，可以用来响应鼠标事件，得到feature的属性。但是对于TileWMS的source，或者说用这个source的Layer，这个函数没起作用。没有看源码，估计是因为WMS图层通过http请求tile来生成地图，而这个函数不包含这种方法。官方的示例用getGetFeatureInfoUrl代替，得到的是服务器返回的一个html元素。</li>
 <li>接着上一条，getGetFeatureInfoUrl里有一个INFO_FORMAT的参数，一直以为是openlayers提供的，其实它是geoserver定义的，是发的请求里的一个参数。</li>
@@ -150,62 +94,41 @@ if (!doNotTrack) {
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>The article was updated on 2017-03-06</span>
+                <span>Updated on 2017-03-06</span>
             </div>
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="https://blog.theropod.tk/2017-03-06-%E4%BD%BF%E7%94%A8openlayers-v4%E6%97%B6%E6%84%9F%E8%A7%89%E9%9C%80%E8%A6%81%E8%AE%B0%E4%B8%80%E4%B8%8B%E7%9A%84%E4%B8%9C%E8%A5%BF/index.md" target="_blank">Read Markdown</a>
+                            <a class="link-to-markdown" href="/2017-03-06-%E4%BD%BF%E7%94%A8openlayers-v4%E6%97%B6%E6%84%9F%E8%A7%89%E9%9C%80%E8%A6%81%E8%AE%B0%E4%B8%80%E4%B8%8B%E7%9A%84%E4%B8%9C%E8%A5%BF/index.md" target="_blank" rel="noopener noreferrer">Read Markdown</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://blog.theropod.tk/2017-03-06-%E4%BD%BF%E7%94%A8openlayers-v4%E6%97%B6%E6%84%9F%E8%A7%89%E9%9C%80%E8%A6%81%E8%AE%B0%E4%B8%80%E4%B8%8B%E7%9A%84%E4%B8%9C%E8%A5%BF/" data-title="使用Openlayers v4时感觉需要记一下的东西" data-hashtags="openlayers"><i class="fab fa-twitter fa-fw"></i>
-</a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://blog.theropod.tk/2017-03-06-%E4%BD%BF%E7%94%A8openlayers-v4%E6%97%B6%E6%84%9F%E8%A7%89%E9%9C%80%E8%A6%81%E8%AE%B0%E4%B8%80%E4%B8%8B%E7%9A%84%E4%B8%9C%E8%A5%BF/" data-hashtag="openlayers"><i class="fab fa-facebook-square fa-fw"></i>
-</a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://blog.theropod.tk/2017-03-06-%E4%BD%BF%E7%94%A8openlayers-v4%E6%97%B6%E6%84%9F%E8%A7%89%E9%9C%80%E8%A6%81%E8%AE%B0%E4%B8%80%E4%B8%8B%E7%9A%84%E4%B8%9C%E8%A5%BF/"><i class="fab fa-linkedin fa-fw"></i>
-</a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://blog.theropod.tk/2017-03-06-%E4%BD%BF%E7%94%A8openlayers-v4%E6%97%B6%E6%84%9F%E8%A7%89%E9%9C%80%E8%A6%81%E8%AE%B0%E4%B8%80%E4%B8%8B%E7%9A%84%E4%B8%9C%E8%A5%BF/" data-title="使用Openlayers v4时感觉需要记一下的东西" data-web><i class="fab fa-whatsapp fa-fw"></i>
-</a><a href="javascript:void(0);" title="Share on Pinterest" data-sharer="pinterest" data-url="https://blog.theropod.tk/2017-03-06-%E4%BD%BF%E7%94%A8openlayers-v4%E6%97%B6%E6%84%9F%E8%A7%89%E9%9C%80%E8%A6%81%E8%AE%B0%E4%B8%80%E4%B8%8B%E7%9A%84%E4%B8%9C%E8%A5%BF/"><i class="fab fa-pinterest fa-fw"></i>
-</a></span>
+                <span></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section><span>
-                        <a href="/tags/openlayers">
-                            <i class="fas fa-tag fa-fw"></i>openlayers
-                        </a>
-                    </span>&nbsp;</section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/openlayers/">openlayers</a></section>
         <section>
-            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="https://blog.theropod.tk/2017-02-23-shapefile-%E4%B9%B1%E7%A0%81%E4%B8%8E%E5%AD%97%E7%AC%A6%E6%88%AA%E6%96%AD%E9%97%AE%E9%A2%98/" class="prev" rel="prev" title="Shapefile 乱码与字符截断问题"><i class="fas fa-angle-left fa-fw"></i>Shapefile 乱码与字符截断问题</a>
-            <a href="https://blog.theropod.tk/2017-04-09-%E5%AE%89%E8%A3%85google-cloud-sdk%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3/" class="next" rel="next" title="安装Google Cloud SDK遇到的问题和解决">安装Google Cloud SDK遇到的问题和解决<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/2017-02-23-shapefile-%E4%B9%B1%E7%A0%81%E4%B8%8E%E5%AD%97%E7%AC%A6%E6%88%AA%E6%96%AD%E9%97%AE%E9%A2%98/" class="prev" rel="prev" title="Shapefile 乱码与字符截断问题"><i class="fas fa-angle-left fa-fw"></i>Shapefile 乱码与字符截断问题</a>
+            <a href="/2017-04-09-%E5%AE%89%E8%A3%85google-cloud-sdk%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3/" class="next" rel="next" title="安装Google Cloud SDK遇到的问题和解决">安装Google Cloud SDK遇到的问题和解决<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
-<div class="comment"><div id="disqus_thread"></div><noscript>
-            Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript></div>
-    </article></div>
+</article></div>
             </main><footer class="footer">
-    <div class="copyright"><div class="copyright-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer">LoveIt<i class="far fa-heart fa-fw"></i></a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.84.0">Hugo</a> | Theme - <a href="https://github.com/sunt-programator/CodeIT" target="_blank" rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://blog.theropod.tk" target="_blank" rel="noopener noreferrer">WGS84教信者</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
+    </footer></div>
 
-        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://blog.theropod.tk" target="_blank">WGS84教信者</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
-    </div>
-</footer>
-</div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
-            <span>&nbsp;</span>
-        </a><script src="https://theropodblog.disqus.com/embed.js"></script><script src="/lib/smooth-scroll/smooth-scroll.polyfills.min.54590077ee163035c3dd38dc034e9f6915ecbe680dd832f449afa21672cab116.js" integrity="sha256-VFkAd&#43;4WMDXD3TjcA06faRXsvmgN2DL0Sa&#43;iFnLKsRY="></script><script src="/lib/sharer/sharer.min.9c88f86c7f0820287113f6236200459832693656e80d7556cc80a93dfbd45813.js" integrity="sha256-nIj4bH8IIChxE/YjYgBFmDJpNlboDXVWzICpPfvUWBM="></script><script src="/js/theme.min.1482fc67bfa2c3b8cebe476d0037b9321b5b7a8a1525b547b94143948be90e9e.js" integrity="sha256-FIL8Z7&#43;iw7jOvkdtADe5MhtbeooVJbVHuUFDlIvpDp4="></script>
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-136276173-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-</body>
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.814eba54011def7fdeead06ae5cf964a245c347d0f4972e71cc3de1482b1b473.css" integrity="sha256-gU66VAEd73/e6tBq5c&#43;WSiRcNH0PSXLnHMPeFIKxtHM="><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.bcff85fb5e00d68802850b393ac7792c997f722f536f38e26638c46dca8e5eb6.js" integrity="sha256-vP&#43;F&#43;14A1ogChQs5Osd5LJl/ci9TbzjiZjjEbcqOXrY="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.fb649fcae62177dfe63e67081ddceb830b5ce1f05a4184e9bbb7d87ac4b8f4e5.js" integrity="sha256-&#43;2SfyuYhd9/mPmcIHdzrgwtc4fBaQYTpu7fYesS49OU="></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.0ef47b3aa47d71accebfc4c7029c37f43d35f3ef43cda0e706c7adb8851f9554.js" integrity="sha256-DvR7OqR9cazOv8THApw39D018&#43;9DzaDnBsetuIUflVQ="></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.87bd0bf4ede9af1be2287acf1f0ac8777dc76a49209d44620752811c3c993897.js" integrity="sha256-h70L9O3prxviKHrPHwrId33HakkgnURiB1KBHDyZOJc="></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.5993efde07d6b1a88dd5d5ff00cf5c0178d1d8c7f682eae59546a8e144aac57e.js" integrity="sha256-WZPv3gfWsaiN1dX/AM9cAXjR2Mf2gurllUao4USqxX4="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.8a7739925f4c03586479852df840b7061948832a7fda30c8c812d2ea4dd4c4f2.js" integrity="sha256-inc5kl9MA1hkeYUt&#43;EC3BhlIgyp/2jDIyBLS6k3UxPI="></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true}};</script><script type="text/javascript" src="/js/theme.min.d1b26d23ac62a6d4bfafb3292c82d97770d7585d5c60e8d254d46fd9555fc69b.js" integrity="sha256-0bJtI6xiptS/r7MpLILZd3DXWF1cYOjSVNRv2VVfxps="></script></body>
 </html>

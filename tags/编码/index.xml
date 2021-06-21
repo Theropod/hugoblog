@@ -1,25 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>编码 on WGS84教信者</title>
-    <link>https://blog.theropod.tk/tags/%E7%BC%96%E7%A0%81/</link>
-    <description>Recent content in 编码 on WGS84教信者</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 23 Feb 2017 12:56:19 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.theropod.tk/tags/%E7%BC%96%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Shapefile 乱码与字符截断问题</title>
-      <link>https://blog.theropod.tk/2017-02-23-shapefile-%E4%B9%B1%E7%A0%81%E4%B8%8E%E5%AD%97%E7%AC%A6%E6%88%AA%E6%96%AD%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Thu, 23 Feb 2017 12:56:19 +0000</pubDate>
-      
-      <guid>https://blog.theropod.tk/2017-02-23-shapefile-%E4%B9%B1%E7%A0%81%E4%B8%8E%E5%AD%97%E7%AC%A6%E6%88%AA%E6%96%AD%E9%97%AE%E9%A2%98/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>编码 - Tag - WGS84教信者</title>
+        <link>https://blog.theropod.tk/tags/%E7%BC%96%E7%A0%81/</link>
+        <description>编码 - Tag - WGS84教信者</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 23 Feb 2017 12:56:19 &#43;0000</lastBuildDate><atom:link href="https://blog.theropod.tk/tags/%E7%BC%96%E7%A0%81/" rel="self" type="application/rss+xml" /><item>
+    <title>Shapefile 乱码与字符截断问题</title>
+    <link>https://blog.theropod.tk/2017-02-23-shapefile-%E4%B9%B1%E7%A0%81%E4%B8%8E%E5%AD%97%E7%AC%A6%E6%88%AA%E6%96%AD%E9%97%AE%E9%A2%98/</link>
+    <pubDate>Thu, 23 Feb 2017 12:56:19 &#43;0000</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2017-02-23-shapefile-%E4%B9%B1%E7%A0%81%E4%B8%8E%E5%AD%97%E7%AC%A6%E6%88%AA%E6%96%AD%E9%97%AE%E9%A2%98/</guid>
+    <description><![CDATA[]]></description>
+</item></channel>
 </rss>

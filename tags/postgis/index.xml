@@ -1,25 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>postgis on WGS84教信者</title>
-    <link>https://blog.theropod.tk/tags/postgis/</link>
-    <description>Recent content in postgis on WGS84教信者</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 16 Mar 2018 17:19:14 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.theropod.tk/tags/postgis/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>postgis不同的栅格存储方式和查询的速度以及区域统计</title>
-      <link>https://blog.theropod.tk/2018-03-16-postgis%E4%B8%8D%E5%90%8C%E7%9A%84%E6%A0%85%E6%A0%BC%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F%E5%92%8C%E6%9F%A5%E8%AF%A2%E7%9A%84%E9%80%9F%E5%BA%A6%E4%BB%A5%E5%8F%8A%E5%8C%BA%E5%9F%9F%E7%BB%9F%E8%AE%A1/</link>
-      <pubDate>Fri, 16 Mar 2018 17:19:14 +0000</pubDate>
-      
-      <guid>https://blog.theropod.tk/2018-03-16-postgis%E4%B8%8D%E5%90%8C%E7%9A%84%E6%A0%85%E6%A0%BC%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F%E5%92%8C%E6%9F%A5%E8%AF%A2%E7%9A%84%E9%80%9F%E5%BA%A6%E4%BB%A5%E5%8F%8A%E5%8C%BA%E5%9F%9F%E7%BB%9F%E8%AE%A1/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>postgis - Tag - WGS84教信者</title>
+        <link>https://blog.theropod.tk/tags/postgis/</link>
+        <description>postgis - Tag - WGS84教信者</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 16 Mar 2018 17:19:14 &#43;0000</lastBuildDate><atom:link href="https://blog.theropod.tk/tags/postgis/" rel="self" type="application/rss+xml" /><item>
+    <title>postgis不同的栅格存储方式和查询的速度以及区域统计</title>
+    <link>https://blog.theropod.tk/2018-03-16-postgis%E4%B8%8D%E5%90%8C%E7%9A%84%E6%A0%85%E6%A0%BC%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F%E5%92%8C%E6%9F%A5%E8%AF%A2%E7%9A%84%E9%80%9F%E5%BA%A6%E4%BB%A5%E5%8F%8A%E5%8C%BA%E5%9F%9F%E7%BB%9F%E8%AE%A1/</link>
+    <pubDate>Fri, 16 Mar 2018 17:19:14 &#43;0000</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2018-03-16-postgis%E4%B8%8D%E5%90%8C%E7%9A%84%E6%A0%85%E6%A0%BC%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F%E5%92%8C%E6%9F%A5%E8%AF%A2%E7%9A%84%E9%80%9F%E5%BA%A6%E4%BB%A5%E5%8F%8A%E5%8C%BA%E5%9F%9F%E7%BB%9F%E8%AE%A1/</guid>
+    <description><![CDATA[]]></description>
+</item></channel>
 </rss>

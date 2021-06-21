@@ -1,25 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Wp8-1 on WGS84教信者</title>
-    <link>https://blog.theropod.tk/tags/wp8-1/</link>
-    <description>Recent content in Wp8-1 on WGS84教信者</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Wed, 21 Oct 2015 13:56:40 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.theropod.tk/tags/wp8-1/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>关于如何强制把lumia920降级到Wp8.1</title>
-      <link>https://blog.theropod.tk/2015-10-21-%E5%85%B3%E4%BA%8E%E5%A6%82%E4%BD%95%E5%BC%BA%E5%88%B6%E6%8A%8Alumia920%E9%99%8D%E7%BA%A7%E5%88%B0wp8.1/</link>
-      <pubDate>Wed, 21 Oct 2015 13:56:40 +0000</pubDate>
-      
-      <guid>https://blog.theropod.tk/2015-10-21-%E5%85%B3%E4%BA%8E%E5%A6%82%E4%BD%95%E5%BC%BA%E5%88%B6%E6%8A%8Alumia920%E9%99%8D%E7%BA%A7%E5%88%B0wp8.1/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>Wp8-1 - Tag - WGS84教信者</title>
+        <link>https://blog.theropod.tk/tags/wp8-1/</link>
+        <description>Wp8-1 - Tag - WGS84教信者</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 21 Oct 2015 13:56:40 &#43;0000</lastBuildDate><atom:link href="https://blog.theropod.tk/tags/wp8-1/" rel="self" type="application/rss+xml" /><item>
+    <title>关于如何强制把lumia920降级到Wp8.1</title>
+    <link>https://blog.theropod.tk/2015-10-21-%E5%85%B3%E4%BA%8E%E5%A6%82%E4%BD%95%E5%BC%BA%E5%88%B6%E6%8A%8Alumia920%E9%99%8D%E7%BA%A7%E5%88%B0wp8.1/</link>
+    <pubDate>Wed, 21 Oct 2015 13:56:40 &#43;0000</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2015-10-21-%E5%85%B3%E4%BA%8E%E5%A6%82%E4%BD%95%E5%BC%BA%E5%88%B6%E6%8A%8Alumia920%E9%99%8D%E7%BA%A7%E5%88%B0wp8.1/</guid>
+    <description><![CDATA[]]></description>
+</item></channel>
 </rss>

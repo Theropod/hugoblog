@@ -1,25 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>mapbox on WGS84教信者</title>
-    <link>https://blog.theropod.tk/tags/mapbox/</link>
-    <description>Recent content in mapbox on WGS84教信者</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sun, 06 Jan 2019 20:28:12 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.theropod.tk/tags/mapbox/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>操作记录-在leaflet中加速大量geojson/topojson多边形的显示</title>
-      <link>https://blog.theropod.tk/2019-01-06-%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-%E5%9C%A8leaflet%E4%B8%AD%E5%8A%A0%E9%80%9F%E5%A4%A7%E9%87%8Fgeojsontopojson%E5%A4%9A%E8%BE%B9%E5%BD%A2%E7%9A%84%E6%98%BE%E7%A4%BA/</link>
-      <pubDate>Sun, 06 Jan 2019 20:28:12 +0000</pubDate>
-      
-      <guid>https://blog.theropod.tk/2019-01-06-%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-%E5%9C%A8leaflet%E4%B8%AD%E5%8A%A0%E9%80%9F%E5%A4%A7%E9%87%8Fgeojsontopojson%E5%A4%9A%E8%BE%B9%E5%BD%A2%E7%9A%84%E6%98%BE%E7%A4%BA/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>mapbox - Tag - WGS84教信者</title>
+        <link>https://blog.theropod.tk/tags/mapbox/</link>
+        <description>mapbox - Tag - WGS84教信者</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 06 Jan 2019 20:28:12 &#43;0000</lastBuildDate><atom:link href="https://blog.theropod.tk/tags/mapbox/" rel="self" type="application/rss+xml" /><item>
+    <title>操作记录-在leaflet中加速大量geojson/topojson多边形的显示</title>
+    <link>https://blog.theropod.tk/2019-01-06-%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-%E5%9C%A8leaflet%E4%B8%AD%E5%8A%A0%E9%80%9F%E5%A4%A7%E9%87%8Fgeojsontopojson%E5%A4%9A%E8%BE%B9%E5%BD%A2%E7%9A%84%E6%98%BE%E7%A4%BA/</link>
+    <pubDate>Sun, 06 Jan 2019 20:28:12 &#43;0000</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2019-01-06-%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-%E5%9C%A8leaflet%E4%B8%AD%E5%8A%A0%E9%80%9F%E5%A4%A7%E9%87%8Fgeojsontopojson%E5%A4%9A%E8%BE%B9%E5%BD%A2%E7%9A%84%E6%98%BE%E7%A4%BA/</guid>
+    <description><![CDATA[]]></description>
+</item></channel>
 </rss>

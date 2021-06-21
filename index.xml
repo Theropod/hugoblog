@@ -1,12 +1,59 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
     <channel>
-        <title>WGS84教信者 | WGS84教信者</title>
+        <title>WGS84教信者</title>
         <link>https://blog.theropod.tk/</link>
-        <description>WGS84教信者 | WGS84教信者</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 30 Jan 2021 18:08:16 &#43;0800</lastBuildDate><atom:link href="https://blog.theropod.tk/" rel="self" type="application/rss+xml" /><item>
-                <title>Posts</title>
-                <link>https://blog.theropod.tk/posts/</link>
-                <pubDate>Sat, 30 Jan 2021 18:08:16 &#43;0800</pubDate><guid>https://blog.theropod.tk/posts/</guid>
-                <description></description>
-            </item></channel>
+        <description>WGS84教信者</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 30 Jan 2021 18:08:16 &#43;0800</lastBuildDate>
+            <atom:link href="https://blog.theropod.tk/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>保持实验室电脑连接到清华网</title>
+    <link>https://blog.theropod.tk/2021-01-30-%E4%BF%9D%E6%8C%81%E5%AE%9E%E9%AA%8C%E5%AE%A4%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E5%88%B0%E6%B8%85%E5%8D%8E%E7%BD%91/</link>
+    <pubDate>Sat, 30 Jan 2021 18:08:16 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2021-01-30-%E4%BF%9D%E6%8C%81%E5%AE%9E%E9%AA%8C%E5%AE%A4%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E5%88%B0%E6%B8%85%E5%8D%8E%E7%BD%91/</guid>
+    <description><![CDATA[校园网+DIVI 目的是用DIVI不要钱且有IPV6地址可以直连cloudflare中转的VMESS，又可以用网线访问校内网页和使用远程桌面 适]]></description>
+</item><item>
+    <title>如何远程桌面</title>
+    <link>https://blog.theropod.tk/2021-01-22-%E5%A6%82%E4%BD%95%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/</link>
+    <pubDate>Sat, 23 Jan 2021 01:10:33 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2021-01-22-%E5%A6%82%E4%BD%95%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/</guid>
+    <description><![CDATA[mstsc 网络行：办公足够，视频游戏略弱 网络不行：勉强办公 不同方法速度降序： 清华校园网直连 实验室主机有线连接获得101开头的ip，主机连接WiFi时]]></description>
+</item><item>
+    <title>Python使用apply_async和imap时遇到的区别</title>
+    <link>https://blog.theropod.tk/2021-01-14-python%E4%BD%BF%E7%94%A8apply_async%E5%92%8Cimap%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+    <pubDate>Thu, 14 Jan 2021 22:06:13 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2021-01-14-python%E4%BD%BF%E7%94%A8apply_async%E5%92%8Cimap%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+    <description><![CDATA[map/map_async与imap/imap_unordered的区别 传递iterable object的方式 map会把发给他的所有任务it]]></description>
+</item><item>
+    <title>使用mkcert快速实现本地https</title>
+    <link>https://blog.theropod.tk/2021-01-14-%E4%BD%BF%E7%94%A8mkcert%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0https/</link>
+    <pubDate>Thu, 14 Jan 2021 15:17:54 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2021-01-14-%E4%BD%BF%E7%94%A8mkcert%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0https/</guid>
+    <description><![CDATA[安装 直接使用github上发布的binary（因为是go写的），或者使用brew/chocolatey等安装 使用 mkcert --install 直接默认生成一个，安装到]]></description>
+</item><item>
+    <title>有关几种使用python裁剪矢量数据的方式和速度</title>
+    <link>https://blog.theropod.tk/2021-01-12-%E6%9C%89%E5%85%B3%E5%87%A0%E7%A7%8D%E4%BD%BF%E7%94%A8python%E8%A3%81%E5%89%AA%E7%9F%A2%E9%87%8F%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E5%BC%8F%E5%92%8C%E9%80%9F%E5%BA%A6/</link>
+    <pubDate>Tue, 12 Jan 2021 16:42:12 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2021-01-12-%E6%9C%89%E5%85%B3%E5%87%A0%E7%A7%8D%E4%BD%BF%E7%94%A8python%E8%A3%81%E5%89%AA%E7%9F%A2%E9%87%8F%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E5%BC%8F%E5%92%8C%E9%80%9F%E5%BA%A6/</guid>
+    <description><![CDATA[例子：用中国边界裁剪MODIS Collection6火点数据（一年，点，shp） 通过QGIS或命令调用ogr2ogr来裁剪Vector都极慢]]></description>
+</item><item>
+    <title>Jupyterlab使用新的tqdm进度条</title>
+    <link>https://blog.theropod.tk/2021-01-08-jupyterlab%E4%BD%BF%E7%94%A8%E6%96%B0%E7%9A%84tqdm%E8%BF%9B%E5%BA%A6%E6%9D%A1/</link>
+    <pubDate>Fri, 08 Jan 2021 13:59:00 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2021-01-08-jupyterlab%E4%BD%BF%E7%94%A8%E6%96%B0%E7%9A%84tqdm%E8%BF%9B%E5%BA%A6%E6%9D%A1/</guid>
+    <description><![CDATA[需要安装labextension（这一步需要nodejs&gt;=10），开启labextension tqdm设置from tqdm.auto import trange, tqdm 之后使用就]]></description>
+</item><item>
+    <title>Pycsw为何请求maxrecords无效</title>
+    <link>https://blog.theropod.tk/2020-12-23-pycsw%E4%B8%BA%E4%BD%95%E8%AF%B7%E6%B1%82maxrecords%E6%97%A0%E6%95%88/</link>
+    <pubDate>Wed, 23 Dec 2020 10:02:52 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2020-12-23-pycsw%E4%B8%BA%E4%BD%95%E8%AF%B7%E6%B1%82maxrecords%E6%97%A0%E6%95%88/</guid>
+    <description><![CDATA[因为需要在pycsw的服务端设置（默认是default.cfg）server.maxrecords pycsw-admin.py -c load_records -f default.cfg -p /root/glass-xml/DSR python ./pycsw/wsgi.py 服务器上的设置脚本]]></description>
+</item><item>
+    <title>气候分析脚本网站前后台的打包</title>
+    <link>https://blog.theropod.tk/2020-11-24-%E6%B0%94%E5%80%99%E5%88%86%E6%9E%90%E8%84%9A%E6%9C%AC%E7%BD%91%E7%AB%99%E5%89%8D%E5%90%8E%E5%8F%B0%E7%9A%84docker%E6%89%93%E5%8C%85/</link>
+    <pubDate>Tue, 24 Nov 2020 00:35:19 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2020-11-24-%E6%B0%94%E5%80%99%E5%88%86%E6%9E%90%E8%84%9A%E6%9C%AC%E7%BD%91%E7%AB%99%E5%89%8D%E5%90%8E%E5%8F%B0%E7%9A%84docker%E6%89%93%E5%8C%85/</guid>
+    <description><![CDATA[conda:太大了 https://pythonspeed.com/articles/conda-docker-image-size/说本来打]]></description>
+</item><item>
+    <title>Github加tag</title>
+    <link>https://blog.theropod.tk/2020-11-23-github%E5%8A%A0tag/</link>
+    <pubDate>Mon, 23 Nov 2020 16:11:09 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2020-11-23-github%E5%8A%A0tag/</guid>
+    <description><![CDATA[两种方式，command line加两种tag release 但是commandline的tag仍不能在pull request的时候转移到主仓库，不如直接在]]></description>
+</item><item>
+    <title>Geoserver中加入netcdf</title>
+    <link>https://blog.theropod.tk/2020-11-15-geoserver%E4%B8%AD%E5%8A%A0%E5%85%A5netcdf/</link>
+    <pubDate>Sun, 15 Nov 2020 17:15:37 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2020-11-15-geoserver%E4%B8%AD%E5%8A%A0%E5%85%A5netcdf/</guid>
+    <description><![CDATA[]]></description>
+</item></channel>
 </rss>

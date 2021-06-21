@@ -1,25 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Google Map on WGS84教信者</title>
-    <link>https://blog.theropod.tk/tags/google-map/</link>
-    <description>Recent content in Google Map on WGS84教信者</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 26 May 2017 23:02:13 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.theropod.tk/tags/google-map/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>关于openlaeyrs获取谷歌卫星地图的无偏瓦片</title>
-      <link>https://blog.theropod.tk/2017-05-26-%E5%85%B3%E4%BA%8Eopenlaeyrs%E8%8E%B7%E5%8F%96%E8%B0%B7%E6%AD%8C%E5%8D%AB%E6%98%9F%E5%9C%B0%E5%9B%BE%E7%9A%84%E6%97%A0%E5%81%8F%E7%93%A6%E7%89%87/</link>
-      <pubDate>Fri, 26 May 2017 23:02:13 +0000</pubDate>
-      
-      <guid>https://blog.theropod.tk/2017-05-26-%E5%85%B3%E4%BA%8Eopenlaeyrs%E8%8E%B7%E5%8F%96%E8%B0%B7%E6%AD%8C%E5%8D%AB%E6%98%9F%E5%9C%B0%E5%9B%BE%E7%9A%84%E6%97%A0%E5%81%8F%E7%93%A6%E7%89%87/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>Google Map - Tag - WGS84教信者</title>
+        <link>https://blog.theropod.tk/tags/google-map/</link>
+        <description>Google Map - Tag - WGS84教信者</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 26 May 2017 23:02:13 &#43;0000</lastBuildDate><atom:link href="https://blog.theropod.tk/tags/google-map/" rel="self" type="application/rss+xml" /><item>
+    <title>关于openlaeyrs获取谷歌卫星地图的无偏瓦片</title>
+    <link>https://blog.theropod.tk/2017-05-26-%E5%85%B3%E4%BA%8Eopenlaeyrs%E8%8E%B7%E5%8F%96%E8%B0%B7%E6%AD%8C%E5%8D%AB%E6%98%9F%E5%9C%B0%E5%9B%BE%E7%9A%84%E6%97%A0%E5%81%8F%E7%93%A6%E7%89%87/</link>
+    <pubDate>Fri, 26 May 2017 23:02:13 &#43;0000</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2017-05-26-%E5%85%B3%E4%BA%8Eopenlaeyrs%E8%8E%B7%E5%8F%96%E8%B0%B7%E6%AD%8C%E5%8D%AB%E6%98%9F%E5%9C%B0%E5%9B%BE%E7%9A%84%E6%97%A0%E5%81%8F%E7%93%A6%E7%89%87/</guid>
+    <description><![CDATA[]]></description>
+</item></channel>
 </rss>

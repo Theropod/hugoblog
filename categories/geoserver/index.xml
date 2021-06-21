@@ -1,25 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>geoserver on WGS84教信者</title>
-    <link>https://blog.theropod.tk/categories/geoserver/</link>
-    <description>Recent content in geoserver on WGS84教信者</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sun, 15 Nov 2020 17:15:37 +0800</lastBuildDate>
-    
-	<atom:link href="https://blog.theropod.tk/categories/geoserver/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Geoserver中加入netcdf</title>
-      <link>https://blog.theropod.tk/2020-11-15-geoserver%E4%B8%AD%E5%8A%A0%E5%85%A5netcdf/</link>
-      <pubDate>Sun, 15 Nov 2020 17:15:37 +0800</pubDate>
-      
-      <guid>https://blog.theropod.tk/2020-11-15-geoserver%E4%B8%AD%E5%8A%A0%E5%85%A5netcdf/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>geoserver - Category - WGS84教信者</title>
+        <link>https://blog.theropod.tk/categories/geoserver/</link>
+        <description>geoserver - Category - WGS84教信者</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 15 Nov 2020 17:15:37 &#43;0800</lastBuildDate><atom:link href="https://blog.theropod.tk/categories/geoserver/" rel="self" type="application/rss+xml" /><item>
+    <title>Geoserver中加入netcdf</title>
+    <link>https://blog.theropod.tk/2020-11-15-geoserver%E4%B8%AD%E5%8A%A0%E5%85%A5netcdf/</link>
+    <pubDate>Sun, 15 Nov 2020 17:15:37 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2020-11-15-geoserver%E4%B8%AD%E5%8A%A0%E5%85%A5netcdf/</guid>
+    <description><![CDATA[]]></description>
+</item></channel>
 </rss>
