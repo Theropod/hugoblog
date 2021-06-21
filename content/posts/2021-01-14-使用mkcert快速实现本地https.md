@@ -2,6 +2,12 @@
 title: "使用mkcert快速实现本地https"
 date: 2021-01-14T15:17:54+08:00
 draft: false
+categories:
+- 网管
+- WEB相关
+tags:
+- https
+- mkcert
 ---
 ### 安装
 直接使用github上发布的binary（因为是go写的），或者使用brew/chocolatey等安装

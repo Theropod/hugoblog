@@ -2,6 +2,10 @@
 title: "Github加tag"
 date: 2020-11-23T16:11:09+08:00
 draft: false
+categories:
+- 各种姿势
+tags:
+- Github
 ---
 
 两种方式，command line加两种tag

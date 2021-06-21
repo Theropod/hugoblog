@@ -3,7 +3,7 @@ title: 关于恢复synaptics触摸板手势
 date: 2018-01-29 13:56:41
 tags: 
 categories: 
-- Windows姿势
+- 各种姿势
 ---
 
 <!--more-->

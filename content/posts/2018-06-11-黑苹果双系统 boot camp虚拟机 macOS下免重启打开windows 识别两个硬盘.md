@@ -5,7 +5,7 @@ tags:
 - 黑苹果
 - 虚拟机
 categories: 
-- Windows姿势
+- 各种姿势
 ---
 
 <!--more-->

@@ -5,7 +5,7 @@ tags:
 - chrome
 - 批量下载
 categories: 
-- Windows姿势
+- 各种姿势
 ---
 
 <!--more-->

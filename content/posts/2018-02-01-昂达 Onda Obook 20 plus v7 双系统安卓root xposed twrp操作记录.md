@@ -3,7 +3,7 @@ title: 昂达 Onda Obook 20 plus v7 双系统安卓root xposed twrp操作记录
 date: 2018-02-01 16:52:43
 tags: 
 categories: 
-- Windows姿势
+- 各种姿势
 ---
 
 <!--more-->

@@ -3,9 +3,10 @@ title: "VSCode中PlantUML流程图"
 date: 2019-03-12T18:34:50+08:00
 draft: false
 categories:
-- 操作经验
+- 各种姿势
 tags:
-- Windows姿势
+- VSCode
+- 流程图
 ---
 #### 需要安装
 

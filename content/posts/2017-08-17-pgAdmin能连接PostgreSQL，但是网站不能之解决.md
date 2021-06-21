@@ -5,7 +5,7 @@ tags:
 - postgresql
 - spring
 categories:
-- 网站相关
+- WEB相关
 ---
 
 <!--more-->
