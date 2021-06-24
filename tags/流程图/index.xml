@@ -1,0 +1,12 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>流程图 - Tag - WGS84教信者</title>
+        <link>https://blog.theropod.tk/tags/%E6%B5%81%E7%A8%8B%E5%9B%BE/</link>
+        <description>流程图 - Tag - WGS84教信者</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 12 Mar 2019 18:34:50 &#43;0800</lastBuildDate><atom:link href="https://blog.theropod.tk/tags/%E6%B5%81%E7%A8%8B%E5%9B%BE/" rel="self" type="application/rss+xml" /><item>
+    <title>VSCode中PlantUML流程图</title>
+    <link>https://blog.theropod.tk/2019-03-12-vscode%E4%B8%ADplantuml%E6%B5%81%E7%A8%8B%E5%9B%BE/</link>
+    <pubDate>Tue, 12 Mar 2019 18:34:50 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2019-03-12-vscode%E4%B8%ADplantuml%E6%B5%81%E7%A8%8B%E5%9B%BE/</guid>
+    <description><![CDATA[需要安装 Markdown Preview Enhanced插件 jdk并且配置了环境变量 PlantUML Preview插件（非必需，只是用来预览放大测试PlantUML类型的流程图 注释 网]]></description>
+</item></channel>
+</rss>

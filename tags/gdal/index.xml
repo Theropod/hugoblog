@@ -3,7 +3,12 @@
         <title>gdal - Tag - WGS84教信者</title>
         <link>https://blog.theropod.tk/tags/gdal/</link>
         <description>gdal - Tag - WGS84教信者</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 23 Mar 2018 11:06:36 &#43;0000</lastBuildDate><atom:link href="https://blog.theropod.tk/tags/gdal/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 12 Jan 2021 16:42:12 &#43;0800</lastBuildDate><atom:link href="https://blog.theropod.tk/tags/gdal/" rel="self" type="application/rss+xml" /><item>
+    <title>有关几种使用python裁剪矢量数据的方式和速度</title>
+    <link>https://blog.theropod.tk/2021-01-12-%E6%9C%89%E5%85%B3%E5%87%A0%E7%A7%8D%E4%BD%BF%E7%94%A8python%E8%A3%81%E5%89%AA%E7%9F%A2%E9%87%8F%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E5%BC%8F%E5%92%8C%E9%80%9F%E5%BA%A6/</link>
+    <pubDate>Tue, 12 Jan 2021 16:42:12 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2021-01-12-%E6%9C%89%E5%85%B3%E5%87%A0%E7%A7%8D%E4%BD%BF%E7%94%A8python%E8%A3%81%E5%89%AA%E7%9F%A2%E9%87%8F%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E5%BC%8F%E5%92%8C%E9%80%9F%E5%BA%A6/</guid>
+    <description><![CDATA[例子：用中国边界裁剪MODIS Collection6火点数据（一年，点，shp） 通过QGIS或命令调用ogr2ogr来裁剪Vector都极慢]]></description>
+</item><item>
     <title>【已经看不懂了】曾经记录的在c&#43;&#43;上用gdal的一些经验</title>
     <link>https://blog.theropod.tk/2018-03-23-%E5%B7%B2%E7%BB%8F%E7%9C%8B%E4%B8%8D%E6%87%82%E4%BA%86%E6%9B%BE%E7%BB%8F%E8%AE%B0%E5%BD%95%E7%9A%84%E5%9C%A8c-%E4%B8%8A%E7%94%A8gdal%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%8F%E9%AA%8C/</link>
     <pubDate>Fri, 23 Mar 2018 11:06:36 &#43;0000</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2018-03-23-%E5%B7%B2%E7%BB%8F%E7%9C%8B%E4%B8%8D%E6%87%82%E4%BA%86%E6%9B%BE%E7%BB%8F%E8%AE%B0%E5%BD%95%E7%9A%84%E5%9C%A8c-%E4%B8%8A%E7%94%A8gdal%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%8F%E9%AA%8C/</guid>
