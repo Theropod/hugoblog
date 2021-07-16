@@ -7,7 +7,7 @@
     <title>Geoserver中netcdf的wms wcs和wps</title>
     <link>https://blog.theropod.tk/2020-11-15-geoserver%E4%B8%AD%E5%8A%A0%E5%85%A5netcdf/</link>
     <pubDate>Sun, 15 Nov 2020 17:15:37 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2020-11-15-geoserver%E4%B8%AD%E5%8A%A0%E5%85%A5netcdf/</guid>
-    <description><![CDATA[Geoserver支持netcdf文件的展示、获取和分析，但是需要安装插件。]]></description>
+    <description><![CDATA[Geoserver支持netcdf文件的展示、获取和分析，但是需要安装插件。 主要参考的链接： 需要的插件 列表 下载位置在这里找： 注意要和自己的g]]></description>
 </item><item>
     <title>Geoserver的CORS问题解决</title>
     <link>https://blog.theropod.tk/2017-09-13-geoserver%E7%9A%84cors%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</link>

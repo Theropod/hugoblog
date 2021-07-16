@@ -6,7 +6,7 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>有关Linux删除libc.so.6之后的几种可能补救 - WGS84教信者</title><meta name="description" content="WGS84教信者"><meta property="og:title" content="有关Linux删除libc.so.6之后的几种可能补救" />
-<meta property="og:description" content="关于libc.so.6" />
+<meta property="og:description" content="关于libc.so.6 指向了系统GLIBC (GNU C Library) 的某个版本，因此大部分操作如ls等都依赖它。如果链接被取消，就无法运行这些命令了。会报 error while loading" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.theropod.tk/2020-11-14-%E6%9C%89%E5%85%B3linux%E5%88%A0%E9%99%A4libc.so.6%E4%B9%8B%E5%90%8E%E7%9A%84%E5%87%A0%E7%A7%8D%E5%8F%AF%E8%83%BD%E8%A1%A5%E6%95%91/" /><meta property="og:image" content="https://blog.theropod.tk/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-11-14T23:05:53&#43;08:00" />
@@ -16,7 +16,7 @@
 <meta name="twitter:image" content="https://blog.theropod.tk/logo.png"/>
 
 <meta name="twitter:title" content="有关Linux删除libc.so.6之后的几种可能补救"/>
-<meta name="twitter:description" content="关于libc.so.6"/>
+<meta name="twitter:description" content="关于libc.so.6 指向了系统GLIBC (GNU C Library) 的某个版本，因此大部分操作如ls等都依赖它。如果链接被取消，就无法运行这些命令了。会报 error while loading"/>
 <meta name="application-name" content="WGS84教信者">
 <meta name="apple-mobile-web-app-title" content="WGS84教信者"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/blog.theropod.tk\/2020-11-14-%E6%9C%89%E5%85%B3linux%E5%88%A0%E9%99%A4libc.so.6%E4%B9%8B%E5%90%8E%E7%9A%84%E5%87%A0%E7%A7%8D%E5%8F%AF%E8%83%BD%E8%A1%A5%E6%95%91\/"
-        },"genre": "posts","keywords": "Linux","wordcount":  11 ,
+        },"genre": "posts","keywords": "Linux","wordcount":  421 ,
         "url": "https:\/\/blog.theropod.tk\/2020-11-14-%E6%9C%89%E5%85%B3linux%E5%88%A0%E9%99%A4libc.so.6%E4%B9%8B%E5%90%8E%E7%9A%84%E5%87%A0%E7%A7%8D%E5%8F%AF%E8%83%BD%E8%A1%A5%E6%95%91\/","datePublished": "2020-11-14T23:05:53+08:00","dateModified": "2020-11-14T23:05:53+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "WGS84教信者"},"author": {
@@ -79,7 +79,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">有关Linux删除libc.so.6之后的几种可能补救</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://blog.theropod.tk" title="Author" target="_blank" rel="noopener noreferrer author" class="author"><i class="fas fa-user-circle fa-fw"></i>WGS84教信者</a></span>&nbsp;<span class="post-category">included in <a href="/categories/%E7%BD%91%E7%AE%A1/"><i class="far fa-folder fa-fw"></i>网管</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-14">2020-11-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;11 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-14">2020-11-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;421 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -89,9 +89,33 @@
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#关于libcso6">关于libc.so.6</a></li>
+    <li><a href="#如何修改这个链接">如何修改这个链接</a></li>
+    <li><a href="#误删或误修改后">误删或误修改后</a>
+      <ul>
+        <li><a href="#有root">有root</a></li>
+        <li><a href="#无root">无root</a></li>
+      </ul>
+    </li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="关于libcso6">关于libc.so.6</h2>
+<p>指向了系统GLIBC (GNU C Library) 的某个版本，因此大部分操作如<code>ls</code>等都依赖它。如果链接被取消，就无法运行这些命令了。会报<br>
+<code> error while loading shared libraries: libc.so.6: cannot open shared object file: No such file or directory</code></p>
+<h2 id="如何修改这个链接">如何修改这个链接</h2>
+<p>应该用<code>ln -sf</code> 否则删完链接，就不能执行命令了。</p>
+<h2 id="误删或误修改后">误删或误修改后</h2>
+<h3 id="有root">有root</h3>
+<ol>
+<li>使用LD_PRELOAD在执行命令之前链接上，动态加载。然后恢复链接</li>
+<li>或使用busybox来ln rm等恢复链接。因为redhat的版本是预先编译的，不需要外部的GLIBC，但是并非所有系统都可以</li>
+</ol>
+<h3 id="无root">无root</h3>
+<ol>
+<li>不重启，如果有statically-linked的sudo的话可以直接用这个sudo来LD_PRELOAD，但是我试了自己编译一个sudo没有用</li>
+<li>重启，用live environment启动，再修改文件链接</li>
+<li>重启，进入grub boot menu之后用<code>init=/bin/busybox/ sh</code></li>
+<li>重启，进入grub菜单之后用<code>break=bottom</code>来打断启动，进入initramfs之后再想办法调用busybox</li>
+</ol>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">

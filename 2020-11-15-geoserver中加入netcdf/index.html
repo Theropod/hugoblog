@@ -6,7 +6,7 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Geoserver中netcdf的wms wcs和wps - WGS84教信者</title><meta name="description" content="WGS84教信者"><meta property="og:title" content="Geoserver中netcdf的wms wcs和wps" />
-<meta property="og:description" content="Geoserver支持netcdf文件的展示、获取和分析，但是需要安装插件。" />
+<meta property="og:description" content="Geoserver支持netcdf文件的展示、获取和分析，但是需要安装插件。 主要参考的链接： 需要的插件 列表 下载位置在这里找： 注意要和自己的g" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.theropod.tk/2020-11-15-geoserver%E4%B8%AD%E5%8A%A0%E5%85%A5netcdf/" /><meta property="og:image" content="https://blog.theropod.tk/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-11-15T17:15:37&#43;08:00" />
@@ -16,7 +16,7 @@
 <meta name="twitter:image" content="https://blog.theropod.tk/logo.png"/>
 
 <meta name="twitter:title" content="Geoserver中netcdf的wms wcs和wps"/>
-<meta name="twitter:description" content="Geoserver支持netcdf文件的展示、获取和分析，但是需要安装插件。"/>
+<meta name="twitter:description" content="Geoserver支持netcdf文件的展示、获取和分析，但是需要安装插件。 主要参考的链接： 需要的插件 列表 下载位置在这里找： 注意要和自己的g"/>
 <meta name="application-name" content="WGS84教信者">
 <meta name="apple-mobile-web-app-title" content="WGS84教信者"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/blog.theropod.tk\/2020-11-15-geoserver%E4%B8%AD%E5%8A%A0%E5%85%A5netcdf\/"
-        },"genre": "posts","keywords": "geoserver, netcdf","wordcount":  38 ,
+        },"genre": "posts","keywords": "geoserver, netcdf","wordcount":  268 ,
         "url": "https:\/\/blog.theropod.tk\/2020-11-15-geoserver%E4%B8%AD%E5%8A%A0%E5%85%A5netcdf\/","datePublished": "2020-11-15T17:15:37+08:00","dateModified": "2020-11-15T17:15:37+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "WGS84教信者"},"author": {
@@ -79,17 +79,46 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Geoserver中netcdf的wms wcs和wps</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://blog.theropod.tk" title="Author" target="_blank" rel="noopener noreferrer author" class="author"><i class="fas fa-user-circle fa-fw"></i>WGS84教信者</a></span>&nbsp;<span class="post-category">included in <a href="/categories/gis/"><i class="far fa-folder fa-fw"></i>GIS</a>&nbsp;<a href="/categories/web%E7%9B%B8%E5%85%B3/"><i class="far fa-folder fa-fw"></i>WEB相关</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-15">2020-11-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;38 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-15">2020-11-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;268 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
                     <span><i class="details-icon fas fa-angle-right"></i></span>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#需要的插件">需要的插件</a></li>
+    <li><a href="#wms">WMS</a></li>
+    <li><a href="#wcs">WCS</a></li>
+    <li><a href="#wps">WPS</a></li>
+  </ul>
+</nav></div>
             </div><div class="content" id="content"><blockquote>
-<p>Geoserver支持netcdf文件的展示、获取和分析，但是需要安装插件。</p>
+<p>Geoserver支持netcdf文件的展示、获取和分析，但是需要安装插件。
+主要参考的链接：</p>
 </blockquote>
+<h2 id="需要的插件">需要的插件</h2>
+<ul>
+<li>列表</li>
+<li>下载位置在这里找：</li>
+<li>注意要和自己的geoserver版本一致</li>
+</ul>
+<h2 id="wms">WMS</h2>
+<ul>
+<li>新建datasource的时候就可以用了，但是注意它只能支持dimensional的</li>
+</ul>
+<h2 id="wcs">WCS</h2>
+<ul>
+<li>若WMS能用，WCS也能，但是这个需要我们</li>
+</ul>
+<h2 id="wps">WPS</h2>
+<ul>
+<li>根据geoserver的定义写一个功能的class，生成jar放到``目录下，geoserver就可以识别。</li>
+<li>geoserver有request builder可以在填参数、自动生成</li>
+<li>如何写的教程网址是</li>
+<li>一个调用NCL的例子，在Github上传了。</li>
+</ul>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
