@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/blog.theropod.tk\/2020-03-11-cmip6%E6%95%B0%E6%8D%AE%E5%8F%91%E5%B8%83%E6%80%BB%E7%BB%93\/"
-        },"genre": "posts","keywords": "毕业用","wordcount":  6881 ,
+        },"genre": "posts","keywords": "毕业用","wordcount":  7166 ,
         "url": "https:\/\/blog.theropod.tk\/2020-03-11-cmip6%E6%95%B0%E6%8D%AE%E5%8F%91%E5%B8%83%E6%80%BB%E7%BB%93\/","datePublished": "2020-03-11T18:47:08+08:00","dateModified": "2020-03-11T18:47:08+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "WGS84教信者"},"author": {
@@ -79,8 +79,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">CMIP6数据发布步骤总结</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://blog.theropod.tk" title="Author" target="_blank" rel="noopener noreferrer author" class="author"><i class="fas fa-user-circle fa-fw"></i>WGS84教信者</a></span>&nbsp;<span class="post-category">included in <a href="/categories/%E7%BD%91%E7%AE%A1/"><i class="far fa-folder fa-fw"></i>网管</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-11">2020-03-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;6881 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;14 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-11">2020-03-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;7166 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;15 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -194,6 +194,9 @@
 </li>
 <li>
 <p>服务器重启 注意默认的catalog需要apache 和 tomcat都起来</p>
+</li>
+<li>
+<p>由于安全问题，学校会要求升级apache版本。默认情况是ansible脚本中指定apache版本，通过yum安装。但很多情况下系统和第三方yum源不提供新版本（甚至大部分centos6的第三方yum源已经被隐藏了），需要自己编译安装。我的老版本是httpd2.2，编译了httpd2.4，因此2.2的配置文件和modules中的so文件都不能通用。esgf-ansible的github中可以找到2.2和2.4版本的httpd配置文件模板，配置中引入的模块也在编译时安装到modules目录下，这需要根据运行提示缺少哪些模块，参照./configure的help来开启。</p>
 </li>
 </ul>
 </li>
@@ -473,7 +476,7 @@ sudo rm /etc/gridftp.conf
 </article></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.84.0">Hugo</a> | Theme - <a href="https://github.com/sunt-programator/CodeIT" target="_blank" rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://blog.theropod.tk" target="_blank" rel="noopener noreferrer">WGS84教信者</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://blog.theropod.tk" target="_blank" rel="noopener noreferrer">WGS84教信者</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 

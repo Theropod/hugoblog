@@ -49,6 +49,7 @@
   
     在目标机上启动httpd失败，错误是Syntax error on line 24 of /etc/httpd/conf/httpd.ssl.conf: SSLCertificateChainFile: file '/etc/certs/cachain.pem' does not exist or is empty. 但是清华是自动的https，已经不需要这个了，注释掉就可。
   - 服务器重启 注意默认的catalog需要apache 和 tomcat都起来
+  - 由于安全问题，学校会要求升级apache版本。默认情况是ansible脚本中指定apache版本，通过yum安装。但很多情况下系统和第三方yum源不提供新版本（甚至大部分centos6的第三方yum源已经被隐藏了），需要自己编译安装。我的老版本是httpd2.2，编译了httpd2.4，因此2.2的配置文件和modules中的so文件都不能通用。esgf-ansible的github中可以找到2.2和2.4版本的httpd配置文件模板，配置中引入的模块也在编译时安装到modules目录下，这需要根据运行提示缺少哪些模块，参照./configure的help来开启。
 
 ## 5. 部署完成后首次配置发布数据
 

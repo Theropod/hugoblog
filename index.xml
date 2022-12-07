@@ -3,9 +3,24 @@
         <title>WGS84教信者</title>
         <link>https://blog.theropod.tk/</link>
         <description>WGS84教信者</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 25 Jun 2021 11:20:56 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 08 Dec 2022 03:58:57 &#43;0800</lastBuildDate>
             <atom:link href="https://blog.theropod.tk/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>VPN连接候无法访问外网</title>
+    <link>https://blog.theropod.tk/2022-10-31-%E6%B8%85%E5%8D%8Evpn%E8%BF%9E%E6%8E%A5%E5%80%99%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91/</link>
+    <pubDate>Thu, 08 Dec 2022 03:58:57 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2022-10-31-%E6%B8%85%E5%8D%8Evpn%E8%BF%9E%E6%8E%A5%E5%80%99%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91/</guid>
+    <description><![CDATA[现象 之前使用windows商店安装清华的Pulse Secure VPN可以同时访问校园网和外网，现在发现使用商店版或学校提供的桌面应用版Pulse Sec]]></description>
+</item><item>
+    <title>Jmeter和tomcat测试相关资料</title>
+    <link>https://blog.theropod.tk/2022-10-10-jmeter%E5%92%8Ctomcat%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/</link>
+    <pubDate>Fri, 14 Oct 2022 05:35:24 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2022-10-10-jmeter%E5%92%8Ctomcat%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/</guid>
+    <description><![CDATA[背景 测试异步的模式数据分析接口的性能瓶颈。接口有2个，提交任务和查询任务状态。由于提交数据和获得结果是异步的，用户并发的性能指标测试包含两个]]></description>
+</item><item>
+    <title>用cesium显示全球模拟数据</title>
+    <link>https://blog.theropod.tk/2021-11-03-%E7%94%A8cesium%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F%E6%95%B0%E6%8D%AE/</link>
+    <pubDate>Wed, 24 Nov 2021 17:13:31 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2021-11-03-%E7%94%A8cesium%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F%E6%95%B0%E6%8D%AE/</guid>
+    <description><![CDATA[背景 测试全球模式数据展示的方法。 d3.js和cesium都可以将图放在3d globe上，但是cesium功能更集成，实现起来更简单。 参考eW]]></description>
+</item><item>
     <title>关于Java调用命令行执行NCL</title>
     <link>https://blog.theropod.tk/2021-06-12-%E5%85%B3%E4%BA%8Ejava%E8%B0%83%E7%94%A8ncl%E5%91%BD%E4%BB%A4%E8%A1%8C/</link>
     <pubDate>Fri, 25 Jun 2021 11:20:56 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2021-06-12-%E5%85%B3%E4%BA%8Ejava%E8%B0%83%E7%94%A8ncl%E5%91%BD%E4%BB%A4%E8%A1%8C/</guid>
@@ -40,20 +55,5 @@
     <link>https://blog.theropod.tk/2021-01-14-%E4%BD%BF%E7%94%A8mkcert%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0https/</link>
     <pubDate>Thu, 14 Jan 2021 15:17:54 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2021-01-14-%E4%BD%BF%E7%94%A8mkcert%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0https/</guid>
     <description><![CDATA[安装 直接使用github上发布的binary（因为是go写的），或者使用brew/chocolatey等安装 使用 mkcert --install 直接默认生成一个，安装到]]></description>
-</item><item>
-    <title>有关几种使用python裁剪矢量数据的方式和速度</title>
-    <link>https://blog.theropod.tk/2021-01-12-%E6%9C%89%E5%85%B3%E5%87%A0%E7%A7%8D%E4%BD%BF%E7%94%A8python%E8%A3%81%E5%89%AA%E7%9F%A2%E9%87%8F%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E5%BC%8F%E5%92%8C%E9%80%9F%E5%BA%A6/</link>
-    <pubDate>Tue, 12 Jan 2021 16:42:12 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2021-01-12-%E6%9C%89%E5%85%B3%E5%87%A0%E7%A7%8D%E4%BD%BF%E7%94%A8python%E8%A3%81%E5%89%AA%E7%9F%A2%E9%87%8F%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E5%BC%8F%E5%92%8C%E9%80%9F%E5%BA%A6/</guid>
-    <description><![CDATA[例子：用中国边界裁剪MODIS Collection6火点数据（一年，点，shp） 通过QGIS或命令调用ogr2ogr来裁剪Vector都极慢]]></description>
-</item><item>
-    <title>Jupyterlab使用新的tqdm进度条</title>
-    <link>https://blog.theropod.tk/2021-01-08-jupyterlab%E4%BD%BF%E7%94%A8%E6%96%B0%E7%9A%84tqdm%E8%BF%9B%E5%BA%A6%E6%9D%A1/</link>
-    <pubDate>Fri, 08 Jan 2021 13:59:00 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2021-01-08-jupyterlab%E4%BD%BF%E7%94%A8%E6%96%B0%E7%9A%84tqdm%E8%BF%9B%E5%BA%A6%E6%9D%A1/</guid>
-    <description><![CDATA[需要安装labextension（这一步需要nodejs&gt;=10），开启labextension tqdm设置from tqdm.auto import trange, tqdm 之后使用就]]></description>
-</item><item>
-    <title>Pycsw为何请求maxrecords无效</title>
-    <link>https://blog.theropod.tk/2020-12-23-pycsw%E4%B8%BA%E4%BD%95%E8%AF%B7%E6%B1%82maxrecords%E6%97%A0%E6%95%88/</link>
-    <pubDate>Wed, 23 Dec 2020 10:02:52 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2020-12-23-pycsw%E4%B8%BA%E4%BD%95%E8%AF%B7%E6%B1%82maxrecords%E6%97%A0%E6%95%88/</guid>
-    <description><![CDATA[因为需要在pycsw的服务端设置（默认是default.cfg）server.maxrecords pycsw-admin.py -c load_records -f default.cfg -p /root/glass-xml/DSR python ./pycsw/wsgi.py 服务器上的设置脚本]]></description>
 </item></channel>
 </rss>

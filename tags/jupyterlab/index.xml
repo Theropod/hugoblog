@@ -7,6 +7,6 @@
     <title>Jupyterlab使用新的tqdm进度条</title>
     <link>https://blog.theropod.tk/2021-01-08-jupyterlab%E4%BD%BF%E7%94%A8%E6%96%B0%E7%9A%84tqdm%E8%BF%9B%E5%BA%A6%E6%9D%A1/</link>
     <pubDate>Fri, 08 Jan 2021 13:59:00 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2021-01-08-jupyterlab%E4%BD%BF%E7%94%A8%E6%96%B0%E7%9A%84tqdm%E8%BF%9B%E5%BA%A6%E6%9D%A1/</guid>
-    <description><![CDATA[需要安装labextension（这一步需要nodejs&gt;=10），开启labextension tqdm设置from tqdm.auto import trange, tqdm 之后使用就]]></description>
+    <description><![CDATA[conda install -c conda-forge nodejs 需要安装labextension（这一步需要nodejs&gt;=10）， 再安装ipywidgets conda install -n base -c conda-forge jupyterlab_widgets conda install -n py36 -c conda-forge ipywidgets https://ipywidgets.readthedocs.io/en/stable/user_install.html]]></description>
 </item></channel>
 </rss>

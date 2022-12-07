@@ -1,0 +1,12 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>Jmeter - Tag - WGS84教信者</title>
+        <link>https://blog.theropod.tk/tags/jmeter/</link>
+        <description>Jmeter - Tag - WGS84教信者</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 14 Oct 2022 05:35:24 &#43;0800</lastBuildDate><atom:link href="https://blog.theropod.tk/tags/jmeter/" rel="self" type="application/rss+xml" /><item>
+    <title>Jmeter和tomcat测试相关资料</title>
+    <link>https://blog.theropod.tk/2022-10-10-jmeter%E5%92%8Ctomcat%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/</link>
+    <pubDate>Fri, 14 Oct 2022 05:35:24 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2022-10-10-jmeter%E5%92%8Ctomcat%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/</guid>
+    <description><![CDATA[背景 测试异步的模式数据分析接口的性能瓶颈。接口有2个，提交任务和查询任务状态。由于提交数据和获得结果是异步的，用户并发的性能指标测试包含两个]]></description>
+</item></channel>
+</rss>
