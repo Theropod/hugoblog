@@ -3,7 +3,12 @@
         <title>geoserver - Tag - WGS84教信者</title>
         <link>https://blog.theropod.tk/tags/geoserver/</link>
         <description>geoserver - Tag - WGS84教信者</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 15 Nov 2020 17:15:37 &#43;0800</lastBuildDate><atom:link href="https://blog.theropod.tk/tags/geoserver/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 07 Jan 2023 06:23:59 &#43;0800</lastBuildDate><atom:link href="https://blog.theropod.tk/tags/geoserver/" rel="self" type="application/rss+xml" /><item>
+    <title>Geoserver加载大文件</title>
+    <link>https://blog.theropod.tk/2023-01-06-geoserver%E5%8A%A0%E8%BD%BD%E5%A4%A7%E5%9E%8Bgeotiff/</link>
+    <pubDate>Sat, 07 Jan 2023 06:23:59 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2023-01-06-geoserver%E5%8A%A0%E8%BD%BD%E5%A4%A7%E5%9E%8Bgeotiff/</guid>
+    <description><![CDATA[背景 希望用geoserver提供大量栅格的wms服务。例如3000+个2MB以内的小geotiff，代表了美国的精细人口密度,分辨率30米。]]></description>
+</item><item>
     <title>Geoserver中netcdf&#43;wms/wcs/wps</title>
     <link>https://blog.theropod.tk/2020-11-15-geoserver%E4%B8%AD%E5%8A%A0%E5%85%A5netcdf/</link>
     <pubDate>Sun, 15 Nov 2020 17:15:37 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2020-11-15-geoserver%E4%B8%AD%E5%8A%A0%E5%85%A5netcdf/</guid>

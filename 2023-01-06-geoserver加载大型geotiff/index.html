@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Geoserver加载大文件 - WGS84教信者</title><meta name="description" content="WGS84教信者"><meta property="og:title" content="Geoserver加载大文件" />
+<meta property="og:description" content="背景 希望用geoserver提供大量栅格的wms服务。例如3000&#43;个2MB以内的小geotiff，代表了美国的精细人口密度,分辨率30米。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.theropod.tk/2023-01-06-geoserver%E5%8A%A0%E8%BD%BD%E5%A4%A7%E5%9E%8Bgeotiff/" /><meta property="og:image" content="https://blog.theropod.tk/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-01-07T06:23:59&#43;08:00" />
+<meta property="article:modified_time" content="2023-01-07T06:23:59&#43;08:00" /><meta property="og:site_name" content="WGS84教信者" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://blog.theropod.tk/logo.png"/>
+
+<meta name="twitter:title" content="Geoserver加载大文件"/>
+<meta name="twitter:description" content="背景 希望用geoserver提供大量栅格的wms服务。例如3000&#43;个2MB以内的小geotiff，代表了美国的精细人口密度,分辨率30米。"/>
+<meta name="application-name" content="WGS84教信者">
+<meta name="apple-mobile-web-app-title" content="WGS84教信者"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.theropod.tk/2023-01-06-geoserver%E5%8A%A0%E8%BD%BD%E5%A4%A7%E5%9E%8Bgeotiff/" /><link rel="prev" href="https://blog.theropod.tk/2022-10-31-%E6%B8%85%E5%8D%8Evpn%E8%BF%9E%E6%8E%A5%E5%80%99%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.055364f5be272caa092b0e6654c165828707f8ab971e2656383a6d6392bc345e.css" integrity="sha256-BVNk9b4nLKoJKw5mVMFlgocH&#43;KuXHiZWODptY5K8NF4="><link rel="stylesheet" href="/css/style.min.aaf2d9a150781010b7b63ffd1d58335c3c5c35ebd095177d247494480adfeec2.css" integrity="sha256-qvLZoVB4EBC3tj/9HVgzXDxcNevQlRd9JHSUSArf7sI="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.876d023d9d10c97941b80c3b03e2a5b94631ff7a4af9cee5604a6a2d39718d84.css" integrity="sha256-h20CPZ0QyXlBuAw7A&#43;KluUYx/3pK&#43;c7lYEpqLTlxjYQ="><link rel="stylesheet" href="/lib/animate/animate.min.3c770e90f98eb21b0c042fafb49755af93306fbaf42e449524f94fae9fc83295.css" integrity="sha256-PHcOkPmOshsMBC&#43;vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Geoserver加载大文件",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog.theropod.tk\/2023-01-06-geoserver%E5%8A%A0%E8%BD%BD%E5%A4%A7%E5%9E%8Bgeotiff\/"
+        },"genre": "posts","keywords": "Geoserver, gdal, gis","wordcount":  2119 ,
+        "url": "https:\/\/blog.theropod.tk\/2023-01-06-geoserver%E5%8A%A0%E8%BD%BD%E5%A4%A7%E5%9E%8Bgeotiff\/","datePublished": "2023-01-07T06:23:59+08:00","dateModified": "2023-01-07T06:23:59+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "WGS84教信者"},"author": {
+                "@type": "Person",
+                "name": "WGS84教信者"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="auto" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="WGS84教信者">WGS84教信者</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="WGS84教信者">WGS84教信者</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Geoserver加载大文件</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://blog.theropod.tk" title="Author" target="_blank" rel="noopener noreferrer author" class="author"><i class="fas fa-user-circle fa-fw"></i>WGS84教信者</a></span>&nbsp;<span class="post-category">included in <a href="/categories/%E5%90%84%E7%A7%8D%E5%A7%BF%E5%8A%BF/"><i class="far fa-folder fa-fw"></i>各种姿势</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-01-07">2023-01-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2119 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#背景">背景</a></li>
+    <li><a href="#相关知识">相关知识</a>
+      <ul>
+        <li><a href="#目标">目标</a></li>
+        <li><a href="#一般使用的文件格式">一般使用的文件格式</a></li>
+        <li><a href="#什么是overview">什么是overview</a></li>
+        <li><a href="#如何选择tiling和金字塔参数">如何选择tiling和金字塔参数</a></li>
+        <li><a href="#压缩方式">压缩方式</a></li>
+        <li><a href="#其他需要注意">其他需要注意</a></li>
+      </ul>
+    </li>
+    <li><a href="#三种可能的处理方式">三种可能的处理方式</a>
+      <ul>
+        <li><a href="#方法1-单tif文件">方法1 单tif文件</a></li>
+        <li><a href="#方法2-生成mosaic">方法2 生成mosaic</a></li>
+        <li><a href="#方法3-金字塔">方法3 金字塔</a></li>
+      </ul>
+    </li>
+    <li><a href="#三种方法外的其他优化">三种方法外的其他优化</a>
+      <ul>
+        <li><a href="#jai设置">JAI设置</a></li>
+        <li><a href="#coverage-access设置">Coverage Access设置</a></li>
+        <li><a href="#重投影设置">重投影设置</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="背景">背景</h2>
+<p>希望用geoserver提供大量栅格的wms服务。例如3000+个2MB以内的小geotiff，代表了美国的精细人口密度,分辨率30米。<br>
+本文主要参考<a href="https://github.com/planetfederal/workshops/blob/master/workshops/data_configs/sphinx/source/raster.rst" target="_blank" rel="noopener noreferrer">这个workshop</a>，辅以搜索到的各类教程。</p>
+<h2 id="相关知识">相关知识</h2>
+<p>此处也参考了这个<a href="https://docs.geoserver.geo-solutions.it/edu/en/enterprise/raster.html#deciding-when-to-go-beyond-and-use-mosaicking-plugins" target="_blank" rel="noopener noreferrer">官方文档</a></p>
+<h3 id="目标">目标</h3>
+<p>主要目标有两个：</p>
+<ol>
+<li>快速获取数据子集：主要涉及re-tiling和compression</li>
+<li>任意分辨率快速获取数据：主要涉及overviews或建立低分辨率的数据版本</li>
+</ol>
+<h3 id="一般使用的文件格式">一般使用的文件格式</h3>
+<p>一般都使用tif，因为tif能够以内部的tile形式组织内部数据，在显示部分图像内容时，可以直接读取某个范围，而PNG/JPEG文件都必须读取整张图片。同时，tiff可以存储一些低分辨率的overview。</p>
+<h3 id="什么是overview">什么是overview</h3>
+<p>每个tif文件的band有0到多个overview，提供低分辨率的缩略图。大小不同但地理范围相同。<a href="https://gdal.org/user/raster_data_model.html#overviews" target="_blank" rel="noopener noreferrer">参见此处</a></p>
+<h3 id="如何选择tiling和金字塔参数">如何选择tiling和金字塔参数</h3>
+<p>显然，金字塔的tile size过小或过大都会影响性能。据workshop说，理想的size是0.5-1GB，这样既容易管理且减少了tiles的数量。需要注意的是，inner tile和金字塔的分割不冲突，内部的tiling总是会提高性能。Tiling的示意可以参考这个<a href="https://docs.geoserver.geo-solutions.it/edu/en/wcs/compression_tiling.html" target="_blank" rel="noopener noreferrer">教程</a>。<br>
+另外，金字塔级数$n = \log_2(\frac{width}{tile_width})$</p>
+<h3 id="压缩方式">压缩方式</h3>
+<p>主要是LZW、Deflate、ZSTD（无损）和LERC、JPEG（有损）。LZW压缩适合重复多的数据（如类别数据），<a href="https://kokoalberti.com/articles/geotiff-compression-optimization-guide/" target="_blank" rel="noopener noreferrer">有人测试过</a>，LZW、ZSTD、Deflate压缩率差别不大，但合理使用压缩时的Predictor参数对结果有提升。ZSTD读取最快。我用前述的人口数据测试zstd确实减小了很多体积。</p>
+<h3 id="其他需要注意">其他需要注意</h3>
+<ul>
+<li>根据数据类型选择合适的重采样方式，例如NN不适合图像类数据，但适合非图像类（如高程）和分类数据</li>
+<li>提前重投影到需要的CRS</li>
+<li>可以使用调色板来减少RGB影像数据量，如使用<code>rgb2pct image3.tiff image3p.tiff</code></li>
+<li>多光谱、高光谱的波段存储方式，比如注意应该选择像素交错还是波段交错等。</li>
+</ul>
+<h2 id="三种可能的处理方式">三种可能的处理方式</h2>
+<ol>
+<li>单tif文件，内部tiling+overview+compression</li>
+<li>多个tile的mosaic，辅以内部优化</li>
+<li>构建金字塔，辅以内部优化</li>
+</ol>
+<p>如何选择处理方式？主要和数据量大小有关</p>
+<ol>
+<li>如果数据小于1-2GB，基本推荐单tif文件，但需要优化并且生成合适的内部tile和overview。</li>
+<li>大于2GB的数据需要分成小文件，同时建立内部的金字塔和tile。</li>
+<li>如果文件特大、且需要再各个缩放层级使用，则需要使用外部的金字塔。</li>
+</ol>
+<h3 id="方法1-单tif文件">方法1 单tif文件</h3>
+<p>直接build vrt，之后可以用gdaltranslate转换成tiff，并用gdalado生成overview。<br>
+具体参数命令见<a href="http://cliffpatterson.ca/blog/2017/10/12/processing-high-resolution-imagery-for-geoserver/" target="_blank" rel="noopener noreferrer">此博客</a>和<a href="https://docs.geoserver.geo-solutions.it/edu/en/raster_data/advanced_gdal/example1.html" target="_blank" rel="noopener noreferrer">官方示例</a></p>
+<h4 id="使用参考">使用参考：</h4>
+<ul>
+<li>如何生成overview：<br>
+<a href="https://gis.stackexchange.com/questions/368560/understanding-what-levels-to-use-in-gdaladdo" target="_blank" rel="noopener noreferrer">overview级别计算</a> 据说边长n倍就是n级别</li>
+<li>gdal的tif处理命令示例<a href="https://docs.geoserver.geo-solutions.it/edu/en/raster_data/processing.html#gdal-translate" target="_blank" rel="noopener noreferrer">官方文档</a><br>
+包括gdalinfo、gdal_translate、gdaladdo、Process in bulk、gdalwarp、gdalbuildvrt、gdal_rasterize、gdal_merge.py、gdal2tiles.py、gdal_calc.py、gdal_edit.py</li>
+<li>设置压缩参数<br>
+gdalado中各个压缩方式参数如何设置<a href="https://gdal.org/programs/gdaladdo.html#external-overviews-in-geotiff-format" target="_blank" rel="noopener noreferrer">官方文档</a></li>
+<li>如何测试性能<br>
+在培训资料里给了一个jmeter测试脚本，修改就可以用。<a href="https://docs.geoserver.geo-solutions.it/edu/en/enterprise/raster.html#test-the-unoptimized-mosaic" target="_blank" rel="noopener noreferrer">参见此处</a></li>
+</ul>
+<h3 id="方法2-生成mosaic">方法2 生成mosaic</h3>
+<p>geoserver可以直接安装image mosaic的插件，但性能受限，仍需要优化<a href="https://gis.stackexchange.com/a/268648" target="_blank" rel="noopener noreferrer">(参考此回答)</a>。 我实际比较过前述的人口数据在geoserver中的使用情况，确实mosaic最慢。<br>
+但如果转换成单个文件后太大（压缩完还是20-30GB以上，影响读取速度）或者要同时加载多个时间、波段的文件时，则不得不使用此方法。</p>
+<h3 id="方法3-金字塔">方法3 金字塔</h3>
+<p>金字塔的每个mosaic都存储在一个单独的文件中，虽然有合成时的开销但可以加快图像处理，因为每个overview都是tiled。（与单GEOTIFF不同，其基本级别都可以tile，但overview不会）</p>
+<h4 id="使用参考-1">使用参考：</h4>
+<ul>
+<li>使用gdal_retile.py来生成金字塔，并在geoserver使用image pyramid插件。说明和简要步骤见<a href="https://docs.geoserver.org/stable/en/user/tutorials/imagepyramid/imagepyramid.html" target="_blank" rel="noopener noreferrer">官方示例</a></li>
+<li>图层发布步骤、发布设置、gdal_retile.py使用、USE_JAI_IMAGEREAD设置的<a href="https://docs.geoserver.geo-solutions.it/edu/en/raster_data/mosaic_pyramid.html" target="_blank" rel="noopener noreferrer">官方教程</a></li>
+</ul>
+<h2 id="三种方法外的其他优化">三种方法外的其他优化</h2>
+<p>(还是参考了workshop的内容)</p>
+<h3 id="jai设置">JAI设置</h3>
+<p>Geoserver使用JAI(Java Advanced Imaging)读取影像。可以调整的设置有</p>
+<ul>
+<li>Memory capacity和Memory threshold，与TileCache相关</li>
+<li>TileThreads 经验是使用CPU核心数量的2倍的线程做Tile Calculation</li>
+<li>Tile Recycling 只在内存足够时启用这个功能</li>
+</ul>
+<h3 id="coverage-access设置">Coverage Access设置</h3>
+<p>调整Geoserver如何使用多线程，对于打开mosaic最重要。主要调整</p>
+<ul>
+<li>Core Pool Size 执行线程池的大小</li>
+<li>Maximum Pool Size 还可以用上面的经验，设置为CPU核心数量的2倍的线程</li>
+<li>ImageIO Cache Memory Threshold 对于WMS不重要，但是对于WCS的大数据量来说，此设置影响缓存到磁盘而不是内存的阈值</li>
+</ul>
+<h3 id="重投影设置">重投影设置</h3>
+<p><code>-Dorg.geotools.referencing.resampleTolerance</code> 设置重投影的错误范围，默认0.333，数字越大投影错误越多性能越好，注意调太大了和矢量数据一起显示时可能会出问题。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-01-07</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/2023-01-06-geoserver%E5%8A%A0%E8%BD%BD%E5%A4%A7%E5%9E%8Bgeotiff/index.md" target="_blank" rel="noopener noreferrer">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/geoserver/">geoserver</a>,&nbsp;<a href="/tags/gdal/">gdal</a>,&nbsp;<a href="/tags/gis/">GIS</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2022-10-31-%E6%B8%85%E5%8D%8Evpn%E8%BF%9E%E6%8E%A5%E5%80%99%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91/" class="prev" rel="prev" title="解决VPN连接后无法访问外网"><i class="fas fa-angle-left fa-fw"></i>解决VPN连接后无法访问外网</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.84.0">Hugo</a> | Theme - <a href="https://github.com/sunt-programator/CodeIT" target="_blank" rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://blog.theropod.tk" target="_blank" rel="noopener noreferrer">WGS84教信者</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.814eba54011def7fdeead06ae5cf964a245c347d0f4972e71cc3de1482b1b473.css" integrity="sha256-gU66VAEd73/e6tBq5c&#43;WSiRcNH0PSXLnHMPeFIKxtHM="><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.bcff85fb5e00d68802850b393ac7792c997f722f536f38e26638c46dca8e5eb6.js" integrity="sha256-vP&#43;F&#43;14A1ogChQs5Osd5LJl/ci9TbzjiZjjEbcqOXrY="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.fb649fcae62177dfe63e67081ddceb830b5ce1f05a4184e9bbb7d87ac4b8f4e5.js" integrity="sha256-&#43;2SfyuYhd9/mPmcIHdzrgwtc4fBaQYTpu7fYesS49OU="></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.0ef47b3aa47d71accebfc4c7029c37f43d35f3ef43cda0e706c7adb8851f9554.js" integrity="sha256-DvR7OqR9cazOv8THApw39D018&#43;9DzaDnBsetuIUflVQ="></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.87bd0bf4ede9af1be2287acf1f0ac8777dc76a49209d44620752811c3c993897.js" integrity="sha256-h70L9O3prxviKHrPHwrId33HakkgnURiB1KBHDyZOJc="></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.5993efde07d6b1a88dd5d5ff00cf5c0178d1d8c7f682eae59546a8e144aac57e.js" integrity="sha256-WZPv3gfWsaiN1dX/AM9cAXjR2Mf2gurllUao4USqxX4="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.8a7739925f4c03586479852df840b7061948832a7fda30c8c812d2ea4dd4c4f2.js" integrity="sha256-inc5kl9MA1hkeYUt&#43;EC3BhlIgyp/2jDIyBLS6k3UxPI="></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true}};</script><script type="text/javascript" src="/js/theme.min.d1b26d23ac62a6d4bfafb3292c82d97770d7585d5c60e8d254d46fd9555fc69b.js" integrity="sha256-0bJtI6xiptS/r7MpLILZd3DXWF1cYOjSVNRv2VVfxps="></script></body>
+</html>

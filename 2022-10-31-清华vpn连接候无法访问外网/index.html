@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>VPN连接候无法访问外网 - WGS84教信者</title><meta name="description" content="WGS84教信者"><meta property="og:title" content="VPN连接候无法访问外网" />
+        <title>解决VPN连接后无法访问外网 - WGS84教信者</title><meta name="description" content="WGS84教信者"><meta property="og:title" content="解决VPN连接后无法访问外网" />
 <meta property="og:description" content="现象 之前使用windows商店安装清华的Pulse Secure VPN可以同时访问校园网和外网，现在发现使用商店版或学校提供的桌面应用版Pulse Sec" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.theropod.tk/2022-10-31-%E6%B8%85%E5%8D%8Evpn%E8%BF%9E%E6%8E%A5%E5%80%99%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91/" /><meta property="og:image" content="https://blog.theropod.tk/logo.png"/><meta property="article:section" content="posts" />
@@ -15,21 +15,21 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://blog.theropod.tk/logo.png"/>
 
-<meta name="twitter:title" content="VPN连接候无法访问外网"/>
+<meta name="twitter:title" content="解决VPN连接后无法访问外网"/>
 <meta name="twitter:description" content="现象 之前使用windows商店安装清华的Pulse Secure VPN可以同时访问校园网和外网，现在发现使用商店版或学校提供的桌面应用版Pulse Sec"/>
 <meta name="application-name" content="WGS84教信者">
 <meta name="apple-mobile-web-app-title" content="WGS84教信者"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.theropod.tk/2022-10-31-%E6%B8%85%E5%8D%8Evpn%E8%BF%9E%E6%8E%A5%E5%80%99%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91/" /><link rel="prev" href="https://blog.theropod.tk/2022-10-10-jmeter%E5%92%8Ctomcat%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.055364f5be272caa092b0e6654c165828707f8ab971e2656383a6d6392bc345e.css" integrity="sha256-BVNk9b4nLKoJKw5mVMFlgocH&#43;KuXHiZWODptY5K8NF4="><link rel="stylesheet" href="/css/style.min.aaf2d9a150781010b7b63ffd1d58335c3c5c35ebd095177d247494480adfeec2.css" integrity="sha256-qvLZoVB4EBC3tj/9HVgzXDxcNevQlRd9JHSUSArf7sI="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.876d023d9d10c97941b80c3b03e2a5b94631ff7a4af9cee5604a6a2d39718d84.css" integrity="sha256-h20CPZ0QyXlBuAw7A&#43;KluUYx/3pK&#43;c7lYEpqLTlxjYQ="><link rel="stylesheet" href="/lib/animate/animate.min.3c770e90f98eb21b0c042fafb49755af93306fbaf42e449524f94fae9fc83295.css" integrity="sha256-PHcOkPmOshsMBC&#43;vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.theropod.tk/2022-10-31-%E6%B8%85%E5%8D%8Evpn%E8%BF%9E%E6%8E%A5%E5%80%99%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91/" /><link rel="prev" href="https://blog.theropod.tk/2022-10-10-jmeter%E5%92%8Ctomcat%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/" /><link rel="next" href="https://blog.theropod.tk/2023-01-06-geoserver%E5%8A%A0%E8%BD%BD%E5%A4%A7%E5%9E%8Bgeotiff/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.055364f5be272caa092b0e6654c165828707f8ab971e2656383a6d6392bc345e.css" integrity="sha256-BVNk9b4nLKoJKw5mVMFlgocH&#43;KuXHiZWODptY5K8NF4="><link rel="stylesheet" href="/css/style.min.aaf2d9a150781010b7b63ffd1d58335c3c5c35ebd095177d247494480adfeec2.css" integrity="sha256-qvLZoVB4EBC3tj/9HVgzXDxcNevQlRd9JHSUSArf7sI="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.876d023d9d10c97941b80c3b03e2a5b94631ff7a4af9cee5604a6a2d39718d84.css" integrity="sha256-h20CPZ0QyXlBuAw7A&#43;KluUYx/3pK&#43;c7lYEpqLTlxjYQ="><link rel="stylesheet" href="/lib/animate/animate.min.3c770e90f98eb21b0c042fafb49755af93306fbaf42e449524f94fae9fc83295.css" integrity="sha256-PHcOkPmOshsMBC&#43;vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "VPN连接候无法访问外网",
+        "headline": "解决VPN连接后无法访问外网",
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/blog.theropod.tk\/2022-10-31-%E6%B8%85%E5%8D%8Evpn%E8%BF%9E%E6%8E%A5%E5%80%99%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91\/"
-        },"genre": "posts","keywords": "校园网","wordcount":  575 ,
+        },"genre": "posts","keywords": "校园网","wordcount":  581 ,
         "url": "https:\/\/blog.theropod.tk\/2022-10-31-%E6%B8%85%E5%8D%8Evpn%E8%BF%9E%E6%8E%A5%E5%80%99%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91\/","datePublished": "2022-12-08T03:58:57+08:00","dateModified": "2022-12-08T03:58:57+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "WGS84教信者"},"author": {
@@ -77,9 +77,9 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">VPN连接候无法访问外网</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">解决VPN连接后无法访问外网</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://blog.theropod.tk" title="Author" target="_blank" rel="noopener noreferrer author" class="author"><i class="fas fa-user-circle fa-fw"></i>WGS84教信者</a></span>&nbsp;<span class="post-category">included in <a href="/categories/%E5%90%84%E7%A7%8D%E5%A7%BF%E5%8A%BF/"><i class="far fa-folder fa-fw"></i>各种姿势</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-12-08">2022-12-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;575 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-12-08">2022-12-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;581 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -98,12 +98,12 @@
 <p>一般认为无法访问外网的原因是路由表被改了，所以很多<a href="https://blog.51cto.com/u_55800/2559574" target="_blank" rel="noopener noreferrer">教程</a>说只需要取消“在远程网络使用默认网关”后调整路由表就可以，但据隔壁的论坛讨论（有很多相似的帖子）似乎是pulse secure会强制更改锁定路由表，所以调整路由表的方式不能用。</p>
 <h1 id="如何解决">如何解决</h1>
 <h2 id="使用openconnect">使用openconnect</h2>
-<p>一种解决方法是换openconnect应用，它因为是开源的，所以不会改路由表。经实验此应用在linux下没问题，据说mac下也好用，但windows GUI很久未更新，连接后就闪退。因此只能从交叉编译的rpm包提取exe执行，同时自己需要修改脚本配置。<a href="https://bbs.pku.edu.cn/v2/post-read.php?bid=35&amp;threadid=18023201" target="_blank" rel="noopener noreferrer">见此贴</a></p>
+<p>一种解决方法是换openconnect应用，它是开源的，不会改路由表。经实验此应用在linux下没问题，据说mac下也容易用，但windows GUI很久未更新，连接后就闪退。因此只能从交叉编译的rpm包提取exe执行，同时自己需要修改脚本配置。<a href="https://bbs.pku.edu.cn/v2/post-read.php?bid=35&amp;threadid=18023201" target="_blank" rel="noopener noreferrer">见此贴</a></p>
 <h2 id="手动改dns">手动改DNS</h2>
-<p>另一种就是在每次pulse secure桌面应用版连接后手动改VPN适配器的DNS，从学校的改为谷歌的。此方法是基于以下的多个改windows设置、路由表、跃点值等操作的对比中唯一可用的。</p>
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQAX_ww7Cukx5PNsE3qBlltJPZgnXyRy0865TIwt_mZTARKRJwsjXEgc4LffaRol0zogbQU5SuniDBi/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+<p>另一种就是在每次pulse secure桌面应用版连接后手动改VPN适配器的DNS，从学校的改为谷歌的。此方法是基于以下的多个改windows设置、路由表、跃点值等操作的对比中唯一可用的。<a href="https://docs.google.com/spreadsheets/d/1k_i4v2Al0FNA2MpfqPRDA74m8N6azy-bdqzfMIhfaqA/edit?usp=sharing" target="_blank" rel="noopener noreferrer">工作表链接</a></p>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQAX_ww7Cukx5PNsE3qBlltJPZgnXyRy0865TIwt_mZTARKRJwsjXEgc4LffaRol0zogbQU5SuniDBi/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" style="width: 100%; height: 500px; top: 0;"></iframe>
 <h1 id="结论">结论</h1>
-<p>由于学校的vpn是zerotier不稳的时候应急的，所以每次改DNS就能够满足需求。最终还是应当使用私有的Moon服务器保证多个zerotier节点之间的网络连接稳定。</p>
+<p>由于学校的vpn是zerotier远程桌面不稳的时候应急的，所以每次改DNS就能够满足需求。最终还是应当配置私有的Moon服务器保证多个zerotier节点之间的网络连接稳定。</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
@@ -129,12 +129,13 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/2022-10-10-jmeter%E5%92%8Ctomcat%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/" class="prev" rel="prev" title="Jmeter和tomcat测试相关资料"><i class="fas fa-angle-left fa-fw"></i>Jmeter和tomcat测试相关资料</a></div>
+    <div class="post-nav"><a href="/2022-10-10-jmeter%E5%92%8Ctomcat%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/" class="prev" rel="prev" title="Jmeter和tomcat测试相关资料"><i class="fas fa-angle-left fa-fw"></i>Jmeter和tomcat测试相关资料</a>
+            <a href="/2023-01-06-geoserver%E5%8A%A0%E8%BD%BD%E5%A4%A7%E5%9E%8Bgeotiff/" class="next" rel="next" title="Geoserver加载大文件">Geoserver加载大文件<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 </article></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.84.0">Hugo</a> | Theme - <a href="https://github.com/sunt-programator/CodeIT" target="_blank" rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://blog.theropod.tk" target="_blank" rel="noopener noreferrer">WGS84教信者</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://blog.theropod.tk" target="_blank" rel="noopener noreferrer">WGS84教信者</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 

@@ -3,7 +3,12 @@
         <title>gdal - Tag - WGS84教信者</title>
         <link>https://blog.theropod.tk/tags/gdal/</link>
         <description>gdal - Tag - WGS84教信者</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 12 Jan 2021 16:42:12 &#43;0800</lastBuildDate><atom:link href="https://blog.theropod.tk/tags/gdal/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 07 Jan 2023 06:23:59 &#43;0800</lastBuildDate><atom:link href="https://blog.theropod.tk/tags/gdal/" rel="self" type="application/rss+xml" /><item>
+    <title>Geoserver加载大文件</title>
+    <link>https://blog.theropod.tk/2023-01-06-geoserver%E5%8A%A0%E8%BD%BD%E5%A4%A7%E5%9E%8Bgeotiff/</link>
+    <pubDate>Sat, 07 Jan 2023 06:23:59 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2023-01-06-geoserver%E5%8A%A0%E8%BD%BD%E5%A4%A7%E5%9E%8Bgeotiff/</guid>
+    <description><![CDATA[背景 希望用geoserver提供大量栅格的wms服务。例如3000+个2MB以内的小geotiff，代表了美国的精细人口密度,分辨率30米。]]></description>
+</item><item>
     <title>有关几种使用python裁剪矢量数据的方式和速度</title>
     <link>https://blog.theropod.tk/2021-01-12-%E6%9C%89%E5%85%B3%E5%87%A0%E7%A7%8D%E4%BD%BF%E7%94%A8python%E8%A3%81%E5%89%AA%E7%9F%A2%E9%87%8F%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E5%BC%8F%E5%92%8C%E9%80%9F%E5%BA%A6/</link>
     <pubDate>Tue, 12 Jan 2021 16:42:12 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2021-01-12-%E6%9C%89%E5%85%B3%E5%87%A0%E7%A7%8D%E4%BD%BF%E7%94%A8python%E8%A3%81%E5%89%AA%E7%9F%A2%E9%87%8F%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E5%BC%8F%E5%92%8C%E9%80%9F%E5%BA%A6/</guid>

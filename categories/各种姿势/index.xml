@@ -3,8 +3,13 @@
         <title>各种姿势 - Category - WGS84教信者</title>
         <link>https://blog.theropod.tk/categories/%E5%90%84%E7%A7%8D%E5%A7%BF%E5%8A%BF/</link>
         <description>各种姿势 - Category - WGS84教信者</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 08 Dec 2022 03:58:57 &#43;0800</lastBuildDate><atom:link href="https://blog.theropod.tk/categories/%E5%90%84%E7%A7%8D%E5%A7%BF%E5%8A%BF/" rel="self" type="application/rss+xml" /><item>
-    <title>VPN连接候无法访问外网</title>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 07 Jan 2023 06:23:59 &#43;0800</lastBuildDate><atom:link href="https://blog.theropod.tk/categories/%E5%90%84%E7%A7%8D%E5%A7%BF%E5%8A%BF/" rel="self" type="application/rss+xml" /><item>
+    <title>Geoserver加载大文件</title>
+    <link>https://blog.theropod.tk/2023-01-06-geoserver%E5%8A%A0%E8%BD%BD%E5%A4%A7%E5%9E%8Bgeotiff/</link>
+    <pubDate>Sat, 07 Jan 2023 06:23:59 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2023-01-06-geoserver%E5%8A%A0%E8%BD%BD%E5%A4%A7%E5%9E%8Bgeotiff/</guid>
+    <description><![CDATA[背景 希望用geoserver提供大量栅格的wms服务。例如3000+个2MB以内的小geotiff，代表了美国的精细人口密度,分辨率30米。]]></description>
+</item><item>
+    <title>解决VPN连接后无法访问外网</title>
     <link>https://blog.theropod.tk/2022-10-31-%E6%B8%85%E5%8D%8Evpn%E8%BF%9E%E6%8E%A5%E5%80%99%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91/</link>
     <pubDate>Thu, 08 Dec 2022 03:58:57 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2022-10-31-%E6%B8%85%E5%8D%8Evpn%E8%BF%9E%E6%8E%A5%E5%80%99%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91/</guid>
     <description><![CDATA[现象 之前使用windows商店安装清华的Pulse Secure VPN可以同时访问校园网和外网，现在发现使用商店版或学校提供的桌面应用版Pulse Sec]]></description>
@@ -48,10 +53,5 @@
     <link>https://blog.theropod.tk/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</link>
     <pubDate>Tue, 12 Mar 2019 18:35:03 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/</guid>
     <description><![CDATA[安装 在WSL上使用，github上有编译的extended的deb版本 因为要使用scss自定义格式 官方教程安装 初始化目录，下载主题，新建项目]]></description>
-</item><item>
-    <title>VSCode中PlantUML流程图</title>
-    <link>https://blog.theropod.tk/2019-03-12-vscode%E4%B8%ADplantuml%E6%B5%81%E7%A8%8B%E5%9B%BE/</link>
-    <pubDate>Tue, 12 Mar 2019 18:34:50 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2019-03-12-vscode%E4%B8%ADplantuml%E6%B5%81%E7%A8%8B%E5%9B%BE/</guid>
-    <description><![CDATA[需要安装 Markdown Preview Enhanced插件 jdk并且配置了环境变量 PlantUML Preview插件（非必需，只是用来预览放大测试PlantUML类型的流程图 注释 网]]></description>
 </item></channel>
 </rss>
