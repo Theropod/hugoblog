@@ -29,10 +29,10 @@
     <pubDate>Sun, 15 Nov 2020 17:15:37 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2020-11-15-geoserver%E4%B8%AD%E5%8A%A0%E5%85%A5netcdf/</guid>
     <description><![CDATA[使用Geoserver支持netcdf文件的展示、获取和分析，需要安装插件。 主要参考的链接：geoserver geosolutions 需求 系统有NetCDF-C环]]></description>
 </item><item>
-    <title>使用ssh的反向代理让内网网站通过外部服务器访问</title>
+    <title>使用ssh的反向和正向代理让内网网站通过外部服务器访问</title>
     <link>https://blog.theropod.tk/2019-01-06-%E4%BD%BF%E7%94%A8ssh%E7%9A%84%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E8%AE%A9%E5%86%85%E7%BD%91%E7%BD%91%E7%AB%99%E9%80%9A%E8%BF%87%E5%A4%96%E9%83%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BF%E9%97%AE/</link>
     <pubDate>Sun, 06 Jan 2019 20:47:57 &#43;0000</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.tk/2019-01-06-%E4%BD%BF%E7%94%A8ssh%E7%9A%84%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E8%AE%A9%E5%86%85%E7%BD%91%E7%BD%91%E7%AB%99%E9%80%9A%E8%BF%87%E5%A4%96%E9%83%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BF%E9%97%AE/</guid>
-    <description><![CDATA[]]></description>
+    <description><![CDATA[用法 1. 反向代理 A能连B，在A运行, 把【外部访问B的端口】转到【A的端口】 1 ssh -fCNR *:B_port:127.0.0.1:A_port B_user@B_ip # [bind_address:]remote_port:localhost:localhost_port 注：一定要开/etc/ssh/sshd_config中]]></description>
 </item><item>
     <title>操作记录-在leaflet中加速大量geojson/topojson多边形的显示</title>
     <link>https://blog.theropod.tk/2019-01-06-%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-%E5%9C%A8leaflet%E4%B8%AD%E5%8A%A0%E9%80%9F%E5%A4%A7%E9%87%8Fgeojsontopojson%E5%A4%9A%E8%BE%B9%E5%BD%A2%E7%9A%84%E6%98%BE%E7%A4%BA/</link>

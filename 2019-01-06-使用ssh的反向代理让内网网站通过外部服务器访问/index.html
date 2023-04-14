@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>使用ssh的反向代理让内网网站通过外部服务器访问 - WGS84教信者</title><meta name="description" content="WGS84教信者"><meta property="og:title" content="使用ssh的反向代理让内网网站通过外部服务器访问" />
-<meta property="og:description" content="" />
+        <title>使用ssh的反向和正向代理让内网网站通过外部服务器访问 - WGS84教信者</title><meta name="description" content="WGS84教信者"><meta property="og:title" content="使用ssh的反向和正向代理让内网网站通过外部服务器访问" />
+<meta property="og:description" content="用法 1. 反向代理 A能连B，在A运行, 把【外部访问B的端口】转到【A的端口】 1 ssh -fCNR *:B_port:127.0.0.1:A_port B_user@B_ip # [bind_address:]remote_port:localhost:localhost_port 注：一定要开/etc/ssh/sshd_config中" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.theropod.tk/2019-01-06-%E4%BD%BF%E7%94%A8ssh%E7%9A%84%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E8%AE%A9%E5%86%85%E7%BD%91%E7%BD%91%E7%AB%99%E9%80%9A%E8%BF%87%E5%A4%96%E9%83%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BF%E9%97%AE/" /><meta property="og:image" content="https://blog.theropod.tk/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-01-06T20:47:57&#43;00:00" />
@@ -15,8 +15,8 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://blog.theropod.tk/logo.png"/>
 
-<meta name="twitter:title" content="使用ssh的反向代理让内网网站通过外部服务器访问"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="使用ssh的反向和正向代理让内网网站通过外部服务器访问"/>
+<meta name="twitter:description" content="用法 1. 反向代理 A能连B，在A运行, 把【外部访问B的端口】转到【A的端口】 1 ssh -fCNR *:B_port:127.0.0.1:A_port B_user@B_ip # [bind_address:]remote_port:localhost:localhost_port 注：一定要开/etc/ssh/sshd_config中"/>
 <meta name="application-name" content="WGS84教信者">
 <meta name="apple-mobile-web-app-title" content="WGS84教信者"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -24,12 +24,12 @@
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "使用ssh的反向代理让内网网站通过外部服务器访问",
+        "headline": "使用ssh的反向和正向代理让内网网站通过外部服务器访问",
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/blog.theropod.tk\/2019-01-06-%E4%BD%BF%E7%94%A8ssh%E7%9A%84%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E8%AE%A9%E5%86%85%E7%BD%91%E7%BD%91%E7%AB%99%E9%80%9A%E8%BF%87%E5%A4%96%E9%83%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BF%E9%97%AE\/"
-        },"genre": "posts","keywords": "ssh, 反向代理, 网站","wordcount":  573 ,
+        },"genre": "posts","keywords": "ssh, 反向代理, 网站","wordcount":  950 ,
         "url": "https:\/\/blog.theropod.tk\/2019-01-06-%E4%BD%BF%E7%94%A8ssh%E7%9A%84%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E8%AE%A9%E5%86%85%E7%BD%91%E7%BD%91%E7%AB%99%E9%80%9A%E8%BF%87%E5%A4%96%E9%83%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BF%E9%97%AE\/","datePublished": "2019-01-06T20:47:57+00:00","dateModified": "2019-01-06T20:47:57+00:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "WGS84教信者"},"author": {
@@ -77,9 +77,9 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">使用ssh的反向代理让内网网站通过外部服务器访问</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">使用ssh的反向和正向代理让内网网站通过外部服务器访问</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://blog.theropod.tk" title="Author" target="_blank" rel="noopener noreferrer author" class="author"><i class="fas fa-user-circle fa-fw"></i>WGS84教信者</a></span>&nbsp;<span class="post-category">included in <a href="/categories/%E7%BD%91%E7%AE%A1/"><i class="far fa-folder fa-fw"></i>网管</a>&nbsp;<a href="/categories/web%E7%9B%B8%E5%85%B3/"><i class="far fa-folder fa-fw"></i>WEB相关</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-01-06">2019-01-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;573 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-01-06">2019-01-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;950 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -88,12 +88,65 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
+    <li><a href="#用法">用法</a>
+      <ul>
+        <li><a href="#1-反向代理">1. 反向代理</a></li>
+        <li><a href="#2-正向代理">2. 正向代理</a></li>
+        <li><a href="#3-创建socks代理">3. 创建socks代理</a></li>
+        <li><a href="#4-其他技巧">4. 其他技巧</a></li>
+      </ul>
+    </li>
+    <li><a href="#反向代理详细说明">反向代理详细说明</a></li>
     <li><a href="#参考">参考</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><ul>
+            </div><div class="content" id="content"><h2 id="用法">用法</h2>
+<h3 id="1-反向代理">1. 反向代理</h3>
+<p><strong>A能连B，在A运行, 把【外部访问B的端口】转到【A的端口】</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">ssh -fCNR *:B_port:127.0.0.1:A_port B_user@B_ip <span class="c1"># [bind_address:]remote_port:localhost:localhost_port  </span>
+</code></pre></td></tr></table>
+</div>
+</div><p>注：一定要开<code>/etc/ssh/sshd_config</code>中的<code>GatewayPorts yes</code>。这样才能让任意外部来源的地址访问B的端口(加上星号*)。否则，只能接收B的loopback访问（B上面用localhost或127.0.0.1才行，在B上面用B的ip都不行）。</p>
+<h3 id="2-正向代理">2. 正向代理</h3>
+<p><strong>B能连A，在B运行, 把【外部访问B端口】转到【A的端口】</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">ssh -fCNL *:B_port:127.0.0.1:A_port A_user@A_ip <span class="c1"># [bind_address:]local_port:remotehost:remotehost_port</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>或，在没有开GatewayPorts的情况下，用这个让任意外部来源地址可以通过port2访问port1（类似本地的端口映射）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">ssh -fCNL *:local_port2:127.0.0.1:local_port1 localhost
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="3-创建socks代理">3. 创建socks代理</h3>
+<p><strong>B能连A，在B运行并启动一个socks5代理，把【socks访问B端口】全部转到A</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">ssh -D B_port A_user@A_ip <span class="c1"># [bind_address:]local_port</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="4-其他技巧">4. 其他技巧</h3>
+<p>通过<code>ps aux | grep ssh</code>查看有没有运行成功</p>
+<h2 id="反向代理详细说明">反向代理详细说明</h2>
+<ul>
 <li>
-<p>内网的服务器1上有网站，但是端口不开放，网站无法在公网上被访问。但是，此内网服务器1本身可以访问外网，于是可以通过ssh反向代理，让内网服务器1首先连接另一台端口可以在公网被访问的服务器2，通过服务器2来访问服务器1上的网站。</p>
+<p>内网的服务器1上有网站，但是端口不开放，网站无法在公网上被访问。同时，此内网服务器1本身可以访问外网，于是可以通过ssh反向代理，让内网服务器1首先连接另一台端口可以在公网被访问的服务器2，通过服务器2来访问服务器1上的网站。</p>
 </li>
 <li>
 <p>ssh 反向代理转发的操作：</p>
@@ -147,9 +200,12 @@ ServerAliveCountMax 9999999999
 </ul>
 <p>于是就这样运行了半个月，服务一直都有</p>
 <h2 id="参考">参考</h2>
-<p><a href="http://www.netcan666.com/2016/09/28/ssh%e9%9a%a7%e9%81%93%e5%8f%8d%e5%90%91%e4%bb%a3%e7%90%86%e5%ae%9e%e7%8e%b0%e5%86%85%e7%bd%91%e5%88%b0%e5%85%ac%e7%bd%91%e7%ab%af%e5%8f%a3%e8%bd%ac%e5%8f%91/" target="_blank" rel="noopener noreferrer">ssh转发1</a>[1]</p>
-<p><a href="https://cherrot.com/tech/2017/01/08/ssh-tunneling-practice.html" target="_blank" rel="noopener noreferrer">ssh转发实战2</a>[2]</p>
-<p><a href="http://coolnull.com/3322.html" target="_blank" rel="noopener noreferrer">不懂iptables原理只能照抄这个</a>[3]</p></div><div class="post-footer" id="post-footer">
+<p><a href="https://linux.die.net/man/1/ssh" target="_blank" rel="noopener noreferrer">ssh的文档最重要</a></p>
+<p><a href="https://www.cnblogs.com/kwongtai/p/6903420.html" target="_blank" rel="noopener noreferrer">ssh反向代理</a></p>
+<p><a href="https://cherrot.com/tech/2017/01/08/ssh-tunneling-practice.html" target="_blank" rel="noopener noreferrer">ssh转发实战</a></p>
+<p><a href="https://jeremyxu2010.github.io/2018/12/ssh%E7%9A%84%E4%B8%89%E7%A7%8D%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/" target="_blank" rel="noopener noreferrer">ssh三种端口转发</a></p>
+<p><a href="http://coolnull.com/3322.html" target="_blank" rel="noopener noreferrer">iptables本地端口映射</a></p>
+</div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
