@@ -1,0 +1,19 @@
+# 气候分析脚本网站前后台的打包
+
+conda:太大了 https://pythonspeed.com/articles/conda-docker-image-size/说本来打包一个python3.8+numpy要950MB 分层压缩之后也要330MB
+aplinelinux：害怕有问题
+ubuntu：官方镜像是72.9MB
+装完nclncocdo之后是1.03GB
+如何精简：https://www.cnblogs.com/dogecheng/p/11437413.html
+ubuntu20.04安装https://packages.ubuntu.com/bionic-updates/amd64/libgfortran3/download
+https://packages.ubuntu.com/bionic-updates/amd64/gcc-6-base/download
+有关X11https://medium.com/@SaravSun/running-gui-applications-inside-docker-containers-83d65c0db110没有用
+但是这个可以
+https://github.com/mviereck/x11docker#dependencies
+```
+x11docker -i <IMAGENAME>
+```
+conda也没有用
+比较一下conda和apt体积? 别了 没有用 肯定是conda大啊
+使用GitHub Actions来推送
+https://sleele.com/2020/01/06/%E4%BD%BF%E7%94%A8github-action%E6%9E%84%E5%BB%BAimage%E6%8E%A8%E9%80%81docker-hub/

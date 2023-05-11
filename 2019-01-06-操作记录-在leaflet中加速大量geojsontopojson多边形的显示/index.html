@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>操作记录-在leaflet中加速大量geojson/topojson多边形的显示 - WGS84教信者</title><meta name="description" content="WGS84教信者"><meta property="og:title" content="操作记录-在leaflet中加速大量geojson/topojson多边形的显示" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="theropod.github.io/hugoblog/2019-01-06-%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-%E5%9C%A8leaflet%E4%B8%AD%E5%8A%A0%E9%80%9F%E5%A4%A7%E9%87%8Fgeojsontopojson%E5%A4%9A%E8%BE%B9%E5%BD%A2%E7%9A%84%E6%98%BE%E7%A4%BA/" /><meta property="og:image" content="/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-01-06T20:28:12+00:00" />
+<meta property="article:modified_time" content="2019-01-06T20:28:12+00:00" /><meta property="og:site_name" content="WGS84教信者" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/logo.png"/>
+
+<meta name="twitter:title" content="操作记录-在leaflet中加速大量geojson/topojson多边形的显示"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="WGS84教信者">
+<meta name="apple-mobile-web-app-title" content="WGS84教信者"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="theropod.github.io/hugoblog/2019-01-06-%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-%E5%9C%A8leaflet%E4%B8%AD%E5%8A%A0%E9%80%9F%E5%A4%A7%E9%87%8Fgeojsontopojson%E5%A4%9A%E8%BE%B9%E5%BD%A2%E7%9A%84%E6%98%BE%E7%A4%BA/" /><link rel="prev" href="theropod.github.io/hugoblog/2018-12-15-%E5%B0%86%E5%87%A0%E7%A7%8D%E5%8C%97%E4%BA%AC%E5%BB%BA%E6%88%90%E5%8C%BA%E6%95%B0%E6%8D%AE%E4%B8%8B%E8%BD%BD%E8%A3%81%E5%89%AA%E9%87%8D%E5%88%86%E7%B1%BB%E5%90%8E%E4%BB%A5%E4%BE%9B%E6%AF%94%E8%BE%83/" /><link rel="next" href="theropod.github.io/hugoblog/2019-01-06-%E4%BD%BF%E7%94%A8ssh%E7%9A%84%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E8%AE%A9%E5%86%85%E7%BD%91%E7%BD%91%E7%AB%99%E9%80%9A%E8%BF%87%E5%A4%96%E9%83%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BF%E9%97%AE/" /><link rel="stylesheet" href="/theropod.github.io/hugoblog/lib/normalize/normalize.min.055364f5be272caa092b0e6654c165828707f8ab971e2656383a6d6392bc345e.css" integrity="sha256-BVNk9b4nLKoJKw5mVMFlgocH&#43;KuXHiZWODptY5K8NF4="><link rel="stylesheet" href="/theropod.github.io/hugoblog/css/style.min.623091c4f3b927646c79b3db3772f496ee423628b9567bc0c74af55a4d50d1ba.css" integrity="sha256-YjCRxPO5J2RsebPbN3L0lu5CNii5VnvAx0r1Wk1Q0bo="><link rel="stylesheet" href="/theropod.github.io/hugoblog/lib/fontawesome-free/all.min.876d023d9d10c97941b80c3b03e2a5b94631ff7a4af9cee5604a6a2d39718d84.css" integrity="sha256-h20CPZ0QyXlBuAw7A&#43;KluUYx/3pK&#43;c7lYEpqLTlxjYQ="><link rel="stylesheet" href="/theropod.github.io/hugoblog/lib/animate/animate.min.3c770e90f98eb21b0c042fafb49755af93306fbaf42e449524f94fae9fc83295.css" integrity="sha256-PHcOkPmOshsMBC&#43;vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "操作记录-在leaflet中加速大量geojson/topojson多边形的显示",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "theropod.github.io\/hugoblog\/2019-01-06-%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-%E5%9C%A8leaflet%E4%B8%AD%E5%8A%A0%E9%80%9F%E5%A4%A7%E9%87%8Fgeojsontopojson%E5%A4%9A%E8%BE%B9%E5%BD%A2%E7%9A%84%E6%98%BE%E7%A4%BA\/"
+        },"genre": "posts","keywords": "Leaflet, Geojson, mapbox, protobuf","wordcount":  1872 ,
+        "url": "theropod.github.io\/hugoblog\/2019-01-06-%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-%E5%9C%A8leaflet%E4%B8%AD%E5%8A%A0%E9%80%9F%E5%A4%A7%E9%87%8Fgeojsontopojson%E5%A4%9A%E8%BE%B9%E5%BD%A2%E7%9A%84%E6%98%BE%E7%A4%BA\/","datePublished": "2019-01-06T20:28:12+00:00","dateModified": "2019-01-06T20:28:12+00:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "WGS84教信者"},"author": {
+                "@type": "Person",
+                "name": "WGS84教信者"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="auto" header-mobile="auto"><script type="text/javascript">('' === 'true' && window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="theropod.github.io/hugoblog/" title="WGS84教信者">WGS84教信者</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/theropod.github.io/hugoblog/posts/"> Posts </a><a class="menu-item" href="/theropod.github.io/hugoblog/tags/"> Tags </a><a class="menu-item" href="/theropod.github.io/hugoblog/categories/"> Categories </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="theropod.github.io/hugoblog/" title="WGS84教信者">WGS84教信者</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/theropod.github.io/hugoblog/posts/" title="">Posts</a><a class="menu-item" href="/theropod.github.io/hugoblog/tags/" title="">Tags</a><a class="menu-item" href="/theropod.github.io/hugoblog/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">操作记录-在leaflet中加速大量geojson/topojson多边形的显示</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://blog.theropod.tk" title="Author" target="_blank" rel="noopener noreferrer author" class="author"><i class="fas fa-user-circle fa-fw"></i>WGS84教信者</a></span>&nbsp;<span class="post-category">included in <a href="theropod.github.io/hugoblog/categories/gis/"><i class="far fa-folder fa-fw"></i>GIS</a>&nbsp;<a href="theropod.github.io/hugoblog/categories/web%E7%9B%B8%E5%85%B3/"><i class="far fa-folder fa-fw"></i>WEB相关</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-01-06">2019-01-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1872 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#场景">场景</a></li>
+        <li><a href="#实现">实现</a></li>
+        <li><a href="#一个protobuf例子">一个protobuf例子</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="场景">场景</h3>
+<p>需要展示覆盖北京的25万+个规则的网格，进行常规的点击显示数据、绘制勾选、着色等等操作。但是希望能直接使用geojson/topojson（原来构想的是随机森林和pagerank跑出结果，匹配到多边形，实时输出到geojson），不转格式，同时想尝试后端越少越好。。。</p>
+<h3 id="实现">实现</h3>
+<ul>
+<li>首先想到的自然是类似于geojson-vt的实现，将json转换成切片之后显示。实际用了leaflet.vectorGrid.js，为了节省空间把geojson先转成topojson，体积大概小了30%，之后直接作为图层放到map里面。这样交互倒是很好实现，但是速度很慢。计时出来，下载70M的topojson需要几秒，而后计算切片显示又需要好几秒。。。最开始我还弱智地把topojson再在前端转成了geojson来放进slicer，就更慢了。另外，在放大到很大的时候自然性能还行，但是缩小到12级往下，缩放/拖动都需要重新计算，查看的延迟太大，不能正常使用。</li>
+<li>首先就是要简化数据，使用了几种北京的建成区遥感分类结果，最后挑选了最新的一个结果来进行叠加，（具体就是先区域统计再筛选，不知道有没有更快的办法）直接缩小到6万+，geojson缩小到17M。这样的话直接用vectorGrid，除了缩小之外甚至都不会有延迟了，但是这里还是必须先把整个json下载下来。</li>
+<li>为了不在一开始就下载所有的json，想到用一个简单的后端。方案是先用tippecannoe把geojson转成mapbox的mbtiles标准（等于把一个geojson转成一个sqlite的文件数据库）。leaflet.VectorGrid里可以把数据源选择成protobuf(protocol buffer)，而mbtiles被发布成http://{host}:{port}/layer/{z}/{x}/{y}.pbf这样的buffer，流程上就ok了。github上面mbtiles有无数种通过自己来发布服务的办法，都是基于mapbox官方发布到github的几个基于node.js的插件来组合的，我选了一个比较无脑的tilehut.js。但是貌似mapbox的sqlite依赖给的有问题，我被卡住了一天，github issue里很多讨论，但是都没有用。。。最后记得是执行了重建所有packages依赖的一类操作才安装上。
+这套方案和mapbox正常显示地图是一样的，所以响应上和底图一样基本没有延迟，缩小后也不会卡顿，定义样式和事件都可以。其实直接把mbtiles上传到mapbox也可以用，只不过不太好自动化进行而已。</li>
+</ul>
+<p>总之，以上的操作证明了即便是大规模的数据，也可以只使用geojson来做地图展示，这样对于数据生成的步骤方便了不少。</p>
+<h3 id="一个protobuf例子">一个protobuf例子</h3>
+<p>值得注意的几点：指定颜色的时候需要首先声明fill:true，另外由于样式化是针对protobuf里的所有图层分别设置的，所以要搞清图层的名字究竟是什么（尤其是和文件名不一致时）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">// beijing grids color definition
+function getColor_People(d) {
+	return d &gt; 10000
+		? &#34;#800026&#34;
+		: d &gt; 5000
+		? &#34;#BD0026&#34;
+		: d &gt; 2500
+		? &#34;#E31A1C&#34;
+		: d &gt; 1000
+		? &#34;#FC4E2A&#34;
+		: d &gt; 500
+		? &#34;#FD8D3C&#34;
+		: d &gt; 200
+		? &#34;#FEB24C&#34;
+		: d &gt; 50
+		? &#34;#FED976&#34;
+		: &#34;#FFEDA0&#34;;
+}
+
+var gridLayer;
+var previousGridId = null;
+var gridPopup = L.popup({ maxWidth: 1500, maxHeight: 400 });
+// load grid with pbf tiles
+var gridLayer = L.vectorGrid.protobuf(
+	 &#34;{host}:{port}/layer/{z}/{x}/{y}.pbf&#34;,
+	{
+		// pane: &#34;gridPane&#34;,
+		rendererFactory: L.canvas.tile,
+		attribution: &#34;© Your Organization&#34;,
+		interactive: true,
+		getFeatureId: function(feature) {
+			return feature.properties.id;
+		},
+		vectorTileLayerStyles: {
+			mylayername: function(feature) {
+				return {
+					// fill: true is needed
+					fill: true,
+					fillColor: getColor_People(feature.people),
+					fillOpacity: 0.7,
+					stroke: false,
+					color: &#34;#595959&#34;,
+					weight: 0.6
+				};
+			}
+		}
+	}
+);
+gridLayer.on(&#34;click&#34;, function(e) {
+	if (map.getZoom() &lt; 14) {
+	} else {
+		//console.log(e);
+		var prop = e.layer.properties;
+		//var latlng = [Number(parcel.y), Number(parcel.x)];
+		var latlng = e.latlng;
+		// settimeout otherwise when map click fires it will override this color change
+		// clear selection if slect on the same grid
+		var selectedGridId = prop[&#34;fnid&#34;];
+		gridLayer.resetFeatureStyle(previousGridId);
+		if (selectedGridId === previousGridId &amp;&amp; !gridPopup.isOpen()) {
+			gridPopup.remove();
+			selectedGridId = null;
+		} else {
+			gridPopup
+				.setLatLng(latlng)
+				.setContent(JSON.stringify(prop))
+				.openOn(map);
+			gridPopup.bringToFront();
+			map.panTo(latlng);
+			setTimeout(function() {
+				gridLayer.setFeatureStyle(
+					selectedGridId,
+					{
+						color: &#34;red&#34;
+					},
+					100
+				);
+			});
+		}
+		previousGridId = selectedGridId;
+	}
+});
+// gridLayer legends
+var gridLayerLegend = L.control({ position: &#34;bottomright&#34; });
+gridLayerLegend.onAdd = function(map) {
+	var div = L.DomUtil.create(&#34;div&#34;, &#34;info legend&#34;),
+		grades = [50, 200, 500, 1000, 2500, 5000, 10000],
+		labels = [&#39;人流量&#39;];
+	div.innerHTML+=&#39;&lt;h4&gt;人流量&lt;/h4&gt;&#39;;
+	// loop through our density intervals and generate a label with a colored square for each interval
+	for (var i = 0; i &lt; grades.length; i++) {
+		div.innerHTML +=
+			&#39;&lt;i style=&#34;background:&#39; +
+			getColor_People(grades[i] + 1) +
+			&#39;&#34;&gt;&lt;/i&gt; &#39; +
+			grades[i] +
+			(grades[i + 1] ? &#34;&amp;ndash;&#34; + grades[i + 1] + &#34;&lt;br&gt;&#34; : &#34;+&#34;);
+	}
+
+	return div;
+};
+// evnets to fire when adding and removing overlays
+map.on(&#34;overlayadd&#34;, function(e) {
+	switch (e.name) {
+		case &#34;Grid人流量&#34;:
+			gridLayerLegend.addTo(map);
+			break;
+		case &#34;Grid2&#34;:
+			gridLayer2Legend.addTo(map);
+			break;
+		default:
+			break;
+	}
+});
+map.on(&#34;overlayremove&#34;, function(e) {
+	switch (e.name) {
+		case &#34;Grid人流量&#34;:
+			gridLayerLegend.remove();
+			break;
+		case &#34;Grid2&#34;:
+			gridLayer2Legend.remove();
+			break;
+		default:
+			break;
+	}
+});
+/**
+ * LAYER CONTROLS
+ */
+var baseMaps = {
+	BingSatellite: bingLayer,
+	OSM: osmTile,
+	GaoDe: GaoDeTile,
+	Grayscale: mapBoxTile
+};
+var overlayMaps = {
+	Grid人流量: gridLayer,
+};
+var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
+</code></pre></td></tr></table>
+</div>
+</div><p>效果：<img
+        class="lazyload"
+        src="/theropod.github.io/hugoblog/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20190106202239504.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoZXJvcG9k,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20190106202239504.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoZXJvcG9k%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20190106202239504.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoZXJvcG9k%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20190106202239504.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoZXJvcG9k%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20190106202239504.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RoZXJvcG9k,size_16,color_FFFFFF,t_70"
+        title="在这里插入图片描述" /></p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2019-01-06</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="theropod.github.io/hugoblog/2019-01-06-%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-%E5%9C%A8leaflet%E4%B8%AD%E5%8A%A0%E9%80%9F%E5%A4%A7%E9%87%8Fgeojsontopojson%E5%A4%9A%E8%BE%B9%E5%BD%A2%E7%9A%84%E6%98%BE%E7%A4%BA/index.md" target="_blank" rel="noopener noreferrer">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="theropod.github.io/hugoblog/tags/leaflet/">Leaflet</a>,&nbsp;<a href="theropod.github.io/hugoblog/tags/geojson/">Geojson</a>,&nbsp;<a href="theropod.github.io/hugoblog/tags/mapbox/">mapbox</a>,&nbsp;<a href="theropod.github.io/hugoblog/tags/protobuf/">protobuf</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="theropod.github.io/hugoblog/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="theropod.github.io/hugoblog/2018-12-15-%E5%B0%86%E5%87%A0%E7%A7%8D%E5%8C%97%E4%BA%AC%E5%BB%BA%E6%88%90%E5%8C%BA%E6%95%B0%E6%8D%AE%E4%B8%8B%E8%BD%BD%E8%A3%81%E5%89%AA%E9%87%8D%E5%88%86%E7%B1%BB%E5%90%8E%E4%BB%A5%E4%BE%9B%E6%AF%94%E8%BE%83/" class="prev" rel="prev" title="将几种北京建成区数据下载裁剪重分类后以供比较"><i class="fas fa-angle-left fa-fw"></i>将几种北京建成区数据下载裁剪重分类后以供比较</a>
+            <a href="theropod.github.io/hugoblog/2019-01-06-%E4%BD%BF%E7%94%A8ssh%E7%9A%84%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E8%AE%A9%E5%86%85%E7%BD%91%E7%BD%91%E7%AB%99%E9%80%9A%E8%BF%87%E5%A4%96%E9%83%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BF%E9%97%AE/" class="next" rel="next" title="使用ssh的反向和正向代理让内网网站通过外部服务器访问">使用ssh的反向和正向代理让内网网站通过外部服务器访问<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.92.2">Hugo</a> | Theme - <a href="https://github.com/sunt-programator/CodeIT" target="_blank" rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://blog.theropod.tk" target="_blank" rel="noopener noreferrer">WGS84教信者</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/theropod.github.io/hugoblog/lib/lightgallery/lightgallery.min.814eba54011def7fdeead06ae5cf964a245c347d0f4972e71cc3de1482b1b473.css" integrity="sha256-gU66VAEd73/e6tBq5c&#43;WSiRcNH0PSXLnHMPeFIKxtHM="><script type="text/javascript" src="/theropod.github.io/hugoblog/lib/smooth-scroll/smooth-scroll.min.bcff85fb5e00d68802850b393ac7792c997f722f536f38e26638c46dca8e5eb6.js" integrity="sha256-vP&#43;F&#43;14A1ogChQs5Osd5LJl/ci9TbzjiZjjEbcqOXrY="></script><script type="text/javascript" src="/theropod.github.io/hugoblog/lib/lazysizes/lazysizes.min.fb649fcae62177dfe63e67081ddceb830b5ce1f05a4184e9bbb7d87ac4b8f4e5.js" integrity="sha256-&#43;2SfyuYhd9/mPmcIHdzrgwtc4fBaQYTpu7fYesS49OU="></script><script type="text/javascript" src="/theropod.github.io/hugoblog/lib/lightgallery/lightgallery.min.0ef47b3aa47d71accebfc4c7029c37f43d35f3ef43cda0e706c7adb8851f9554.js" integrity="sha256-DvR7OqR9cazOv8THApw39D018&#43;9DzaDnBsetuIUflVQ="></script><script type="text/javascript" src="/theropod.github.io/hugoblog/lib/lightgallery/lg-thumbnail.min.87bd0bf4ede9af1be2287acf1f0ac8777dc76a49209d44620752811c3c993897.js" integrity="sha256-h70L9O3prxviKHrPHwrId33HakkgnURiB1KBHDyZOJc="></script><script type="text/javascript" src="/theropod.github.io/hugoblog/lib/lightgallery/lg-zoom.min.5993efde07d6b1a88dd5d5ff00cf5c0178d1d8c7f682eae59546a8e144aac57e.js" integrity="sha256-WZPv3gfWsaiN1dX/AM9cAXjR2Mf2gurllUao4USqxX4="></script><script type="text/javascript" src="/theropod.github.io/hugoblog/lib/clipboard/clipboard.min.8a7739925f4c03586479852df840b7061948832a7fda30c8c812d2ea4dd4c4f2.js" integrity="sha256-inc5kl9MA1hkeYUt&#43;EC3BhlIgyp/2jDIyBLS6k3UxPI="></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true}};</script><script type="text/javascript" src="/theropod.github.io/hugoblog/js/theme.min.47a1ff73dc443ed4a9f13e3134f6058e8c6d21248b35d03e7d64f56345190c3e.js" integrity="sha256-R6H/c9xEPtSp8T4xNPYFjoxtISSLNdA&#43;fWT1Y0UZDD4="></script></body>
+</html>

@@ -1,0 +1,27 @@
+# 将几种北京建成区数据下载裁剪重分类后以供比较
+
+
+<!--more-->
+
+# [Beijing-Impervious-Compare](https://github.com/Theropod/Beijing-Impervious-Compare)
+4 geotiff representing the impervious surface of Beijing (30m)
+
+![在这里插入图片描述](https://gitee.com/Theropod/Beijing-Impervious-Compare/raw/master/Comparison.gif)
+
+- ## 1是建成区，其他是0
+- ## urban_beijing_classified
+    
+    Beijing City Lab自己做的2015年30m城市制图 用GEE
+    https://www.beijingcitylab.com/data-released-1/
+- ## 2013年from-glc
+    
+    Beijing City Lab下载拼接提取的2013年的from-glc建成区，本地再把北京区域裁剪出来
+- ## 2015年from-glc
+    
+    from-glc官网上下载的2015v1，本地拼接后再把北京区域裁剪出来。这一年的不知道为什么建成区提的很范围很大，城市里的湖泊一类的都挤小了，impervious连成一片
+- ## 2017年from-glc
+    
+    from-glc官网上下载的2017v1，在110E50N这一景的最下面（也就是40N纬线）上有一个条带的缺失，值为0，不知道为什么。这个缺失我是用from-glc 2013给补上
+- ## 栅格处理
+    因为原始数据不一样，裁剪重分类步骤不一样，最后要统一一下。本地先在qgis里Raster->Conversion->Translate里面把data type改成Byte (8 digit unsigned int) 本来这样大约(8728*8828*8)/8=77050784 byte 70多M一景，但是在Arcgis里面不管是不是已经30m再重采样一遍，就可以缩小到1-2M
+

@@ -1,0 +1,124 @@
+# 自用hugo操作记录
+
+## 安装
+
+- 在WSL上使用，github上有编译的extended的deb版本 因为要使用scss自定义格式
+- 官方教程安装 初始化目录，下载主题，新建项目等等
+
+## 自定义
+
+### 我才发现有官方文档
+
+这里<https://codeit.suntprogramator.dev/zh-cn/>
+
+### config.toml相关配置
+
+- 加了`hasCJKlanguage=true`
+
+### 各种路径
+
+- 图片放到`static/images`里面，先同步再引用github的地址,而主题里的很多处引用都调整了相对路径
+- favicon 都放在static里面
+
+### 主题调整
+
+- themes\CodeIT\assets\css\_custom.scss
+  
+    ```css
+    .page {
+        max-width: 900px;
+    }
+
+    ```
+
+看起来舒服一点
+- 由于主题从LoveIt迁移到CodeIT，后者默认的config.toml里面的设置没有都复制过来
+- config.toml里面defaultTheme改成了dark
+- themes\CodeIT\layouts\_default\single.html，可以增减一些模板内容
+- 关于目录，在config.toml里[params]部分加入
+
+    ```toml
+    # tableOfContents
+    toc = "true"
+    ```
+
+    toml后面也有地方可以设置toc的等级
+
+- 媒体查询，在media.scss里找
+- Disqus模板主题已经内置，申请一个Disqus Site得到shortname，作为`DisqusShortname`放在config.toml（注意localhost的时候没有效果的）。但我发现disqus好像已经完全被墙了。。。只有架梯子才能评论
+
+- config.toml里加入google analytics的id,headers.html里放入Hugo提供的谷歌模板，就可以被谷歌检测到。之后按照谷歌的提示通过他们各种各样的检测，以及search console也可以加入。百度的这个据说很慢，先搁置。
+- 默认的archetypes里面是`draft:true`也就是说用`hugo server -D`才能看到这些drafts，而生成静态网页就忽略掉了。。。嫌麻烦直接改成true。测试可以用`hugo server -D`的server模式，且包括标记为draft的文本）
+  
+## 写
+
+- 就是普通写markdown
+- 代码块要在```之后声明语言，否则会和行内的代码高亮混淆
+- 用vscode的md插件还会有自动语法检查，强迫症患者可以用来排错玩
+
+## github同步
+
+### 有关域名
+
+- 如果想用`username.github.io`当做主页,就需要只把hugo生成的public文件夹放在`username.github.io`的项目中（加入其他文件会生成页面失败），这样其余的文件必须再新建另一个项目来保存。即：Hugo文件夹是一个项目，每次生成的public作为submodule放在使用用户名作为地址的项目。
+- 但我本来就有域名，所以不需要非得用`username.github.io`这个
+
+### 使用自定义域名（cloudflare）
+
+- Hugo文件夹git init，add remote，pull下来一个github空项目，配置好博客内容，生成public目录。
+- 先把github pages里域名设置成自己的（这里我的freenom DNS会失败，换成cloudflare的才能被github认出来），否则网站主题模板找根路径会有问题，毕竟根目录本来是个人域名下的一个项目
+- config.toml里设置baseURL到Github Pages的publish 地址。这里我用的是`blog.therpod.tk`，于是在cloudflare里只配置了一个CNAME,指向`theropod.github.io`。
+- 在github pages里面开启https后，提示`NET::ERR_CERT_COMMON_NAME_INVALID github pages`，感觉像是github.com发的证书仍没有和我的域名联系起来。我在cloudflare里又加上了A记录，直接用ip地址，https就好了。
+![image](https://raw.githubusercontent.com/Theropod/hugoblog/master/static/images/blog_images/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-02.png)
+- 接下来就是按照官方文档里说的，只把public文件夹用`git worktree`弄到一个新的gh-pages分支，选择这个分支作为主页就行了。注意官方文档的upstream指的是你自己上游的名字，比如origin。
+
+### 发布脚本
+
+- 最后就是修改下官网上发布脚本的例子了。正好vscode里面可以把terminal改成是wsl的bash.exe，写和发布可以在一起进行。
+  - 注意这个脚本里Push新生成的Public，github的相应分支里的CNAME和README这些要重新放进去，否则每次传完都要重新配置
+  - 还有就是注意VSCode把脚本CRLF转成LF。
+- vscode里没法push gh-pages目录，提示说已经在WSL的子系统里checkout过了。索性加入WSL的ssh key，在terminal里用ssh push。
+
+    ```bash
+    #!/bin/sh
+    DIR=$(dirname "$0")
+    cd $DIR/..
+
+    if [[ $(git status -s) ]]
+    then
+        echo "The working directory is dirty. Please commit any pending changes."
+        exit 1;
+    fi
+
+    echo "Deleting old publication"
+    rm -rf public
+    mkdir public
+    git worktree prune
+    rm -rf .git/worktrees/public/
+
+    echo "Checking out gh-pages branch into public"
+    git worktree add -B gh-pages public origin/gh-pages
+
+    echo "Removing existing files"
+    rm -rf public/*
+
+    echo "Generating site"
+    hugo
+
+    echo "Adding files"
+    cp CNAME public
+    cp gh-pages-README.md public/README.md
+
+    echo "Updating master branch"
+    git add --all && git commit -m "Publishing to master (publish.sh)"
+    git push origin master
+
+    echo "Updating gh-pages branch"
+    cd public && git add --all && git commit -m "Publishing to gh-pages (publish.sh)"
+    git push origin gh-pages
+    ```
+
+## VSCode一站式解决
+
+![image](https://raw.githubusercontent.com/Theropod/hugoblog/master/static/images/blog_images/2019-03-12-%E8%87%AA%E7%94%A8hugo%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-01.png)
+

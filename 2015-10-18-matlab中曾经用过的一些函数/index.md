@@ -1,0 +1,31 @@
+# Matlab中曾经用过的一些函数
+
+
+<!--more-->
+
+
+##写下来以防以后忘了。。。
+
+ -  **获取变量的名称**：inputname(变量),但是数组好像不行。。。这时候索性在数组里面加维度然后自己命名。。。
+ - **数字转字符**：num2str(数字)
+ - **将散点图平滑**（不是多项式拟合）：可以用拟合工具箱里的smooth spline,同时生成代码
+ -  **把文字视为代码来运行**：用eval(一些文字)。[这是一个例子](http://zhidao.baidu.com/link?url=n8UzQMDXzFA8J0KCJ6dJIEw7WLCay18p3os5PXBhjTPPZnyDrDVHPP8M_Ts3mqfM_P7eNx9-gQJozgKsrdpWHa "百度知道中的答案")                                    
+ - **连接字符串**：strcat('字符串'，'字符串')
+ - **保存全部（包括变量）**： save 名称
+  - 将变量 variable1 和 variable2 存到 filename.mat （或加上存放的文件目录亦可）中：save('filename', 'variable1','variable2')
+  - 在 filename.mat 中追加变量variable3，需用到 '-append' 参数，如下：save('filename', 'variable3','-append')
+ - **保存当前生成的图像**：saveas(gcf,'路径的字符串');
+ - **plot**是将散点连接起来，而**scatter**只是画点。
+ - **text**:在图上的某处显示文字。
+ text(x,y,'string')    [一个例子](http://nf.nci.org.au/facilities/software/Matlab/techdoc/ref/text.html%20%E5%87%BD%E6%95%B0%E6%89%8B%E5%86%8C)
+ - **medfilt2**: 中值滤波，可以某种程度上去掉斑点噪声和椒盐噪声。
+ - **从大到小循环**：如从4到1，用for I=4:-1:1 中间加一个-1
+ - **n阶单位阵**：eye(n)
+ - **插入行/列**： 行：A=(A;b) 列：A=[A b]
+ - **找最大值和位置**：[maxr,index]=max(r)
+**改启动路径：快捷方式上直接右键**
+----
+
+ 
+
+

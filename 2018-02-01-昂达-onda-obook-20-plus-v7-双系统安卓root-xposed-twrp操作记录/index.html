@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>昂达 Onda Obook 20 plus v7 双系统安卓root xposed twrp操作记录 - WGS84教信者</title><meta name="description" content="WGS84教信者"><meta property="og:title" content="昂达 Onda Obook 20 plus v7 双系统安卓root xposed twrp操作记录" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="theropod.github.io/hugoblog/2018-02-01-%E6%98%82%E8%BE%BE-onda-obook-20-plus-v7-%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%8D%93root-xposed-twrp%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/" /><meta property="og:image" content="/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2018-02-01T16:52:43+00:00" />
+<meta property="article:modified_time" content="2018-02-01T16:52:43+00:00" /><meta property="og:site_name" content="WGS84教信者" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/logo.png"/>
+
+<meta name="twitter:title" content="昂达 Onda Obook 20 plus v7 双系统安卓root xposed twrp操作记录"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="WGS84教信者">
+<meta name="apple-mobile-web-app-title" content="WGS84教信者"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="theropod.github.io/hugoblog/2018-02-01-%E6%98%82%E8%BE%BE-onda-obook-20-plus-v7-%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%8D%93root-xposed-twrp%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/" /><link rel="prev" href="theropod.github.io/hugoblog/2018-01-29-%E5%85%B3%E4%BA%8E%E6%81%A2%E5%A4%8Dsynaptics%E8%A7%A6%E6%91%B8%E6%9D%BF%E6%89%8B%E5%8A%BF/" /><link rel="next" href="theropod.github.io/hugoblog/2018-03-13-%E5%BE%85%E7%BB%86%E7%9C%8B%E5%85%B3%E4%BA%8Egdal%E7%9A%84vrt%E6%A0%BC%E5%BC%8F/" /><link rel="stylesheet" href="/theropod.github.io/hugoblog/lib/normalize/normalize.min.055364f5be272caa092b0e6654c165828707f8ab971e2656383a6d6392bc345e.css" integrity="sha256-BVNk9b4nLKoJKw5mVMFlgocH&#43;KuXHiZWODptY5K8NF4="><link rel="stylesheet" href="/theropod.github.io/hugoblog/css/style.min.623091c4f3b927646c79b3db3772f496ee423628b9567bc0c74af55a4d50d1ba.css" integrity="sha256-YjCRxPO5J2RsebPbN3L0lu5CNii5VnvAx0r1Wk1Q0bo="><link rel="stylesheet" href="/theropod.github.io/hugoblog/lib/fontawesome-free/all.min.876d023d9d10c97941b80c3b03e2a5b94631ff7a4af9cee5604a6a2d39718d84.css" integrity="sha256-h20CPZ0QyXlBuAw7A&#43;KluUYx/3pK&#43;c7lYEpqLTlxjYQ="><link rel="stylesheet" href="/theropod.github.io/hugoblog/lib/animate/animate.min.3c770e90f98eb21b0c042fafb49755af93306fbaf42e449524f94fae9fc83295.css" integrity="sha256-PHcOkPmOshsMBC&#43;vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "昂达 Onda Obook 20 plus v7 双系统安卓root xposed twrp操作记录",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "theropod.github.io\/hugoblog\/2018-02-01-%E6%98%82%E8%BE%BE-onda-obook-20-plus-v7-%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%8D%93root-xposed-twrp%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95\/"
+        },"genre": "posts","wordcount":  1440 ,
+        "url": "theropod.github.io\/hugoblog\/2018-02-01-%E6%98%82%E8%BE%BE-onda-obook-20-plus-v7-%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%8D%93root-xposed-twrp%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95\/","datePublished": "2018-02-01T16:52:43+00:00","dateModified": "2018-02-01T16:52:43+00:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "WGS84教信者"},"author": {
+                "@type": "Person",
+                "name": "WGS84教信者"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="auto" header-mobile="auto"><script type="text/javascript">('' === 'true' && window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="theropod.github.io/hugoblog/" title="WGS84教信者">WGS84教信者</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/theropod.github.io/hugoblog/posts/"> Posts </a><a class="menu-item" href="/theropod.github.io/hugoblog/tags/"> Tags </a><a class="menu-item" href="/theropod.github.io/hugoblog/categories/"> Categories </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="theropod.github.io/hugoblog/" title="WGS84教信者">WGS84教信者</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/theropod.github.io/hugoblog/posts/" title="">Posts</a><a class="menu-item" href="/theropod.github.io/hugoblog/tags/" title="">Tags</a><a class="menu-item" href="/theropod.github.io/hugoblog/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">昂达 Onda Obook 20 plus v7 双系统安卓root xposed twrp操作记录</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://blog.theropod.tk" title="Author" target="_blank" rel="noopener noreferrer author" class="author"><i class="fas fa-user-circle fa-fw"></i>WGS84教信者</a></span>&nbsp;<span class="post-category">included in <a href="theropod.github.io/hugoblog/categories/%E5%90%84%E7%A7%8D%E5%A7%BF%E5%8A%BF/"><i class="far fa-folder fa-fw"></i>各种姿势</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2018-02-01">2018-02-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1440 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><p>好像这种国产双系统寨板都是Intel Cherry Trail的主板，（我是Cherry Trail CR，Z8350的U），所以说什么昂达论坛，国外的TechTablets，Xda，Onda Forum，Chuwei Forum都有很多贴可以看，甚至国外的比国内的讲得更好一点（也许是因为我用谷歌搜的，但是百度已经被平板广告污染了，搜不到）。。。也不知道洋人花这么大功夫在这个不值钱的东西上是为了什么
+简单的操作流程：
+<a href="http://www.ondabbs.cn/forum.php?mod=viewthread&amp;tid=73864" target="_blank" rel="noopener noreferrer">http://www.ondabbs.cn/forum.php?mod=viewthread&tid=73864</a>
+<a href="https://forum.xda-developers.com/android/development/root-tutorial-intel-atom-cherry-trail-t3468330" target="_blank" rel="noopener noreferrer">https://forum.xda-developers.com/android/development/root-tutorial-intel-atom-cherry-trail-t3468330</a>
+<a href="https://www.mobile01.com/topicdetail.php?f=163&amp;t=4923924" target="_blank" rel="noopener noreferrer">https://www.mobile01.com/topicdetail.php?f=163&t=4923924</a>
+差不多说的是同样的流程。。。</p>
+<ul>
+<li>从论坛上下了一个包含fastboot.exe adb.exe bootimg.exe twrp.img等等的文件夹，又装了一些Intel的刷机工具（装驱动用），下了最新supersu的zip，还有一个论坛dalao找到的American Megatrends支持的双系统平板用xposed(这个寨板的BIOS就是AMI的)
+<a href="https://forum.xda-developers.com/xposed/lollipop-xposed-framework-intel-cherry-t3565149" target="_blank" rel="noopener noreferrer">https://forum.xda-developers.com/xposed/lollipop-xposed-framework-intel-cherry-t3565149</a></li>
+<li>首先修改原厂ROM的boot.img。用工具解包，改几个文件中的几句话（据说是boot.img校验?如果能改system分区就不让启动？），改完了打包，得到新的boot.img。</li>
+<li>设置-开发人员里面关闭OEM锁，打开USB调试，寨板连电脑，重启选安卓，我是在选择之后立即按住音量-，进入fastboot模式。</li>
+<li>电脑cd到fastboot.exe文件夹，执行解锁oem锁，把boot分区刷入新的boot，再用twrp.img启动recovery模式。twrp里面刷supersu</li>
+<li>本来这样就行了，结果我开不了机，但能进fastboot，但是我想要把twrp.img刷入recovery分区的时候告诉我找不到。。。failed to get partition recovery not found</li>
+<li>算了，直接把新boot.img替换原厂刷机包的boot.img，重新刷安卓。。。再进fastboot就能刷twrp了。。。twrp里面刷了supersu和xposed。重启发现没有问题，再安一个xposed的官方应用，这个安卓van机环境算是弄好了。论坛上有人警告用xposed会有卡到bootloop，我是没遇到，可能我的xposed包是正确的。
+因为刚才重新刷了一遍安卓，而原厂安卓刷机包里面有一个GPT.bin，把分区表覆盖了（要是调整两个系统的容量也是改这里，搜索教程有真相），所以我的Windows10重启的时候就识别不出来。。。但是大丈夫，用老毛桃-DiskGenius-重建分区表，如果放efi的那个还是未分配，格式化成fat32之后用引导修复工具就行了</li>
+</ul>
+<p>以上这些从查到搞完也就几个小时，很顺利了。真正困扰人的是双系统的windows10不读Class10以上或者64G以上的tf卡\sd卡的问题。我tmd搜了几天，全世界的论坛都看了，还是不行。仅仅是偶尔能看到，一会儿又没了，还差点把我三星的Evo搞坏了。这个好像是寨板通病，光搜我的型号没有什么讨论，但是其他型号的讨论很多。。。
+网上的方法总结起来就是，先在重启高级选项里关闭驱动安装的签名，再在设备管理器里面把SD Host Controller驱动换成论坛里提供的，最后再到C:\Windows\System32\Drivers里看一下sdbus.sys和dumpsd.sys的版本，要是没变再手动替换一下。重启之后在BIOS里面可以找到一个Advanced and then System Component，把MS Custom SMbus Driver开或者关，都有可能进windows之后识别
+试了无数遍之后发现这个识别不识别也是看运气，论坛里也有人说这个无解，时间长了还是不能稳定，甚至卡都会坏。。。总之我是不试了，寨板还是要配寨卡。</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2018-02-01</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="theropod.github.io/hugoblog/2018-02-01-%E6%98%82%E8%BE%BE-onda-obook-20-plus-v7-%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%8D%93root-xposed-twrp%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/index.md" target="_blank" rel="noopener noreferrer">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="theropod.github.io/hugoblog/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="theropod.github.io/hugoblog/2018-01-29-%E5%85%B3%E4%BA%8E%E6%81%A2%E5%A4%8Dsynaptics%E8%A7%A6%E6%91%B8%E6%9D%BF%E6%89%8B%E5%8A%BF/" class="prev" rel="prev" title="关于恢复synaptics触摸板手势"><i class="fas fa-angle-left fa-fw"></i>关于恢复synaptics触摸板手势</a>
+            <a href="theropod.github.io/hugoblog/2018-03-13-%E5%BE%85%E7%BB%86%E7%9C%8B%E5%85%B3%E4%BA%8Egdal%E7%9A%84vrt%E6%A0%BC%E5%BC%8F/" class="next" rel="next" title="【待细看】关于GDAL的VRT格式">【待细看】关于GDAL的VRT格式<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.92.2">Hugo</a> | Theme - <a href="https://github.com/sunt-programator/CodeIT" target="_blank" rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://blog.theropod.tk" target="_blank" rel="noopener noreferrer">WGS84教信者</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/theropod.github.io/hugoblog/lib/lightgallery/lightgallery.min.814eba54011def7fdeead06ae5cf964a245c347d0f4972e71cc3de1482b1b473.css" integrity="sha256-gU66VAEd73/e6tBq5c&#43;WSiRcNH0PSXLnHMPeFIKxtHM="><script type="text/javascript" src="/theropod.github.io/hugoblog/lib/smooth-scroll/smooth-scroll.min.bcff85fb5e00d68802850b393ac7792c997f722f536f38e26638c46dca8e5eb6.js" integrity="sha256-vP&#43;F&#43;14A1ogChQs5Osd5LJl/ci9TbzjiZjjEbcqOXrY="></script><script type="text/javascript" src="/theropod.github.io/hugoblog/lib/lazysizes/lazysizes.min.fb649fcae62177dfe63e67081ddceb830b5ce1f05a4184e9bbb7d87ac4b8f4e5.js" integrity="sha256-&#43;2SfyuYhd9/mPmcIHdzrgwtc4fBaQYTpu7fYesS49OU="></script><script type="text/javascript" src="/theropod.github.io/hugoblog/lib/lightgallery/lightgallery.min.0ef47b3aa47d71accebfc4c7029c37f43d35f3ef43cda0e706c7adb8851f9554.js" integrity="sha256-DvR7OqR9cazOv8THApw39D018&#43;9DzaDnBsetuIUflVQ="></script><script type="text/javascript" src="/theropod.github.io/hugoblog/lib/lightgallery/lg-thumbnail.min.87bd0bf4ede9af1be2287acf1f0ac8777dc76a49209d44620752811c3c993897.js" integrity="sha256-h70L9O3prxviKHrPHwrId33HakkgnURiB1KBHDyZOJc="></script><script type="text/javascript" src="/theropod.github.io/hugoblog/lib/lightgallery/lg-zoom.min.5993efde07d6b1a88dd5d5ff00cf5c0178d1d8c7f682eae59546a8e144aac57e.js" integrity="sha256-WZPv3gfWsaiN1dX/AM9cAXjR2Mf2gurllUao4USqxX4="></script><script type="text/javascript" src="/theropod.github.io/hugoblog/lib/clipboard/clipboard.min.8a7739925f4c03586479852df840b7061948832a7fda30c8c812d2ea4dd4c4f2.js" integrity="sha256-inc5kl9MA1hkeYUt&#43;EC3BhlIgyp/2jDIyBLS6k3UxPI="></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true}};</script><script type="text/javascript" src="/theropod.github.io/hugoblog/js/theme.min.47a1ff73dc443ed4a9f13e3134f6058e8c6d21248b35d03e7d64f56345190c3e.js" integrity="sha256-R6H/c9xEPtSp8T4xNPYFjoxtISSLNdA&#43;fWT1Y0UZDD4="></script></body>
+</html>

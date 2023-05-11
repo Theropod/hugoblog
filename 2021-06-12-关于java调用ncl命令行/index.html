@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>关于Java调用命令行执行NCL - WGS84教信者</title><meta name="description" content="WGS84教信者"><meta property="og:title" content="关于Java调用命令行执行NCL" />
+<meta property="og:description" content="碰到2次这种需求了：需要给NCL做一个Java Web的套壳，前端参数传给后台，后台用命令行调用NCL出结果。 一般的做法 用Runtime类ge" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="theropod.github.io/hugoblog/2021-06-12-%E5%85%B3%E4%BA%8Ejava%E8%B0%83%E7%94%A8ncl%E5%91%BD%E4%BB%A4%E8%A1%8C/" /><meta property="og:image" content="/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-06-25T11:20:56+08:00" />
+<meta property="article:modified_time" content="2021-06-25T11:20:56+08:00" /><meta property="og:site_name" content="WGS84教信者" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/logo.png"/>
+
+<meta name="twitter:title" content="关于Java调用命令行执行NCL"/>
+<meta name="twitter:description" content="碰到2次这种需求了：需要给NCL做一个Java Web的套壳，前端参数传给后台，后台用命令行调用NCL出结果。 一般的做法 用Runtime类ge"/>
+<meta name="application-name" content="WGS84教信者">
+<meta name="apple-mobile-web-app-title" content="WGS84教信者"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="theropod.github.io/hugoblog/2021-06-12-%E5%85%B3%E4%BA%8Ejava%E8%B0%83%E7%94%A8ncl%E5%91%BD%E4%BB%A4%E8%A1%8C/" /><link rel="prev" href="theropod.github.io/hugoblog/2021-06-21-fork%E4%B9%8B%E5%90%8E%E8%AE%BE%E7%BD%AEupstream%E5%92%8Corigin%E8%AE%B0%E5%BD%95%E4%BF%AE%E6%94%B9merge%E4%B8%BB%E4%BB%93%E5%BA%93%E5%8F%98%E5%8C%96/" /><link rel="next" href="theropod.github.io/hugoblog/2021-11-03-%E7%94%A8cesium%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F%E6%95%B0%E6%8D%AE/" /><link rel="stylesheet" href="/theropod.github.io/hugoblog/lib/normalize/normalize.min.055364f5be272caa092b0e6654c165828707f8ab971e2656383a6d6392bc345e.css" integrity="sha256-BVNk9b4nLKoJKw5mVMFlgocH&#43;KuXHiZWODptY5K8NF4="><link rel="stylesheet" href="/theropod.github.io/hugoblog/css/style.min.623091c4f3b927646c79b3db3772f496ee423628b9567bc0c74af55a4d50d1ba.css" integrity="sha256-YjCRxPO5J2RsebPbN3L0lu5CNii5VnvAx0r1Wk1Q0bo="><link rel="stylesheet" href="/theropod.github.io/hugoblog/lib/fontawesome-free/all.min.876d023d9d10c97941b80c3b03e2a5b94631ff7a4af9cee5604a6a2d39718d84.css" integrity="sha256-h20CPZ0QyXlBuAw7A&#43;KluUYx/3pK&#43;c7lYEpqLTlxjYQ="><link rel="stylesheet" href="/theropod.github.io/hugoblog/lib/animate/animate.min.3c770e90f98eb21b0c042fafb49755af93306fbaf42e449524f94fae9fc83295.css" integrity="sha256-PHcOkPmOshsMBC&#43;vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "关于Java调用命令行执行NCL",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "theropod.github.io\/hugoblog\/2021-06-12-%E5%85%B3%E4%BA%8Ejava%E8%B0%83%E7%94%A8ncl%E5%91%BD%E4%BB%A4%E8%A1%8C\/"
+        },"genre": "posts","keywords": "NCL, Java","wordcount":  1271 ,
+        "url": "theropod.github.io\/hugoblog\/2021-06-12-%E5%85%B3%E4%BA%8Ejava%E8%B0%83%E7%94%A8ncl%E5%91%BD%E4%BB%A4%E8%A1%8C\/","datePublished": "2021-06-25T11:20:56+08:00","dateModified": "2021-06-25T11:20:56+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "WGS84教信者"},"author": {
+                "@type": "Person",
+                "name": "WGS84教信者"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="auto" header-mobile="auto"><script type="text/javascript">('' === 'true' && window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="theropod.github.io/hugoblog/" title="WGS84教信者">WGS84教信者</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/theropod.github.io/hugoblog/posts/"> Posts </a><a class="menu-item" href="/theropod.github.io/hugoblog/tags/"> Tags </a><a class="menu-item" href="/theropod.github.io/hugoblog/categories/"> Categories </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="theropod.github.io/hugoblog/" title="WGS84教信者">WGS84教信者</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/theropod.github.io/hugoblog/posts/" title="">Posts</a><a class="menu-item" href="/theropod.github.io/hugoblog/tags/" title="">Tags</a><a class="menu-item" href="/theropod.github.io/hugoblog/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">关于Java调用命令行执行NCL</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://blog.theropod.tk" title="Author" target="_blank" rel="noopener noreferrer author" class="author"><i class="fas fa-user-circle fa-fw"></i>WGS84教信者</a></span>&nbsp;<span class="post-category">included in <a href="theropod.github.io/hugoblog/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"><i class="far fa-folder fa-fw"></i>编程语言</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-06-25">2021-06-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1271 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#一般的做法">一般的做法</a>
+      <ul>
+        <li><a href="#getruntime使用需要注意">getRuntime使用需要注意</a></li>
+      </ul>
+    </li>
+    <li><a href="#在ncl中可能遇到的问题和解决">在NCL中可能遇到的问题和解决</a></li>
+    <li><a href="#processbuilder例子">processbuilder例子</a>
+      <ul>
+        <li><a href="#不开thread用工具类">不开thread用工具类</a></li>
+        <li><a href="#用streamgobbler工具类处理输出">用streamgobbler工具类处理输出</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<p>碰到2次这种需求了：需要给NCL做一个Java Web的套壳，前端参数传给后台，后台用命令行调用NCL出结果。</p>
+</blockquote>
+<h2 id="一般的做法">一般的做法</h2>
+<p>用Runtime类getRuntime().exec()或用p=processbuilder后p.start()<br>
+用jdk的Runtime类可以获得当前java程序的Runtime实例。每个java application只有一个runtime实例，显然这是一个单例模式。</p>
+<h3 id="getruntime使用需要注意">getRuntime使用需要注意</h3>
+<p>参考经常被引用的<a href="https://www.infoworld.com/article/2071275/when-runtime-exec---won-t.html" target="_blank" rel="noopener noreferrer">这篇4个可能遇到的坑</a> 以及<a href="https://www.jianshu.com/p/af4b3264bc5d" target="_blank" rel="noopener noreferrer">中文版</a></p>
+<ul>
+<li>用waitFor()方法等待执行完再调用结果,否则会抛出错误</li>
+<li>子进程公用父进程的流，要使用bufferreader读取父进程的stream，防止满了之后导致死锁</li>
+<li>不同平台命令兼容性（我这没这个问题）</li>
+<li>对stream重定向或者pipeline不能通过shell命令（如2&gt;&amp;1），而是要编程手段解决。比如建立一个工具类新开thread来处理stdout和stderr</li>
+</ul>
+<h2 id="在ncl中可能遇到的问题和解决">在NCL中可能遇到的问题和解决</h2>
+<ul>
+<li>脚本的environment和workdir参数，用processbuilder可以方便导入</li>
+<li>getRuntime和processbuilder传参的格式不同，getruntime接受整条命令，processbuilder接受的是分割的命令和参数。getruntime内部是分割后传给processbuilder</li>
+<li>NCL的输出在error，而且shell的重定向是不管用的。processbuilder有redirect方法，可以方便把stderror重定向</li>
+<li>NCL若最后没写quit或exit方法，执行完会一直hang住，用waitFor来控制NCL执行中出问题没退出而超时</li>
+<li>在waitfor阻塞结束后才能调用bufferreader里面的值，如果想要实时看到执行的结果，需要新开thread，用streamgobbler工具类处理</li>
+</ul>
+<h2 id="processbuilder例子">processbuilder例子</h2>
+<h3 id="不开thread用工具类">不开thread用工具类</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="c1">// 导入脚本的环境变量，执行command。重定向stderr，在waitfor阻塞结束之后一起返回结果
+</span><span class="c1"></span><span class="kd">public</span> <span class="n">String</span> <span class="nf">exeCmd</span><span class="o">(</span><span class="n">String</span> <span class="n">command</span><span class="o">,</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">environment</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">try</span> <span class="o">{</span>
+        <span class="cm">/* use processbuilder to easily redirect errorstream to inputstream */</span>
+        <span class="n">ProcessBuilder</span> <span class="n">pb</span> <span class="o">=</span>
+                <span class="k">new</span> <span class="n">ProcessBuilder</span><span class="o">(</span><span class="n">command</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&#34; &#34;</span><span class="o">));</span>
+        <span class="n">pb</span><span class="o">.</span><span class="na">redirectErrorStream</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">env</span> <span class="o">=</span> <span class="n">pb</span><span class="o">.</span><span class="na">environment</span><span class="o">();</span>
+        <span class="k">for</span> <span class="o">(</span><span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">entry</span> <span class="o">:</span> <span class="n">environment</span><span class="o">.</span><span class="na">entrySet</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">env</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">entry</span><span class="o">.</span><span class="na">getKey</span><span class="o">(),</span> <span class="n">entry</span><span class="o">.</span><span class="na">getValue</span><span class="o">());</span>
+        <span class="o">}</span>
+        <span class="n">Process</span> <span class="n">p</span> <span class="o">=</span> <span class="n">pb</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+        <span class="n">BufferedReader</span> <span class="n">buf</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span><span class="k">new</span> <span class="n">InputStreamReader</span><span class="o">(</span><span class="n">p</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
+        <span class="n">StringBuilder</span> <span class="n">logString</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+
+        <span class="n">String</span> <span class="n">line</span><span class="o">;</span>
+        <span class="k">while</span> <span class="o">((</span><span class="n">line</span> <span class="o">=</span> <span class="n">buf</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">line</span><span class="o">);</span>
+            <span class="n">logString</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">line</span><span class="o">);</span>
+            <span class="n">logString</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&#34;\n&#34;</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="c1">// wait for 1 minutes
+</span><span class="c1"></span>        <span class="kt">boolean</span> <span class="n">exitVal</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="na">waitFor</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">MINUTES</span><span class="o">);</span>
+        <span class="k">return</span> <span class="o">(</span><span class="n">exitVal</span> <span class="o">?</span> <span class="s">&#34;Finished&#34;</span> <span class="o">:</span> <span class="s">&#34;Timeout&#34;</span><span class="o">)</span> <span class="o">+</span> <span class="s">&#34; log: &#34;</span> <span class="o">+</span> <span class="n">logString</span><span class="o">;</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//TODO: handle exception
+</span><span class="c1"></span>        <span class="k">return</span> <span class="s">&#34;failed &#34;</span> <span class="o">+</span> <span class="n">e</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="用streamgobbler工具类处理输出">用streamgobbler工具类处理输出</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="c1">// class定义略过
+</span><span class="c1"></span>    <span class="c1">// process builder is expecting string[] and automatically add spaces
+</span><span class="c1"></span>    <span class="n">ProcessBuilder</span> <span class="n">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ProcessBuilder</span><span class="o">(</span><span class="n">cmd</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&#34; &#34;</span><span class="o">));</span>
+    <span class="n">builder</span><span class="o">.</span><span class="na">directory</span><span class="o">(</span><span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">workingDir</span><span class="o">));</span>
+
+    <span class="n">Process</span> <span class="n">process</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+
+    <span class="n">StreamGobbler</span> <span class="n">outputGobbler</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StreamGobbler</span><span class="o">(</span><span class="n">process</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">());</span>
+    <span class="n">outputGobbler</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+
+    <span class="n">exitVal</span> <span class="o">=</span> <span class="n">process</span><span class="o">.</span><span class="na">waitFor</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">MINUTES</span><span class="o">);</span>
+
+    <span class="n">nclOutputFile</span> <span class="o">=</span> <span class="n">outputGobbler</span><span class="o">.</span><span class="na">getNclOutputFile</span><span class="o">();</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">exitVal</span> <span class="o">?</span> <span class="s">&#34;NCL Success&#34;</span> <span class="o">:</span> <span class="s">&#34;NCL Failed&#34;</span><span class="o">);</span>
+
+<span class="c1">// streamgobbler类
+</span><span class="c1">// using nio is a little bit overkill
+</span><span class="c1">// use this stream gobbler to deal with output in a new thread
+</span><span class="c1">// or, when ncl encounters error and never quits, readline in main tread will be waiting forever
+</span><span class="c1">// only killing ncl process will continue the program
+</span><span class="c1"></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">StreamGobbler</span> <span class="kd">extends</span> <span class="n">Thread</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">InputStream</span> <span class="n">is</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">nclOutputFile</span> <span class="o">=</span> <span class="s">&#34;&#34;</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">StreamGobbler</span><span class="o">(</span><span class="n">InputStream</span> <span class="n">is</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">is</span> <span class="o">=</span> <span class="n">is</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getNclOutputFile</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">nclOutputFile</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">InputStreamReader</span> <span class="n">isr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">InputStreamReader</span><span class="o">(</span><span class="n">is</span><span class="o">);</span>
+            <span class="n">BufferedReader</span> <span class="n">br</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span><span class="n">isr</span><span class="o">);</span>
+            <span class="n">String</span> <span class="n">line</span><span class="o">;</span>
+            <span class="k">while</span> <span class="o">((</span><span class="n">line</span> <span class="o">=</span> <span class="n">br</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">line</span><span class="o">);</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">line</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="s">&#34;Plot Done&#34;</span><span class="o">))</span> <span class="o">{</span>
+                    <span class="n">nclOutputFile</span> <span class="o">=</span> <span class="n">line</span><span class="o">;</span>
+                    <span class="n">nclOutputFile</span> <span class="o">=</span> <span class="n">nclOutputFile</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&#34;./&#34;</span><span class="o">)[</span><span class="n">1</span><span class="o">];</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">ioe</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">ioe</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-06-25</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="theropod.github.io/hugoblog/2021-06-12-%E5%85%B3%E4%BA%8Ejava%E8%B0%83%E7%94%A8ncl%E5%91%BD%E4%BB%A4%E8%A1%8C/index.md" target="_blank" rel="noopener noreferrer">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="theropod.github.io/hugoblog/tags/ncl/">NCL</a>,&nbsp;<a href="theropod.github.io/hugoblog/tags/java/">Java</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="theropod.github.io/hugoblog/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="theropod.github.io/hugoblog/2021-06-21-fork%E4%B9%8B%E5%90%8E%E8%AE%BE%E7%BD%AEupstream%E5%92%8Corigin%E8%AE%B0%E5%BD%95%E4%BF%AE%E6%94%B9merge%E4%B8%BB%E4%BB%93%E5%BA%93%E5%8F%98%E5%8C%96/" class="prev" rel="prev" title="Fork之后设置upstream和origin记录修改、merge主仓库变化"><i class="fas fa-angle-left fa-fw"></i>Fork之后设置upstream和origin记录修改、merge主仓库变化</a>
+            <a href="theropod.github.io/hugoblog/2021-11-03-%E7%94%A8cesium%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F%E6%95%B0%E6%8D%AE/" class="next" rel="next" title="用cesium显示全球模拟数据">用cesium显示全球模拟数据<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.92.2">Hugo</a> | Theme - <a href="https://github.com/sunt-programator/CodeIT" target="_blank" rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://blog.theropod.tk" target="_blank" rel="noopener noreferrer">WGS84教信者</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/theropod.github.io/hugoblog/lib/lightgallery/lightgallery.min.814eba54011def7fdeead06ae5cf964a245c347d0f4972e71cc3de1482b1b473.css" integrity="sha256-gU66VAEd73/e6tBq5c&#43;WSiRcNH0PSXLnHMPeFIKxtHM="><script type="text/javascript" src="/theropod.github.io/hugoblog/lib/smooth-scroll/smooth-scroll.min.bcff85fb5e00d68802850b393ac7792c997f722f536f38e26638c46dca8e5eb6.js" integrity="sha256-vP&#43;F&#43;14A1ogChQs5Osd5LJl/ci9TbzjiZjjEbcqOXrY="></script><script type="text/javascript" src="/theropod.github.io/hugoblog/lib/lazysizes/lazysizes.min.fb649fcae62177dfe63e67081ddceb830b5ce1f05a4184e9bbb7d87ac4b8f4e5.js" integrity="sha256-&#43;2SfyuYhd9/mPmcIHdzrgwtc4fBaQYTpu7fYesS49OU="></script><script type="text/javascript" src="/theropod.github.io/hugoblog/lib/lightgallery/lightgallery.min.0ef47b3aa47d71accebfc4c7029c37f43d35f3ef43cda0e706c7adb8851f9554.js" integrity="sha256-DvR7OqR9cazOv8THApw39D018&#43;9DzaDnBsetuIUflVQ="></script><script type="text/javascript" src="/theropod.github.io/hugoblog/lib/lightgallery/lg-thumbnail.min.87bd0bf4ede9af1be2287acf1f0ac8777dc76a49209d44620752811c3c993897.js" integrity="sha256-h70L9O3prxviKHrPHwrId33HakkgnURiB1KBHDyZOJc="></script><script type="text/javascript" src="/theropod.github.io/hugoblog/lib/lightgallery/lg-zoom.min.5993efde07d6b1a88dd5d5ff00cf5c0178d1d8c7f682eae59546a8e144aac57e.js" integrity="sha256-WZPv3gfWsaiN1dX/AM9cAXjR2Mf2gurllUao4USqxX4="></script><script type="text/javascript" src="/theropod.github.io/hugoblog/lib/clipboard/clipboard.min.8a7739925f4c03586479852df840b7061948832a7fda30c8c812d2ea4dd4c4f2.js" integrity="sha256-inc5kl9MA1hkeYUt&#43;EC3BhlIgyp/2jDIyBLS6k3UxPI="></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true}};</script><script type="text/javascript" src="/theropod.github.io/hugoblog/js/theme.min.47a1ff73dc443ed4a9f13e3134f6058e8c6d21248b35d03e7d64f56345190c3e.js" integrity="sha256-R6H/c9xEPtSp8T4xNPYFjoxtISSLNdA&#43;fWT1Y0UZDD4="></script></body>
+</html>

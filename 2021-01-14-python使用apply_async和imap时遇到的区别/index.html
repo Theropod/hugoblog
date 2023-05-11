@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Python使用apply_async和imap时遇到的区别 - WGS84教信者</title><meta name="description" content="WGS84教信者"><meta property="og:title" content="Python使用apply_async和imap时遇到的区别" />
+<meta property="og:description" content="map/map_async与imap/imap_unordered的区别 传递iterable object的方式 map会把发给他的所有任务it" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="theropod.github.io/hugoblog/2021-01-14-python%E4%BD%BF%E7%94%A8apply_async%E5%92%8Cimap%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E5%8C%BA%E5%88%AB/" /><meta property="og:image" content="/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-01-14T22:06:13+08:00" />
+<meta property="article:modified_time" content="2021-01-14T22:06:13+08:00" /><meta property="og:site_name" content="WGS84教信者" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/logo.png"/>
+
+<meta name="twitter:title" content="Python使用apply_async和imap时遇到的区别"/>
+<meta name="twitter:description" content="map/map_async与imap/imap_unordered的区别 传递iterable object的方式 map会把发给他的所有任务it"/>
+<meta name="application-name" content="WGS84教信者">
+<meta name="apple-mobile-web-app-title" content="WGS84教信者"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="theropod.github.io/hugoblog/2021-01-14-python%E4%BD%BF%E7%94%A8apply_async%E5%92%8Cimap%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E5%8C%BA%E5%88%AB/" /><link rel="prev" href="theropod.github.io/hugoblog/2021-01-14-%E4%BD%BF%E7%94%A8mkcert%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0https/" /><link rel="next" href="theropod.github.io/hugoblog/2021-01-22-%E5%A6%82%E4%BD%95%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/" /><link rel="stylesheet" href="/theropod.github.io/hugoblog/lib/normalize/normalize.min.055364f5be272caa092b0e6654c165828707f8ab971e2656383a6d6392bc345e.css" integrity="sha256-BVNk9b4nLKoJKw5mVMFlgocH&#43;KuXHiZWODptY5K8NF4="><link rel="stylesheet" href="/theropod.github.io/hugoblog/css/style.min.623091c4f3b927646c79b3db3772f496ee423628b9567bc0c74af55a4d50d1ba.css" integrity="sha256-YjCRxPO5J2RsebPbN3L0lu5CNii5VnvAx0r1Wk1Q0bo="><link rel="stylesheet" href="/theropod.github.io/hugoblog/lib/fontawesome-free/all.min.876d023d9d10c97941b80c3b03e2a5b94631ff7a4af9cee5604a6a2d39718d84.css" integrity="sha256-h20CPZ0QyXlBuAw7A&#43;KluUYx/3pK&#43;c7lYEpqLTlxjYQ="><link rel="stylesheet" href="/theropod.github.io/hugoblog/lib/animate/animate.min.3c770e90f98eb21b0c042fafb49755af93306fbaf42e449524f94fae9fc83295.css" integrity="sha256-PHcOkPmOshsMBC&#43;vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Python使用apply_async和imap时遇到的区别",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "theropod.github.io\/hugoblog\/2021-01-14-python%E4%BD%BF%E7%94%A8apply_async%E5%92%8Cimap%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E5%8C%BA%E5%88%AB\/"
+        },"genre": "posts","keywords": "python, multiprocessing","wordcount":  2168 ,
+        "url": "theropod.github.io\/hugoblog\/2021-01-14-python%E4%BD%BF%E7%94%A8apply_async%E5%92%8Cimap%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E5%8C%BA%E5%88%AB\/","datePublished": "2021-01-14T22:06:13+08:00","dateModified": "2021-01-14T22:06:13+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "WGS84教信者"},"author": {
+                "@type": "Person",
+                "name": "WGS84教信者"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="auto" header-mobile="auto"><script type="text/javascript">('' === 'true' && window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="theropod.github.io/hugoblog/" title="WGS84教信者">WGS84教信者</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/theropod.github.io/hugoblog/posts/"> Posts </a><a class="menu-item" href="/theropod.github.io/hugoblog/tags/"> Tags </a><a class="menu-item" href="/theropod.github.io/hugoblog/categories/"> Categories </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="theropod.github.io/hugoblog/" title="WGS84教信者">WGS84教信者</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/theropod.github.io/hugoblog/posts/" title="">Posts</a><a class="menu-item" href="/theropod.github.io/hugoblog/tags/" title="">Tags</a><a class="menu-item" href="/theropod.github.io/hugoblog/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Python使用apply_async和imap时遇到的区别</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://blog.theropod.tk" title="Author" target="_blank" rel="noopener noreferrer author" class="author"><i class="fas fa-user-circle fa-fw"></i>WGS84教信者</a></span>&nbsp;<span class="post-category">included in <a href="theropod.github.io/hugoblog/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"><i class="far fa-folder fa-fw"></i>编程语言</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-01-14">2021-01-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2168 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#mapmap_async与imapimap_unordered的区别">map/map_async与imap/imap_unordered的区别</a></li>
+    <li><a href="#和applyapply_async的区别">和apply/apply_async的区别</a></li>
+    <li><a href="#使用中遇到的问题">使用中遇到的问题</a></li>
+    <li><a href="#一个例子jupyterlab有时可以用">一个例子,jupyterlab有时可以用</a></li>
+    <li><a href="#为什么要用multiprocessing">为什么要用multiprocessing</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="mapmap_async与imapimap_unordered的区别">map/map_async与imap/imap_unordered的区别</h2>
+<ol>
+<li>传递iterable object的方式
+<ul>
+<li>map会把发给他的所有任务iterable转成list，然后分块发给pool中的process。转换成list+分解成块需要把整个list放内存，占空间但是快</li>
+<li>imap不会转list到内存，默认不分块，每次发送一个iterable到process。这样占用少可以避免内存超额的问题，但是速度降低（可通过手动设置chunksize缓解）<a href="https://stackoverflow.com/questions/53751050/python-multiprocessing-understanding-logic-behind-chunksize" target="_blank" rel="noopener noreferrer">chunksize原理</a></li>
+</ul>
+</li>
+<li>它们返回结果的方式
+<ul>
+<li>map必须执行完返回结果，map_async会立即返回AsyncResult但不是实际完成的值</li>
+<li>imap和imap_unordered会立即返回结果，因此可以用于tqdm。<a href="https://github.com/tqdm/tqdm/issues/484" target="_blank" rel="noopener noreferrer">tqdm操作方法</a></li>
+</ul>
+</li>
+<li>imap和imap_unordered<br>
+unordered会比imap稍好，先自动执行小任务出结果，同时总体上内存小一点</li>
+</ol>
+<p><a href="https://stackoverflow.com/questions/26520781/multiprocessing-pool-whats-the-difference-between-map-async-and-imap" target="_blank" rel="noopener noreferrer">参考链接</a></p>
+<h2 id="和applyapply_async的区别">和apply/apply_async的区别</h2>
+<ol>
+<li>apply仅将一个任务发送给process，在完成前都是block</li>
+<li>apply_async可以立即获得AsyncResult，任务结束得到值,可以用于tqdm。<a href="https://github.com/tqdm/tqdm/issues/484" target="_blank" rel="noopener noreferrer">(tqdm操作方法)</a><br>
+apply is implemented by simply calling apply_async(&hellip;).get()</li>
+</ol>
+<h2 id="使用中遇到的问题">使用中遇到的问题</h2>
+<ol>
+<li>若希望在multi processing时用tqdm显示进度，不能用同步的map或apply，会阻塞tqdm更新</li>
+<li>尽量显式传参给子进程
+<ul>
+<li>虽然unix的fork方式可以让子进程使用父进程的全局变量，但仍建议传参</li>
+<li>原因：Windows兼容、别处也可直接调用、防止子进程alive时资源GC</li>
+</ul>
+</li>
+<li>有关Windows/Interactive环境下执行
+<ul>
+<li>开启多进程有fork/spawn/fork_server三种方式 <a href="https://docs.python.org/3.8/library/multiprocessing.html#contexts-and-start-methods" target="_blank" rel="noopener noreferrer">(官方文档)</a>，windows和interactive的shell采用spawn，会很难从头开始导入code。而unix使用fork会直接复制running states，就不会有这个问题。<a href="https://stackoverflow.com/a/50385056" target="_blank" rel="noopener noreferrer">详见</a></li>
+<li>因此，Windows下需要判断 <code>if __name__ == '__main__':</code>后再执行imap等开启多进程，称为protect the main function <a href="https://stackoverflow.com/a/45110493" target="_blank" rel="noopener noreferrer">(否则会导致main中内容又执行一遍)</a>，官方文档的programming guidline也提示<a href="https://docs.python.org/3.8/library/multiprocessing.html#the-spawn-and-forkserver-start-methods" target="_blank" rel="noopener noreferrer">safe importing of main module</a></li>
+<li>但是，有时children需要__main__模块的内容才能正确运行，而Windows下子进程的__name__不再是__main__ <a href="https://cloud.tencent.com/developer/article/1563136" target="_blank" rel="noopener noreferrer">参考</a>，因此需要用到的资源要在<code>if __name__ == '__main__':</code>之前确定好,在这语句之后的值不会传递到子进程里。interactive interpreter（导入code困难）有时会无法运行 <a href="https://docs.python.org/3.8/library/multiprocessing.html#using-a-pool-of-workers" target="_blank" rel="noopener noreferrer">可以参考此节的的Note</a></li>
+<li>为此有人会专门把函数写到文件，用多进程时import它，以避免spawn的导入code失败（此处的jupyter会失败，我现在没有遇到此问题 <a href="https://stackoverflow.com/a/54266620" target="_blank" rel="noopener noreferrer">参考</a>）</li>
+</ul>
+</li>
+<li>jupyter中的可用性十分不稳定。multiprocessing会把整个jupyter的kernel复制一遍，有时会遇到谜之bug(比如notebook前端一直收到克隆kernel的更新状态失败信息)。而就算把上述best practice都做了有时也会只有第一个循环的进程跑不完，看gdb是其他进程read的时候卡住，第一个循环的进程有futex锁，整个程序卡死。</li>
+</ol>
+<h2 id="一个例子jupyterlab有时可以用">一个例子,jupyterlab有时可以用</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span><span class="lnt">92
+</span><span class="lnt">93
+</span><span class="lnt">94
+</span><span class="lnt">95
+</span><span class="lnt">96
+</span><span class="lnt">97
+</span><span class="lnt">98
+</span><span class="lnt">99
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># import multiprocessing as mp</span>
+<span class="c1"># this module is a fork of official multiprocessing and I believe is faster</span>
+<span class="kn">import</span> <span class="nn">multiprocess</span> <span class="k">as</span> <span class="nn">mp</span>
+
+<span class="c1"># pool</span>
+<span class="c1"># pool = mp.Pool(mp.cpu_count())</span>
+<span class="n">pool</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+
+<span class="s1">&#39;&#39;&#39;
+</span><span class="s1">multiprocessing a for-range function with tqdm showing progess bar, https://github.com/tqdm/tqdm/issues/484
+</span><span class="s1">using imap_unordered to start process in a pool and get returned value asynchronously
+</span><span class="s1">- imap_unordered only takes one argument(the iterator), if you need multiple arguments, you have to wrap all arguments into one new iterator
+</span><span class="s1"># myRange: range of for loop, e.g. range(2001,2020)
+</span><span class="s1"># MyFunc: function to by multiprocessed, takes returned value of myRange as the only argument
+</span><span class="s1">&#39;&#39;&#39;</span> 
+<span class="k">def</span> <span class="nf">forloop_mp</span><span class="p">(</span><span class="n">myRange</span><span class="p">,</span> <span class="n">myFunc</span><span class="p">):</span>
+    <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+        <span class="c1"># start a pool</span>
+        <span class="c1"># with mp.Pool(processes=mp.cpu_count()) as pool:</span>
+        <span class="k">with</span> <span class="n">mp</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
+         
+            <span class="c1"># to store returned values</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="c1"># run iteration with tqdm</span>
+            <span class="c1"># expecting a message to print and the returned result of each iteration</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">pool</span><span class="o">.</span><span class="n">imap_unordered</span><span class="p">(</span><span class="n">myFunc</span><span class="p">,</span> <span class="n">myRange</span><span class="p">),</span> <span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">myRange</span><span class="p">)):</span>
+                <span class="c1"># if you want to print returned message</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+            <span class="c1"># stop receiving new tasks</span>
+            <span class="n">pool</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="c1"># block the method until the process whose join() method is called terminates</span>
+            <span class="n">pool</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+            <span class="c1"># exiting the &#39;with&#39;-block has stopped the pool, dont terminate it manually</span>
+            <span class="c1"># pool.terminate()</span>
+            
+        <span class="k">return</span> <span class="n">results</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="s2">&#34;Not in Jupyter Notebook&#34;</span>
+
+<span class="s1">&#39;&#39;&#39;
+</span><span class="s1">multiprocessing a for-range function with tqdm showing progess bar, https://github.com/tqdm/tqdm/issues/484
+</span><span class="s1">using apply_async to start process in a pool (another way is to use imap_unordered)
+</span><span class="s1"># myRange: range of for loop, e.g. range(2001,2020)
+</span><span class="s1"># MyFunc: function to by multiprocessed
+</span><span class="s1"># params: apply_async can receive multiple args as a list, or you can simple use args=(i, ), which will be the same as imap_unordered
+</span><span class="s1">&#39;&#39;&#39;</span> 
+<span class="k">def</span> <span class="nf">forloop_mp_applyasync</span><span class="p">(</span><span class="n">myRange</span><span class="p">,</span> <span class="n">myFunc</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+    <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+        <span class="c1"># start a pool</span>
+        <span class="c1"># with mp.Pool(processes=mp.cpu_count()) as pool:</span>
+        <span class="k">with</span> <span class="n">mp</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
+            
+            <span class="c1"># progress bar and result list</span>
+            <span class="n">pbar</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">myRange</span><span class="p">))</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">myRange</span><span class="p">)</span>  <span class="c1"># result list of correct size</span>
+
+            <span class="c1"># callback function to update pbar</span>
+            <span class="c1"># expecting a message to print and the returned result of each iteration    </span>
+            <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
+                <span class="n">pbar</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+                <span class="c1"># if you want to print returned value</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">myRange</span><span class="p">:</span>
+                <span class="n">pool</span><span class="o">.</span><span class="n">apply_async</span><span class="p">(</span><span class="n">myFunc</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span> <span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">update</span><span class="p">)</span>
+
+            <span class="c1"># stop receiving new tasks</span>
+            <span class="n">pool</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="c1"># block the method until the process whose join() method is called terminates</span>
+            <span class="n">pool</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+            <span class="c1"># stop updating pbar</span>
+            <span class="n">pbar</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="c1"># exiting the &#39;with&#39;-block has stopped the pool, dont terminate it manually</span>
+            <span class="c1"># pool.terminate()</span>
+            
+        <span class="k">return</span> <span class="n">results</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="s2">&#34;Not in Jupyter Notebook&#34;</span>
+
+<span class="s1">&#39;&#39;&#39; 
+</span><span class="s1">clip raster by mask layer
+</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="k">def</span> <span class="nf">clip_raster_by_mask_layer</span><span class="p">(</span><span class="n">inputfile</span><span class="p">,</span> <span class="n">masklayer</span><span class="p">,</span> <span class="n">outputfile</span><span class="p">):</span>
+    <span class="c1"># warp</span>
+    <span class="n">gdal</span><span class="o">.</span><span class="n">Warp</span><span class="p">(</span><span class="n">outputfile</span><span class="p">,</span> <span class="n">inputfile</span><span class="p">,</span> <span class="nb">format</span> <span class="o">=</span> <span class="s1">&#39;GTiff&#39;</span><span class="p">,</span> <span class="n">cutlineDSName</span> <span class="o">=</span> <span class="n">masklayer</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;clipping &#39;</span> <span class="o">+</span> <span class="n">inputfile</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="s1">&#39;clipped &#39;</span> <span class="o">+</span> <span class="n">inputfile</span><span class="p">)</span>
+<span class="s1">&#39;&#39;&#39;
+</span><span class="s1">the function to be multi processed
+</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="k">def</span> <span class="nf">clip_LC_rasters</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+    <span class="n">input_file</span> <span class="o">=</span> <span class="n">LC_PATH</span> <span class="o">+</span> <span class="s1">&#39;Aligned_LandCover&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;_4326.tif&#39;</span>
+    <span class="n">output_file</span> <span class="o">=</span> <span class="n">LC_PATH</span> <span class="o">+</span> <span class="s1">&#39;Clipped_LandCover&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;_4326.tif&#39;</span>
+    <span class="n">mask_layer</span> <span class="o">=</span> <span class="n">BOUND_PATH</span> <span class="o">+</span> <span class="s1">&#39;ChinaBound-FromGov-1000000.shp&#39;</span>
+    <span class="k">return</span> <span class="n">clip_raster_by_mask_layer</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="n">mask_layer</span><span class="p">,</span> <span class="n">output_file</span><span class="p">)</span>
+<span class="c1"># call</span>
+<span class="n">forloop_mp</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2001</span><span class="p">,</span><span class="mi">2020</span><span class="p">),</span> <span class="n">clip_LC_rasters</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="为什么要用multiprocessing">为什么要用multiprocessing</h2>
+<p>cpython的GIL（Global Interpreter Lock）默认任何时候单进程只有一个线程能拿到GIL，竞争、切换锁消耗资源，且永远只能同时执行一个线程，效率不高。多核时，其他核心的线程虽然被唤醒-竞争锁，但大概率还是CPU0拿到锁，其他线程回到待调度，造成thrashing，效率更低。
+不过，IO密集操作的线程等待时间较长，这时切换到其他线程就可以提高效率。CPU密集则需要multiprocessing<br>
+<a href="https://zhuanlan.zhihu.com/p/20953544" target="_blank" rel="noopener noreferrer">参考1</a> <a href="http://cenalulu.github.io/python/gil-in-python/" target="_blank" rel="noopener noreferrer">参考2</a> <a href="https://python3-cookbook.readthedocs.io/zh_CN/latest/c12/p09_dealing_with_gil_stop_worring_about_it.html" target="_blank" rel="noopener noreferrer">参考3</a></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-01-14</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="theropod.github.io/hugoblog/2021-01-14-python%E4%BD%BF%E7%94%A8apply_async%E5%92%8Cimap%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E5%8C%BA%E5%88%AB/index.md" target="_blank" rel="noopener noreferrer">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="theropod.github.io/hugoblog/tags/python/">python</a>,&nbsp;<a href="theropod.github.io/hugoblog/tags/multiprocessing/">multiprocessing</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="theropod.github.io/hugoblog/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="theropod.github.io/hugoblog/2021-01-14-%E4%BD%BF%E7%94%A8mkcert%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0https/" class="prev" rel="prev" title="使用mkcert快速实现本地https"><i class="fas fa-angle-left fa-fw"></i>使用mkcert快速实现本地https</a>
+            <a href="theropod.github.io/hugoblog/2021-01-22-%E5%A6%82%E4%BD%95%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/" class="next" rel="next" title="如何远程桌面">如何远程桌面<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.92.2">Hugo</a> | Theme - <a href="https://github.com/sunt-programator/CodeIT" target="_blank" rel="noopener noreferrer" title="CodeIT 0.2.10"><i class="fas fa-laptop-code fa-fw"></i> CodeIT</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://blog.theropod.tk" target="_blank" rel="noopener noreferrer">WGS84教信者</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/theropod.github.io/hugoblog/lib/lightgallery/lightgallery.min.814eba54011def7fdeead06ae5cf964a245c347d0f4972e71cc3de1482b1b473.css" integrity="sha256-gU66VAEd73/e6tBq5c&#43;WSiRcNH0PSXLnHMPeFIKxtHM="><script type="text/javascript" src="/theropod.github.io/hugoblog/lib/smooth-scroll/smooth-scroll.min.bcff85fb5e00d68802850b393ac7792c997f722f536f38e26638c46dca8e5eb6.js" integrity="sha256-vP&#43;F&#43;14A1ogChQs5Osd5LJl/ci9TbzjiZjjEbcqOXrY="></script><script type="text/javascript" src="/theropod.github.io/hugoblog/lib/lazysizes/lazysizes.min.fb649fcae62177dfe63e67081ddceb830b5ce1f05a4184e9bbb7d87ac4b8f4e5.js" integrity="sha256-&#43;2SfyuYhd9/mPmcIHdzrgwtc4fBaQYTpu7fYesS49OU="></script><script type="text/javascript" src="/theropod.github.io/hugoblog/lib/lightgallery/lightgallery.min.0ef47b3aa47d71accebfc4c7029c37f43d35f3ef43cda0e706c7adb8851f9554.js" integrity="sha256-DvR7OqR9cazOv8THApw39D018&#43;9DzaDnBsetuIUflVQ="></script><script type="text/javascript" src="/theropod.github.io/hugoblog/lib/lightgallery/lg-thumbnail.min.87bd0bf4ede9af1be2287acf1f0ac8777dc76a49209d44620752811c3c993897.js" integrity="sha256-h70L9O3prxviKHrPHwrId33HakkgnURiB1KBHDyZOJc="></script><script type="text/javascript" src="/theropod.github.io/hugoblog/lib/lightgallery/lg-zoom.min.5993efde07d6b1a88dd5d5ff00cf5c0178d1d8c7f682eae59546a8e144aac57e.js" integrity="sha256-WZPv3gfWsaiN1dX/AM9cAXjR2Mf2gurllUao4USqxX4="></script><script type="text/javascript" src="/theropod.github.io/hugoblog/lib/clipboard/clipboard.min.8a7739925f4c03586479852df840b7061948832a7fda30c8c812d2ea4dd4c4f2.js" integrity="sha256-inc5kl9MA1hkeYUt&#43;EC3BhlIgyp/2jDIyBLS6k3UxPI="></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true}};</script><script type="text/javascript" src="/theropod.github.io/hugoblog/js/theme.min.47a1ff73dc443ed4a9f13e3134f6058e8c6d21248b35d03e7d64f56345190c3e.js" integrity="sha256-R6H/c9xEPtSp8T4xNPYFjoxtISSLNdA&#43;fWT1Y0UZDD4="></script></body>
+</html>
