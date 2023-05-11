@@ -43,22 +43,22 @@ enableEmoji = true
       [[languages.en.menu.main]]
         identifier = "posts"
         name = "Posts"
-        url = "/posts/"
+        url = "posts/"
         weight = 1
       [[languages.en.menu.main]]
         identifier = "tags"
         name = "Tags"
-        url = "/tags/"
+        url = "tags/"
         weight = 2
       [[languages.en.menu.main]]
         identifier = "categories"
         name = "Categories"
-        url = "/categories/"
+        url = "categories/"
         weight = 3
       #[[languages.en.menu.main]]
       #  identifier = "about"
       #  name = "About"
-      #  url = "/about/"
+      #  url = "about/"
       #  weight = 4
       [languages.en.params]
         # site description
@@ -75,7 +75,7 @@ enableEmoji = true
             # Gravatar Email for preferred avatar in home page
             gravatarEmail = ""
             # URL of avatar shown in home page
-            avatarURL = "/images/me/avatar.png"
+            avatarURL = "images/me/avatar.png"
             # subtitle shown in home page
             subtitle = "在做了在做了.jpg"
             # whether to use typeit animation for subtitle
@@ -298,19 +298,19 @@ enableEmoji = true
   [params.publisher]
     name = "Theropod"
     [params.publisher.logo]
-      url = "/images/me/avatar.png"
+      url = "images/me/avatar.png"
       width = 867
       height = 868
   # Website Log Info just for SEO
   # 网站 Logo 信息，仅用于 SEO
   [params.logo]
-    url = "/images/me/avatar.png"
+    url = "images/me/avatar.png"
     width = 867
     height = 868
   # Website Image Info just for SEO
   #  网站图标信息，仅用于 SEO
   [params.image]
-    url = "/images/me/avatar.png"
+    url = "images/me/avatar.png"
     width = 867
     height = 868
   # CSS and JS Files CDN
