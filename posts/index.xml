@@ -1,57 +1,57 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
     <channel>
         <title>All Posts - WGS84教信者</title>
-        <link>theropod.github.io/hugoblog/posts/</link>
+        <link>https://theropod.github.io/hugoblog/posts/</link>
         <description>All Posts | WGS84教信者</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 07 Jan 2023 06:23:59 &#43;0800</lastBuildDate><atom:link href="theropod.github.io/hugoblog/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 07 Jan 2023 06:23:59 &#43;0800</lastBuildDate><atom:link href="https://theropod.github.io/hugoblog/posts/" rel="self" type="application/rss+xml" /><item>
     <title>Geoserver加载大文件</title>
-    <link>theropod.github.io/hugoblog/2023-01-06-geoserver%E5%8A%A0%E8%BD%BD%E5%A4%A7%E5%9E%8Bgeotiff/</link>
-    <pubDate>Sat, 07 Jan 2023 06:23:59 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>theropod.github.io/hugoblog/2023-01-06-geoserver%E5%8A%A0%E8%BD%BD%E5%A4%A7%E5%9E%8Bgeotiff/</guid>
+    <link>https://theropod.github.io/hugoblog/2023-01-06-geoserver%E5%8A%A0%E8%BD%BD%E5%A4%A7%E5%9E%8Bgeotiff/</link>
+    <pubDate>Sat, 07 Jan 2023 06:23:59 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2023-01-06-geoserver%E5%8A%A0%E8%BD%BD%E5%A4%A7%E5%9E%8Bgeotiff/</guid>
     <description><![CDATA[背景 希望用geoserver提供大量栅格的wms服务。例如3000+个2MB以内的小geotiff，代表了美国的精细人口密度,分辨率30米。]]></description>
 </item><item>
     <title>解决VPN连接后无法访问外网</title>
-    <link>theropod.github.io/hugoblog/2022-10-31-%E6%B8%85%E5%8D%8Evpn%E8%BF%9E%E6%8E%A5%E5%80%99%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91/</link>
-    <pubDate>Thu, 08 Dec 2022 03:58:57 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>theropod.github.io/hugoblog/2022-10-31-%E6%B8%85%E5%8D%8Evpn%E8%BF%9E%E6%8E%A5%E5%80%99%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91/</guid>
+    <link>https://theropod.github.io/hugoblog/2022-10-31-%E6%B8%85%E5%8D%8Evpn%E8%BF%9E%E6%8E%A5%E5%80%99%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91/</link>
+    <pubDate>Thu, 08 Dec 2022 03:58:57 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2022-10-31-%E6%B8%85%E5%8D%8Evpn%E8%BF%9E%E6%8E%A5%E5%80%99%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91/</guid>
     <description><![CDATA[现象 之前使用windows商店安装清华的Pulse Secure VPN可以同时访问校园网和外网，现在发现使用商店版或学校提供的桌面应用版Pulse Sec]]></description>
 </item><item>
     <title>Jmeter和tomcat测试相关资料</title>
-    <link>theropod.github.io/hugoblog/2022-10-10-jmeter%E5%92%8Ctomcat%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/</link>
-    <pubDate>Fri, 14 Oct 2022 05:35:24 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>theropod.github.io/hugoblog/2022-10-10-jmeter%E5%92%8Ctomcat%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/</guid>
+    <link>https://theropod.github.io/hugoblog/2022-10-10-jmeter%E5%92%8Ctomcat%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/</link>
+    <pubDate>Fri, 14 Oct 2022 05:35:24 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2022-10-10-jmeter%E5%92%8Ctomcat%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/</guid>
     <description><![CDATA[背景 测试异步的模式数据分析接口的性能瓶颈。接口有2个，提交任务和查询任务状态。由于提交数据和获得结果是异步的，用户并发的性能指标测试包含两个]]></description>
 </item><item>
     <title>用cesium显示全球模拟数据</title>
-    <link>theropod.github.io/hugoblog/2021-11-03-%E7%94%A8cesium%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F%E6%95%B0%E6%8D%AE/</link>
-    <pubDate>Wed, 24 Nov 2021 17:13:31 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>theropod.github.io/hugoblog/2021-11-03-%E7%94%A8cesium%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F%E6%95%B0%E6%8D%AE/</guid>
+    <link>https://theropod.github.io/hugoblog/2021-11-03-%E7%94%A8cesium%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F%E6%95%B0%E6%8D%AE/</link>
+    <pubDate>Wed, 24 Nov 2021 17:13:31 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2021-11-03-%E7%94%A8cesium%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F%E6%95%B0%E6%8D%AE/</guid>
     <description><![CDATA[背景 测试全球模式数据展示的方法。 d3.js和cesium都可以将图放在3d globe上，但是cesium功能更集成，实现起来更简单。 参考eW]]></description>
 </item><item>
     <title>关于Java调用命令行执行NCL</title>
-    <link>theropod.github.io/hugoblog/2021-06-12-%E5%85%B3%E4%BA%8Ejava%E8%B0%83%E7%94%A8ncl%E5%91%BD%E4%BB%A4%E8%A1%8C/</link>
-    <pubDate>Fri, 25 Jun 2021 11:20:56 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>theropod.github.io/hugoblog/2021-06-12-%E5%85%B3%E4%BA%8Ejava%E8%B0%83%E7%94%A8ncl%E5%91%BD%E4%BB%A4%E8%A1%8C/</guid>
+    <link>https://theropod.github.io/hugoblog/2021-06-12-%E5%85%B3%E4%BA%8Ejava%E8%B0%83%E7%94%A8ncl%E5%91%BD%E4%BB%A4%E8%A1%8C/</link>
+    <pubDate>Fri, 25 Jun 2021 11:20:56 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2021-06-12-%E5%85%B3%E4%BA%8Ejava%E8%B0%83%E7%94%A8ncl%E5%91%BD%E4%BB%A4%E8%A1%8C/</guid>
     <description><![CDATA[碰到2次这种需求了：需要给NCL做一个Java Web的套壳，前端参数传给后台，后台用命令行调用NCL出结果。 一般的做法 用Runtime类ge]]></description>
 </item><item>
     <title>Fork之后设置upstream和origin记录修改、merge主仓库变化</title>
-    <link>theropod.github.io/hugoblog/2021-06-21-fork%E4%B9%8B%E5%90%8E%E8%AE%BE%E7%BD%AEupstream%E5%92%8Corigin%E8%AE%B0%E5%BD%95%E4%BF%AE%E6%94%B9merge%E4%B8%BB%E4%BB%93%E5%BA%93%E5%8F%98%E5%8C%96/</link>
-    <pubDate>Mon, 21 Jun 2021 20:43:54 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>theropod.github.io/hugoblog/2021-06-21-fork%E4%B9%8B%E5%90%8E%E8%AE%BE%E7%BD%AEupstream%E5%92%8Corigin%E8%AE%B0%E5%BD%95%E4%BF%AE%E6%94%B9merge%E4%B8%BB%E4%BB%93%E5%BA%93%E5%8F%98%E5%8C%96/</guid>
+    <link>https://theropod.github.io/hugoblog/2021-06-21-fork%E4%B9%8B%E5%90%8E%E8%AE%BE%E7%BD%AEupstream%E5%92%8Corigin%E8%AE%B0%E5%BD%95%E4%BF%AE%E6%94%B9merge%E4%B8%BB%E4%BB%93%E5%BA%93%E5%8F%98%E5%8C%96/</link>
+    <pubDate>Mon, 21 Jun 2021 20:43:54 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2021-06-21-fork%E4%B9%8B%E5%90%8E%E8%AE%BE%E7%BD%AEupstream%E5%92%8Corigin%E8%AE%B0%E5%BD%95%E4%BF%AE%E6%94%B9merge%E4%B8%BB%E4%BB%93%E5%BA%93%E5%8F%98%E5%8C%96/</guid>
     <description><![CDATA[工程中Fork/Submodule了别人的项目，又有一些修改，如何同步 1. Github上Fork一份，用于保存自己的修改 2. 在本地Git目录设置]]></description>
 </item><item>
     <title>CWIC-Beijing服务器软件安装与操作记录</title>
-    <link>theropod.github.io/hugoblog/2021-06-01-%E9%80%82%E7%94%A8%E4%BA%8Ecwic-opensearch%E7%9A%84pycsw%E8%B0%83%E6%95%B4/</link>
-    <pubDate>Mon, 21 Jun 2021 17:54:31 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>theropod.github.io/hugoblog/2021-06-01-%E9%80%82%E7%94%A8%E4%BA%8Ecwic-opensearch%E7%9A%84pycsw%E8%B0%83%E6%95%B4/</guid>
+    <link>https://theropod.github.io/hugoblog/2021-06-01-%E9%80%82%E7%94%A8%E4%BA%8Ecwic-opensearch%E7%9A%84pycsw%E8%B0%83%E6%95%B4/</link>
+    <pubDate>Mon, 21 Jun 2021 17:54:31 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2021-06-01-%E9%80%82%E7%94%A8%E4%BA%8Ecwic-opensearch%E7%9A%84pycsw%E8%B0%83%E6%95%B4/</guid>
     <description><![CDATA[背景 需要为CWIC的Opensearch系统提供数据，并使其最终能在NASA Earth Data Search上找到。对于CEOS，以NRSCC节点的名义来发]]></description>
 </item><item>
     <title>保持实验室电脑连接到清华网</title>
-    <link>theropod.github.io/hugoblog/2021-01-30-%E4%BF%9D%E6%8C%81%E5%AE%9E%E9%AA%8C%E5%AE%A4%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E5%88%B0%E6%B8%85%E5%8D%8E%E7%BD%91/</link>
-    <pubDate>Sat, 30 Jan 2021 18:08:16 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>theropod.github.io/hugoblog/2021-01-30-%E4%BF%9D%E6%8C%81%E5%AE%9E%E9%AA%8C%E5%AE%A4%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E5%88%B0%E6%B8%85%E5%8D%8E%E7%BD%91/</guid>
+    <link>https://theropod.github.io/hugoblog/2021-01-30-%E4%BF%9D%E6%8C%81%E5%AE%9E%E9%AA%8C%E5%AE%A4%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E5%88%B0%E6%B8%85%E5%8D%8E%E7%BD%91/</link>
+    <pubDate>Sat, 30 Jan 2021 18:08:16 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2021-01-30-%E4%BF%9D%E6%8C%81%E5%AE%9E%E9%AA%8C%E5%AE%A4%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E5%88%B0%E6%B8%85%E5%8D%8E%E7%BD%91/</guid>
     <description><![CDATA[校园网+DIVI 目的是用DIVI不要钱且有IPV6地址可以直连cloudflare中转的VMESS，又可以用网线访问校内网页和使用远程桌面 适]]></description>
 </item><item>
     <title>如何远程桌面</title>
-    <link>theropod.github.io/hugoblog/2021-01-22-%E5%A6%82%E4%BD%95%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/</link>
-    <pubDate>Sat, 23 Jan 2021 01:10:33 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>theropod.github.io/hugoblog/2021-01-22-%E5%A6%82%E4%BD%95%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/</guid>
+    <link>https://theropod.github.io/hugoblog/2021-01-22-%E5%A6%82%E4%BD%95%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/</link>
+    <pubDate>Sat, 23 Jan 2021 01:10:33 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2021-01-22-%E5%A6%82%E4%BD%95%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/</guid>
     <description><![CDATA[mstsc 网络行：办公足够，视频游戏略弱 网络不行：勉强办公 不同方法速度降序： 清华校园网直连 实验室主机有线连接获得101开头的ip，主机连接WiFi时]]></description>
 </item><item>
     <title>Python使用apply_async和imap时遇到的区别</title>
-    <link>theropod.github.io/hugoblog/2021-01-14-python%E4%BD%BF%E7%94%A8apply_async%E5%92%8Cimap%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
-    <pubDate>Thu, 14 Jan 2021 22:06:13 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>theropod.github.io/hugoblog/2021-01-14-python%E4%BD%BF%E7%94%A8apply_async%E5%92%8Cimap%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+    <link>https://theropod.github.io/hugoblog/2021-01-14-python%E4%BD%BF%E7%94%A8apply_async%E5%92%8Cimap%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+    <pubDate>Thu, 14 Jan 2021 22:06:13 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2021-01-14-python%E4%BD%BF%E7%94%A8apply_async%E5%92%8Cimap%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
     <description><![CDATA[map/map_async与imap/imap_unordered的区别 传递iterable object的方式 map会把发给他的所有任务it]]></description>
 </item></channel>
 </rss>

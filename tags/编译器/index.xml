@@ -1,12 +1,12 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
     <channel>
         <title>编译器 - Tag - WGS84教信者</title>
-        <link>theropod.github.io/hugoblog/tags/%E7%BC%96%E8%AF%91%E5%99%A8/</link>
+        <link>https://theropod.github.io/hugoblog/tags/%E7%BC%96%E8%AF%91%E5%99%A8/</link>
         <description>编译器 - Tag - WGS84教信者</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 17 Jun 2016 19:06:17 &#43;0000</lastBuildDate><atom:link href="theropod.github.io/hugoblog/tags/%E7%BC%96%E8%AF%91%E5%99%A8/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 17 Jun 2016 19:06:17 &#43;0000</lastBuildDate><atom:link href="https://theropod.github.io/hugoblog/tags/%E7%BC%96%E8%AF%91%E5%99%A8/" rel="self" type="application/rss+xml" /><item>
     <title>关于C&#43;&#43;的模板类</title>
-    <link>theropod.github.io/hugoblog/2016-06-17-%E5%85%B3%E4%BA%8Ec-%E7%9A%84%E6%A8%A1%E6%9D%BF%E7%B1%BB/</link>
-    <pubDate>Fri, 17 Jun 2016 19:06:17 &#43;0000</pubDate><dc:creator>WGS84教信者</dc:creator><guid>theropod.github.io/hugoblog/2016-06-17-%E5%85%B3%E4%BA%8Ec-%E7%9A%84%E6%A8%A1%E6%9D%BF%E7%B1%BB/</guid>
+    <link>https://theropod.github.io/hugoblog/2016-06-17-%E5%85%B3%E4%BA%8Ec-%E7%9A%84%E6%A8%A1%E6%9D%BF%E7%B1%BB/</link>
+    <pubDate>Fri, 17 Jun 2016 19:06:17 &#43;0000</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2016-06-17-%E5%85%B3%E4%BA%8Ec-%E7%9A%84%E6%A8%A1%E6%9D%BF%E7%B1%BB/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>

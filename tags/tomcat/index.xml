@@ -1,17 +1,17 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
     <channel>
         <title>tomcat - Tag - WGS84教信者</title>
-        <link>theropod.github.io/hugoblog/tags/tomcat/</link>
+        <link>https://theropod.github.io/hugoblog/tags/tomcat/</link>
         <description>tomcat - Tag - WGS84教信者</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 14 Oct 2022 05:35:24 &#43;0800</lastBuildDate><atom:link href="theropod.github.io/hugoblog/tags/tomcat/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 14 Oct 2022 05:35:24 &#43;0800</lastBuildDate><atom:link href="https://theropod.github.io/hugoblog/tags/tomcat/" rel="self" type="application/rss+xml" /><item>
     <title>Jmeter和tomcat测试相关资料</title>
-    <link>theropod.github.io/hugoblog/2022-10-10-jmeter%E5%92%8Ctomcat%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/</link>
-    <pubDate>Fri, 14 Oct 2022 05:35:24 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>theropod.github.io/hugoblog/2022-10-10-jmeter%E5%92%8Ctomcat%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/</guid>
+    <link>https://theropod.github.io/hugoblog/2022-10-10-jmeter%E5%92%8Ctomcat%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/</link>
+    <pubDate>Fri, 14 Oct 2022 05:35:24 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2022-10-10-jmeter%E5%92%8Ctomcat%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/</guid>
     <description><![CDATA[背景 测试异步的模式数据分析接口的性能瓶颈。接口有2个，提交任务和查询任务状态。由于提交数据和获得结果是异步的，用户并发的性能指标测试包含两个]]></description>
 </item><item>
     <title>Tomacat部署两个项目的几点经验</title>
-    <link>theropod.github.io/hugoblog/2017-05-02-tomacat%E9%83%A8%E7%BD%B2%E4%B8%A4%E4%B8%AA%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%87%A0%E7%82%B9%E7%BB%8F%E9%AA%8C/</link>
-    <pubDate>Tue, 02 May 2017 13:54:50 &#43;0000</pubDate><dc:creator>WGS84教信者</dc:creator><guid>theropod.github.io/hugoblog/2017-05-02-tomacat%E9%83%A8%E7%BD%B2%E4%B8%A4%E4%B8%AA%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%87%A0%E7%82%B9%E7%BB%8F%E9%AA%8C/</guid>
+    <link>https://theropod.github.io/hugoblog/2017-05-02-tomacat%E9%83%A8%E7%BD%B2%E4%B8%A4%E4%B8%AA%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%87%A0%E7%82%B9%E7%BB%8F%E9%AA%8C/</link>
+    <pubDate>Tue, 02 May 2017 13:54:50 &#43;0000</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2017-05-02-tomacat%E9%83%A8%E7%BD%B2%E4%B8%A4%E4%B8%AA%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%87%A0%E7%82%B9%E7%BB%8F%E9%AA%8C/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>

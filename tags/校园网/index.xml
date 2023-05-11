@@ -1,22 +1,22 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
     <channel>
         <title>校园网 - Tag - WGS84教信者</title>
-        <link>theropod.github.io/hugoblog/tags/%E6%A0%A1%E5%9B%AD%E7%BD%91/</link>
+        <link>https://theropod.github.io/hugoblog/tags/%E6%A0%A1%E5%9B%AD%E7%BD%91/</link>
         <description>校园网 - Tag - WGS84教信者</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 08 Dec 2022 03:58:57 &#43;0800</lastBuildDate><atom:link href="theropod.github.io/hugoblog/tags/%E6%A0%A1%E5%9B%AD%E7%BD%91/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 08 Dec 2022 03:58:57 &#43;0800</lastBuildDate><atom:link href="https://theropod.github.io/hugoblog/tags/%E6%A0%A1%E5%9B%AD%E7%BD%91/" rel="self" type="application/rss+xml" /><item>
     <title>解决VPN连接后无法访问外网</title>
-    <link>theropod.github.io/hugoblog/2022-10-31-%E6%B8%85%E5%8D%8Evpn%E8%BF%9E%E6%8E%A5%E5%80%99%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91/</link>
-    <pubDate>Thu, 08 Dec 2022 03:58:57 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>theropod.github.io/hugoblog/2022-10-31-%E6%B8%85%E5%8D%8Evpn%E8%BF%9E%E6%8E%A5%E5%80%99%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91/</guid>
+    <link>https://theropod.github.io/hugoblog/2022-10-31-%E6%B8%85%E5%8D%8Evpn%E8%BF%9E%E6%8E%A5%E5%80%99%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91/</link>
+    <pubDate>Thu, 08 Dec 2022 03:58:57 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2022-10-31-%E6%B8%85%E5%8D%8Evpn%E8%BF%9E%E6%8E%A5%E5%80%99%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91/</guid>
     <description><![CDATA[现象 之前使用windows商店安装清华的Pulse Secure VPN可以同时访问校园网和外网，现在发现使用商店版或学校提供的桌面应用版Pulse Sec]]></description>
 </item><item>
     <title>保持实验室电脑连接到清华网</title>
-    <link>theropod.github.io/hugoblog/2021-01-30-%E4%BF%9D%E6%8C%81%E5%AE%9E%E9%AA%8C%E5%AE%A4%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E5%88%B0%E6%B8%85%E5%8D%8E%E7%BD%91/</link>
-    <pubDate>Sat, 30 Jan 2021 18:08:16 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>theropod.github.io/hugoblog/2021-01-30-%E4%BF%9D%E6%8C%81%E5%AE%9E%E9%AA%8C%E5%AE%A4%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E5%88%B0%E6%B8%85%E5%8D%8E%E7%BD%91/</guid>
+    <link>https://theropod.github.io/hugoblog/2021-01-30-%E4%BF%9D%E6%8C%81%E5%AE%9E%E9%AA%8C%E5%AE%A4%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E5%88%B0%E6%B8%85%E5%8D%8E%E7%BD%91/</link>
+    <pubDate>Sat, 30 Jan 2021 18:08:16 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2021-01-30-%E4%BF%9D%E6%8C%81%E5%AE%9E%E9%AA%8C%E5%AE%A4%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E5%88%B0%E6%B8%85%E5%8D%8E%E7%BD%91/</guid>
     <description><![CDATA[校园网+DIVI 目的是用DIVI不要钱且有IPV6地址可以直连cloudflare中转的VMESS，又可以用网线访问校内网页和使用远程桌面 适]]></description>
 </item><item>
     <title>如何远程桌面</title>
-    <link>theropod.github.io/hugoblog/2021-01-22-%E5%A6%82%E4%BD%95%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/</link>
-    <pubDate>Sat, 23 Jan 2021 01:10:33 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>theropod.github.io/hugoblog/2021-01-22-%E5%A6%82%E4%BD%95%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/</guid>
+    <link>https://theropod.github.io/hugoblog/2021-01-22-%E5%A6%82%E4%BD%95%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/</link>
+    <pubDate>Sat, 23 Jan 2021 01:10:33 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2021-01-22-%E5%A6%82%E4%BD%95%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/</guid>
     <description><![CDATA[mstsc 网络行：办公足够，视频游戏略弱 网络不行：勉强办公 不同方法速度降序： 清华校园网直连 实验室主机有线连接获得101开头的ip，主机连接WiFi时]]></description>
 </item></channel>
 </rss>
