@@ -1,4 +1,4 @@
-baseURL = "https://blog.theropod.tk/hugoblog"
+baseURL = "https://theropod.github.io/hugoblog/"
 # [en, zh-CN, ...] determines default content language
 # [en, zh-CN, ...] 设置默认的语言
 defaultContentLanguage = "en"
