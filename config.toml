@@ -1,4 +1,4 @@
-baseURL = "https://theropod.github.io/hugoblog/"
+baseURL = "https://blog.theropod.eu.org/"
 # [en, zh-CN, ...] determines default content language
 # [en, zh-CN, ...] 设置默认的语言
 defaultContentLanguage = "en"
@@ -154,7 +154,7 @@ enableEmoji = true
           # Gitea = "xxxx"
           # XMPP = "xxxx"
           # Matrix = "xxxx"
-          Bilibili = "6370869"
+          # Bilibili = "6370869"
         # Social Share Links in post page
         [languages.en.params.share]
           enable = true
