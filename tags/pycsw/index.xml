@@ -1,12 +1,12 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
     <channel>
         <title>pycsw - Tag - WGS84教信者</title>
-        <link>https://theropod.github.io/hugoblog/tags/pycsw/</link>
+        <link>https://blog.theropod.eu.org/tags/pycsw/</link>
         <description>pycsw - Tag - WGS84教信者</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 23 Dec 2020 10:02:52 &#43;0800</lastBuildDate><atom:link href="https://theropod.github.io/hugoblog/tags/pycsw/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 23 Dec 2020 10:02:52 &#43;0800</lastBuildDate><atom:link href="https://blog.theropod.eu.org/tags/pycsw/" rel="self" type="application/rss+xml" /><item>
     <title>Pycsw为何请求maxrecords无效</title>
-    <link>https://theropod.github.io/hugoblog/2020-12-23-pycsw%E4%B8%BA%E4%BD%95%E8%AF%B7%E6%B1%82maxrecords%E6%97%A0%E6%95%88/</link>
-    <pubDate>Wed, 23 Dec 2020 10:02:52 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2020-12-23-pycsw%E4%B8%BA%E4%BD%95%E8%AF%B7%E6%B1%82maxrecords%E6%97%A0%E6%95%88/</guid>
+    <link>https://blog.theropod.eu.org/2020-12-23-pycsw%E4%B8%BA%E4%BD%95%E8%AF%B7%E6%B1%82maxrecords%E6%97%A0%E6%95%88/</link>
+    <pubDate>Wed, 23 Dec 2020 10:02:52 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.eu.org/2020-12-23-pycsw%E4%B8%BA%E4%BD%95%E8%AF%B7%E6%B1%82maxrecords%E6%97%A0%E6%95%88/</guid>
     <description><![CDATA[因为需要在pycsw的服务端设置（默认是default.cfg）server.maxrecords pycsw-admin.py -c load_records -f default.cfg -p /root/glass-xml/DSR python ./pycsw/wsgi.py 服务器上的设置脚本]]></description>
 </item></channel>
 </rss>

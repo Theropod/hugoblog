@@ -1,57 +1,57 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
     <channel>
         <title>WEB相关 - Category - WGS84教信者</title>
-        <link>https://theropod.github.io/hugoblog/categories/web%E7%9B%B8%E5%85%B3/</link>
+        <link>https://blog.theropod.eu.org/categories/web%E7%9B%B8%E5%85%B3/</link>
         <description>WEB相关 - Category - WGS84教信者</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 14 Oct 2022 05:35:24 &#43;0800</lastBuildDate><atom:link href="https://theropod.github.io/hugoblog/categories/web%E7%9B%B8%E5%85%B3/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 14 Oct 2022 05:35:24 &#43;0800</lastBuildDate><atom:link href="https://blog.theropod.eu.org/categories/web%E7%9B%B8%E5%85%B3/" rel="self" type="application/rss+xml" /><item>
     <title>Jmeter和tomcat测试相关资料</title>
-    <link>https://theropod.github.io/hugoblog/2022-10-10-jmeter%E5%92%8Ctomcat%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/</link>
-    <pubDate>Fri, 14 Oct 2022 05:35:24 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2022-10-10-jmeter%E5%92%8Ctomcat%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/</guid>
+    <link>https://blog.theropod.eu.org/2022-10-10-jmeter%E5%92%8Ctomcat%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/</link>
+    <pubDate>Fri, 14 Oct 2022 05:35:24 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.eu.org/2022-10-10-jmeter%E5%92%8Ctomcat%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/</guid>
     <description><![CDATA[背景 测试异步的模式数据分析接口的性能瓶颈。接口有2个，提交任务和查询任务状态。由于提交数据和获得结果是异步的，用户并发的性能指标测试包含两个]]></description>
 </item><item>
     <title>用cesium显示全球模拟数据</title>
-    <link>https://theropod.github.io/hugoblog/2021-11-03-%E7%94%A8cesium%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F%E6%95%B0%E6%8D%AE/</link>
-    <pubDate>Wed, 24 Nov 2021 17:13:31 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2021-11-03-%E7%94%A8cesium%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F%E6%95%B0%E6%8D%AE/</guid>
+    <link>https://blog.theropod.eu.org/2021-11-03-%E7%94%A8cesium%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F%E6%95%B0%E6%8D%AE/</link>
+    <pubDate>Wed, 24 Nov 2021 17:13:31 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.eu.org/2021-11-03-%E7%94%A8cesium%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F%E6%95%B0%E6%8D%AE/</guid>
     <description><![CDATA[背景 测试全球模式数据展示的方法。 d3.js和cesium都可以将图放在3d globe上，但是cesium功能更集成，实现起来更简单。 参考eW]]></description>
 </item><item>
     <title>CWIC-Beijing服务器软件安装与操作记录</title>
-    <link>https://theropod.github.io/hugoblog/2021-06-01-%E9%80%82%E7%94%A8%E4%BA%8Ecwic-opensearch%E7%9A%84pycsw%E8%B0%83%E6%95%B4/</link>
-    <pubDate>Mon, 21 Jun 2021 17:54:31 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2021-06-01-%E9%80%82%E7%94%A8%E4%BA%8Ecwic-opensearch%E7%9A%84pycsw%E8%B0%83%E6%95%B4/</guid>
+    <link>https://blog.theropod.eu.org/2021-06-01-%E9%80%82%E7%94%A8%E4%BA%8Ecwic-opensearch%E7%9A%84pycsw%E8%B0%83%E6%95%B4/</link>
+    <pubDate>Mon, 21 Jun 2021 17:54:31 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.eu.org/2021-06-01-%E9%80%82%E7%94%A8%E4%BA%8Ecwic-opensearch%E7%9A%84pycsw%E8%B0%83%E6%95%B4/</guid>
     <description><![CDATA[背景 需要为CWIC的Opensearch系统提供数据，并使其最终能在NASA Earth Data Search上找到。对于CEOS，以NRSCC节点的名义来发]]></description>
 </item><item>
     <title>使用mkcert快速实现本地https</title>
-    <link>https://theropod.github.io/hugoblog/2021-01-14-%E4%BD%BF%E7%94%A8mkcert%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0https/</link>
-    <pubDate>Thu, 14 Jan 2021 15:17:54 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2021-01-14-%E4%BD%BF%E7%94%A8mkcert%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0https/</guid>
+    <link>https://blog.theropod.eu.org/2021-01-14-%E4%BD%BF%E7%94%A8mkcert%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0https/</link>
+    <pubDate>Thu, 14 Jan 2021 15:17:54 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.eu.org/2021-01-14-%E4%BD%BF%E7%94%A8mkcert%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0https/</guid>
     <description><![CDATA[安装 直接使用github上发布的binary（因为是go写的），或者使用brew/chocolatey等安装 使用 mkcert --install 直接默认生成一个，安装到]]></description>
 </item><item>
     <title>Geoserver中netcdf&#43;wms/wcs/wps</title>
-    <link>https://theropod.github.io/hugoblog/2020-11-15-geoserver%E4%B8%AD%E5%8A%A0%E5%85%A5netcdf/</link>
-    <pubDate>Sun, 15 Nov 2020 17:15:37 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2020-11-15-geoserver%E4%B8%AD%E5%8A%A0%E5%85%A5netcdf/</guid>
+    <link>https://blog.theropod.eu.org/2020-11-15-geoserver%E4%B8%AD%E5%8A%A0%E5%85%A5netcdf/</link>
+    <pubDate>Sun, 15 Nov 2020 17:15:37 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.eu.org/2020-11-15-geoserver%E4%B8%AD%E5%8A%A0%E5%85%A5netcdf/</guid>
     <description><![CDATA[使用Geoserver支持netcdf文件的展示、获取和分析，需要安装插件。 主要参考的链接：geoserver geosolutions 需求 系统有NetCDF-C环]]></description>
 </item><item>
     <title>使用ssh的反向和正向代理让内网网站通过外部服务器访问</title>
-    <link>https://theropod.github.io/hugoblog/2019-01-06-%E4%BD%BF%E7%94%A8ssh%E7%9A%84%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E8%AE%A9%E5%86%85%E7%BD%91%E7%BD%91%E7%AB%99%E9%80%9A%E8%BF%87%E5%A4%96%E9%83%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BF%E9%97%AE/</link>
-    <pubDate>Sun, 06 Jan 2019 20:47:57 &#43;0000</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2019-01-06-%E4%BD%BF%E7%94%A8ssh%E7%9A%84%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E8%AE%A9%E5%86%85%E7%BD%91%E7%BD%91%E7%AB%99%E9%80%9A%E8%BF%87%E5%A4%96%E9%83%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BF%E9%97%AE/</guid>
+    <link>https://blog.theropod.eu.org/2019-01-06-%E4%BD%BF%E7%94%A8ssh%E7%9A%84%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E8%AE%A9%E5%86%85%E7%BD%91%E7%BD%91%E7%AB%99%E9%80%9A%E8%BF%87%E5%A4%96%E9%83%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BF%E9%97%AE/</link>
+    <pubDate>Sun, 06 Jan 2019 20:47:57 &#43;0000</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.eu.org/2019-01-06-%E4%BD%BF%E7%94%A8ssh%E7%9A%84%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E8%AE%A9%E5%86%85%E7%BD%91%E7%BD%91%E7%AB%99%E9%80%9A%E8%BF%87%E5%A4%96%E9%83%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BF%E9%97%AE/</guid>
     <description><![CDATA[用法 1. 反向代理 A能连B，在A运行, 把【外部访问B的端口】转到【A的端口】 1 ssh -fCNR *:B_port:127.0.0.1:A_port B_user@B_ip # [bind_address:]remote_port:localhost:localhost_port 注：一定要开/etc/ssh/sshd_config中]]></description>
 </item><item>
     <title>操作记录-在leaflet中加速大量geojson/topojson多边形的显示</title>
-    <link>https://theropod.github.io/hugoblog/2019-01-06-%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-%E5%9C%A8leaflet%E4%B8%AD%E5%8A%A0%E9%80%9F%E5%A4%A7%E9%87%8Fgeojsontopojson%E5%A4%9A%E8%BE%B9%E5%BD%A2%E7%9A%84%E6%98%BE%E7%A4%BA/</link>
-    <pubDate>Sun, 06 Jan 2019 20:28:12 &#43;0000</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2019-01-06-%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-%E5%9C%A8leaflet%E4%B8%AD%E5%8A%A0%E9%80%9F%E5%A4%A7%E9%87%8Fgeojsontopojson%E5%A4%9A%E8%BE%B9%E5%BD%A2%E7%9A%84%E6%98%BE%E7%A4%BA/</guid>
+    <link>https://blog.theropod.eu.org/2019-01-06-%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-%E5%9C%A8leaflet%E4%B8%AD%E5%8A%A0%E9%80%9F%E5%A4%A7%E9%87%8Fgeojsontopojson%E5%A4%9A%E8%BE%B9%E5%BD%A2%E7%9A%84%E6%98%BE%E7%A4%BA/</link>
+    <pubDate>Sun, 06 Jan 2019 20:28:12 &#43;0000</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.eu.org/2019-01-06-%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95-%E5%9C%A8leaflet%E4%B8%AD%E5%8A%A0%E9%80%9F%E5%A4%A7%E9%87%8Fgeojsontopojson%E5%A4%9A%E8%BE%B9%E5%BD%A2%E7%9A%84%E6%98%BE%E7%A4%BA/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>关于 OAuth2.0 安全性</title>
-    <link>https://theropod.github.io/hugoblog/2018-06-03-%E5%85%B3%E4%BA%8E-oauth2.0-%E5%AE%89%E5%85%A8%E6%80%A7/</link>
-    <pubDate>Sun, 03 Jun 2018 20:30:02 &#43;0000</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2018-06-03-%E5%85%B3%E4%BA%8E-oauth2.0-%E5%AE%89%E5%85%A8%E6%80%A7/</guid>
+    <link>https://blog.theropod.eu.org/2018-06-03-%E5%85%B3%E4%BA%8E-oauth2.0-%E5%AE%89%E5%85%A8%E6%80%A7/</link>
+    <pubDate>Sun, 03 Jun 2018 20:30:02 &#43;0000</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.eu.org/2018-06-03-%E5%85%B3%E4%BA%8E-oauth2.0-%E5%AE%89%E5%85%A8%E6%80%A7/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>pgAdmin能连接PostgreSQL，但是网站不能之解决</title>
-    <link>https://theropod.github.io/hugoblog/2017-08-17-pgadmin%E8%83%BD%E8%BF%9E%E6%8E%A5postgresql%E4%BD%86%E6%98%AF%E7%BD%91%E7%AB%99%E4%B8%8D%E8%83%BD%E4%B9%8B%E8%A7%A3%E5%86%B3/</link>
-    <pubDate>Thu, 17 Aug 2017 15:35:34 &#43;0000</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2017-08-17-pgadmin%E8%83%BD%E8%BF%9E%E6%8E%A5postgresql%E4%BD%86%E6%98%AF%E7%BD%91%E7%AB%99%E4%B8%8D%E8%83%BD%E4%B9%8B%E8%A7%A3%E5%86%B3/</guid>
+    <link>https://blog.theropod.eu.org/2017-08-17-pgadmin%E8%83%BD%E8%BF%9E%E6%8E%A5postgresql%E4%BD%86%E6%98%AF%E7%BD%91%E7%AB%99%E4%B8%8D%E8%83%BD%E4%B9%8B%E8%A7%A3%E5%86%B3/</link>
+    <pubDate>Thu, 17 Aug 2017 15:35:34 &#43;0000</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.eu.org/2017-08-17-pgadmin%E8%83%BD%E8%BF%9E%E6%8E%A5postgresql%E4%BD%86%E6%98%AF%E7%BD%91%E7%AB%99%E4%B8%8D%E8%83%BD%E4%B9%8B%E8%A7%A3%E5%86%B3/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>完全地模拟操作网页-PhantomJS</title>
-    <link>https://theropod.github.io/hugoblog/2017-06-02-%E5%AE%8C%E5%85%A8%E5%9C%B0%E6%A8%A1%E6%8B%9F%E6%93%8D%E4%BD%9C%E7%BD%91%E9%A1%B5-phantomjs/</link>
-    <pubDate>Fri, 02 Jun 2017 00:42:25 &#43;0000</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2017-06-02-%E5%AE%8C%E5%85%A8%E5%9C%B0%E6%A8%A1%E6%8B%9F%E6%93%8D%E4%BD%9C%E7%BD%91%E9%A1%B5-phantomjs/</guid>
+    <link>https://blog.theropod.eu.org/2017-06-02-%E5%AE%8C%E5%85%A8%E5%9C%B0%E6%A8%A1%E6%8B%9F%E6%93%8D%E4%BD%9C%E7%BD%91%E9%A1%B5-phantomjs/</link>
+    <pubDate>Fri, 02 Jun 2017 00:42:25 &#43;0000</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.eu.org/2017-06-02-%E5%AE%8C%E5%85%A8%E5%9C%B0%E6%A8%A1%E6%8B%9F%E6%93%8D%E4%BD%9C%E7%BD%91%E9%A1%B5-phantomjs/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>

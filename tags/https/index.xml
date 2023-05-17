@@ -1,12 +1,12 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
     <channel>
         <title>https - Tag - WGS84教信者</title>
-        <link>https://theropod.github.io/hugoblog/tags/https/</link>
+        <link>https://blog.theropod.eu.org/tags/https/</link>
         <description>https - Tag - WGS84教信者</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 14 Jan 2021 15:17:54 &#43;0800</lastBuildDate><atom:link href="https://theropod.github.io/hugoblog/tags/https/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 14 Jan 2021 15:17:54 &#43;0800</lastBuildDate><atom:link href="https://blog.theropod.eu.org/tags/https/" rel="self" type="application/rss+xml" /><item>
     <title>使用mkcert快速实现本地https</title>
-    <link>https://theropod.github.io/hugoblog/2021-01-14-%E4%BD%BF%E7%94%A8mkcert%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0https/</link>
-    <pubDate>Thu, 14 Jan 2021 15:17:54 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2021-01-14-%E4%BD%BF%E7%94%A8mkcert%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0https/</guid>
+    <link>https://blog.theropod.eu.org/2021-01-14-%E4%BD%BF%E7%94%A8mkcert%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0https/</link>
+    <pubDate>Thu, 14 Jan 2021 15:17:54 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.eu.org/2021-01-14-%E4%BD%BF%E7%94%A8mkcert%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0https/</guid>
     <description><![CDATA[安装 直接使用github上发布的binary（因为是go写的），或者使用brew/chocolatey等安装 使用 mkcert --install 直接默认生成一个，安装到]]></description>
 </item></channel>
 </rss>

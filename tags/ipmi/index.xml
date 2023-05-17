@@ -1,12 +1,12 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
     <channel>
         <title>IPMI - Tag - WGS84教信者</title>
-        <link>https://theropod.github.io/hugoblog/tags/ipmi/</link>
+        <link>https://blog.theropod.eu.org/tags/ipmi/</link>
         <description>IPMI - Tag - WGS84教信者</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 10 May 2019 13:17:45 &#43;0800</lastBuildDate><atom:link href="https://theropod.github.io/hugoblog/tags/ipmi/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 10 May 2019 13:17:45 &#43;0800</lastBuildDate><atom:link href="https://blog.theropod.eu.org/tags/ipmi/" rel="self" type="application/rss+xml" /><item>
     <title>半途而废-超微IPMI风扇调节</title>
-    <link>https://theropod.github.io/hugoblog/2019-05-10-%E8%B6%85%E5%BE%AEipmi%E9%A3%8E%E6%89%87%E8%B0%83%E8%8A%82/</link>
-    <pubDate>Fri, 10 May 2019 13:17:45 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2019-05-10-%E8%B6%85%E5%BE%AEipmi%E9%A3%8E%E6%89%87%E8%B0%83%E8%8A%82/</guid>
+    <link>https://blog.theropod.eu.org/2019-05-10-%E8%B6%85%E5%BE%AEipmi%E9%A3%8E%E6%89%87%E8%B0%83%E8%8A%82/</link>
+    <pubDate>Fri, 10 May 2019 13:17:45 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.eu.org/2019-05-10-%E8%B6%85%E5%BE%AEipmi%E9%A3%8E%E6%89%87%E8%B0%83%E8%8A%82/</guid>
     <description><![CDATA[问题 组里分配的5年前台式，主板Supermicro X10SLM+-LN4F 服务器主板下压式风扇很小，动不动转速起飞，吵死我了，看起来需要用IPMI调节风扇曲线 定义]]></description>
 </item></channel>
 </rss>

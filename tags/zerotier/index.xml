@@ -1,12 +1,12 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
     <channel>
         <title>zerotier - Tag - WGS84教信者</title>
-        <link>https://theropod.github.io/hugoblog/tags/zerotier/</link>
+        <link>https://blog.theropod.eu.org/tags/zerotier/</link>
         <description>zerotier - Tag - WGS84教信者</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 23 Jan 2021 01:10:33 &#43;0800</lastBuildDate><atom:link href="https://theropod.github.io/hugoblog/tags/zerotier/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 23 Jan 2021 01:10:33 &#43;0800</lastBuildDate><atom:link href="https://blog.theropod.eu.org/tags/zerotier/" rel="self" type="application/rss+xml" /><item>
     <title>如何远程桌面</title>
-    <link>https://theropod.github.io/hugoblog/2021-01-22-%E5%A6%82%E4%BD%95%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/</link>
-    <pubDate>Sat, 23 Jan 2021 01:10:33 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2021-01-22-%E5%A6%82%E4%BD%95%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/</guid>
+    <link>https://blog.theropod.eu.org/2021-01-22-%E5%A6%82%E4%BD%95%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/</link>
+    <pubDate>Sat, 23 Jan 2021 01:10:33 &#43;0800</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.eu.org/2021-01-22-%E5%A6%82%E4%BD%95%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/</guid>
     <description><![CDATA[mstsc 网络行：办公足够，视频游戏略弱 网络不行：勉强办公 不同方法速度降序： 清华校园网直连 实验室主机有线连接获得101开头的ip，主机连接WiFi时]]></description>
 </item></channel>
 </rss>

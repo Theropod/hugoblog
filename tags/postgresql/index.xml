@@ -1,12 +1,12 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
     <channel>
         <title>postgresql - Tag - WGS84教信者</title>
-        <link>https://theropod.github.io/hugoblog/tags/postgresql/</link>
+        <link>https://blog.theropod.eu.org/tags/postgresql/</link>
         <description>postgresql - Tag - WGS84教信者</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 17 Aug 2017 15:35:34 &#43;0000</lastBuildDate><atom:link href="https://theropod.github.io/hugoblog/tags/postgresql/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 17 Aug 2017 15:35:34 &#43;0000</lastBuildDate><atom:link href="https://blog.theropod.eu.org/tags/postgresql/" rel="self" type="application/rss+xml" /><item>
     <title>pgAdmin能连接PostgreSQL，但是网站不能之解决</title>
-    <link>https://theropod.github.io/hugoblog/2017-08-17-pgadmin%E8%83%BD%E8%BF%9E%E6%8E%A5postgresql%E4%BD%86%E6%98%AF%E7%BD%91%E7%AB%99%E4%B8%8D%E8%83%BD%E4%B9%8B%E8%A7%A3%E5%86%B3/</link>
-    <pubDate>Thu, 17 Aug 2017 15:35:34 &#43;0000</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2017-08-17-pgadmin%E8%83%BD%E8%BF%9E%E6%8E%A5postgresql%E4%BD%86%E6%98%AF%E7%BD%91%E7%AB%99%E4%B8%8D%E8%83%BD%E4%B9%8B%E8%A7%A3%E5%86%B3/</guid>
+    <link>https://blog.theropod.eu.org/2017-08-17-pgadmin%E8%83%BD%E8%BF%9E%E6%8E%A5postgresql%E4%BD%86%E6%98%AF%E7%BD%91%E7%AB%99%E4%B8%8D%E8%83%BD%E4%B9%8B%E8%A7%A3%E5%86%B3/</link>
+    <pubDate>Thu, 17 Aug 2017 15:35:34 &#43;0000</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.eu.org/2017-08-17-pgadmin%E8%83%BD%E8%BF%9E%E6%8E%A5postgresql%E4%BD%86%E6%98%AF%E7%BD%91%E7%AB%99%E4%B8%8D%E8%83%BD%E4%B9%8B%E8%A7%A3%E5%86%B3/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>

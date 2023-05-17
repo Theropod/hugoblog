@@ -1,12 +1,12 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
     <channel>
         <title>谷歌 - Tag - WGS84教信者</title>
-        <link>https://theropod.github.io/hugoblog/tags/%E8%B0%B7%E6%AD%8C/</link>
+        <link>https://blog.theropod.eu.org/tags/%E8%B0%B7%E6%AD%8C/</link>
         <description>谷歌 - Tag - WGS84教信者</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 09 Apr 2017 01:33:27 &#43;0000</lastBuildDate><atom:link href="https://theropod.github.io/hugoblog/tags/%E8%B0%B7%E6%AD%8C/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 09 Apr 2017 01:33:27 &#43;0000</lastBuildDate><atom:link href="https://blog.theropod.eu.org/tags/%E8%B0%B7%E6%AD%8C/" rel="self" type="application/rss+xml" /><item>
     <title>安装Google Cloud SDK遇到的问题和解决</title>
-    <link>https://theropod.github.io/hugoblog/2017-04-09-%E5%AE%89%E8%A3%85google-cloud-sdk%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3/</link>
-    <pubDate>Sun, 09 Apr 2017 01:33:27 &#43;0000</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://theropod.github.io/hugoblog/2017-04-09-%E5%AE%89%E8%A3%85google-cloud-sdk%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3/</guid>
+    <link>https://blog.theropod.eu.org/2017-04-09-%E5%AE%89%E8%A3%85google-cloud-sdk%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3/</link>
+    <pubDate>Sun, 09 Apr 2017 01:33:27 &#43;0000</pubDate><dc:creator>WGS84教信者</dc:creator><guid>https://blog.theropod.eu.org/2017-04-09-%E5%AE%89%E8%A3%85google-cloud-sdk%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>
